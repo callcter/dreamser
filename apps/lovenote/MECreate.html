@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scaleable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <title>添加时间线</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../frameworks/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/style/css/love.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><div class="h-left fa fa-angle-left fa-2x"></div></a>
+        <div class="h-middle">添加时间线</div>
+        <div onclick="MECreate()" class="h-right fa fa-check fa-lg" id="finished"></div>
+    </header>
+    <div class="wrapper">
+        <textarea class="eventContent" id="eventContent" placeholder="将这一刻记录下来"></textarea>
+        <div class="canvases" id="canvases">
+            <div class="upload" id="upload">
+                <div class="uploadBtn"><img src="../static/image/upload.png"></div>
+                <input id="picture" type="file" class="uploadIn" accept="image/*" onchange="previewImage(this);">
+            </div>
+        </div>
+        <div class="e-time">
+            <i class="fa fa-calendar fa-lg"></i>&nbsp;&nbsp;<input type="text" id="date" placeholder="日期">
+        </div>
+        <div class="e-position">
+            &nbsp;<i class="fa fa-map-marker fa-lg"></i>&nbsp;&nbsp;&nbsp;<input type="text" id="position" placeholder="位置">
+        </div>
+    </div>
+</body>
+
+    <script src="../frameworks/jquery-2.1.4.min.js"></script>
+    <script src="../static/scripts/global.min.js"></script>
+    <script src="../static/scripts/common.min.js"></script>
+    <script src="../static/scripts/love.min.js"></script>
+
+</html>

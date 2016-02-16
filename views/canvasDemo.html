@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+   
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scaleable=0">
@@ -7,10 +8,19 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="email=no">
-    <title>dreamser开发者聚集地</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>刘杭のBlog</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/style/css/canvas.css">
 </head>
-<body>
-	new life!
+
+<body onload="main()">
+    <canvas width="800" height="600" class="canvas" id="canvas">
+        
+    </canvas>
 </body>
+
+    <script src="../frameworks/canvas.js"></script>
+    <script src="../static/scripts/animation.min.js"></script>
+    <script src="../static/scripts/canvasDemo.js"></script>
+
 </html>

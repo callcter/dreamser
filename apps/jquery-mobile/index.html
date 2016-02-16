@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>jquery mobile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="../../frameworks/jquery-mobile/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div data-role="page" id="index" data-theme="b">
+        <div data-role="header" data-position="fixed">
+            <a href="http://dreamser.com/jquerymobile/" data-icon="home" data-iconpos="left" data-corners="true">首页</a>
+            <h1>jquery mobile</h1>
+            <a href="#donate" data-role="button" class="ui-btn-right" data-icon="star" data-transition="slide">捐献</a>
+        </div>
+        <div data-role="content">
+            <div data-role="collapsible" data-collapsed="false">
+                <h1>今日安排</h1>
+                <p>下班，收拾东西，去车站坐车回家。</p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><a href="#" data-icon="plus">分享到新浪微博</a></li>
+                    <li><a href="#" data-icon="plus">分享到朋友圈</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="donate">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <a href="#index" data-role="button" data-icon="back" data-transition="slide" data-direction="reverse">返回</a>
+            <h1>支付宝扫码支付</h1>
+        </div>
+        <div data-role="content"  data-theme="d">
+            <img src="img/alipay_lh.png">
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <div  data-role="navbar">
+                <ul>
+                    <li><a href="#">感谢您的支持，我会好好努力哒！</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../frameworks/jquery/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../../frameworks/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+
+</html>

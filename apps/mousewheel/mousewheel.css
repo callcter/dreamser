@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+    font-family: "Microsoft YaHei" !important;
+}
+.sec1,.sec2,.sec3,.sec4,.sec5,.sec6{
+    text-align: center;
+}
+.sec1{
+    background: #00CCFF;
+}
+.sec2{
+    background: #66FF99;
+}
+.sec3{
+    background: #9933FF;
+}
+.sec4{
+    background: #CCFF00;
+}
+.sec5{
+    background: #000;
+}
+.sec6{
+    background: #fff;
+}

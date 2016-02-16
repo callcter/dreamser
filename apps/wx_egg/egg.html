@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <title>鸟蛋连接</title>
+    <link rel="stylesheet" type="text/less" href="egg.less">
+    <script src="less.js"></script>
+    <script src="jquery.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <script src="chart.js"></script>
+    <script src="egg.js"></script>
+</head>
+    
+<body>
+    <div class="wrapper">
+        <div id="unbind" class="unbind">
+            <div class="tip">您还未绑定鸟蛋，请将手机靠近鸟蛋并晃动鸟蛋</div>
+            <div class="btn">绑定鸟蛋</div>
+        </div>
+        <div id="data_list" class="data-list">
+            <ul>
+                <li>2015-10-6骑行15公里，骑行时间1小时30分，休息20分，停车6次，消耗580kcal</li>
+                <li>2015-10-6骑行15公里，骑行时间1小时30分，休息20分，停车6次，消耗580kcal</li>
+                <li>2015-10-6骑行15公里，骑行时间1小时30分，休息20分，停车6次，消耗580kcal</li>
+                <li>2015-10-6骑行15公里，骑行时间1小时30分，休息20分，停车6次，消耗580kcal</li>
+            </ul>
+            <div class="btn">
+                <div class="topBtn">
+                    <div class="press" id="press">
+                        <img id="pressImg" src="up_icon.png">
+<!--                        <img src="123.gif">-->
+                    </div>
+                    <span>同步数据（</span><span>15</span><span>）</span>
+                    
+                    <div class="clear"></div>
+                </div>
+                <div class="btn1">设置轮径</div>
+                <div class="btn2">硬件信息</div>
+            </div>
+        </div>
+        <div id="back_box" class="back-box">
+            <div id="egg_list" class="egg-list">
+                <ul>
+                    <li>
+                        <div class="pic"><img src="ic_newbie_circle.png"></div>
+                        <div class="text">egg</div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="ic_newbie_circle.png"></div>
+                        <div class="text">egg</div>
+                    </li>
+                    <li>
+                        <div class="pic"><img src="ic_newbie_circle.png"></div>
+                        <div class="text">egg</div>
+                    </li>
+                </ul>
+            </div>
+            <div id="egg_link" class="egg-link">
+                <div class="con">
+                    <div class="text">请将手机靠近鸟蛋并轻微晃动鸟蛋</div>
+                </div>
+                <div onclick="checkBindStatus()" class="btn">确定</div>
+            </div>
+            <ul class="hardware">
+                <li>
+                    <div class="left">固件版本号</div>
+                    <div class="right">12341</div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="left">型号</div>
+                    <div class="right">12341</div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="left">序列号</div>
+                    <div class="right">12341</div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="left">批次号</div>
+                    <div class="right">12341</div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="left">电量</div>
+                    <div class="right">12341</div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="btn">确定</div>
+                </li>
+            </ul>
+            <div class="perimeter">
+                <div class="title">轮圈周长</div>
+                <div class="fillIn">
+                    <input type="text" name="perimeter" placeholder="请输入轮圈周长(mm)">
+                </div>
+                <div class="btn">
+                    <span>取消</span><span>确定</span>
+                </div>
+            </div>
+            <div id="loading" class="loading">
+                <div class="spinner">
+                    <div class="spinner-container container1">
+                        <div class="circle1"></div>
+                        <div class="circle2"></div>
+                        <div class="circle3"></div>
+                        <div class="circle4"></div>
+                    </div>
+                    <div class="spinner-container container2">
+                        <div class="circle1"></div>
+                        <div class="circle2"></div>
+                        <div class="circle3"></div>
+                        <div class="circle4"></div>
+                    </div>
+                    <div class="spinner-container container3">
+                        <div class="circle1"></div>
+                        <div class="circle2"></div>
+                        <div class="circle3"></div>
+                        <div class="circle4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="day_list" class="day-list">
+            <div class="speed">
+                <div class="left">
+                    <p class="num">22.0</p>
+                    <p class="ch">平均速度km/h</p>
+                </div>
+                <div class="left">
+                    <p class="num">22.0</p>
+                    <p class="ch">最高速度km/h</p>
+                </div>
+            </div>
+            <div id="chart_container" class="chart"></div>
+            <ul>
+                <li>
+                    <p class="title">09:30-10:30的骑行 | 20km</p>
+                    <p class="detail">骑行2小时2分 | 休息1小时20分 | 停车100次 | 消耗200kcal</p>
+                </li>
+                <li>
+                    <p class="title">09:30-10:30的骑行 | 20km</p>
+                    <p class="detail">骑行2小时2分 | 休息1小时20分 | 停车100次 | 消耗200kcal</p>
+                </li>
+                <li>
+                    <p class="title">09:30-10:30的骑行 | 20km</p>
+                    <p class="detail">骑行2小时2分 | 休息1小时20分 | 停车100次 | 消耗200kcal</p>
+                </li>
+            </ul>
+        </div>
+        <div id="net_error" class="net-error">
+            <div class="pic"><img src="fault_icon.png"></div>
+            <p class="text">网络未连接，请检查网络设置</p>
+        </div>
+    </div>
+    
+</body>
+
+</html>

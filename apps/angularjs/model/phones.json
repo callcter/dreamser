@@ -1,0 +1,27 @@
+[
+	{
+		"age": 13,
+		"name": "iphone6",
+		"snippet": "apple"
+    },
+	{
+		"age": 14,
+		"name": "nokia",
+		"snippet": "solid"
+	},
+	{
+		"age": 15,
+		"name": "mi",
+		"snippet": "fever"
+	},
+	{
+		"age":12,
+		"name":"sum",
+		"snippet":"new"
+	},
+    {
+        "age":17,
+        "name":"link",
+        "snippet":"omg"
+    }
+]

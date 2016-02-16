@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>摇一摇许愿</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="style.js"></script>
+</head>
+<body onload="rockWishWrapper()">
+    <div class="rockWish_wrapper">
+        <header>
+            <div class="left">
+                <div class="pic">
+                    <img src="img/back.png">
+                </div>
+                <div class="tip">
+                    <span>返回</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="middle">
+                <span>圣诞节许愿</span>
+            </div>
+            <div class="right">
+                <div class="num">
+                    <div class="numContent">
+                        <span>999</span>
+                    </div>
+                </div>
+                <div class="tip">
+                    <span>幸运指数</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </header>
+        <div class="carousel" id="carousel">
+            <div id="c1">
+                <img src="img/center1.jpg">
+            </div>
+            <div id="c2">
+                <img src="img/center.jpg">
+                <div class="bot">
+                    <span>
+                        <img src="img/wish_mac.png">
+                    </span>
+                    <span>
+                        <img src="img/avator.jpg">
+                    </span>
+                    <span>
+                        <img src="img/avator.jpg">
+                    </span>
+                </div>
+            </div>
+            <div id="c3">
+                <img src="img/center3.jpg">
+            </div>
+        </div>
+        <div class="luckyNum">
+            恭喜你获得<span id="luckyNum">247</span>个幸运指数，快快说出你的愿望吧！
+        </div>
+        <ul class="icons">
+            <li>
+                <div class="icon">
+                    <div class="i1">
+                        <img src="img/mac_icon_2.png">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <div class="i2">
+                        <img src="img/pic_icon.png">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="icon">
+                    <div class="i3">
+                        <img src="img/round_icon.png">
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ul class="write">
+            <li class="left">
+                <div class="lock">
+                    <img src="img/lock_open_2.png">
+                </div>
+            </li>
+            <li class="middle">
+                <input type="text" name="wish" placeholder="在这里输入您的愿望">
+            </li>
+            <li class="right">
+                完成
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>翻页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <link rel="stylesheet" href="../../frameworks/slider/css/swiper.min.css">
+    <link rel="stylesheet" type="text/less" href="page.less">
+    <script src="../../frameworks/less/less-2.5.3.min.js"></script>
+    <script src="../../frameworks/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../../frameworks/slider/js/swiper.jquery.min.js"></script>
+    <script src="page.js"></script>
+</head>
+<body>
+    <div class="swiper-container" id="verital">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">
+                <div class="swiper-container" id="horizontal">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Slider2-1</div>
+                        <div class="swiper-slide">Slider2-2</div>
+                        <div class="swiper-slide">Slider2-3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div id="go_top" class="go-top">
+        <span>顶</span>
+    </div>
+</body>
+</html>

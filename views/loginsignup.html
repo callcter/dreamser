@@ -1,0 +1,73 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>登录注册</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../css/loginsignup.css" type="text/css" />
+		<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101179122" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+		var paras = {};
+
+		QC.api("get_user_info", paras)
+			.success(function(s){//成功回调
+			alert("获取用户信息成功！当前用户昵称为："+s.data.nickname);
+			})
+		.error(function(f){//失败回调
+			alert("获取用户信息失败！");
+			})
+		.complete(function(c){//完成请求回调
+			alert("获取用户信息完成！");
+			});
+		</script>
+		
+	</head>
+	<body>
+		<div class="top">
+		<div class="intop">
+			<div class="inintop1">
+				<a href="http://dreamser.com"><img src="../img/logo.png" /></a>
+			</div>
+			
+			<div class="inintop2">
+			<div class="ininintop1">
+			<div class="intopqq">
+				<span id="qqLoginBtn"></span>  
+				<script type="text/javascript">  
+					QC.Login({  
+					btnId:"qqLoginBtn"  //插入按钮的节点id  
+					});  
+				</script>
+			</div>
+			</div>
+			
+			<div class="ininintop2">
+			<div class="inininintop1">
+				<a>首页</a>
+				<a>开发目录</a>
+				<a>个人博客</a>
+				<a>追梦者论坛</a>
+			</div>
+			<div class="inininintop2">
+				<a href="#">登录</a>|<a href="#">注册</a>
+			</div>
+			</div>
+			
+			</div>
+		</div>
+		</div>
+		<div class="content">
+			<div class="incontent">
+				<ul>
+				<li>微博登录</li>
+				<li>人人登录</li>
+				<li>facebook登录</li>
+				</ul>
+			</div>
+			
+		</div>
+		<div class="bottom">
+			<hr/>
+		</div>
+	</body>
+</html>

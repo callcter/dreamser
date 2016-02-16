@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>日历</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <link rel="stylesheet" href="../../frameworks/slider/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="../../frameworks/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/less" href="date.less">
+    <script src="../../frameworks/less/less-2.5.3.min.js"></script>
+    <script src="../../frameworks/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../../frameworks/slider/js/swiper.jquery.min.js"></script>
+    <script src="../../frameworks/highcharts.js"></script>
+    <script src="date.js"></script>
+</head>
+<body> 
+<div class="swiper-container" id="horizontal">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="date" id="date">
+                <div id="yearAndMonth" class="yearAndMonth">
+                    <div class="left fa fa-angle-left fa-2x" id="left"></div>
+                    <div class="middle">
+                        <span id="year"></span> 年
+                        <span id="month"></span> 月
+                    </div>
+                    <div class="right fa fa-angle-right fa-2x" id="right"></div>
+                </div>
+                <ul id="week">
+                    <li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li>
+                </ul>
+                <div id="days"></div>
+            </div>
+        </div>
+        <div id="chart_container" class="swiper-slide"></div>
+    </div>
+</div>
+<div id="day_list" class="day-list">
+    <div class="sum">
+        <div class="tip">本月合计</div>
+        <ul id="month_sum">
+            <li>
+                <div class="pic"><img src="btn_cal_white.png"></div>
+                <p class="data">2200</p>
+                <p>卡路里</p>
+                <p>kcal</p>
+            </li>
+            <li>
+                <div class="border"> </div>
+                <div class="pic"><img src="btn_mileage_white.png"></div>
+                <p class="data">60.35</p>
+                <p>里程</p>
+                <p>km</p>
+            </li>
+            <li>
+                <div class="border"> </div>
+                <div class="pic"><img src="btn_time_white.png"></div>
+                <p class="data">35.00</p>
+                <p>平均速度</p>
+                <p>km/h</p>
+            </li>
+            <li>
+                <div class="border"> </div>
+                <div class="pic"><img src="btn_velocity_white.png"></div>
+                <p class="data">23:20:20</p>
+                <p>骑行时间</p>
+                <p>h:m:s</p>
+            </li>
+        </ul>
+    </div>
+    <ul id="ul_list">
+    </ul>
+</div>
+<div id="listCount" class="list-count">同步数据</div>
+   
+<div id="model" class="model">
+    <div id="unbind" class="unbind">
+        <div class="tip">请将手机靠近鸟蛋并晃动鸟蛋</div>
+        <div class="btn1">绑定鸟蛋</div>
+        <div class="btn2">历史数据</div>
+    </div>
+    <div id="back_box" class="back-box">
+        <div id="egg_list" class="egg-list">
+            <ul>
+                <li>
+                    <div class="pic"><img src="ic_newbie_circle.png"></div>
+                    <div class="text">egg</div>
+                </li>
+                <li>
+                    <div class="pic"><img src="ic_newbie_circle.png"></div>
+                    <div class="text">egg</div>
+                </li>
+                <li>
+                    <div class="pic"><img src="ic_newbie_circle.png"></div>
+                    <div class="text">egg</div>
+                </li>
+            </ul>
+        </div>
+        <div id="loading" class="loading">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+    </div>
+    <div id="net_error" class="net-error">
+        <div class="pic"><img src="fault_icon.png"></div>
+        <p class="text">网络未连接，请检查网络设置</p>
+    </div>
+</div>
+    
+</body>
+</html>

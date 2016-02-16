@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>许愿游戏</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="style.js"></script>
+</head>
+<body onload="game()">
+    <div class="christmas_wrapper" id="christmas_wrapper">
+        <div class="tree large" id="tree">
+            <div class="lightOut LO1">
+                <div class="lightIn LI1">
+                    <img src="img/red1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO2">
+                <div class="lightIn LI2">
+                    <img src="img/yellow1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO3">
+                <div class="lightIn LI3">
+                    <img src="img/blue1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO4">
+                <div class="lightIn LI4">
+                    <img src="img/green1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO5">
+                <div class="lightIn LI5">
+                    <img src="img/purple1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO6">
+                <div class="lightIn LI6">
+                    <img src="img/orange1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO7">
+                <div class="lightIn LI7">
+                    <img src="img/red1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO8">
+                <div class="lightIn LI8">
+                    <img src="img/yellow1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO9">
+                <div class="lightIn LI9">
+                    <img src="img/blue1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO10">
+                <div class="lightIn LI10">
+                    <img src="img/green1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO11">
+                <div class="lightIn LI11">
+                    <img src="img/purple1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO12">
+                <div class="lightIn LI12">
+                    <img src="img/orange1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO13">
+                <div class="lightIn LI13">
+                    <img src="img/red1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO14">
+                <div class="lightIn LI14">
+                    <img src="img/yellow1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO15">
+                <div class="lightIn LI15">
+                    <img src="img/blue1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO16">
+                <div class="lightIn LI16">
+                    <img src="img/green1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO17">
+                <div class="lightIn LI17">
+                    <img src="img/purple1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO18">
+                <div class="lightIn LI18">
+                    <img src="img/orange1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO19">
+                <div class="lightIn LI19">
+                    <img src="img/red1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO20">
+                <div class="lightIn LI20">
+                    <img src="img/yellow1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO21">
+                <div class="lightIn LI21">
+                    <img src="img/blue1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO22">
+                <div class="lightIn LI22">
+                    <img src="img/green1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO23">
+                <div class="lightIn LI23">
+                    <img src="img/purple1.gif">
+                </div>
+            </div>
+            <div class="lightOut LO24">
+                <div class="lightIn LI24">
+                    <img src="img/orange1.gif">
+                </div>
+            </div>
+        </div>
+        <div class="luckyNum" id="luckNumBack">
+            <div class="pic">
+                <img src="img/luck_num_back.png">
+            </div>
+            <div class="text">
+                <span id="luckyNum">0</span>
+            </div>
+        </div>
+        <div class="lastTime">
+            <p class="tip">游戏倒计时</p>
+            <p class="time" id="time">00:60</p>
+        </div>
+        <div class="backBox">
+            <div class="back">
+                <div class="warning">
+                    <p class="title">太棒了！</p>
+                    <p>您击中了<span id="lightSum">356</span>个灯，收获最多的是<span>事业运</span>世上仅有<span>10</span>人如此幸运！
+                    </p>
+                </div>
+                <div class="mine_box">
+                    <div class="avator">
+                        <img src="img/avator.jpg">
+                    </div>
+                    <div class="luck_num">
+                        <span id="sum">356</span>
+                    </div>
+                    <div class="light l1">
+                        <div class="red_light"></div>
+                        <div class="cha">
+                            <img src="img/cha_icon_gray.png">
+                        </div>
+                        <div class="num">
+                            <span id="red">10</span>
+                        </div>
+                    </div>
+                    <div class="light l2">
+                        <div class="green_light"></div>
+                        <div class="cha">
+                            <img src="img/cha_icon_gray.png">
+                        </div>
+                        <div class="num">
+                            <span id="green">10</span>
+                        </div>
+                    </div>
+                    <div class="light l3">
+                        <div class="blue_light"></div>
+                        <div class="cha">
+                            <img src="img/cha_icon_gray.png">
+                        </div>
+                        <div class="num">
+                            <span id="blue">10</span>
+                        </div>
+                    </div>
+                    <div class="light l4">
+                        <div class="orange_light"></div>
+                        <div class="cha">
+                            <img src="img/cha_icon_gray.png">
+                        </div>
+                        <div class="num">
+                            <span id="orange">10</span>
+                        </div>
+                    </div>
+                    <div class="light l5">
+                        <div class="purple_light"></div>
+                        <div class="cha">
+                            <img src="img/cha_icon_gray.png">
+                        </div>
+                        <div class="num">
+                            <span id="purple">10</span>
+                        </div>
+                    </div>
+                    <div class="light l6">
+                        <div class="yellow_light"></div>
+                        <div class="cha">
+                            <img src="img/cha_icon_gray.png">
+                        </div>
+                        <div class="num">
+                            <span id="yellow">10</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="light_tip">
+                    红：爱情 绿：健康 蓝：事业 橙：平安 紫：学业 黄：财运
+                </div>
+                <div class="rote_title">
+                    游戏排行榜
+                </div>
+                <ul class="rote">
+                    <li>
+                        <div class="avator">
+                            <img src="img/avator.jpg">
+                        </div>
+                        <div class="luck_num">
+                            <span>356</span>
+                        </div>
+                        <div class="nickname">
+                            <span>追梦</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="avator">
+                            <img src="img/avator.jpg">
+                        </div>
+                        <div class="luck_num">
+                            <span>356</span>
+                        </div>
+                        <div class="nickname">
+                            <span>追梦</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="avator">
+                            <img src="img/avator.jpg">
+                        </div>
+                        <div class="luck_num">
+                            <span>356</span>
+                        </div>
+                        <div class="nickname">
+                            <span>追梦</span>
+                        </div>
+                    </li>
+                </ul>
+                <a href="writeWish.html">
+                    <div class="btn">
+                        去许愿
+                    </div>
+                </a>
+                <a href="rockWish.html">
+                    <div class="close">
+                        <div class="ccc">
+                            <img src="img/cha_ico_white.png">
+                        </div>
+                    </div>
+                </a>
+                <a href="christmas.html">
+                    <div class="again">
+                        再玩一次 >
+                    </div>
+                </a>
+            </div>
+            <div class="countDown" id="countDown">5</div>
+        </div>
+    </div>
+</body>
+</html>

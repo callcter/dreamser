@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>许愿详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="style.js"></script>
+</head>
+<body onload="wishListWrapper()">
+    <div class="wishList_wrapper" id="wishList">
+        <div class="shareTo">
+            <div class="share_box">
+                <div class="title">分享到</div>
+                <ul class="shareBtn">
+                    <li>
+                        <div class="icon">
+                            <img src="img/wechat.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <img src="img/qq_zone.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <img src="img/weibo.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <img src="img/facebook.png">
+                        </div>
+                    </li>
+                </ul>
+                <div class="btn">取消</div>
+            </div>
+        </div>
+        <header>
+            <div class="left">
+                <div class="menu">
+                    <img src="img/menu_icon.png">
+                </div>
+            </div>
+            <div class="middle">
+                <span>愿望榜</span>
+            </div>
+            <div class="clear"></div>
+        </header>
+        <ul class="navigation">
+            <li>
+                <div class="icon">
+                    <img src="img/heart_3.png">
+                </div>
+                <div class="text">我要许愿</div>
+            </li>
+            <li>
+                <div class="icon">
+                    <img src="img/cup_icon.png">
+                </div>
+                <div class="text"><span class="active">愿望榜</span></div>
+            </li>
+            <li>
+                <div class="icon">
+                    <img src="img/man_icon.png">
+                </div>
+                <div class="text">我的</div>
+            </li>
+        </ul>
+        <div class="top">
+            <div class="heart">
+                <img src="img/heart_2.png">
+            </div>
+            <div class="announce">
+                全世界<span class="pNum">22000</span>人许了<span class="wNum">99999</span>愿望
+            </div>
+        </div>
+        <ul class="list">
+            <li>
+                <div class="avator">
+                    <div class="numIcon">
+                        <img src="img/num1_icon.png">
+                    </div>
+                    <div class="aPic">
+                        <img src="img/avator.jpg">
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="title">
+                        <div class="nickname">小白</div>
+                        <div class="point">
+                            <img src="img/point_down_icon.png">
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="time">
+                        <div class="pic">
+                            <img src="img/clock_icon.png">
+                        </div>
+                        <span>2015/11/13 11:22</span>
+                    </div>
+                    <div class="content">
+                        老婆圣诞节快乐
+                    </div>
+                    <div class="scroll">
+                        <ul class="friends">
+                            <li><img src="img/avator.jpg"></li>
+                            <li><img src="img/avator.jpg"></li>
+                            <li><img src="img/avator.jpg"></li>
+                            <li><img src="img/avator.jpg"></li>
+                            <li><img src="img/avator.jpg"></li>
+                            <li><img src="img/avator.jpg"></li>
+                            <li><img src="img/avator.jpg"></li>
+                        </ul>
+                    </div>
+                    <div class="nums">
+                        <div class="bless">
+                            <div class="pic">
+                                <img src="img/heart_icon.png">
+                            </div>
+                            89
+                        </div>
+                        <div class="comment">
+                            <div class="pic">
+                                <img src="img/talk_icon.png">
+                            </div>
+                            24
+                        </div>
+                        <div class="share">
+                            <div class="pic">
+                                <img src="img/share_icon.png">
+                            </div>
+                            515
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <div class="avator">
+                    <div class="numIcon">
+                        <img src="img/num2_icon.png">
+                    </div>
+                    <div class="aPic">
+                        <img src="img/avator.jpg">
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="title">
+                        <div class="nickname">小白</div>
+                        <div class="point">
+                            <img src="img/point_down_icon.png">
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="time">
+                        <div class="pic">
+                            <img src="img/clock_icon.png">
+                        </div>
+                        <span>2015/11/13 11:22</span>
+                    </div>
+                    <div class="content">
+                        老婆圣诞节快乐
+                    </div>
+                    <div class="nums">
+                        <div class="bless">
+                            <div class="pic">
+                                <img src="img/heart_icon.png">
+                            </div>
+                            89
+                        </div>
+                        <div class="comment">
+                            <div class="pic">
+                                <img src="img/talk_icon.png">
+                            </div>
+                            24
+                        </div>
+                        <div class="share">
+                            <div class="pic">
+                                <img src="img/share_icon.png">
+                            </div>
+                            515
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <div class="avator">
+                    <div class="numIcon">
+                        <img src="img/num3_icon.png">
+                    </div>
+                    <div class="aPic">
+                        <img src="img/avator.jpg">
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="title">
+                        <div class="nickname">小白</div>
+                        <div class="point">
+                            <img src="img/point_down_icon.png">
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="time">
+                        <div class="pic">
+                            <img src="img/clock_icon.png">
+                        </div>
+                        <span>2015/11/13 11:22</span>
+                    </div>
+                    <div class="content">
+                        老婆圣诞节快乐
+                    </div>
+                    <div class="nums">
+                        <div class="bless">
+                            <div class="pic">
+                                <img src="img/heart_icon.png">
+                            </div>
+                            89
+                        </div>
+                        <div class="comment">
+                            <div class="pic">
+                                <img src="img/talk_icon.png">
+                            </div>
+                            24
+                        </div>
+                        <div class="share">
+                            <div class="pic">
+                                <img src="img/share_icon.png">
+                            </div>
+                            515
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

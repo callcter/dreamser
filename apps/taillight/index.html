@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="access-token" content="{{access_token}}">
+	<meta name="uid" content="{{uid}}">
+	<title>taillight</title>
+    <link rel="stylesheet" type="text/less" href="light.less">
+    <link rel="stylesheet" href="jquery.range.css">
+    <script src="../../frameworks/jquery/jquery-2.1.4.min.js"></script>
+    <script src="jquery.range.js"></script>
+    <script src="../../frameworks/less/less-2.5.3.min.js"></script>
+    <script src="../../frameworks/html2canvas.js"></script>
+    <script src="light.js"></script>
+    <script>
+        var red = "red.jpg";
+        var black = "black.jpg";
+        var white = "white.jpg";
+        var urlRed = /red.jpg/;
+    </script>
+</head>
+<body>
+    <div id="directoryBox" class="directoryBox">
+    </div>
+    <div class="workBox">
+        <div class="container">
+            <div id="model" class="light">
+                <ul><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li></ul>
+                <ul><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li></ul>
+                <ul><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li></ul>
+                <ul><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li></ul>
+                <ul><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li></ul>
+                <ul><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li></ul>
+                <ul><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li></ul>
+                <ul><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li></ul>
+                <ul><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li></ul>
+                <ul><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li></ul>
+                <ul><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li></ul>
+                <ul><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li><li><div class="pic"><img src="white.jpg"></div></li></ul>
+            </div>
+            <div id="light" class="model"></div>
+        </div>
+        <div class="controlls">
+            <p>
+                <button class="cover" onclick="doCover()">选择此帧为封面</button>
+            </p>
+            <p>
+                <button onclick="clearDrawback()">清空</button>
+                <button onclick="fullDrawback()">填满</button>
+                <button onclick="reverseDrawback()">反色</button>
+            </p>
+            <p>
+                <button onclick="moveUp()">上移</button>
+                <button onclick="moveDown()">下移</button>
+                <button onclick="moveLeft()">左移</button>
+                <button onclick="moveRight()">右移</button>
+            </p>
+            <p>
+                <button onclick="saveFrame()">保存</button>
+            </p>
+            <div id="sim">
+            <p>速度：<a onclick="proffessional()">高级>></a></p>
+            <p class="slider"><input type="hidden" class="speed-slider" value="1"></p>
+            </div>
+            <p>
+                <button id="play" onclick="play()">播放</button>
+            </p>
+        </div>
+        <div class="clear"></div>
+        <div id="page" class="page"></div>
+        <div id="frameCtrl">
+            <button onclick="preNewFrame()">前插帧</button>
+            <button onclick="copyFrame()">复制</button>
+            <button onclick="pasteFrame()">粘贴</button>
+<!--            <button onclick="updateFrame()">保存</button>-->
+            <button onclick="delFrame()">删除</button>
+            <button onclick="nextNewFrame()">后插帧</button>
+        </div>
+    </div>
+    <div class="submitBox">
+        <div id="pro">
+        <p>高级设置<a onclick="simple()">简单>></a></p>
+        <p>延迟时间参数：</p>
+        <p><input type="hidden" class="delay-slider" value="0"></p>
+        <p>淡入时间参数：</p>
+        <p><input type="hidden" class="fadein-slider" value="0"></p>
+        <p>淡出时间参数：</p>
+        <p><input type="hidden" class="fadeout-slider" value="0"></p>
+        <p>熄灭时间参数：</p>
+        <p><input type="hidden" class="extinguish-slider" value="0"></p>
+        </div>
+        <form name="animations" id='animations'>
+            频道序号：<select id="channel_num" name='channel_num'>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+            </select><br/>
+            动画标题：<input type='text' id="title" name='title' value=""><br/>
+            动画公开：<input type='checkbox' id="is_public" name='is_public' checked="checked"><br/>
+            播放次数：<input type='text' id="play_times" name='play_times' value=""><br/>
+        </form>
+<!--
+        <p>
+            <button onclick="saveAction()">保存动画</button>
+            <button onclick="getAction()">获取动画</button>
+            <button onclick="delAction()">删除动画</button>
+            <button onclick="updateAction()">更新动画</button>
+        </p>
+-->
+        <div id="cover" class="cover"></div>
+    </div>
+</body>
+</html>

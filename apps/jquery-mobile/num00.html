@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+  <html>
+  <head>
+     <meta charset="utf-8" />
+    <title>hah</title>
+      <script src="js/jquery-1.11.3.js"></script>
+      <script>
+         //JS版
+    //将传入数据转换为字符串,并清除字符串中非数字与.的字符
+    //按数字格式补全字符串
+    var getFloatStr = function(num){
+        num += '';
+        num = num.replace(/[^0-9|\.]/g, ''); //清除字符串中的非数字非.字符
+        
+        if(/^0+/) //清除字符串开头的0
+            num = num.replace(/^0+/, '');
+        if(!/\./.test(num)) //为整数字符串在末尾添加.00
+            num += '.00';
+        if(/^\./.test(num)) //字符以.开头时,在开头添加0
+            num = '0' + num;
+        num += '00';        //在字符串末尾补零
+        num = num.match(/\d+\.\d{2}/)[0];
+    };
+          $(function(){
+              $num = 12;
+              alert($num);
+          })
+    function number_format(num, ext){
+    if(ext < 0){
+        return num;
+    }
+    num = Number(num);
+    if(isNaN(num)){
+        num = 0;
+    }
+    var _str = num.toString();
+    var _arr = _str.split('.');
+    var _int = _arr[0];
+    var _flt = _arr[1];
+    if(_str.indexOf('.') == -1){
+        /* 找不到小数点，则添加 */
+        if(ext == 0){
+            return _str;
+        }
+        var _tmp = '';
+        for(var i = 0; i < ext; i++){
+            _tmp += '0';
+        }
+        _str = _str + '.' + _tmp;
+    }else{
+        if(_flt.length == ext){
+            return _str;
+        }
+        /* 找得到小数点，则截取 */
+        if(_flt.length > ext){
+            _str = _str.substr(0, _str.length - (_flt.length - ext));
+            if(ext == 0){
+                _str = _int;
+            }
+        }else{
+            for(var i = 0; i < ext - _flt.length; i++){
+                _str += '0';
+            }
+        }
+    }
+
+    return _str;
+}
+       
+      </script>
+      </head>
+      <body>
+      
+      </body>
+</html>

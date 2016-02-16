@@ -1,0 +1,48 @@
+<header class="row">
+    <div class="logo"><a href="#">Newbie.com</a></div>
+    <ul id="navi" class="navi">
+        <li class="active" onclick="naviClick(this)"><a href="#/index">首页</a></li>
+        <li onclick="naviClick(this)"><a href="#/about">关于</a></li>
+        <li onclick="dropDown(this)"><a href=''>链接 <i class="fa fa-angle-down fa-lg"></i></a></li>
+        <li onclick="naviClick(this)"><a href="#/index">联系</a></li>
+    </ul>
+    <div class="sign">
+        <div ng-hide="logFlag">
+            <a href="#/login">登录</a> | <a href="#/signup">注册</a>
+        </div>
+        <div ng-show="logFlag"><a href="">Hi {{username}}</a></div>
+    </div>
+    <div onclick="phoneMenu()" id="nav" class="nav">
+        <i class="fa fa-bars fa-2x"></i>
+    </div>
+</header>
+
+<ul id="phoneMenu" class="phoneMenu">
+    <li class="active"><a href="#/index">首页</a></li>
+    <li><a href="#/about">关于</a></li>
+    <li onclick="phoneLink()"><a href=''>链接 <i class="fa fa-angle-down fa-lg"></i></a></li>
+    <ul id="phoneLink" class="phoneLink">
+        <li class="title">个人</li>
+        <li><a href="">个人博客</a></li>
+        <li><a href="">DOTA</a></li>
+        <li><a href="">不知道</a></li>
+        <li><a href="">每日一言</a></li>
+    </ul>
+    <li><a href="#/index">联系</a></li>
+    <li>
+        <div id='phoneLog' ng-hide="logFlag"><a href="#/login">登录</a> | <a href="#/signup">注册</a></div>
+        <div ng-show="logFlag"><a href="">Hi {{username}}</a></div>
+    </li>
+</ul>
+
+<ul id="dropLink" class="dropLink">
+    <li class="title">个人</li>
+    <li><a href="">个人博客</a></li>
+    <li><a href="">DOTA</a></li>
+    <li><a href="">不知道</a></li>
+    <li><a href="">每日一言</a></li>
+</ul>
+
+<div class="tip row">
+    <span>开发中，敬请期待……</span>
+</div>

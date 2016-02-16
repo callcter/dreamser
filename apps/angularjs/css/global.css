@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+html{
+    font-size: 10px;
+}
+h1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+/*@media screen and (max-width: 319px){*/
+    /*html{*/
+        /*font-size: 10px;*/
+    /*}*/
+/*}*/
+/*@media screen and (min-width: 320px) and (max-width: 479px){*/
+    /*html{*/
+        /*font-size: 12px;*/
+    /*}*/
+/*}*/
+/*@media screen and (min-width: 480px) and (max-width: 639px){*/
+    /*html{*/
+        /*font-size: 14px;*/
+    /*}*/
+/*}*/
+/*@media screen and (min-width: 640px) and (max-width: 799px){*/
+    /*html{*/
+        /*font-size: 16px;*/
+    /*}*/
+/*}*/
+/*@media screen and (min-width: 800px) and (max-width: 959px){*/
+    /*html{*/
+        /*font-size: 18px;*/
+    /*}*/
+/*}*/
+/*@media screen and (min-width: 960px){*/
+    /*html{*/
+        /*font-size: 20px;*/
+    /*}*/
+/*}*/
+
+body {
+    font-family: "Microsoft YaHei" !important;
+}
+body i{
+    overflow: hidden;
+}
+ul,li {
+    list-style: none;
+}
+ul{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+.margintop{
+    margin-top: 60px;
+}
+@media only screen and (min-width:1201px){
+    .container{
+        width: 1170px;
+    }
+}
+@media only screen and (min-width:992px) and (max-width:1200px){
+    .container{
+        width: 970px;
+    }
+}
+@media only screen and (min-width:768px) and (max-width:991px){
+    .container{
+        width: 750px;
+    }
+}
+@media only screen and (max-width:767px){
+    .container{
+        width: 100%;
+    }
+}
+.row {
+    clear: both;
+}
+.col-1 {
+    width: 8.3333%;
+}
+.col-2 {
+    width: 16.6666%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-4 {
+    width: 33.3333%;
+}
+.col-5 {
+    width: 41.6666%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-7 {
+    width: 58.3333%;
+}
+.col-8 {
+    width: 66.6666%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-10 {
+    width: 83.3333%;
+}
+.col-11 {
+    width: 91.6666%;
+}
+.col-12 {
+    width: 100%;
+}
+.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12 {
+    margin-right: auto;
+    margin-left: auto;
+    float: left;
+    text-align: center;
+}
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>许愿</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="style.js"></script>
+</head>
+<body onload="wishWrapper()">
+    <div class="wish_wrapper">
+        <header>
+            <div class="left">
+                <div class="menu">
+                    <img src="img/menu_icon.png">
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="middle">
+                <span>圣诞节许愿</span>
+            </div>
+            <div class="right">
+                <div class="num">
+                    <div class="numContent">
+                        <span>0</span>
+                    </div>
+                </div>
+                <div class="tip">
+                    <span>幸运指数</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </header>
+        <ul class="navigation">
+            <li>
+                <div class="icon">
+                    <img src="img/heart_icon_4.png">
+                </div>
+                <div class="text"><span class="active">我要许愿</span></div>
+            </li>
+            <li>
+                <div class="icon">
+                    <img src="img/cup_icon_2.png">
+                </div>
+                <div class="text">愿望榜</div>
+            </li>
+            <li>
+                <div class="icon">
+                    <img src="img/man_icon.png">
+                </div>
+                <div class="text">我的</div>
+            </li>
+        </ul>
+        <div class="carousel" id="carousel">
+            <div id="c1">
+                <img src="img/center1.jpg">
+            </div>
+            <div id="c2">
+                <img src="img/center.jpg">
+            </div>
+            <div id="c3">
+                <img src="img/center3.jpg">
+            </div>
+        </div>
+        <div class="change1">
+            <ul class="icons">
+                <li>
+                    <div class="icon">
+                        <div class="i1">
+                            <img src="img/mac_icon_2.png">
+                        </div>
+                    </div>
+                    <div class="text">
+                        语音
+                    </div>
+                </li>
+                <li>
+                    <div class="icon">
+                        <div class="i2">
+                            <img src="img/pic_icon.png">
+                        </div>
+                    </div>
+                    <div class="text">
+                        照片
+                    </div>
+                </li>
+                <li>
+                    <div class="icon">
+                        <div class="i3">
+                            <img src="img/round_icon.png">
+                        </div>
+                    </div>
+                    <div class="text">
+                        公开
+                    </div>
+                </li>
+            </ul>
+            <ul class="write">
+                <li class="middle">
+                    <input type="text" name="wish" placeholder="在这里输入您的愿望(0/70)">
+                </li>
+                <li class="right">
+                    完成
+                </li>
+            </ul>
+        </div>
+        <div class="change2">
+            <img src="img/rockWish.png">
+        </div>
+    </div>
+</body>
+</html>

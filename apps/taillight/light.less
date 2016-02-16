@@ -1,0 +1,197 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #000;
+    font-family: "Microsoft YaHei" !important;
+    button{
+        font-family: "Microsoft YaHei" !important;
+        cursor: pointer;
+    }
+}
+.clear{
+    clear: both;
+}
+.directoryBox{
+    float: left;
+    min-width: 200px;
+    width: auto;
+    margin-top: 20px;
+    margin-left: 50px;
+    color: #fff;
+    text-align: left;
+    p{
+        height: 20px;
+        line-height: 20px;
+        vertical-align: middle;
+        font-size: 14px;
+        width: 100%;
+        cursor: pointer;
+    }
+}
+.workBox{
+    width: 600px;
+    margin-top: 20px;
+    height: 450px;
+    float: left;
+    margin-left: 20px;
+    border: 5px solid #fff;
+    .container{
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        margin-left: 30px;
+        margin-top: 20px;
+        background-color: #000;
+        .light{
+            width: 300px;
+            height: 300px;
+            background: #000;
+            opacity: 1;
+            ul{
+                list-style: none;
+                background: #000;
+                margin-top: -4px;
+                li{
+                    display: inline-block;
+                    width: 25px;
+                    height: 25px;
+                    background: #000;
+                    border-radius: 50%;
+                    margin-left: 0px;
+                    .pic{
+                        width: 23px;
+                        height: 23px;
+                        margin: 1px;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                        }
+                    }
+                }
+                li:first-child{
+                    margin-left: 0px;
+                }
+            }
+            ul:first-child{
+                margin-top: 0px;
+            }
+        }
+        .model{
+            top: 0;
+            position: absolute;
+            z-index: 10;
+            width: 298px;
+            height: 300px;
+            background: rgba(255,255,255,0);
+        }
+    }
+    .page{
+        position: absolute;
+        margin-top: 340px;
+        width: 530px;
+        margin-left: 35px;
+        height: 20px;
+        display: none;
+        color: #fff;
+        text-align: center;
+        line-height: 16px;
+        vertical-align: middle;
+        font-size: 14px;
+        span{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 1px;
+            border: 1px solid #fff;
+            cursor: pointer;
+        }
+        span.active{
+            background: rgba(255,255,255,0.5);
+        }
+        span.noactive{
+            background: #000;
+        }
+    }
+    #frameCtrl{
+        width: 600px;
+        height: 30px;
+        text-align: center;
+        margin-top: 400px;
+        button{
+            width: 50px;
+            height: 30px;
+            background: #fff;
+            border: none;
+            outline: none;
+            line-height: 30px;
+            font-size: 14px;
+            color: #000;
+            font-weight: bold;
+            vertical-align: middle;
+            border-radius: 3px;
+        }
+    }
+    .controlls{
+        color: #fff;
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 350px;
+        p{
+            height: 30px;
+            width: auto;
+            margin-top: 10px;
+            button{
+                width: 50px;
+                height: 30px;
+                background: #fff;
+                border: none;
+                outline: none;
+                line-height: 30px;
+                font-size: 14px;
+                color: #000;
+                font-weight: bold;
+                vertical-align: middle;
+                border-radius: 3px;
+            }
+            button.cover{
+                width: 120px;
+            }
+        }
+        p.slider{
+            height: 40px;
+            input{
+                
+            }
+        }
+    }
+}
+
+.submitBox{
+    color: #fff;
+    width: 300px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 20px;
+    .cover{
+        width: 200px;
+        height: 200px;
+        img{
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+    p{
+        width: auto;
+        height: 40px;
+    }
+}
+#pro{
+    display: none;
+}
+#sim{
+    display: block;
+}

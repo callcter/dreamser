@@ -1,0 +1,16 @@
+<h1>angularjs实例——phoneList</h1>
+<div class="col-6">
+    Search:<input ng-model="query">
+    Sort by:
+    <select ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+    </select>
+    <ul>
+        <li ng-repeat="phone in phones|filter:query|orderBy:orderProp" class="phone-listing">
+            <h3 ng-bind="phone.name"></h3>
+            <p ng-bind="phone.snippet"></p>
+        </li>
+    </ul>
+</div>
+<hello/>

@@ -1,0 +1,208 @@
+@black0: #000;
+@black1: #111;
+@black2: #222;
+@blue: #00ffff;
+@red: red;
+@white: #fff;
+@fontInitial: 20px;
+@font12: @fontInitial * 0.6;
+@font14: @fontInitial * 0.7;
+@font16: @fontInitial * 0.8;
+
+.borderRadius(@radius: 5px){
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.signup-form{
+    
+    width: 100%;
+    
+    table{        
+        width: 90%;
+        margin: 0 auto;
+        height: 30px;
+        
+        caption{
+            font-size: @fontInitial;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        tr{            
+            width: 100%;
+            height: 30px;
+            margin: 10px 0;
+            
+            td{
+                width: 100%;
+                
+                .btn{
+                    width: 70%;
+                    margin: 20px auto 0;
+                    
+                    button{
+                        width: 100%;
+                        height: 40px;
+                        font-size: @font16;
+                        font-family: "Microsoft YaHei";
+                        background: #66ff99;
+                        outline: none;
+                        border: 1px solid #ccc;
+                        .borderRadius;
+                    }
+                }
+                
+            }
+            
+            td.title{
+                width: 30%;
+                text-align: right;
+                font-size: @font14;
+            }
+            
+            td.text{
+                width: 70%;
+                
+                span.warning{
+                    color: red;
+                }
+                
+                input{
+                    width: 90%;
+                    height: 25px;
+                    padding: 3px 5px;
+                    border: 1px solid #999;
+                    outline: none;
+                    .borderRadius;
+                }
+            }
+            
+        }
+    }
+}
+
+.pic{
+    width: 90%;
+    height: auto;
+    margin: 5px auto;
+    img{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+/*------------------------demo5-----------------------------------*/
+body{
+    background: #fff;
+}
+.d5-banner{
+    width: 100%;
+    height: 200px;
+    background-image: url(../img/b.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 40px;
+}
+.user{
+    position: absolute;
+    right: 5%;
+    top: 250px;
+    width: 100%;
+    height: 60px;
+    span{
+        width: 55px;
+        height: 55px;
+        float: right;
+        text-align: center;
+
+        display: inline-block;
+
+        img{
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+    span.username{
+        color: #fff;
+        height: 40px;
+        margin-top: 15px;
+    }
+    span.avator{
+        border: 2px solid #fff;
+    }
+}
+
+.d5-content{
+    font-size: 12px;
+    background: #fff;
+    width: 95%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    .title{
+        width: 100%;
+        height: 40px;
+        div{
+            display: inline-block;
+        }
+        div.avator{
+            width: 30px;
+            height: 30px;
+            img{
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }
+        div.text{
+            margin-left: 5px;
+            p{
+                padding-top: 2px;
+                span{
+                    color: #3399cc;
+                }
+            }
+        }
+    }
+    .time{
+        margin-left: 37px;
+        font-size: 10px;
+        color: #999;
+    }
+    .arrow{
+        margin-left: 45px;
+        width: 0;
+        height: 0;
+        border: solid 8px;
+        border-color:  #fff #fff #eee #fff ;
+    }
+    .chat{
+        margin-left: 37px;
+        padding: 5px 10px;
+        width: 80%;
+        height: auto;
+        background: #eee;
+        p{
+            span{
+                color: #3399cc;
+            }
+        }
+        p.friend{
+            margin-bottom: 8px;
+            color: #3399cc;
+        }
+    }
+}
+
+
+
+
+

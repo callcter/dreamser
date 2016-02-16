@@ -1,0 +1,55 @@
+<form name="signupForm" class="signup-form">
+    <table>
+        <caption>用户注册</caption>
+        <tr>
+            <td class="title">*用户名：</td>
+            <td class="text"><input name="username" required type="text" ng-model="user.username" novalidate="novalidate" ng-pattern="/^([a-zA-Z_])([a-zA-Z_0-9]{5,31})/"></td>
+        </tr>
+        <tr ng-show="signupForm.username.$error.required || signupForm.username.$error.pattern">
+            <td class="title"></td>
+            <td class="text">
+                <span class="warning" ng-show="signupForm.username.$error.required">必填</span>
+                <span class="warning" ng-show="signupForm.username.$error.pattern">格式错误，用户名由6-32个数字、字母或下滑线组成，以字母或下划线开头</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="title">*邮箱：</td>
+            <td class="text"><input name="email" required type="email" ng-model="user.email" novalidate=”novalidate” ng-pattern="/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+\.([a-zA-Z0-9_-])+/"></td>
+        </tr>
+        <tr  ng-show="signupForm.email.$error.required || signupForm.email.$error.pattern">
+            <td class="title"></td>
+            <td class="text">
+                <span class="warning" ng-show="signupForm.email.$error.required">必填</span>
+                <span class="warning" ng-show="signupForm.email.$error.pattern">email地址错误</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="title">*密码：</td>
+            <td class="text"><input name="password" required type="password" ng-model="user.password" novalidate=”novalidate” ng-minlength="6" ng-maxlength="18"></td>
+        </tr>
+        <tr ng-show="signupForm.password.$error.required || signupForm.password.$error.minlength||myForm.password.$error.maxlength">
+            <td class="title"></td>
+            <td class="text">
+                <span class="warning" ng-show="signupForm.password.$error.required">必填</span>
+                <span class="warning" ng-show="signupForm.password.$error.minlength||myForm.password.$error.maxlength">密码6-18</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="title">*确认密码：</td>
+            <td class="text"><input ng-model="confirmPassword" type="password"></td>
+        </tr>
+        <tr ng-show="(confirmPassword != user.password)">
+            <td class="title"></td>
+            <td class="text">
+                <span class="warning" ng-show="(confirmPassword != user.password)">密码不一致</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="btn">
+                    <button ng-click="signupSubmit()" type="submit" ng-disabled="signupForm.$invalid" class="btn">注册</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</form>

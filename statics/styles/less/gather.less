@@ -161,6 +161,60 @@ header{
         vertical-align: middle;
         color: #999;
     }
+    .h-wrapper{
+        width: 1200px;
+        height: 40px;
+        margin: 0 auto;
+        .title{
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+            font-size: 1rem;
+            color: #aaa;
+        }
+        .title:hover{
+            color: #fff;
+        }
+        .list{
+            display: inline-block;
+            width: auto;
+            height: 40px;
+            li{
+                display: inline-block;
+                width: 90px;
+                height: 40px;
+                font-size: 0.8rem;
+                color: #fff;
+                text-align: center;
+                cursor: pointer;
+                transition: font-size 1s,color 1s,background 1s;
+                -o-transition: font-size 1s,color 1s,background 1s;
+                -moz-transition: font-size 1s,color 1s,background 1s;
+                -webkit-transition: font-size 1s,color 1s,background 1s;
+            }
+            li:hover{
+                font-size: 0.9rem;
+                color: #000;
+                background: #fff;
+            }
+        }
+    }
+}
+nav{
+    height: 30px;
+    background: #f0f0f0;
+    width: 100%;
+    min-width: 1200px;
+    margin-bottom: 10px;
+    .navigator{
+        width: 1180px;
+        height: 30px;
+        margin: 0 auto;
+        line-height: 30px;
+        color: #999;
+        vertical-align: middle;
+        font-size: 0.7rem;
+    }
 }
 
 .menu{

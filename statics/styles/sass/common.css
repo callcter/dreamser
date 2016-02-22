@@ -1,0 +1,17 @@
+/* line 1, D:/dreamser.com/statics/styles/sass/common.scss */
+.toTop {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  background: #333;
+  border-radius: 5px;
+  overflow: hidden;
+  position: fixed;
+  left: 50%;
+  bottom: 50px;
+  color: #fff;
+  cursor: pointer; }
+
+/*# sourceMappingURL=common.css.map */

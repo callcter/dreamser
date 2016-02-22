@@ -1,0 +1,16 @@
+.toTop{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    background: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    position: fixed;
+    left: 50%;
+//    margin-left: 650px;
+    bottom: 50px;
+    color: #fff;
+    cursor: pointer;
+}

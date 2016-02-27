@@ -1,0 +1,588 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", arial, sans-serif;
+}
+html {
+  font-size: 20px;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+select {
+  margin: 0;
+  padding: 0;
+  height: 1.3rem;
+  line-height: 1.3rem;
+  vertical-align: middle;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 0.7rem;
+  background: #fff;
+  border-radius: 1px;
+  -o-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border: 1px solid #ddd;
+  outline: none;
+  display: inline-block;
+}
+.clear {
+  clear: both;
+}
+.search {
+  width: 1200px;
+  height: 180px;
+  margin: 10px auto;
+}
+.search .condition {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  background: #26B4D3;
+  border: 1px solid #0896B5;
+  color: #fff;
+  font-size: 0.7rem;
+  line-height: 30px;
+  vertical-align: middle;
+}
+.search .condition .serviceType,
+.search .condition .route,
+.search .condition .searchBtn {
+  display: inline-block;
+  height: 30px;
+  margin-top: 10px;
+}
+.search .condition .serviceType {
+  width: auto;
+  margin-left: 30px;
+  position: relative;
+}
+.search .condition .serviceType .selectBox {
+  width: 60px;
+  height: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+  background: #fff;
+  margin-bottom: -10px;
+  margin-left: 2px;
+  font-size: 0.7rem;
+  color: #999;
+  cursor: pointer;
+}
+.search .condition .serviceType .selectBox .xlIcon {
+  display: inline-block;
+  margin-left: 10px;
+}
+.search .condition .serviceType .active {
+  border: 1px solid #26b4d3;
+}
+.search .condition .serviceType .selectList {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  height: auto;
+  width: 70px;
+  right: 0;
+  background: #fff;
+}
+.search .condition .serviceType .selectList li {
+  list-style: none;
+  color: #999;
+  cursor: pointer;
+  padding-left: 5px;
+  border: none;
+}
+.search .condition .serviceType .selectList li.activeS {
+  background: #26b4d3;
+  color: #fff;
+}
+.search .condition .route .startP {
+  height: 24px;
+  display: inline-block;
+  background: #fff;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  margin-left: 3px;
+}
+.search .condition .route .startP .pIcon {
+  width: 14px;
+  height: 18px;
+  line-height: 18px;
+  display: inline-block;
+  margin-bottom: -4px;
+}
+.search .condition .route input {
+  height: 20px;
+  width: 200px;
+  padding: 0;
+  outline: none;
+  border: none;
+  color: #999;
+}
+.search .condition .route .disabled {
+  background: #EBEBE4;
+}
+.search .condition .searchBtn {
+  width: 80px;
+  height: 30px;
+  position: relative;
+  margin-left: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #FFA939;
+  border-radius: 2px;
+  -o-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  cursor: pointer;
+}
+.search .options {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  border: 1px #C7C7C7 solid;
+  border-top: none;
+  font-size: 0.7rem;
+  color: #666;
+}
+.search .options .type,
+.search .options .inputBoxs,
+.search .options .checkBoxs {
+  height: 30px;
+  margin-bottom: 5px;
+  line-height: 30px;
+  margin-left: 30px;
+}
+.search .options .type {
+  display: inline-block;
+  position: relative;
+}
+.search .options .type .goodBox {
+  width: 220px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+.search .options .type .goodBox .xlIcon {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  display: inline-block;
+}
+.search .options .type .goods {
+  width: 240px;
+  height: 200px;
+  font-size: 0.6rem;
+  line-height: 25px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  background: #fff;
+  position: absolute;
+  top: 32px;
+  left: 88px;
+  display: none;
+  z-index: 10;
+}
+.search .options .type .goods .tip {
+  height: 25px;
+  width: auto;
+  padding-left: 5px;
+}
+.search .options .type .goods .tab {
+  width: auto;
+  height: 25px;
+  border-bottom: 1px solid #ddd;
+  padding-left: 10px;
+}
+.search .options .type .goods .tab li {
+  display: inline-block;
+  list-style: none;
+  height: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.search .options .type .goods .tab li.activeTab {
+  border-bottom: 1px solid #26b4d3;
+  color: #26b4d3;
+}
+.search .options .type .goods .firstList,
+.search .options .type .goods .secondList,
+.search .options .type .goods .thirdList {
+  position: absolute;
+  top: 52px;
+  left: 10px;
+  width: 220px;
+  height: auto;
+  background: #fff;
+  display: none;
+}
+.search .options .type .goods .firstList li,
+.search .options .type .goods .secondList li,
+.search .options .type .goods .thirdList li {
+  list-style: none;
+  height: 20px;
+  display: inline-block;
+  width: auto;
+  white-space: nowrap;
+  padding: 0 10px;
+  line-height: 20px;
+  vertical-align: middle;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.search .options .type .goods .firstList li.activeT,
+.search .options .type .goods .secondList li.activeT,
+.search .options .type .goods .thirdList li.activeT {
+  background: #26b4d3;
+  color: #fff;
+}
+.search .options .inputBoxs {
+  display: inline-block;
+}
+.search .options .inputBoxs .input {
+  width: 70px;
+  height: 24px;
+  padding: 0 5px;
+  outline-color: #26b4d3;
+}
+.search .options .checkBoxs {
+  border: 0;
+}
+.search .options .checkBoxs span {
+  cursor: pointer;
+}
+.search .options .checkBoxs input[type=checkbox] {
+  display: none;
+}
+.search .options .checkBoxs .checkLabel {
+  line-height: 20px;
+  vertical-align: middle;
+  padding-left: 20px;
+  cursor: pointer;
+  background-image: url(../../image/fuxuan.png);
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.search .options .checkBoxs .checked {
+  background-image: url(../../image/gouxuan.png);
+}
+.search .options .checkBoxs .nolimit {
+  color: #26b4d3;
+}
+.search .options .c-title {
+  font-size: 0.8rem;
+  color: #333;
+}
+.list {
+  width: 1200px;
+  margin: 10px auto;
+  height: auto;
+  font-size: 0.7rem;
+  color: #666;
+}
+.list .list-top {
+  width: 100%;
+  height: 40px;
+  background: #C2E8F3;
+  position: relative;
+}
+.list .list-top .tip {
+  line-height: 40px;
+}
+.list .list-top .title {
+  display: inline-block;
+  width: auto;
+  height: 26px;
+  margin-left: 10px;
+}
+.list .list-top .title li {
+  width: 70px;
+  margin-left: 5px;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  text-align: center;
+  border: none;
+  list-style: none;
+  display: inline-block;
+  background: #fff;
+  cursor: pointer;
+}
+.list .list-top .title li.active {
+  border: 1px solid #26b4d3;
+}
+.list .list-top .result {
+  right: 20px;
+  font-size: 0.6rem;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  display: inline-block;
+  position: absolute;
+}
+.list .list-top .result .num {
+  color: #ff0000;
+}
+.list li {
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: #F2F9FD;
+  border-bottom: 2px solid #258FAA;
+}
+.list li .listDetail {
+  display: table-cell;
+  width: 920px;
+}
+.list li .listDetail li {
+  width: auto;
+  height: auto;
+  position: relative;
+  list-style: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.list li .listDetail li p {
+  padding-top: 2px;
+  padding-bottom: 3px;
+}
+.list li .listDetail li .d1,
+.list li .listDetail li .d2,
+.list li .listDetail li .d3,
+.list li .listDetail li .d4,
+.list li .listDetail li .d5,
+.list li .listDetail li .d6 {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  left: 10px;
+}
+.list li .listDetail li .d1 {
+  width: 140px;
+}
+.list li .listDetail li .d1 .icon li {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: none;
+  padding: 0;
+  margin-left: -2px;
+}
+.list li .listDetail li .d1 .icon li:first-child {
+  margin-left: 2px;
+}
+.list li .listDetail li .d2 {
+  width: 240px;
+}
+.list li .listDetail li .d2 a:link,
+.list li .listDetail li .d2 a:visited,
+.list li .listDetail li .d2 a:hover,
+.list li .listDetail li .d2 a:active {
+  color: #80B5E7;
+}
+.list li .listDetail li .d2 .icons span {
+  display: inline-block;
+  width: 17px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  line-height: 20px;
+  text-align: center;
+  font-size: 0.6rem;
+  color: #fff;
+  margin-right: 5px;
+}
+.list li .listDetail li .d3 {
+  width: 150px;
+}
+.list li .listDetail li .d4 {
+  width: 150px;
+}
+.list li .listDetail li .d5 {
+  width: 100px;
+  line-height: 50px;
+  color: #ff0000;
+}
+.list li .listDetail li .d5 .buIcon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-bottom: -6px;
+}
+.list li .listDetail li .d6 {
+  width: auto;
+  text-align: center;
+}
+.list li .listDetail li .d6 a {
+  color: #80B5E7;
+  text-decoration: underline;
+}
+.list li .listDetail li:last-child {
+  border: none;
+}
+.list li .listSummary {
+  left: 20px;
+  width: auto;
+  display: table-cell;
+  position: relative;
+}
+.list li .listSummary .s1,
+.list li .listSummary .s2 {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+}
+.list li .listSummary .s1 {
+  width: auto;
+  white-space: nowrap;
+  margin-top: -15px;
+}
+.list li .listSummary .s1 .priceSum {
+  color: #ff0000;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.list li .listSummary .s2 {
+  width: 70px;
+  left: 160px;
+  margin-top: -30px;
+}
+.list li .listSummary .s2 .confirmBtn {
+  width: 70px;
+  height: 25px;
+  margin: auto;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 2px;
+  -o-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border: none;
+  color: #fff;
+  font-size: 0.6rem;
+  background: #5AA7E1;
+}
+.list li .listSummary .s2 .collect {
+  width: auto;
+  margin-top: 10px;
+}
+.list li .listSummary .s2 .collect #collected {
+  width: auto;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+.list li .listSummary .s2 .collect #collected .collectIcon {
+  display: inline-block;
+  margin-bottom: -2px;
+  width: 14px;
+  height: 14px;
+}
+.list li .hotroute {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 75px;
+  height: 25px;
+}
+.page {
+  width: 1200px;
+  height: 20px;
+  margin: 10px auto;
+  color: #fff;
+  font-size: 0.6rem;
+  text-align: center;
+  line-height: 20px;
+  vertical-align: middle;
+}
+.page .prepage {
+  width: 50px;
+  height: 20px;
+  display: inline-block;
+  background: #5aa7e1;
+  float: right;
+}
+.page .pages {
+  width: auto;
+  height: 20px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  float: right;
+}
+.page .pages li {
+  list-style: none;
+  display: inline-block;
+  background: #5aa7e1;
+  margin-left: 5px;
+  width: 18px;
+  height: 20px;
+}
+.page .pages li:first-child {
+  margin-left: 0;
+}
+.page .nextpage {
+  width: 50px;
+  height: 20px;
+  display: inline-block;
+  background: #5aa7e1;
+  float: right;
+  margin-right: 20px;
+}
+.priceDetailBox {
+  width: 120px;
+  height: auto;
+  position: absolute;
+  left: 1020px;
+  top: 0;
+  display: none;
+}
+.priceDetailBox .jiao {
+  width: 100%;
+  height: 10px;
+  margin-bottom: -1px;
+}
+.priceDetailBox .detailList {
+  width: 100%;
+  height: auto;
+  margin-top: 0;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+.priceDetailBox .detailList li {
+  list-style: none;
+  font-size: 0.6rem;
+  margin-left: 5px;
+  line-height: 20px;
+  color: #A0A0A0;
+}
+.redWord {
+  font-size: 0.8rem;
+  color: #ff0000;
+}
+.orange {
+  color: #D98027;
+}

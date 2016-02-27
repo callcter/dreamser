@@ -6,85 +6,114 @@ body{
 
 .wrapper{
     width: 1200px;
-    background: #f0f0f0;
+    background: #fff;
     margin: 0 auto;
-    .carousel{
-        display: block;
-        position: relative;
-        float: left;
-        width: 900px;
-        height: 400px;
-        .index{
+    .banner{
+        width: 100%;
+        height: auto;
+        background: #f0f0f0;
+        .carousel{
             display: block;
-            position: absolute;
-            top: 350px;
-            left: 435px;
-            li{
-                list-style: none;
-                
-                display: inline-block;
-                width: 10px;
-                height: 10px;
-                .rounded-corners;
-                background-color: #f0f0f0;
-                cursor: pointer;
+            position: relative;
+            float: left;
+            width: 900px;
+            height: 400px;
+            .index{
+                display: block;
+                position: absolute;
+                top: 350px;
+                left: 435px;
+                li{
+                    list-style: none;
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    .rounded-corners(50%);
+                    background-color: #f0f0f0;
+                    cursor: pointer;
+                }
+                li.active{
+                    background-color: #e2ff00;
+                }
             }
-            li.active{
-                background-color: #e2ff00;
+        }
+        .thumbnail{
+            display: block;
+            position: relative;
+            float: left;
+            width: 240px;
+            height: 320px;
+            margin-left: 30px;
+            margin-top: 40px;
+            .avator{
+                margin: 0 auto 30px;
+                width: 80px;
+                height: 80px;
+                .rounded-corners(50%);
+                overflow: hidden;
+            }
+            .nickname{
+                width: 100%;
+                height: 40px;
+                font-size: 0.9rem;
+                color: #333;
+                line-height: 40px;
+                vertical-align: middle;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .motto{
+                width: 100%;
+                height: auto;
+                font-size: 0.8rem;
+                line-height: 25px;
             }
         }
     }
-    .thumbnail{
-        display: block;
-        position: relative;
-        float: left;
-        width: 240px;
-        height: 320px;
-        margin-left: 30px;
-        margin-top: 40px;
-        .avator{
-            margin: 0 auto 30px;
-            width: 80px;
-            height: 80px;
-            .rounded-corners(50%);
-            overflow: hidden;
-        }
-        .nickname{
-            width: 100%;
-            height: 40px;
-            font-size: 0.9rem;
-            color: #333;
-            line-height: 40px;
-            vertical-align: middle;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .motto{
-            width: 100%;
-            height: auto;
-            font-size: 0.8rem;
-            line-height: 25px;
-        }
-    }
-    .links{
+    .list{
         width: 100%;
         height: auto;
         li{
             list-style: none;
             width: 100%;
-            height: 300px;
-            background: #ddd;
+            height: auto;
+            background: #f0f0f0;
             margin-top: 10px;
-            .rounded-corners(10px);
-            
+            .title-1{
+                font-size: 0.9rem;
+                line-height: 25px;
+                vertical-align: middle;
+                text-align: left;
+                color: #333;
+                width: 100%;
+                height: 25px;
+                padding: 5px 20px;
+            }
             .workList{
+                width: 100%;
+                height: auto;
+                padding-top: 10px;
+                padding-bottom: 10px;
                 li{
-                    list-style: decimal;
-                    height: 25px;
+                    list-style: none;
+                    height: auto;
                     width: 90%;
-                    background: #fff;
                     margin: 5px auto;
-                    .rounded-corners(0);
+                    .title-2{
+                        font-size: 0.8rem;
+                        color: #666;
+                        height: 20px;
+                        line-height: 20px;
+                        vertical-align: middle;
+                    }
+                    .detail{
+                        width: 100%;
+                        height: auto;
+                        .text{
+                            line-height: 20px;
+                            font-size: 0.7rem;
+                        }
+                    }
                 }
             }
         }

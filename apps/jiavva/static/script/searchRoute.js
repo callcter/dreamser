@@ -12,20 +12,20 @@ var selectList = function(){
     var selectList = document.getElementById("selectList");
     var lis = selectList.getElementsByTagName("li");
     var selected = document.getElementById("selected");
-    serviceType.addEventListener("mouseover",function(){
+    addEvent(serviceType,"mouseover",function(){
         selectList.style.display = "block";
     });
-    selectList.addEventListener("mouseover",function(){
-        selectList.style.display = "block";
-    });
-    selectList.addEventListener("mouseout",function(){
+    addEvent(serviceType,"mouseout",function(){
         selectList.style.display = "none";
     });
-    serviceType.addEventListener("mouseout",function(){
+    addEvent(selectList,"mouseover",function(){
+        selectList.style.display = "block";
+    });
+    addEvent(selectList,"mouseout",function(){
         selectList.style.display = "none";
     });
     for(var i=0;i<lis.length;i++){
-        lis[i].addEventListener("click",function(){
+        addEvent(lis[i],"click",function(){
             selected.innerHTML = this.innerHTML;
             if(this.innerHTML=="安装"){
                 document.getElementById("startPlaceBox").className = "startP disabled";
@@ -35,10 +35,10 @@ var selectList = function(){
                 document.getElementById("startPlace").removeAttribute("disabled");
             }
         });
-        lis[i].addEventListener("mouseover",function(){
+        addEvent(lis[i],"mouseover",function(){
             this.className = "activeS";
         });
-        lis[i].addEventListener("mouseout",function(){
+        addEvent(lis[i],"mouseout",function(){
             this.className = "";
         });
     }
@@ -53,7 +53,7 @@ var goodsList = function(){
     var thirdList = document.getElementById("thirdList");
     var listBtn = document.getElementById("goodsList");
     var note = "";
-    listBtn.addEventListener("click",function(){
+    addEvent(listBtn,"click",function(){
         note = "";
         if(good.style.display == "block"){
             good.style.display = "none";
@@ -71,7 +71,7 @@ var goodsList = function(){
         var fLi = document.createElement("li");
         fLi.innerHTML = goods[i].name;
         firstList.appendChild(fLi);
-        fLi.addEventListener("click",function(){
+        addEvent(fLi,"click",function(){
             note += this.innerHTML;
             goodSelected.innerHTML = note;
             //清空二级商品列表
@@ -82,7 +82,7 @@ var goodsList = function(){
                 var sLi = document.createElement("li");
                 sLi.innerHTML = goods[liNum(this)].sub[j].name;
                 secondList.appendChild(sLi);
-                sLi.addEventListener("click",function(){
+                addEvent(sLi,"click",function(){
                      note += "-"+this.innerHTML;
                      goodSelected.innerHTML = note;
                      //清空三级商品列表
@@ -91,7 +91,7 @@ var goodsList = function(){
                          var tLi = document.createElement("li");
                          tLi.innerHTML = firstListArray[liNum(this)].sub[k].name;
                          thirdList.appendChild(tLi);
-                         tLi.addEventListener("click",function(){
+                         addEvent(tLi,"click",function(){
                              note += "-"+this.innerHTML;
                              goodSelected.innerHTML = note;
                              thirdList.style.display = "none";
@@ -102,10 +102,10 @@ var goodsList = function(){
                                 document.getElementById("ge").removeAttribute("disabled");
                             }
                          });
-                         tLi.addEventListener("mouseover",function(){
+                         addEvent(tLi,"mouseover",function(){
                              this.className = "activeT";
                          });
-                         tLi.addEventListener("mouseout",function(){
+                         addEvent(tLi,"mouseout",function(){
                              this.className = "";
                          });
                      }
@@ -114,10 +114,10 @@ var goodsList = function(){
                     tabs[1].className = "";
                     tabs[2].className = "activeTab";
                 });
-                sLi.addEventListener("mouseover",function(){
+                addEvent(sLi,"mouseover",function(){
                     this.className = "activeT";
                 });
-                sLi.addEventListener("mouseout",function(){
+                addEvent(sLi,"mouseout",function(){
                     this.className = "";
                 });
             }
@@ -126,10 +126,10 @@ var goodsList = function(){
             tabs[0].className = "";
             tabs[1].className = "activeTab";
         });
-        fLi.addEventListener("mouseover",function(){
+        addEvent(fLi,"mouseover",function(){
             this.className = "activeT";
         });
-        fLi.addEventListener("mouseout",function(){
+        addEvent(fLi,"mouseout",function(){
             this.className = "";
         });
     }
@@ -144,62 +144,61 @@ var checkBox = function(){
     var inputs2 = field2.getElementsByTagName("input");
     var nolimit1 = document.getElementById("nolimit1");
     var nolimit2 = document.getElementById("nolimit2");
-    
-    nolimit1.addEventListener("click",function(){
+    addEvent(nolimit1,"click",function(){
         for(var i=0;i<labels1.length;i++){
             labels1[i].className = "checkLabel";
             inputs1[i].checked = false;
         }
         nolimit1.className = "nolimit";
     });
-    
-    nolimit2.addEventListener("click",function(){
+    addEvent(nolimit2,"click",function(){
         for(var i=0;i<labels2.length;i++){
             labels2[i].className = "checkLabel";
             inputs2[i].checked = false;
         }
         nolimit2.className = "nolimit";
     });
-    
     for(var i=0;i<labels1.length;i++){
         labels1[i].index = i;
-        labels1[i].addEventListener("click",function(){
+        addEvent(labels1[i],"click",function(){
             if(this.className == "checkLabel"){
                 this.className = "checkLabel checked";
             }else{
                 this.className = "checkLabel";
             }
-//            console.log(inputs1[this.index].checked);
             nolimit1.className = "";
-        })
+        });
     }
     for(var i=0;i<labels2.length;i++){
         labels2[i].index = i;
-        labels2[i].addEventListener("click",function(){
+        addEvent(labels2[i],"click",function(){
             if(this.className == "checkLabel"){
                 this.className = "checkLabel checked";
             }else{
                 this.className = "checkLabel";
             }
-//            console.log(inputs2[this.index].checked);
             nolimit2.className = "";
-        })
+        });
     }
 }
 //评估费用详细弹出框
 var priceList = function(){
     var tanchu = document.getElementById("priceDetailBox");
     var top = 0;
-    var priceSums = document.getElementsByClassName("priceSum");
+//    if(document.getElementsByClassName("priceSum")){
+//        var priceSums = document.getElementsByClassName("priceSum");
+//    }else{
+        var priceSums = getElementsByClassName(document.body,'priceSum');
+//    }
     for(var i=0;i<priceSums.length;i++){
-        priceSums[i].addEventListener("mouseover",function(event){
+        addEvent(priceSums[i],"mouseover",function(event){
             top = this.offsetParent.offsetParent.offsetParent.offsetTop+this.offsetParent.offsetParent.offsetParent.offsetHeight/2+this.offsetParent.offsetHeight/2-5;
             tanchu.style.top = top+"px";
             tanchu.style.display = "block";
         });
     }
     for(var i=0;i<priceSums.length;i++){
-        priceSums[i].addEventListener("mouseout",function(event){
+        addEvent(priceSums[i],"mouseout",function(event){
             tanchu.style.display = "none";
         });
     }
@@ -209,7 +208,7 @@ var rankList = function(){
     var title = document.getElementById("title");
     var lis = title.getElementsByTagName("li");
     for(var i=0;i<lis.length;i++){
-        lis[i].addEventListener("click",function(){
+        addEvent(lis[i],"click",function(){
             for(var j=0;j<lis.length;j++){
                 lis[j].className = "";
             }
@@ -232,5 +231,24 @@ function removeAllChild(ul)
     while(ul.hasChildNodes())
     {
         ul.removeChild(ul.firstChild);
+    }
+}
+//为保证IE8下可以使用
+function getElementsByClassName(node, classname) {
+    var a = [];
+    var re = new RegExp('(^| )' + classname + '( |$)');
+    var els = node.getElementsByTagName("*");
+    for (var i = 0, j = els.length; i < j; i++)
+        if (re.test(els[i].className)) a.push(els[i]);
+    return a;
+}
+//事件绑定，兼容所有
+function addEvent(obj,event,fn){
+    if(obj.attachEvent){
+        obj.attachEvent("on"+event,function(){
+            fn.call(obj);
+        });
+    }else{
+        obj.addEventListener(event,fn,false);
     }
 }

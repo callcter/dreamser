@@ -1,0 +1,235 @@
+.displayIB {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", arial, sans-serif;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+select {
+  margin: 0;
+  padding: 0;
+  height: 26px;
+  line-height: 26px;
+  vertical-align: middle;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 1px;
+  -o-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border: 1px solid #ddd;
+  outline: none;
+  display: inline-block;
+}
+.clear {
+  clear: both;
+}
+.banner {
+  width: 100%;
+  height: 370px;
+  background-image: url(../../image/banner.png);
+  background-position: center 0;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.banner .bannerBox {
+  width: 1200px;
+  margin: 50px auto;
+}
+.banner .bannerBox .searchBox {
+  width: 500px;
+  height: 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 3px;
+  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background: #fff;
+}
+.banner .bannerBox .searchBox .searchTab {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
+}
+.banner .bannerBox .searchBox .searchTab li {
+  list-style: none;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  vertical-align: middle;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  font-size: 16px;
+  margin-left: -3px;
+  cursor: pointer;
+}
+.banner .bannerBox .searchBox .searchTab li:first-child {
+  margin-left: 30px;
+}
+.banner .bannerBox .searchBox .searchTab li.active {
+  color: #FFA939;
+}
+.banner .bannerBox .searchBox .searchTab .tabActive {
+  position: absolute;
+  top: 40px;
+  width: 100px;
+  height: 7px;
+  left: 30px;
+}
+.banner .bannerBox .searchBox #searchTab0 {
+  display: block;
+}
+.banner .bannerBox .searchBox #searchTab1,
+.banner .bannerBox .searchBox #searchTab2 {
+  display: none;
+}
+.banner .bannerBox .searchBox .searchInput {
+  width: 400px;
+  height: 50px;
+  margin: 20px auto;
+  font-size: 18px;
+  color: #333;
+}
+.banner .bannerBox .searchBox .searchInput .searchSelect {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  position: relative;
+  width: 300px;
+  height: 40px;
+  padding-left: 10px;
+  line-height: 40px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 16px;
+  color: #999;
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.banner .bannerBox .searchBox .searchInput .searchSelect .searchIcon {
+  position: absolute;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: 15px;
+  height: 20px;
+  right: 5px;
+  top: 10px;
+}
+.banner .bannerBox .searchBox .searchBtn {
+  width: 120px;
+  height: 35px;
+  border-radius: 3px;
+  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background: #FFA939;
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  vertical-align: middle;
+  margin: 20px auto;
+  font-size: 16px;
+}
+.banner .bannerBox .goodTypeBox {
+  width: 300px;
+  height: 200px;
+  font-size: 12px;
+  line-height: 25px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  background: #fff;
+  position: absolute;
+  top: 32px;
+  left: 87px;
+  display: none;
+  z-index: 10;
+}
+.banner .bannerBox .goodTypeBox .tip {
+  height: 25px;
+  width: auto;
+  padding-left: 5px;
+}
+.banner .bannerBox .goodTypeBox .tab {
+  width: auto;
+  height: 25px;
+  border-bottom: 1px solid #ddd;
+  padding-left: 10px;
+}
+.banner .bannerBox .goodTypeBox .tab li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  list-style: none;
+  height: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.banner .bannerBox .goodTypeBox .tab li.activeTab {
+  border-bottom: 1px solid #26b4d3;
+  color: #26b4d3;
+}
+.banner .bannerBox .goodTypeBox .firstList,
+.banner .bannerBox .goodTypeBox .secondList,
+.banner .bannerBox .goodTypeBox .thirdList {
+  position: absolute;
+  top: 52px;
+  left: 10px;
+  width: 220px;
+  height: auto;
+  background: #fff;
+  display: none;
+}
+.banner .bannerBox .goodTypeBox .firstList li,
+.banner .bannerBox .goodTypeBox .secondList li,
+.banner .bannerBox .goodTypeBox .thirdList li {
+  list-style: none;
+  height: 20px;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: auto;
+  white-space: nowrap;
+  padding: 0 10px;
+  line-height: 20px;
+  vertical-align: middle;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.banner .bannerBox .goodTypeBox .firstList li.activeT,
+.banner .bannerBox .goodTypeBox .secondList li.activeT,
+.banner .bannerBox .goodTypeBox .thirdList li.activeT {
+  background: #26b4d3;
+  color: #fff;
+}

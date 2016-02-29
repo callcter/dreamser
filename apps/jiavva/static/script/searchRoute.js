@@ -1,11 +1,10 @@
-function loaded(){
+window.onload = function(){
     checkBox();
     priceList();
     selectList();
     goodsList();
     rankList();
 }
-var goods = [{"name":"床类","sub":[{"name":"单人床","sub":[{"name":"两米"},{"name":"一米"}]},{"name":"双人床","sub":[{"name":"三米"},{"name":"四米"}]}]},{"name":"桌类","sub":[{"name":"单人桌","sub":[{"name":"两厘米"},{"name":"一厘米"}]},{"name":"双人桌","sub":[{"name":"三厘米"},{"name":"四厘米"}]}]}];
 
 //服务类型选择下拉列表样式自定义
 var selectList = function(){

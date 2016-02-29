@@ -1,10 +1,12 @@
+.displayIB {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
 * {
   margin: 0;
   padding: 0;
   font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", arial, sans-serif;
-}
-html {
-  font-size: 20px;
 }
 body {
   width: 100%;
@@ -22,12 +24,12 @@ a {
 select {
   margin: 0;
   padding: 0;
-  height: 1.3rem;
-  line-height: 1.3rem;
+  height: 26px;
+  line-height: 26px;
   vertical-align: middle;
   padding-left: 5px;
   padding-right: 5px;
-  font-size: 0.7rem;
+  font-size: 14px;
   background: #fff;
   border-radius: 1px;
   -o-border-radius: 1px;
@@ -60,6 +62,8 @@ select {
 .search .condition .route,
 .search .condition .searchBtn {
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   height: 30px;
   margin-top: 10px;
 }
@@ -74,6 +78,8 @@ select {
   padding-left: 5px;
   padding-right: 5px;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   background: #fff;
   margin-bottom: -10px;
   margin-left: 2px;
@@ -83,6 +89,8 @@ select {
 }
 .search .condition .serviceType .selectBox .xlIcon {
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   margin-left: 10px;
 }
 .search .condition .serviceType .active {
@@ -111,6 +119,8 @@ select {
 .search .condition .route .startP {
   height: 24px;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   background: #fff;
   padding-right: 5px;
   padding-left: 5px;
@@ -122,6 +132,8 @@ select {
   height: 18px;
   line-height: 18px;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   margin-bottom: -4px;
 }
 .search .condition .route input {
@@ -155,7 +167,7 @@ select {
   padding: 10px 0;
   border: 1px #C7C7C7 solid;
   border-top: none;
-  font-size: 0.7rem;
+  font-size: 14px;
   color: #666;
 }
 .search .options .type,
@@ -168,11 +180,15 @@ select {
 }
 .search .options .type {
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   position: relative;
 }
 .search .options .type .goodBox {
-  width: 220px;
+  width: 230px;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   border: 1px solid #ddd;
   padding-left: 5px;
   padding-right: 5px;
@@ -183,18 +199,20 @@ select {
   right: 10px;
   top: 12px;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
 }
 .search .options .type .goods {
   width: 240px;
   height: 200px;
-  font-size: 0.6rem;
+  font-size: 12px;
   line-height: 25px;
   vertical-align: middle;
   border: 1px solid #ddd;
   background: #fff;
   position: absolute;
   top: 32px;
-  left: 88px;
+  left: 87px;
   display: none;
   z-index: 10;
 }
@@ -211,6 +229,8 @@ select {
 }
 .search .options .type .goods .tab li {
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   list-style: none;
   height: 25px;
   padding-left: 5px;
@@ -237,6 +257,8 @@ select {
   list-style: none;
   height: 20px;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   width: auto;
   white-space: nowrap;
   padding: 0 10px;
@@ -257,6 +279,8 @@ select {
 }
 .search .options .inputBoxs {
   display: inline-block;
+  *display: inline;
+  zoom: 1;
 }
 .search .options .inputBoxs .input {
   width: 70px;
@@ -289,15 +313,16 @@ select {
   color: #26b4d3;
 }
 .search .options .c-title {
-  font-size: 0.8rem;
+  font-size: 16px;
   color: #333;
 }
 .list {
   width: 1200px;
   margin: 10px auto;
   height: auto;
-  font-size: 0.7rem;
+  font-size: 14px;
   color: #666;
+  position: relative;
 }
 .list .list-top {
   width: 100%;
@@ -310,6 +335,8 @@ select {
 }
 .list .list-top .title {
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   width: auto;
   height: 26px;
   margin-left: 10px;
@@ -324,6 +351,8 @@ select {
   border: none;
   list-style: none;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   background: #fff;
   cursor: pointer;
 }
@@ -332,11 +361,13 @@ select {
 }
 .list .list-top .result {
   right: 20px;
-  font-size: 0.6rem;
+  font-size: 12px;
   height: 40px;
   line-height: 40px;
   vertical-align: middle;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   position: absolute;
 }
 .list .list-top .result .num {
@@ -351,8 +382,13 @@ select {
   border-bottom: 2px solid #258FAA;
 }
 .list li .listDetail {
-  display: table-cell;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
   width: 920px;
+  position: relative;
+  left: 0;
+  top: 0;
 }
 .list li .listDetail li {
   width: auto;
@@ -383,6 +419,8 @@ select {
 }
 .list li .listDetail li .d1 .icon li {
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   width: 12px;
   height: 12px;
   border: none;
@@ -403,6 +441,8 @@ select {
 }
 .list li .listDetail li .d2 .icons span {
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   width: 17px;
   height: 20px;
   background-position: center;
@@ -410,7 +450,7 @@ select {
   background-size: contain;
   line-height: 20px;
   text-align: center;
-  font-size: 0.6rem;
+  font-size: 12px;
   color: #fff;
   margin-right: 5px;
 }
@@ -429,6 +469,8 @@ select {
   width: 25px;
   height: 25px;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   margin-bottom: -6px;
 }
 .list li .listDetail li .d6 {
@@ -443,32 +485,38 @@ select {
   border: none;
 }
 .list li .listSummary {
-  left: 20px;
+  left: 940px;
   width: auto;
-  display: table-cell;
-  position: relative;
+  height: auto;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
 }
 .list li .listSummary .s1,
 .list li .listSummary .s2 {
-  position: absolute;
   display: inline-block;
-  top: 50%;
+  *display: inline;
+  zoom: 1;
 }
 .list li .listSummary .s1 {
-  width: auto;
+  width: 160px;
+  position: relative;
   white-space: nowrap;
-  margin-top: -15px;
 }
 .list li .listSummary .s1 .priceSum {
   color: #ff0000;
-  font-size: 0.9rem;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
 }
 .list li .listSummary .s2 {
   width: 70px;
-  left: 160px;
-  margin-top: -30px;
+  left: 170px;
+  position: absolute;
+  top: -15px;
 }
 .list li .listSummary .s2 .confirmBtn {
   width: 70px;
@@ -482,7 +530,7 @@ select {
   -webkit-border-radius: 2px;
   border: none;
   color: #fff;
-  font-size: 0.6rem;
+  font-size: 12px;
   background: #5AA7E1;
 }
 .list li .listSummary .s2 .collect {
@@ -497,6 +545,8 @@ select {
 }
 .list li .listSummary .s2 .collect #collected .collectIcon {
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   margin-bottom: -2px;
   width: 14px;
   height: 14px;
@@ -508,12 +558,42 @@ select {
   width: 75px;
   height: 25px;
 }
+.list .priceDetailBox {
+  width: 120px;
+  height: auto;
+  position: absolute;
+  left: 940px;
+  top: 0;
+  display: none;
+}
+.list .priceDetailBox .jiao {
+  width: 100%;
+  height: 10px;
+  margin-bottom: -1px;
+}
+.list .priceDetailBox .detailList {
+  width: 100%;
+  height: auto;
+  margin-top: 0;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+.list .priceDetailBox .detailList li {
+  list-style: none;
+  font-size: 12px;
+  width: 110px;
+  margin-left: 5px;
+  line-height: 20px;
+  color: #A0A0A0;
+  border: none;
+  background: #fff;
+}
 .page {
   width: 1200px;
   height: 20px;
   margin: 10px auto;
   color: #fff;
-  font-size: 0.6rem;
+  font-size: 12px;
   text-align: center;
   line-height: 20px;
   vertical-align: middle;
@@ -522,6 +602,8 @@ select {
   width: 50px;
   height: 20px;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   background: #5aa7e1;
   float: right;
 }
@@ -529,6 +611,8 @@ select {
   width: auto;
   height: 20px;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   margin-left: 10px;
   margin-right: 10px;
   float: right;
@@ -536,6 +620,8 @@ select {
 .page .pages li {
   list-style: none;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   background: #5aa7e1;
   margin-left: 5px;
   width: 18px;
@@ -548,39 +634,14 @@ select {
   width: 50px;
   height: 20px;
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   background: #5aa7e1;
   float: right;
   margin-right: 20px;
 }
-.priceDetailBox {
-  width: 120px;
-  height: auto;
-  position: absolute;
-  left: 1020px;
-  top: 0;
-  display: none;
-}
-.priceDetailBox .jiao {
-  width: 100%;
-  height: 10px;
-  margin-bottom: -1px;
-}
-.priceDetailBox .detailList {
-  width: 100%;
-  height: auto;
-  margin-top: 0;
-  border: 1px solid #ddd;
-  background: #fff;
-}
-.priceDetailBox .detailList li {
-  list-style: none;
-  font-size: 0.6rem;
-  margin-left: 5px;
-  line-height: 20px;
-  color: #A0A0A0;
-}
 .redWord {
-  font-size: 0.8rem;
+  font-size: 16px;
   color: #ff0000;
 }
 .orange {

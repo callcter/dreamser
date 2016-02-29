@@ -17,7 +17,7 @@
         line-height: 30px;
         vertical-align: middle;
         .serviceType,.route,.searchBtn{
-            display: inline-block;
+            .displayIB;
             height: 30px;
             margin-top: 10px;
         }
@@ -30,7 +30,7 @@
                 height: 30px;
                 padding-left: 5px;
                 padding-right: 5px;
-                display: inline-block;
+                .displayIB;
                 background: #fff;
                 margin-bottom: -10px;
                 margin-left: 2px;
@@ -38,7 +38,7 @@
                 color: #999;
                 cursor: pointer;
                 .xlIcon{
-                    display: inline-block;
+                    .displayIB;
                     margin-left: 10px;
                 }
             }
@@ -59,16 +59,8 @@
                     cursor: pointer;
                     padding-left: 5px;
                     border: none;
-//                    text-align: center;
-//                    border-bottom: 1px solid #ddd;
-//                    border-left: 1px solid #ddd;
-//                    border-right: 1px solid #ddd;
-                }
-                li:first-child{
-//                    border-top: 1px solid #ddd;
                 }
                 li.activeS{
-//                    border: 1px solid #26b4d3;
                     background: #26b4d3;
                     color: #fff;
                 }
@@ -77,7 +69,7 @@
         .route{
             .startP{
                 height: 24px;
-                display: inline-block;
+                .displayIB;
                 background: #fff;
                 padding-right: 5px;
                 padding-left: 5px;
@@ -87,7 +79,7 @@
                     width: 14px;
                     height: 18px;
                     line-height: 18px;
-                    display: inline-block;
+                    .displayIB;
                     margin-bottom: -4px;
                 }
             }
@@ -121,7 +113,7 @@
         padding: 10px 0;
         border: 1px #C7C7C7 solid;
         border-top: none;
-        font-size: 0.7rem;
+        .fontSize(0.7);
         color: #666;
         .type,.inputBoxs,.checkBoxs{
             height: 30px;
@@ -130,11 +122,11 @@
             margin-left: 30px;
         }
         .type{
-            display: inline-block;
+            .displayIB;
             position: relative;
             .goodBox{
-                width: 220px;
-                display: inline-block;
+                width: 230px;
+                .displayIB;
                 border: 1px solid #ddd;
                 padding-left: 5px;
                 padding-right: 5px;
@@ -143,20 +135,20 @@
                     position: absolute;
                     right: 10px;
                     top: 12px;
-                    display: inline-block;
+                    .displayIB;
                 }
             }
             .goods{
                 width: 240px;
                 height: 200px;
-                font-size: 0.6rem;
+                .fontSize(0.6);
                 line-height: 25px;
                 vertical-align: middle;
                 border: 1px solid #ddd;
                 background: #fff;
                 position: absolute;
                 top: 32px;
-                left: 88px;
+                left: 87px;
                 display: none;
                 z-index: 10;
                 .tip{
@@ -170,7 +162,7 @@
                     border-bottom: 1px solid #ddd;
                     padding-left: 10px;
                     li{
-                        display: inline-block;
+                        .displayIB;
                         list-style: none;
                         height: 25px;
                         padding-left: 5px;
@@ -187,27 +179,21 @@
                     left: 10px;
                     width: 220px;
                     height: auto;
-//                    border: 1px solid #ddd;
                     background: #fff;
                     display: none;
-//                    .box-shadow(1px,1px,1px,#666);
                     li{
                         list-style: none;
                         height: 20px;
-                        display: inline-block;
+                        .displayIB;
                         width: auto;
                         white-space: nowrap;
                         padding: 0 10px;
                         line-height: 20px;
                         vertical-align: middle;
-    //                    border-bottom: 1px solid #ddd;
                         border: none;
                         cursor: pointer;
                         .rounded-corners(3px);
                     }
-    //                li:last-child{
-    //                    border-bottom: none;
-    //                }
                     li.activeT{
                         background: #26b4d3;
                         color: #fff;
@@ -216,7 +202,7 @@
             }
         }
         .inputBoxs{
-            display: inline-block;
+            .displayIB;
             .input{
                 width: 70px;
                 height: 24px;
@@ -249,8 +235,7 @@
             }
         }
         .c-title{
-//            font-weight: bold;
-            font-size: 0.8rem;
+            .fontSize(0.8);
             color: #333;
         }
     }
@@ -259,8 +244,9 @@
     width: 1200px;
     margin: 10px auto;
     height: auto;
-    font-size: 0.7rem;
+    .fontSize(0.7);
     color: #666;
+    position: relative;
     .list-top{
         width: 100%;
         height: 40px;
@@ -270,7 +256,7 @@
             line-height: 40px;
         }
         .title{
-            display: inline-block;
+            .displayIB;
             width: auto;
             height: 26px;
             margin-left: 10px;
@@ -283,7 +269,7 @@
                 text-align: center;
                 border: none;
                 list-style: none;
-                display: inline-block;
+                .displayIB;
                 background: #fff;
                 cursor: pointer;
             }
@@ -293,11 +279,11 @@
         }
         .result{
             right: 20px;
-            font-size: 0.6rem;
+            .fontSize(0.6);
             height: 40px;
             line-height: 40px;
             vertical-align: middle;
-            display: inline-block;
+            .displayIB;
             position: absolute;
             .num{
                 color: @red;
@@ -312,8 +298,11 @@
         background-color: #F2F9FD;
         border-bottom: 2px solid #258FAA;
         .listDetail{
-            display: table-cell;
+            .displayIB;
             width: 920px;
+            position: relative;
+            left: 0;
+            top: 0;
             li{
                 width: auto;
                 height: auto;
@@ -336,7 +325,7 @@
                     width: 140px;
                     .icon{
                         li{
-                            display: inline-block;
+                            .displayIB;
                             width: 12px;
                             height: 12px;
                             border: none;
@@ -355,7 +344,7 @@
                     }
                     .icons{
                         span{
-                            display: inline-block;
+                            .displayIB;
                             width: 17px;
                             height: 20px;
                             background-position: center;
@@ -363,7 +352,7 @@
                             background-size: contain;
                             line-height: 20px;
                             text-align: center;
-                            font-size: 0.6rem;
+                            .fontSize(0.6);
                             color: #fff;
                             margin-right: 5px;
                         }
@@ -383,7 +372,7 @@
                     .buIcon{
                         width: 25px;
                         height: 25px;
-                        display: inline-block;
+                        .displayIB;
                         margin-bottom: -6px;
                     }
                 }
@@ -401,30 +390,32 @@
             }
         }
         .listSummary{
-            left: 20px;
+            left: 940px;
             width: auto;
-            display: table-cell;
-            position: relative;
+            height: auto;
+            .displayIB;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
             .s1,.s2{
-                position: absolute;
-                display: inline-block;
-                top: 50%;
+                .displayIB;
             }
             .s1{
-                width: auto;
+                width: 160px;
+                position: relative;
                 white-space:nowrap;
-                margin-top: -15px;
                 .priceSum{
                     color: @red;
-                    font-size: 0.9rem;
+                    .fontSize(0.9);
                     font-weight: bold;
                     cursor: pointer;
                 }
             }
             .s2{
                 width: 70px;
-                left: 160px;
-                margin-top: -30px;
+                left: 170px;
+                position: absolute;
+                top: -15px;
                 .confirmBtn{
                     width: 70px;
                     height: 25px;
@@ -434,7 +425,7 @@
                     .rounded-corners(2px);
                     border: none;
                     color: #fff;
-                    font-size: 0.6rem;
+                    .fontSize(0.6);
                     background: #5AA7E1;
                 }
                 .collect{
@@ -446,7 +437,7 @@
                         line-height: 20px;
                         vertical-align: middle;
                         .collectIcon{
-                            display: inline-block;
+                            .displayIB;
                             margin-bottom: -2px;
                             width: 14px;
                             height: 14px;
@@ -464,33 +455,63 @@
             height: 25px;
         }
     }
+    .priceDetailBox{
+        width: 120px;
+        height: auto;
+        position: absolute;
+        left: 940px;
+        top: 0;
+        display: none;
+        .jiao{
+            width: 100%;
+            height: 10px;
+            margin-bottom: -1px;
+        }
+        .detailList{
+            width: 100%;
+            height: auto;
+            margin-top: 0;
+            border: 1px solid #ddd;
+            background: #fff;
+            li{
+                list-style: none;
+                .fontSize(0.6);
+                width: 110px;
+                margin-left: 5px;
+                line-height: 20px;
+                color: #A0A0A0;
+                border: none;
+                background: #fff;
+            }
+        }
+    }
 }
 .page{
     width: 1200px;
     height: 20px;
     margin: 10px auto;
     color: #fff;
-    font-size: 0.6rem;
+    .fontSize(0.6);
     text-align: center;
     line-height: 20px;
     vertical-align: middle;
     .prepage{
         width: 50px;
         height: 20px;
-        display: inline-block;
+        .displayIB;
         background: #5aa7e1;
         float: right;
     }
     .pages{
         width: auto;
         height: 20px;
-        display: inline-block;
+        .displayIB;
         margin-left: 10px;
         margin-right: 10px;
         float: right;
         li{
             list-style: none;
-            display: inline-block;
+            .displayIB;
             background: #5aa7e1;
             margin-left: 5px;
             width: 18px;
@@ -503,41 +524,15 @@
     .nextpage{
         width: 50px;
         height: 20px;
-        display: inline-block;
+        .displayIB;
         background: #5aa7e1;
         float: right;
         margin-right: 20px;
     }
 }
-.priceDetailBox{
-    width: 120px;
-    height: auto;
-    position: absolute;
-    left: 1020px;
-    top: 0;
-    display: none;
-    .jiao{
-        width: 100%;
-        height: 10px;
-        margin-bottom: -1px;
-    }
-    .detailList{
-        width: 100%;
-        height: auto;
-        margin-top: 0;
-        border: 1px solid #ddd;
-        background: #fff;
-        li{
-            list-style: none;
-            font-size: 0.6rem;
-            margin-left: 5px;
-            line-height: 20px;
-            color: #A0A0A0;
-        }
-    }
-}
+
 .redWord{
-    font-size: 0.8rem;
+    .fontSize(0.8);
     color: @red;
 }
 .orange{

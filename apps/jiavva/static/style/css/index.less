@@ -77,6 +77,12 @@
                     .fontSize(0.8);
                     color: #999;
                     .rounded-corners;
+                    .input{
+                        width: 280px;
+                        border: none;
+                        height: 24px;
+                        outline: none;
+                    }
                     .searchIcon{
                         position: absolute;
                         .displayIB;
@@ -100,9 +106,9 @@
                 .fontSize(0.8);
             }
         }
-        .goodTypeBox{
-            width: 300px;
-            height: 200px;
+        .selectBox{
+            width: 310px;
+            height: auto;
             .fontSize(0.6);
             line-height: 25px;
             vertical-align: middle;
@@ -113,12 +119,12 @@
             left: 87px;
             display: none;
             z-index: 10;
-            .tip{
+            .selectTip{
                 height: 25px;
                 width: auto;
                 padding-left: 5px;
             }
-            .tab{
+            .selectTab{
                 width: auto;
                 height: 25px;
                 border-bottom: 1px solid #ddd;
@@ -130,16 +136,16 @@
                     padding-left: 5px;
                     padding-right: 5px;
                 }
-                li.activeTab{
+                li.active{
                     border-bottom: 1px solid #26b4d3;
                     color: #26b4d3;
                 }
             }
-            .firstList,.secondList,.thirdList{
-                position: absolute;
-                top: 52px;
-                left: 10px;
-                width: 220px;
+            .selectList{
+                position: relative;
+                margin-top: 2px;
+                margin-left: 10px;
+                width: 290px;
                 height: auto;
                 background: #fff;
                 display: none;

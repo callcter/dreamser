@@ -1,7 +1,10 @@
 //首页js
 window.onload = function(){
     searchBox();
-
+    selectList1();
+    selectList2();
+    selectList3();
+    selectList4();
 }
 //首页查询框
 var searchBox = function(){
@@ -12,7 +15,7 @@ var searchBox = function(){
     var box2 = document.getElementById("searchTab2");
     for(var i=0;i<tabs.length;i++){
         tabs[i].index = i;
-        tabs[i].addEventListener("click",function(){
+        addEvent(tabs[i],"click",function(){
             for(var j=0;j<tabs.length;j++){
                 tabs[j].className = "";
             }
@@ -41,94 +44,358 @@ var searchBox = function(){
         });
     }
 }
-
-//商品类型列表样式自定义
-var goodsList = function(){
-    var origin = document.getElementById("origin");
-    var goodTypeBox = document.getElementById("goodTypeBox");
-    var tabs = document.getElementById("goodsTab").getElementsByTagName("li");
-    var firstList = document.getElementById("firstList");
-    var secondList = document.getElementById("secondList");
-    var thirdList = document.getElementById("thirdList");
-    var listBtn = document.getElementById("goodsList");
+var selectList1 = function(){
+    var box = document.getElementById("origin");
+    var selectBox = document.getElementById("selectBox1");
+    var selectTabs = document.getElementById("selectTab1").getElementsByTagName("li");
+    var selectList0 = document.getElementById("selectList10");
+    var selectList1 = document.getElementById("selectList11");
+    var selectList2 = document.getElementById("selectList12");
+    var boxS = document.getElementById("originSelect");
     var note = "";
-    listBtn.addEventListener("click",function(){
+    var options = address;
+    var selected = box;
+    addEvent(boxS,"click",function(){
         note = "";
-        if(good.style.display == "block"){
-            good.style.display = "none";
-            firstList.style.display = "none";
-            secondList.style.display = "none";
-            thirdList.style.display = "none";
+        selectBox.style.top = this.offsetHeight+this.offsetTop+"px";
+        selectBox.style.left = this.offsetLeft+"px";
+        if(selectBox.style.display == "block"){
+            selectBox.style.display = "none";
+            selectList0.style.display = "none";
+            selectList1.style.display = "none";
+            selectList2.style.display = "none";
         }else{
-            good.style.display = "block";
-            firstList.style.display = "block";
+            selectBox.style.display = "block";
+            selectList0.style.display = "block";
         }
-        tabs[2].className = "";
-        tabs[0].className = "activeTab";
+        selectTabs[2].className = "";
+        selectTabs[0].className = "active";
     });
-    for(var i=0;i<goods.length;i++){
+    for(var i=0;i<options.length;i++){
         var fLi = document.createElement("li");
-        fLi.innerHTML = goods[i].name;
-        firstList.appendChild(fLi);
-        fLi.addEventListener("click",function(){
+        fLi.innerHTML = options[i].text;
+        selectList0.appendChild(fLi);
+        addEvent(fLi,"click",function(){
             note += this.innerHTML;
-            goodSelected.innerHTML = note;
+            selected.innerHTML = note;
             //清空二级商品列表
-            removeAllChild(secondList);
+            removeAllChild(selectList1);
             //作为三级商品列表向上访问时二级列表的缓存
-            var firstListArray = goods[liNum(this)].sub;
-            for(var j=0;j<goods[liNum(this)].sub.length;j++){
+            var firstListArray = options[liNum(this)].children;
+            for(var j=0;j<options[liNum(this)].children.length;j++){
                 var sLi = document.createElement("li");
-                sLi.innerHTML = goods[liNum(this)].sub[j].name;
-                secondList.appendChild(sLi);
-                sLi.addEventListener("click",function(){
+                sLi.innerHTML = options[liNum(this)].children[j].text;
+                selectList1.appendChild(sLi);
+                addEvent(sLi,"click",function(){
                      note += "-"+this.innerHTML;
-                     goodSelected.innerHTML = note;
+                     selected.innerHTML = note;
                      //清空三级商品列表
-                     removeAllChild(thirdList);
-                     for(var k=0;k<firstListArray[liNum(this)].sub.length;k++){
+                     removeAllChild(selectList2);
+                     for(var k=0;k<firstListArray[liNum(this)].children.length;k++){
                          var tLi = document.createElement("li");
-                         tLi.innerHTML = firstListArray[liNum(this)].sub[k].name;
-                         thirdList.appendChild(tLi);
-                         tLi.addEventListener("click",function(){
+                         tLi.innerHTML = firstListArray[liNum(this)].children[k].text;
+                         selectList2.appendChild(tLi);
+                         addEvent(tLi,"click",function(){
                              note += "-"+this.innerHTML;
-                             goodSelected.innerHTML = note;
-                             thirdList.style.display = "none";
-                             good.style.display = "none";
-                            if(this.innerHTML=="一米"){
-                                document.getElementById("ge").setAttribute("disabled","disabled");
-                            }else{
-                                document.getElementById("ge").removeAttribute("disabled");
-                            }
+                             selected.innerHTML = note;
+                             selectList2.style.display = "none";
+                             selectBox.style.display = "none";
                          });
-                         tLi.addEventListener("mouseover",function(){
+                         addEvent(tLi,"mouseover",function(){
                              this.className = "activeT";
                          });
-                         tLi.addEventListener("mouseout",function(){
+                         addEvent(tLi,"mouseout",function(){
                              this.className = "";
                          });
                      }
-                    secondList.style.display = "none";
-                    thirdList.style.display = "block";
-                    tabs[1].className = "";
-                    tabs[2].className = "activeTab";
+                    selectList1.style.display = "none";
+                    selectList2.style.display = "block";
+                    selectTabs[1].className = "";
+                    selectTabs[2].className = "active";
                 });
-                sLi.addEventListener("mouseover",function(){
+                addEvent(sLi,"mouseover",function(){
                     this.className = "activeT";
                 });
-                sLi.addEventListener("mouseout",function(){
+                addEvent(sLi,"mouseout",function(){
                     this.className = "";
                 });
             }
-            firstList.style.display = "none";
-            secondList.style.display = "block";
-            tabs[0].className = "";
-            tabs[1].className = "activeTab";
+            selectList0.style.display = "none";
+            selectList1.style.display = "block";
+            selectTabs[0].className = "";
+            selectTabs[1].className = "active";
         });
-        fLi.addEventListener("mouseover",function(){
+        addEvent(fLi,"mouseover",function(){
             this.className = "activeT";
         });
-        fLi.addEventListener("mouseout",function(){
+        addEvent(fLi,"mouseout",function(){
+            this.className = "";
+        });
+    }
+}
+var selectList2 = function(){
+    var box = document.getElementById("destination");
+    var selectBox = document.getElementById("selectBox2");
+    var selectTabs = document.getElementById("selectTab2").getElementsByTagName("li");
+    var selectList0 = document.getElementById("selectList20");
+    var selectList1 = document.getElementById("selectList21");
+    var selectList2 = document.getElementById("selectList22");
+    var boxS = document.getElementById("destinationSelect");
+    var note = "";
+    var options = address;
+    var selected = box;
+    addEvent(boxS,"click",function(){
+        note = "";
+        selectBox.style.top = this.offsetHeight+this.offsetTop+"px";
+        selectBox.style.left = this.offsetLeft+"px";
+        if(selectBox.style.display == "block"){
+            selectBox.style.display = "none";
+            selectList0.style.display = "none";
+            selectList1.style.display = "none";
+            selectList2.style.display = "none";
+        }else{
+            selectBox.style.display = "block";
+            selectList0.style.display = "block";
+        }
+        selectTabs[2].className = "";
+        selectTabs[0].className = "active";
+    });
+    for(var i=0;i<options.length;i++){
+        var fLi = document.createElement("li");
+        fLi.innerHTML = options[i].text;
+        selectList0.appendChild(fLi);
+        addEvent(fLi,"click",function(){
+            note += this.innerHTML;
+            selected.innerHTML = note;
+            //清空二级商品列表
+            removeAllChild(selectList1);
+            //作为三级商品列表向上访问时二级列表的缓存
+            var firstListArray = options[liNum(this)].children;
+            for(var j=0;j<options[liNum(this)].children.length;j++){
+                var sLi = document.createElement("li");
+                sLi.innerHTML = options[liNum(this)].children[j].text;
+                selectList1.appendChild(sLi);
+                addEvent(sLi,"click",function(){
+                     note += "-"+this.innerHTML;
+                     selected.innerHTML = note;
+                     //清空三级商品列表
+                     removeAllChild(selectList2);
+                     for(var k=0;k<firstListArray[liNum(this)].children.length;k++){
+                         var tLi = document.createElement("li");
+                         tLi.innerHTML = firstListArray[liNum(this)].children[k].text;
+                         selectList2.appendChild(tLi);
+                         addEvent(tLi,"click",function(){
+                             note += "-"+this.innerHTML;
+                             selected.innerHTML = note;
+                             selectList2.style.display = "none";
+                             selectBox.style.display = "none";
+                         });
+                         addEvent(tLi,"mouseover",function(){
+                             this.className = "activeT";
+                         });
+                         addEvent(tLi,"mouseout",function(){
+                             this.className = "";
+                         });
+                     }
+                    selectList1.style.display = "none";
+                    selectList2.style.display = "block";
+                    selectTabs[1].className = "";
+                    selectTabs[2].className = "active";
+                });
+                addEvent(sLi,"mouseover",function(){
+                    this.className = "activeT";
+                });
+                addEvent(sLi,"mouseout",function(){
+                    this.className = "";
+                });
+            }
+            selectList0.style.display = "none";
+            selectList1.style.display = "block";
+            selectTabs[0].className = "";
+            selectTabs[1].className = "active";
+        });
+        addEvent(fLi,"mouseover",function(){
+            this.className = "activeT";
+        });
+        addEvent(fLi,"mouseout",function(){
+            this.className = "";
+        });
+    }
+}
+var selectList3 = function(){
+    var box = document.getElementById("goodType");
+    var selectBox = document.getElementById("selectBox3");
+    var selectTabs = document.getElementById("selectTab3").getElementsByTagName("li");
+    var selectList0 = document.getElementById("selectList30");
+    var selectList1 = document.getElementById("selectList31");
+    var selectList2 = document.getElementById("selectList32");
+    var boxS = document.getElementById("goodTypeSelect");
+    var note = "";
+    var options = goodType[0].children;
+    var selected = box;
+    addEvent(boxS,"click",function(){
+        note = "";
+        selectBox.style.top = this.offsetHeight+this.offsetTop+"px";
+        selectBox.style.left = this.offsetLeft+"px";
+        if(selectBox.style.display == "block"){
+            selectBox.style.display = "none";
+            selectList0.style.display = "none";
+            selectList1.style.display = "none";
+            selectList2.style.display = "none";
+        }else{
+            selectBox.style.display = "block";
+            selectList0.style.display = "block";
+        }
+        selectTabs[2].className = "";
+        selectTabs[0].className = "active";
+    });
+    for(var i=0;i<options.length;i++){
+        var fLi = document.createElement("li");
+        fLi.innerHTML = options[i].text;
+        selectList0.appendChild(fLi);
+        addEvent(fLi,"click",function(){
+            note += this.innerHTML;
+            selected.innerHTML = note;
+            //清空二级商品列表
+            removeAllChild(selectList1);
+            //作为三级商品列表向上访问时二级列表的缓存
+            var firstListArray = options[liNum(this)].children;
+            for(var j=0;j<options[liNum(this)].children.length;j++){
+                var sLi = document.createElement("li");
+                sLi.innerHTML = options[liNum(this)].children[j].text;
+                selectList1.appendChild(sLi);
+                addEvent(sLi,"click",function(){
+                     note += "-"+this.innerHTML;
+                     selected.innerHTML = note;
+                     //清空三级商品列表
+                     removeAllChild(selectList2);
+                     for(var k=0;k<firstListArray[liNum(this)].children.length;k++){
+                         var tLi = document.createElement("li");
+                         tLi.innerHTML = firstListArray[liNum(this)].children[k].text;
+                         selectList2.appendChild(tLi);
+                         addEvent(tLi,"click",function(){
+                             note += "-"+this.innerHTML;
+                             selected.innerHTML = note;
+                             selectList2.style.display = "none";
+                             selectBox.style.display = "none";
+                         });
+                         addEvent(tLi,"mouseover",function(){
+                             this.className = "activeT";
+                         });
+                         addEvent(tLi,"mouseout",function(){
+                             this.className = "";
+                         });
+                     }
+                    selectList1.style.display = "none";
+                    selectList2.style.display = "block";
+                    selectTabs[1].className = "";
+                    selectTabs[2].className = "active";
+                });
+                addEvent(sLi,"mouseover",function(){
+                    this.className = "activeT";
+                });
+                addEvent(sLi,"mouseout",function(){
+                    this.className = "";
+                });
+            }
+            selectList0.style.display = "none";
+            selectList1.style.display = "block";
+            selectTabs[0].className = "";
+            selectTabs[1].className = "active";
+        });
+        addEvent(fLi,"mouseover",function(){
+            this.className = "activeT";
+        });
+        addEvent(fLi,"mouseout",function(){
+            this.className = "";
+        });
+    }
+}
+var selectList4 = function(){
+    var box = document.getElementById("goodInstall");
+    var selectBox = document.getElementById("selectBox4");
+    var selectTabs = document.getElementById("selectTab4").getElementsByTagName("li");
+    var selectList0 = document.getElementById("selectList40");
+    var selectList1 = document.getElementById("selectList41");
+    var selectList2 = document.getElementById("selectList42");
+    var boxS = document.getElementById("goodInstallSelect");
+    var note = "";
+    var options = address;
+    var selected = box;
+    addEvent(boxS,"click",function(){
+        note = "";
+        selectBox.style.top = this.offsetHeight+this.offsetTop+"px";
+        selectBox.style.left = this.offsetLeft+"px";
+        if(selectBox.style.display == "block"){
+            selectBox.style.display = "none";
+            selectList0.style.display = "none";
+            selectList1.style.display = "none";
+            selectList2.style.display = "none";
+        }else{
+            selectBox.style.display = "block";
+            selectList0.style.display = "block";
+        }
+        selectTabs[2].className = "";
+        selectTabs[0].className = "active";
+    });
+    for(var i=0;i<options.length;i++){
+        var fLi = document.createElement("li");
+        fLi.innerHTML = options[i].text;
+        selectList0.appendChild(fLi);
+        addEvent(fLi,"click",function(){
+            note += this.innerHTML;
+            selected.innerHTML = note;
+            //清空二级商品列表
+            removeAllChild(selectList1);
+            //作为三级商品列表向上访问时二级列表的缓存
+            var firstListArray = options[liNum(this)].children;
+            for(var j=0;j<options[liNum(this)].children.length;j++){
+                var sLi = document.createElement("li");
+                sLi.innerHTML = options[liNum(this)].children[j].text;
+                selectList1.appendChild(sLi);
+                addEvent(sLi,"click",function(){
+                     note += "-"+this.innerHTML;
+                     selected.innerHTML = note;
+                     //清空三级商品列表
+                     removeAllChild(selectList2);
+                     for(var k=0;k<firstListArray[liNum(this)].children.length;k++){
+                         var tLi = document.createElement("li");
+                         tLi.innerHTML = firstListArray[liNum(this)].children[k].text;
+                         selectList2.appendChild(tLi);
+                         addEvent(tLi,"click",function(){
+                             note += "-"+this.innerHTML;
+                             selected.innerHTML = note;
+                             selectList2.style.display = "none";
+                             selectBox.style.display = "none";
+                         });
+                         addEvent(tLi,"mouseover",function(){
+                             this.className = "activeT";
+                         });
+                         addEvent(tLi,"mouseout",function(){
+                             this.className = "";
+                         });
+                     }
+                    selectList1.style.display = "none";
+                    selectList2.style.display = "block";
+                    selectTabs[1].className = "";
+                    selectTabs[2].className = "active";
+                });
+                addEvent(sLi,"mouseover",function(){
+                    this.className = "activeT";
+                });
+                addEvent(sLi,"mouseout",function(){
+                    this.className = "";
+                });
+            }
+            selectList0.style.display = "none";
+            selectList1.style.display = "block";
+            selectTabs[0].className = "";
+            selectTabs[1].className = "active";
+        });
+        addEvent(fLi,"mouseover",function(){
+            this.className = "activeT";
+        });
+        addEvent(fLi,"mouseout",function(){
             this.className = "";
         });
     }

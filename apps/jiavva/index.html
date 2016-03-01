@@ -1,211 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>无标题文档</title>
-    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <title>首页</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" href="static/style/css/index.css">
-<!--    <script src="js/jquery.min.js"></script>-->
-<!--    <script src="libs/js/city.data-3.js"></script>-->
-<!--    <script src="libs/layer/layer.js"></script>-->
-<!--    <script src="libs/laypage/laypage.js"></script>-->
-<!--    <script src="js/pcpub.js"></script>-->
-<!--    <script src="js/modernizr.js"></script>-->
-<!--    <script type="text/javascript" src="jquery-1.12.0.min.js"></script>-->
-
-    <script>
-//        $(function () {
-//            var $banner = $('.banner');
-//            var $banner_ul = $('.banner-img');
-//            var $btn = $('.banner-btn');
-//            var $btn_a = $btn.find('a')
-//            var v_width = $banner.width();
-//
-//            var page = 1;
-//
-//            var timer = null;
-//            var btnClass = null;
-//
-//            var page_count = $banner_ul.find('li').length; //把这个值赋给小圆点的个数
-//
-//            var banner_cir = "<li class='selected' href='#'><a></a></li>";
-//            for (var i = 1; i < page_count; i++) {
-//                //动态添加小圆点
-//                banner_cir += "<li><a href='#'></a></li>";
-//            }
-//            $('.banner-circle').append(banner_cir);
-//
-//            var cirLeft = $('.banner-circle').width() * (-0.5);
-//            $('.banner-circle').css({
-//                'marginLeft': cirLeft
-//            });
-//
-//            $banner_ul.width(page_count * v_width);
-//
-//            function move(obj, classname) {
-//                //手动及自动播放
-//                if (!$banner_ul.is(':animated')) {
-//                    if (classname == 'prevBtn') {
-//                        if (page == 1) {
-//                            $banner_ul.animate({
-//                                left: -v_width * (page_count - 1)
-//                            });
-//                            page = page_count;
-//                            cirMove();
-//                        } else {
-//                            $banner_ul.animate({
-//                                left: '+=' + v_width
-//                            }, "slow");
-//                            page--;
-//                            cirMove();
-//                        }
-//                    } else {
-//                        if (page == page_count) {
-//                            $banner_ul.animate({
-//                                left: 0
-//                            });
-//                            page = 1;
-//                            cirMove();
-//                        } else {
-//                            $banner_ul.animate({
-//                                left: '-=' + v_width
-//                            }, "slow");
-//                            page++;
-//                            cirMove();
-//                        }
-//                    }
-//                }
-//            }
-//
-//            function cirMove() {
-//                //检测page的值，使当前的page与selected的小圆点一致
-//                $('.banner-circle li').eq(page - 1).addClass('selected')
-//                    .siblings().removeClass('selected');
-//            }
-//
-//            $banner.mouseover(function () {
-//                $btn.css({
-//                    'display': 'block'
-//                });
-//                clearInterval(timer);
-//            }).mouseout(function () {
-//                $btn.css({
-//                    'display': 'none'
-//                });
-//                clearInterval(timer);
-//                timer = setInterval(move, 3000);
-//            }).trigger("mouseout"); //激活自动播放
-//
-//            $btn_a.mouseover(function () {
-//                //实现透明渐变，阻止冒泡
-//                $(this).animate({
-//                    opacity: 0.6
-//                }, 'fast');
-//                $btn.css({
-//                    'display': 'block'
-//                });
-//                return false;
-//            }).mouseleave(function () {
-//                $(this).animate({
-//                    opacity: 0.3
-//                }, 'fast');
-//                $btn.css({
-//                    'display': 'none'
-//                });
-//                return false;
-//            }).click(function () {
-//                //手动点击清除计时器
-//                btnClass = this.className;
-//                clearInterval(timer);
-//                timer = setInterval(move, 3000);
-//                move($(this), this.className);
-//            });
-//
-//            $('.banner-circle li').on('click', function () {
-//                var index = $('.banner-circle li').index(this);
-//                $banner_ul.animate({
-//                    left: -v_width * index
-//                }, 'slow');
-//                page = index + 1;
-//                cirMove();
-//            });
-//        });
-//        window.onload = function () {
-//            var nav = $(".topiu li");
-//            var con = $(".contont > div");
-//            toptab(nav, con);
-//            xuantab($('.listxuan li'), $('.xianlutuijian > div'));
-//        }
-//
-//        function toptab(nav, con) {
-//            for (var i = 0, len = nav.length; i < len; i++) {
-//                nav[i].index = i;
-//                nav[i].onclick = function () {
-//                    for (var j = 0, l = con.length; j < l; j++) {
-//                        con[j].style.display = 'none';
-//                        nav[j].className = 'hujf';
-//                    }
-//                    con[this.index].style.display = 'block';
-//                    nav[this.index].className = 'xuanzhong';
-//                }
-//            }
-//        }
-//
-//        function xuantab(nav, con) {
-//            for (var i = 0, len = nav.length; i < len; i++) {
-//                nav[i].index = i;
-//                nav[i].onclick = function () {
-//                    for (var j = 0, l = con.length; j < l; j++) {
-//                        con[j].style.display = 'none';
-//                        nav[j].className = 'weixuanzhong';
-//                    }
-//                    con[this.index].style.display = 'block';
-//                    nav[this.index].className = 'xuanzhongst';
-//                }
-//            }
-//        }
-    </script>
 </head>
 
 <body>
-    <div class="headbox">
-        <ul>
-            <li class="topnav1"><a href="#" class="bule">首页</a></li>
-            <li class="topnav2"><a href="#">商家入驻</a></li>
-            <li class="topnav3"><a>服务热线：0532-55775827</a></li>
-            <li class="topnav7"><a href="#" class="bule">商家中心</a></li>
-            <li class="topnav6"><a href="#" class="bule">我的订单</a></li>
-            <li class="topnav5"><a href="#" class="bule">消息</a></li>
-            <li class="topnav4"><a href="#">注册</a></li>
-            <li class="topnav4"><a href="#">登录</a></li>
-            <li class="topnav4"><a href="#">欢迎来到家哇云平台</a></li>
-        </ul>
-    </div>
-    <div class="top">
-        <div class="logobox"> <img src="images/logo.png"> </div>
-        <div class="rightbox">
-            <ul>
-                <li class="float01"> <span><img src="images/iconfont-peiziiconfont09.png" width="20" height="20"></span><a href="#">手机物流-在线查询</a> </li>
-                <li class="float01"> <span><img src="images/iconfont-xingzhuang19.png" width="20" height="20"></span><a href="#">在线咨询</a> </li>
-                <li class="float01"> <span><img src="images/iconfont-help.png" width="20" height="20"></span><a href="#">帮助</a> </li>
-                <li class="float01"> <span><img src="images/iconfont-jianyi.png" width="15" height="15" style=" margin-top:3px;"></span><a href="#">建议</a> </li>
-                <li class="float02" style="margin-left:85px;"> <img src="images/erweima_06.png"> </li>
-            </ul>
+    <header>
+        <div class="top">
+            <div class="top-l"><a href="#" class="blue">首页</a></div>
+            <div class="top-l"><a href="#">商家入驻</a></div>
+            <div class="top-l"><a href="#">服务热线：0532-55775827</a></div>
+            <div class="top-r"><a href="#" class="blue">商家中心</a></div>
+            <div class="top-r"><a href="#" class="blue">我的订单</a></div>
+            <div class="top-r"><a href="#" class="blue">消息</a></div>
+            <div class="top-r"><a href="#">注册</a></div>
+            <div class="top-r"><a href="#">登录</a></div>
+            <div class="top-r"><a href="#">欢迎来到家哇云平台</a></div>
+            <div class="clear"></div>
         </div>
-    </div>
-    <div class="nav">
-        <ul class="nav_mid">
-            <li><a href="#" class="first">首页</a></li>
-            <li><a href="#" class="sec">服务查询</a></li>
-            <li><a href="#" class="sec">订单中心</a></li>
-            <li><a href="#" class="sec">订单跟踪</a></li>
-            <li><a href="#" class="sec">报表中心</a></li>
-            <li><a href="#" class="sec">会员中心</a></li>
-            <li><a href="#" class="sec">如何下单</a></li>
-        </ul>
-    </div>
+        <div class="logo">
+            <div class="logo-l">
+                <img src="static/image/logo.png">
+            </div>
+            <div class="logo-code">
+                <img src="static/image/erweima_06.png">
+            </div>
+            <ul class="logo-r">
+                <li>
+                    <span class="icon"><img src="static/image/iconfont-peiziiconfont09.png"></span>
+                    <span>手机物流-在线查询</span>
+                </li>
+                <li>
+                    <span class="icon"><img src="static/image/iconfont-xingzhuang19.png"></span>
+                    <span>在线咨询</span>
+                </li>
+                <li>
+                    <span class="icon"><img src="static/image/iconfont-help.png"></span>
+                    <span>帮助</span>
+                </li>
+                <li>
+                    <span class="icon"><img src="static/image/iconfont-jianyi.png"></span>
+                    <span>建议</span>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <nav>
+            <ul class="navi">
+                <li class="index">首页</li>
+                <li>服务查询</li>
+                <li>订单中心</li>
+                <li>订单跟踪</li>
+                <li>报表中心</li>
+                <li>会员中心</li>
+                <li>如何下单</li>
+            </ul>
+        </nav>
+    </header>
     <div class="banner">
         <div class="bannerBox">
             <div class="searchBox">
@@ -220,7 +75,7 @@
                 <div id="searchTab0">
                     <div class="searchInput">
                         <span>&nbsp;&nbsp;始发地&nbsp;&nbsp;&nbsp;</span>
-                        <div class="searchSelect">
+                        <div class="searchSelect" id="originSelect">
                             <span id="origin">请选择始发地</span>
                             <div class="searchIcon">
                                 <img src="static/image/iconfont-dizhi.png">
@@ -229,8 +84,8 @@
                     </div>
                     <div class="searchInput">
                         <span>&nbsp;&nbsp;目的地&nbsp;&nbsp;&nbsp;</span>
-                        <div class="searchSelect">
-                            <span id="origin">请选择目的地</span>
+                        <div class="searchSelect" id="destinationSelect">
+                            <span id="destination">请选择目的地</span>
                             <div class="searchIcon">
                                 <img src="static/image/iconfont-dizhi.png">
                             </div>
@@ -240,8 +95,8 @@
                 <div id="searchTab1">
                     <div class="searchInput">
                         <span>家具分类&nbsp;&nbsp;</span>
-                        <div class="searchSelect">
-                            <span id="origin">请选择家具分类</span>
+                        <div class="searchSelect" id="goodTypeSelect">
+                            <span id="goodType">请选择家具分类</span>
                             <div class="searchIcon">
                                 <img src="static/image/iconfont-dizhi.png">
                             </div>
@@ -249,8 +104,8 @@
                     </div>
                     <div class="searchInput">
                         <span>安装地点&nbsp;&nbsp;</span>
-                        <div class="searchSelect">
-                            <span id="origin">请选择安装地点</span>
+                        <div class="searchSelect" id="goodInstallSelect">
+                            <span id="goodInstall">请选择安装地点</span>
                             <div class="searchIcon">
                                 <img src="static/image/iconfont-dizhi.png">
                             </div>
@@ -261,7 +116,7 @@
                     <div class="searchInput">
                         <span>&nbsp;&nbsp;订单号&nbsp;&nbsp;&nbsp;</span>
                         <div class="searchSelect">
-                            <span id="origin">请输入家哇单号/服务商单号/手机号/姓名</span>
+                            <input class="input" type="text" placeholder="请输入家哇单号/服务商单号/手机号/姓名">
 <!--
                             <div class="searchIcon">
                                 <img src="static/image/iconfont-dizhi.png">
@@ -272,91 +127,51 @@
                 </div>
                 <div class="searchBtn">查询</div>
             </div>
-            <div class="goodTypeBox" id="goodTypeBox">
-                <p class="tip">请选择家具分类</p>
-                <ul class="tab" id="goodsTab">
+            <div class="selectBox" id="selectBox1">
+                <p class="selectTip">请选择始发地</p>
+                <ul class="selectTab" id="selectTab1">
+                    <li>省</li>
+                    <li>市</li>
+                    <li>县区</li>
+                </ul>
+                <ul class="selectList" id="selectList10"></ul>
+                <ul class="selectList" id="selectList11"></ul>
+                <ul class="selectList" id="selectList12"></ul>
+            </div>
+            <div class="selectBox" id="selectBox2">
+                <p class="selectTip">请选择目的地</p>
+                <ul class="selectTab" id="selectTab2">
+                    <li>省</li>
+                    <li>市</li>
+                    <li>县区</li>
+                </ul>
+                <ul class="selectList" id="selectList20"></ul>
+                <ul class="selectList" id="selectList21"></ul>
+                <ul class="selectList" id="selectList22"></ul>
+            </div>
+            <div class="selectBox" id="selectBox3">
+                <p class="selectTip">请选择家具分类</p>
+                <ul class="selectTab" id="selectTab3">
                     <li>二级品类</li>
                     <li>三级品类</li>
                     <li>规格</li>
                 </ul>
-                <ul class="firstList" id="firstList"></ul>
-                <ul class="secondList" id="secondList"></ul>
-                <ul class="thirdList" id="thirdList"></ul>
+                <ul class="selectList" id="selectList30"></ul>
+                <ul class="selectList" id="selectList31"></ul>
+                <ul class="selectList" id="selectList32"></ul>
             </div>
-            <div class="addressBox"></div>
-        </div>
-    </div>
-<!--
-    <div class="bannerbox">
-        <div class="banner">
-            <div class="searchbox">
-                <div class="topiu" id="topiu">
-                    <ul>
-                        <li class="xuanzhong" style=" margin-left:20px;"><a href="#" class="tu">物流配送</a></li>
-                        <li class="hujf"><a href="#">快捷安装</a></li>
-                        <li class="hujf"><a href="#">订单跟踪</a></li>
-                        <li class="gygf" style=" width:180px;"></li>
-                    </ul>
-                </div>
-                <div class="contont" id="contont">
-                    <div class="qiehuan">
-                        <div class="bomyu">
-                            <div class="shuruyu"> <span>始发地</span>
-                                <input class="kaishi" value placeholder="请选择始发地">
-                            </div>
-                        </div>
-                        <div class="bomyu">
-                            <div class="shuruyu"> <span>目的地</span>
-                                <input class="kaishi" value placeholder="请选择目的地">
-                            </div>
-                        </div>
-                        <div class="bomyu">
-                            <div class="shuruyu" style=" margin-top:25px;">
-                                <input class="kaishi2" type="button" value="查询">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="qiehuan" style=" display:none">
-                        <div class="bomyu">
-                            <div class="shuruyu"> <span>家具品类</span>
-                                <input class="kaishi" value placeholder="请选择家具品类">
-                            </div>
-                        </div>
-                        <div class="bomyu">
-                            <div class="shuruyu"> <span>安装地点</span>
-                                <input class="kaishi" value placeholder="请选择安装地点">
-                            </div>
-                        </div>
-                        <div class="bomyu">
-                            <div class="shuruyu" style=" margin-top:25px;">
-                                <input class="kaishi2" type="button" value="搜索">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="qiehuan" style=" display:none">
-
-                        <div class="bomyu">
-                            <div class="shuruyu"> <span>订单单号</span>
-                                <input class="kaishi" value placeholder="请输入家哇单号/服务商单号/手机号/姓名" style=" background: none;">
-                            </div>
-                        </div>
-                        <div class="bomyu" style=" margin-top:5px;">
-                            <div class="shuruyu" style=" margin-top:25px;">
-                                <input class="kaishi2" type="button" value="查询">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="selectBox" id="selectBox4">
+                <p class="selectTip">请选择安装地点</p>
+                <ul class="selectTab" id="selectTab4">
+                    <li>省</li>
+                    <li>市</li>
+                    <li>县区</li>
+                </ul>
+                <ul class="selectList" id="selectList40"></ul>
+                <ul class="selectList" id="selectList41"></ul>
+                <ul class="selectList" id="selectList42"></ul>
             </div>
         </div>
-    </div>
--->
-    <div class="icontu">
-        <ul>
-        </ul>
     </div>
     <div class="tuijian">
         <div class="tuijian_tit"> <span>优质物流商推荐</span> </div>
@@ -657,49 +472,39 @@
     </div>
     <div class="wuliu">
         <div class="tuijian_tit"> <span>合作服务商</span> </div>
-
         <div align="center" style="width:1270px; margin:0 auto;overflow:hidden; ">
-            <!--<div class="hezuo">
-<span style=" margin-top:5px;">合作</span><span>物流</span>
-</div>-->
             <div class="banner2">
                 <div class="banner-btn">
                     <a href="javascript:;" class="prevBtn"><i></i></a>
                     <a href="javascript:;" class="nextBtn"><i></i></a>
                 </div>
                 <ul class="banner-img">
-                    <li>
-                        <a href="#"><img src="img/bbb1_44.png"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="img/bbb1_44.png"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="img/bbb1_44.png"></a>
-                    </li>
-                    <!--<li><a href="#"><img src="images/T1LtlPFppjXXb1upjX.jpg"></a></li>
-		<li><a href="#"><img src="images/T1GGJWFvpgXXazuKP7-520-280.jpg"></a></li>
-		<li><a href="#"><img src="images/T104hZFBVdXXazuKP7-520-280.jpg"></a></li>-->
+                    <li><a href="#"><img src="img/bbb1_44.png"></a></li>
+                    <li><a href="#"><img src="img/bbb1_44.png"></a></li>
+                    <li><a href="#"><img src="img/bbb1_44.png"></a></li>
                 </ul>
                 <ul class="banner-circle"></ul>
             </div>
         </div>
     </div>
     <div class="line"></div>
-    <div class="footer">
-        <ul>
-            <li><a href="http://www.jiavva.com/about/index.html#about" target="_blank">关于我们</a></li>
-            <li><a href="http://www.jiavva.com/about/index.html#business" target="_blank">业务全景</a></li>
-            <li><a href="http://www.jiavva.com/about/index.html#mission" target="_blank">平台定位</a></li>
-            <li><a href="http://www.jiavva.com/about/index.html#line" target="_blank">干线云图</a></li>
-            <li><a href="http://www.jiavva.com/about/index.html#service" target="_blank">服务查询</a></li>
-            <li><a href="http://www.jiavva.com/about/index.html#reg" target="_blank">报名体验</a></li>
-            <li><a href="http://www.jiavva.com/about/index.html#team" target="_blank">创客团队</a></li>
-            <li style=" background:none;"><a href="http://fuwu.jiavva.com/" target="_blank">商家中心</a></li>
+    <footer>
+        <ul class="anchor">
+            <li><a href="#">关于我们</a></li>
+            <li><a href="#">业务全景</a></li>
+            <li><a href="#">平台定位</a></li>
+            <li><a href="#">干线云图</a></li>
+            <li><a href="#">服务查询</a></li>
+            <li><a href="#">报名体验</a></li>
+            <li><a href="#">创客团队</a></li>
+            <li><a href="#">商家中心</a></li>
         </ul>
-        <div class="dibiao">© 2015-2016 www.jiavva.com 版权所有  浙ICP备15014455号-1</div>
-    </div>
+        <div class="copyright">&copy; 2015-2016 www.jiavva.com 版权所有 浙ICP备15014455号-1</div>
+    </footer>
 </body>
+    <script src="static/script/common.js"></script>
+    <script src="static/script/goodType.js"></script>
+    <script src="static/script/address.js"></script>
     <script src="static/script/index.js"></script>
 
 </html>

@@ -53,6 +53,7 @@ var goodsList = function(){
     var thirdList = document.getElementById("thirdList");
     var listBtn = document.getElementById("goodsList");
     var note = "";
+    var goods = goodType[0].children;
     addEvent(listBtn,"click",function(){
         note = "";
         if(good.style.display == "block"){
@@ -69,7 +70,7 @@ var goodsList = function(){
     });
     for(var i=0;i<goods.length;i++){
         var fLi = document.createElement("li");
-        fLi.innerHTML = goods[i].name;
+        fLi.innerHTML = goods[i].text;
         firstList.appendChild(fLi);
         addEvent(fLi,"click",function(){
             note += this.innerHTML;
@@ -77,19 +78,19 @@ var goodsList = function(){
             //清空二级商品列表
             removeAllChild(secondList);
             //作为三级商品列表向上访问时二级列表的缓存
-            var firstListArray = goods[liNum(this)].sub;
-            for(var j=0;j<goods[liNum(this)].sub.length;j++){
+            var firstListArray = goods[liNum(this)].children;
+            for(var j=0;j<goods[liNum(this)].children.length;j++){
                 var sLi = document.createElement("li");
-                sLi.innerHTML = goods[liNum(this)].sub[j].name;
+                sLi.innerHTML = goods[liNum(this)].children[j].text;
                 secondList.appendChild(sLi);
                 addEvent(sLi,"click",function(){
                      note += "-"+this.innerHTML;
                      goodSelected.innerHTML = note;
                      //清空三级商品列表
                      removeAllChild(thirdList);
-                     for(var k=0;k<firstListArray[liNum(this)].sub.length;k++){
+                     for(var k=0;k<firstListArray[liNum(this)].children.length;k++){
                          var tLi = document.createElement("li");
-                         tLi.innerHTML = firstListArray[liNum(this)].sub[k].name;
+                         tLi.innerHTML = firstListArray[liNum(this)].children[k].text;
                          thirdList.appendChild(tLi);
                          addEvent(tLi,"click",function(){
                              note += "-"+this.innerHTML;
@@ -214,41 +215,5 @@ var rankList = function(){
             }
             this.className = "active";
         });
-    }
-}
-//返回li的序号
-function liNum(li){
-    var lis = li.offsetParent.getElementsByTagName("li");
-    for(var i=0;i<lis.length;i++){
-        if(lis[i]==li){
-            return i;
-        }
-    }
-}
-//删除所有子元素
-function removeAllChild(ul)
-{
-    while(ul.hasChildNodes())
-    {
-        ul.removeChild(ul.firstChild);
-    }
-}
-//为保证IE8下可以使用
-function getElementsByClassName(node, classname) {
-    var a = [];
-    var re = new RegExp('(^| )' + classname + '( |$)');
-    var els = node.getElementsByTagName("*");
-    for (var i = 0, j = els.length; i < j; i++)
-        if (re.test(els[i].className)) a.push(els[i]);
-    return a;
-}
-//事件绑定，兼容所有
-function addEvent(obj,event,fn){
-    if(obj.attachEvent){
-        obj.attachEvent("on"+event,function(){
-            fn.call(obj);
-        });
-    }else{
-        obj.addEventListener(event,fn,false);
     }
 }

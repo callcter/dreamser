@@ -1,4 +1,4 @@
-function onloaded(){
+window.onload = function(){
     carousel();
 }
 
@@ -40,4 +40,9 @@ function carousel(){
         
     },2000);
     
+}
+
+var animate = function(obj,fn,time){
+    var 
+    var timer = setInterval(fn,);
 }

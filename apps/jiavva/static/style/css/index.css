@@ -286,6 +286,7 @@ footer .copyright {
   -o-border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  white-space: nowrap;
 }
 .banner .bannerBox .searchBox .searchInput .searchSelect .input {
   width: 280px;

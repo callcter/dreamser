@@ -5,6 +5,7 @@ function goTop(id){
         document.documentElement.scrollTop = document.body.scrollTop = 0;
     });
 }
+
 //电影目录列表
 function movieList(){
     var cover = document.getElementById("cover");

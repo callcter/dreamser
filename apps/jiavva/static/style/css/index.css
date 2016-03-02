@@ -48,18 +48,18 @@ select {
 .clear {
   clear: both;
 }
-header {
+.header {
   width: 100%;
   height: auto;
   margin: 0;
 }
-header .top {
+.header .top {
   width: 100%;
   height: 30px;
   border-bottom: 1px solid #ddd;
 }
-header .top .top-l,
-header .top .top-r {
+.header .top .top-l,
+.header .top .top-r {
   width: auto;
   height: 30px;
   line-height: 30px;
@@ -67,42 +67,42 @@ header .top .top-r {
   color: #333;
   vertical-align: middle;
 }
-header .top .top-l a,
-header .top .top-r a {
+.header .top .top-l a,
+.header .top .top-r a {
   text-decoration: none;
   color: #333;
 }
-header .top .top-l a.blue,
-header .top .top-r a.blue {
+.header .top .top-l a.blue,
+.header .top .top-r a.blue {
   color: #0d6eb7;
 }
-header .top .top-l {
+.header .top .top-l {
   float: left;
   margin-left: 30px;
 }
-header .top .top-r {
+.header .top .top-r {
   float: right;
   margin-right: 30px;
 }
-header .logo {
+.header .logo {
   width: 1200px;
   height: 90px;
   margin: 0 auto;
 }
-header .logo .logo-l {
+.header .logo .logo-l {
   width: 415px;
   height: 90px;
   float: left;
   margin-left: 0;
 }
-header .logo .logo-r {
+.header .logo .logo-r {
   margin-top: 35px;
   height: 20px;
   float: right;
   margin-right: 50px;
   vertical-align: middle;
 }
-header .logo .logo-r li {
+.header .logo .logo-r li {
   display: inline-block;
   *display: inline;
   zoom: 1;
@@ -111,34 +111,34 @@ header .logo .logo-r li {
   line-height: 20px;
   margin-left: 10px;
 }
-header .logo .logo-r li span {
+.header .logo .logo-r li span {
   display: inline-block;
   *display: inline;
   zoom: 1;
 }
-header .logo .logo-r li span.icon {
+.header .logo .logo-r li span.icon {
   width: 18px;
   height: 18px;
   margin-bottom: -3px;
   margin-left: 2px;
 }
-header .logo .logo-code {
+.header .logo .logo-code {
   float: right;
   width: 64px;
   height: 81px;
   margin-top: 5px;
   margin-right: 0;
 }
-header nav {
+.header .nav {
   width: 100%;
   height: 40px;
   background: #5aa7e1;
 }
-header nav .navi {
+.header .nav .navi {
   width: 1200px;
   margin: 0 auto;
 }
-header nav .navi li {
+.header .nav .navi li {
   list-style: none;
   display: inline-block;
   *display: inline;
@@ -153,23 +153,23 @@ header nav .navi li {
   cursor: pointer;
   margin-left: -3px;
 }
-header nav .navi li.index {
+.header .nav .navi li.index {
   background: #FFA939;
   margin-left: 0;
 }
-header nav .navi li:hover {
+.header .nav .navi li:hover {
   background: #5196ca;
 }
-footer {
+.footer {
   width: 700px;
   margin: 10px auto 20px;
   font-size: 14px;
 }
-footer .anchor {
+.footer .anchor {
   width: 100%;
   margin-bottom: 10px;
 }
-footer .anchor li {
+.footer .anchor li {
   display: inline-block;
   *display: inline;
   zoom: 1;
@@ -181,14 +181,14 @@ footer .anchor li {
   margin-left: -3px;
   text-align: center;
 }
-footer .anchor li a {
+.footer .anchor li a {
   color: #333;
   text-decoration: none;
 }
-footer .anchor li.index {
+.footer .anchor li.index {
   margin-left: 0;
 }
-footer .copyright {
+.footer .copyright {
   width: 100%;
   text-align: center;
 }
@@ -196,7 +196,7 @@ footer .copyright {
   width: 100%;
   height: 370px;
   position: relative;
-  background-image: url(../../image/banner.png);
+  background-image: url(../../image/index/banner.png);
   background-position: center 0;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -447,27 +447,27 @@ footer .copyright {
 .recommendBox .brands li.index {
   margin-left: 2px;
 }
-.hotRoute {
+.recommendRoute {
   width: 1200px;
   margin: 20px auto;
 }
-.hotRoute .title,
-.hotRoute .tab {
+.recommendRoute .title,
+.recommendRoute .tab {
   width: 100%;
   line-height: 35px;
   vertical-align: middle;
   color: #666;
 }
-.hotRoute .title {
+.recommendRoute .title {
   height: 35px;
   font-size: 22px;
 }
-.hotRoute .tab {
+.recommendRoute .tab {
   height: 36px;
   border-bottom: 1px solid #ddd;
   font-size: 16px;
 }
-.hotRoute .tab li {
+.recommendRoute .tab li {
   display: inline-block;
   *display: inline;
   zoom: 1;
@@ -478,16 +478,16 @@ footer .copyright {
   cursor: pointer;
   background: #fff;
 }
-.hotRoute .tab li.active {
+.recommendRoute .tab li.active {
   border-top: 1px solid #f00;
   margin-bottom: 2px solid #fff;
 }
-.hotRoute .routeList {
+.recommendRoute .routeList {
   margin-top: 20px;
   width: 100%;
   height: auto;
 }
-.hotRoute .routeList li {
+.recommendRoute .routeList li {
   display: inline-block;
   *display: inline;
   zoom: 1;
@@ -498,7 +498,92 @@ footer .copyright {
   text-align: center;
   vertical-align: middle;
 }
-.hotRoute .routeList li .num {
+.recommendRoute .routeList li .num {
   color: #ECAF72;
   font-style: italic;
+}
+.brandWall {
+  width: 1200px;
+  margin: 0 auto;
+}
+.brandWall .title {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  vertical-align: middle;
+  font-size: 22px;
+  color: #666;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f00;
+}
+.brandWall .brands {
+  width: 100%;
+  height: auto;
+}
+.brandWall .brands li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: 218px;
+  height: 98px;
+  border: 1px solid #ddd;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.brandWall .brands li.first {
+  margin-left: 0;
+}
+.logisticWall {
+  width: 1200px;
+  overflow: hidden;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+}
+.logisticWall .title {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  vertical-align: middle;
+  font-size: 22px;
+  color: #666;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f00;
+}
+.logisticWall .carouselContainer {
+  width: 1120px;
+  height: 100px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.logisticWall .carouselContainer .carousel {
+  width: 2230px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.logisticWall .carouselContainer .carousel li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: 218px;
+  height: 98px;
+  margin-left: 3px;
+}
+.logisticWall .prevBtn,
+.logisticWall .nextBtn {
+  position: absolute;
+  width: 35px;
+  height: 100px;
+  top: 56px;
+  opacity: 1;
+  z-index: 10;
+}
+.logisticWall .prevBtn {
+  left: 0;
+}
+.logisticWall .nextBtn {
+  right: 0;
 }

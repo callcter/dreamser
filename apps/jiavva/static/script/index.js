@@ -5,6 +5,7 @@ window.onload = function(){
     selectList2();
     selectList3();
     selectList4();
+    carousel();
 }
 //首页查询框
 var searchBox = function(){
@@ -399,4 +400,19 @@ var selectList4 = function(){
             this.className = "";
         });
     }
+}
+
+var carousel = function(){
+    var container = document.getElementById("carousel");
+    var pics = container.getElementsByTagName("li");
+    var index = 0;
+    var autoPlay = setInterval(function(){
+        if(index==pics.length-5){
+            index = 0;
+        }
+        $("#carousel").animate({
+            left: -pics[index].offsetLeft+"px"
+        },"slow");
+        index++;
+    },2000);
 }

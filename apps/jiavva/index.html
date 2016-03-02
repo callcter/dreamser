@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    <div class="header">
         <div class="top">
             <div class="top-l"><a href="#" class="blue">首页</a></div>
             <div class="top-l"><a href="#">商家入驻</a></div>
@@ -50,7 +50,7 @@
             </ul>
             <div class="clear"></div>
         </div>
-        <nav>
+        <div class="nav">
             <ul class="navi">
                 <li class="index">首页</li>
                 <li>服务查询</li>
@@ -60,8 +60,8 @@
                 <li>会员中心</li>
                 <li>如何下单</li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </div>
     <div class="banner">
         <div class="bannerBox">
             <div class="searchBox">
@@ -175,14 +175,14 @@
         </div>
     </div>
     <div class="servicePic">
-        <img src="static/image/servicePic.png">
+        <img src="static/image/index/servicePic.png">
     </div>
     <div class="recommendBox">
         <div class="title">优质物流商推荐</div>
         <ul class="brands">
             <li class="index">
                 <div class="brandLogo">
-                    <img src="static/image/brand1.png">
+                    <img src="static/image/index/brand1.png">
                 </div>
                 <div class="brandDetail">
                     <p>德邦物流</p>
@@ -193,7 +193,7 @@
             </li>
             <li>
                 <div class="brandLogo">
-                    <img src="static/image/brand2.png">
+                    <img src="static/image/index/brand2.png">
                 </div>
                 <div class="brandDetail">
                     <p>德邦物流</p>
@@ -204,7 +204,7 @@
             </li>
             <li>
                 <div class="brandLogo">
-                    <img src="static/image/brand3.png">
+                    <img src="static/image/index/brand3.png">
                 </div>
                 <div class="brandDetail">
                     <p>德邦物流</p>
@@ -215,7 +215,7 @@
             </li>
             <li>
                 <div class="brandLogo">
-                    <img src="static/image/brand4.png">
+                    <img src="static/image/index/brand4.png">
                 </div>
                 <div class="brandDetail">
                     <p>德邦物流</p>
@@ -232,7 +232,7 @@
         <ul class="brands">
             <li class="index">
                 <div class="brandLogo">
-                    <img src="static/image/brand1.png">
+                    <img src="static/image/index/brand1.png">
                 </div>
                 <div class="brandDetail">
                     <p>德邦物流</p>
@@ -243,7 +243,7 @@
             </li>
             <li>
                 <div class="brandLogo">
-                    <img src="static/image/brand2.png">
+                    <img src="static/image/index/brand2.png">
                 </div>
                 <div class="brandDetail">
                     <p>德邦物流</p>
@@ -254,7 +254,7 @@
             </li>
             <li>
                 <div class="brandLogo">
-                    <img src="static/image/brand3.png">
+                    <img src="static/image/index/brand3.png">
                 </div>
                 <div class="brandDetail">
                     <p>德邦物流</p>
@@ -265,7 +265,7 @@
             </li>
             <li>
                 <div class="brandLogo">
-                    <img src="static/image/brand4.png">
+                    <img src="static/image/index/brand4.png">
                 </div>
                 <div class="brandDetail">
                     <p>德邦物流</p>
@@ -277,7 +277,7 @@
             
         </ul>
     </div>
-    <div class="hotRoute">
+    <div class="recommendRoute">
         <div class="title">优质线路推荐</div>
         <ul class="tab">
             <li class="active">青岛</li><li>东莞</li><li>佛山</li>
@@ -300,7 +300,57 @@
             <li>青岛 → 佛山&nbsp;&nbsp;&nbsp;<span class="num">0.44</span> 元/公斤&nbsp;&nbsp;&nbsp;<span class="num">120</span> 元/立方</li>
         </ul>
     </div>
-    <footer>
+    <div class="brandWall">
+        <div class="title">合作品牌墙</div>
+        <ul class="brands">
+            <li class="first"><img src="static/image/index/brand-wall1.png"></li>
+            <li><img src="static/image/index/brand-wall2.png"></li>
+            <li><img src="static/image/index/brand-wall3.png"></li>
+            <li><img src="static/image/index/brand-wall4.png"></li>
+            <li><img src="static/image/index/brand-wall5.png"></li>
+            <li class="first"><img src="static/image/index/brand-wall6.png"></li>
+            <li><img src="static/image/index/brand-wall7.png"></li>
+            <li><img src="static/image/index/brand-wall8.png"></li>
+            <li><img src="static/image/index/brand-wall9.png"></li>
+            <li><img src="static/image/index/brand-wall10.png"></li>
+            <li class="first"><img src="static/image/index/brand-wall11.png"></li>
+            <li><img src="static/image/index/brand-wall12.png"></li>
+            <li><img src="static/image/index/brand-wall13.png"></li>
+            <li><img src="static/image/index/brand-wall14.png"></li>
+            <li><img src="static/image/index/brand-wall15.png"></li>
+        </ul>
+    </div>
+    <div class="logisticWall">
+        <div class="title">合作物流商</div>
+        <div class="prevBtn" id="prevBtn">
+            <img src="static/image/index/prevBtn.png">
+        </div>
+        <div class="nextBtn" id="nextBtn">
+            <img src="static/image/index/nextBtn.png">
+        </div>
+        <div class="carouselContainer">
+            <ul class="carousel" id="carousel">
+                <li><img src="static/image/index/brand-wall1.png"></li>
+                <li><img src="static/image/index/brand-wall2.png"></li>
+                <li><img src="static/image/index/brand-wall3.png"></li>
+                <li><img src="static/image/index/brand-wall4.png"></li>
+                <li><img src="static/image/index/brand-wall5.png"></li>
+                <li><img src="static/image/index/brand-wall6.png"></li>
+                <li><img src="static/image/index/brand-wall7.png"></li>
+                <li><img src="static/image/index/brand-wall8.png"></li>
+                <li><img src="static/image/index/brand-wall9.png"></li>
+                <li><img src="static/image/index/brand-wall10.png"></li>
+            </ul>
+        </div>
+<!--
+        <ul class="indexs">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
+-->
+    </div>
+    <div class="footer">
         <ul class="anchor">
             <li><a href="#">关于我们</a></li>
             <li><a href="#">业务全景</a></li>
@@ -312,8 +362,9 @@
             <li><a href="#">商家中心</a></li>
         </ul>
         <div class="copyright">&copy; 2015-2016 www.jiavva.com 版权所有 浙ICP备15014455号-1</div>
-    </footer>
+    </div>
 </body>
+    <script src="static/script/jquery.js"></script>
     <script src="static/script/common.js"></script>
     <script src="static/script/goodType.js"></script>
     <script src="static/script/address.js"></script>

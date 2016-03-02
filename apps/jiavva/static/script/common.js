@@ -34,3 +34,4 @@ function addEvent(obj,event,fn){
         obj.addEventListener(event,fn,false);
     }
 }
+//轮播框，需依赖jquery animate模块

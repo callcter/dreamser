@@ -42,7 +42,7 @@ function carousel(){
     
 }
 
-var animate = function(obj,fn,time){
-    var 
-    var timer = setInterval(fn,);
-}
+//var animate = function(obj,fn,time){
+//    var 
+//    var timer = setInterval(fn,);
+//}

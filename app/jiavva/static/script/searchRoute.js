@@ -1,9 +1,10 @@
 window.onload = function(){
     checkBox();
-    priceList();
+//    priceList();
     selectList();
     goodsList();
     rankList();
+    routeCreate();
 }
 
 //服务类型选择下拉列表样式自定义
@@ -182,15 +183,74 @@ var checkBox = function(){
         });
     }
 }
+//循环生成路线
+var routeCreate = function(){
+    var content = document.getElementById("content");
+    var list = "<li><ul class='listDetail'>"+
+            "<li><div class='d1'><p>"+
+            "一智通家具"+
+            "</p><ul class='icon'><li><img src='../static/image/iconfont-"+
+            "xingji"+
+            ".png'></li><li><img src='../static/image/iconfont-"+
+            "xingji"+
+            ".png'></li><li><img src='../static/image/iconfont-"+
+            "xingji"+
+            ".png'></li><li><img src='../static/image/iconfont-"+
+            "xingji"+
+            ".png'></li><li><img src='../static/image/iconfont-"+
+            "iconxingjikongxin"+
+            ".png'></li></ul></div><div class='d2'><p class='route'>从："+
+            "佛山市-顺德区"+
+            "（<a href='#'>查看网点</a>）</p><p class='route'>从："+
+            "长沙市-岳麓区"+
+            "（<a href='#'>查看网点</a>）</p><p class='icons'>"+
+            "<span><img src='../static/image/baoxian.png'></span>"+
+            "<span><img src='../static/image/tiqu.png'></span>"+
+            "<span><img src='../static/image/songzhuang.png'>"+
+            "</span><span><img src='../static/image/ruanti.png'></span>"+
+            "<span><img src='../static/image/dingzhi.png'></span>"+
+            "<span><img src='../static/image/banshi.png'></span>"+
+            "<span><img src='../static/image/shimu.png'></span>"+
+            "</p><p class='type orange'>"+
+            "送装一体"+
+            "</p></div><div class='d3'><p class='time'>物流："+
+            "1-3天"+
+            "</p><p class='time'>安装："+
+            "1-2天"+
+            "</p><p class='type orange'>"+
+            "零担，普通汽运"+
+            "</p></div><div class='d4'><p>轻货：￥"+
+            "100"+
+            " /立方米</p><p>重货：￥"+
+            "120"+
+            " /立方米</p><p>配送：￥"+
+            "90"+
+            " /立方米</p><p>安装：￥"+
+            "30"+
+            " /组</p><p>保底：￥"+
+            "60"+
+            " /票</p></div><div class='d5'><div class='buIcon'><img src='../static/image/searchRoute/butie.png'></div><span>"+
+            "20%"+
+            "</span></div><div class='d6'><p>已成交<span class='redWord'>"+
+            "150"+
+            "</span>笔</p><p><a href='#'>"+
+            "33"+
+            "条评价</a></p></div></li>"+"</ul><div class='listSummary'><div class='s1'><p>预估费用：<span class='redWord'>￥</span><span class='priceSum'>"+
+            "290"+
+            "</span></p></div><div class='s2'><div class='confirmBtn'>下单</div><div class='collect'><div id='collected'><div class='collectIcon'><img src='../static/image/iconfont-"+
+            "shoucang-wancheng"+
+            ".png'></div><span>"+
+            " 已收藏"+
+            "</span></div></div></div></div>"+
+            "<div class='hotroute'><img src='../static/image/searchRoute/hotroute.png'></div></li>";
+    content.innerHTML = list;
+    
+}
 //评估费用详细弹出框
 var priceList = function(){
     var tanchu = document.getElementById("priceDetailBox");
     var top = 0;
-//    if(document.getElementsByClassName("priceSum")){
-//        var priceSums = document.getElementsByClassName("priceSum");
-//    }else{
-        var priceSums = getElementsByClassName(document.body,'priceSum');
-//    }
+    var priceSums = getElementsByClassName(document.body,'priceSum');
     for(var i=0;i<priceSums.length;i++){
         addEvent(priceSums[i],"mouseover",function(event){
             top = this.offsetParent.offsetParent.offsetParent.offsetTop+this.offsetParent.offsetParent.offsetParent.offsetHeight/2+this.offsetParent.offsetHeight/2-5;
@@ -217,3 +277,96 @@ var rankList = function(){
         });
     }
 }
+//后天链接，动态生成路线列表
+(function($){
+    var data = new Object();
+    switch($("#selected").text()){
+        case "异地配送":
+            data.serviceType = "t";
+            break;
+        case "异地送装":
+            data.serviceType = "t";
+            break;
+        case "同城配送":
+            data.serviceType = "t";
+            break;
+        case "同城送装":
+            data.serviceType = "t";
+            break;
+        case "安装":
+            data.serviceType = "t";
+            break;
+        case "维修":
+            data.serviceType = "t";
+            break;
+    }
+    var url = "";
+    var dataJson = JSON.stringify(data);
+    $.ajax({
+        url: url,
+        data: json,
+        dataType: "json",
+        type: "POST",
+        success: function(result){
+            var obj = eval("("+result+")");
+            
+            "<ul class='listDetail'>"+
+            "<li><div class='d1'><p>"+
+            "一智通家具"+
+            "</p><ul class='icon'><li><img src='../static/image/iconfont-"+
+            "xingji"+
+            ".png'></li><li><img src='../static/image/iconfont-"+
+            "xingji"+
+            ".png'></li><li><img src='../static/image/iconfont-"+
+            "xingji"+
+            ".png'></li><li><img src='../static/image/iconfont-"+
+            "xingji"+
+            ".png'></li><li><img src='../static/image/iconfont-"+
+            "iconxingjikongxin"+
+            ".png'></li></ul></div><div class='d2'><p class='route'>从："+
+            "佛山市-顺德区"+
+            "（<a href='#'>查看网点</a>）</p><p class='route'>从："+
+            "长沙市-岳麓区"+
+            "（<a href='#'>查看网点</a>）</p><p class='icons'>"+
+            "<span><img src='../static/image/baoxian.png'></span>"+
+            "<span><img src='../static/image/tiqu.png'></span>"+
+            "<span><img src='../static/image/songzhuang.png'>"+
+            "</span><span><img src='../static/image/ruanti.png'></span>"+
+            "<span><img src='../static/image/dingzhi.png'></span>"+
+            "<span><img src='../static/image/banshi.png'></span>"+
+            "<span><img src='../static/image/shimu.png'></span>"+
+            "</p><p class='type orange'>"+
+            "送装一体"+
+            "</p></div><div class='d3'><p class='time'>物流："+
+            "1-3天"+
+            "</p><p class='time'>安装："+
+            "1-2天"+
+            "</p><p class='type orange'>"+
+            "零担，普通汽运"+
+            "</p></div><div class='d4'><p>轻货：￥"+
+            "100"+
+            " /立方米</p><p>重货：￥"+
+            "120"+
+            " /立方米</p><p>配送：￥"+
+            "90"+
+            " /立方米</p><p>安装：￥"+
+            "30"+
+            " /组</p><p>保底：￥"+
+            "60"+
+            " /票</p></div><div class='d5'><div class='buIcon'><img src='../static/image/searchRoute/butie.png'></div><span>"+
+            "20%"+
+            "</span></div><div class='d6'><p>已成交<span class='redWord'>"+
+            "150"+
+            "</span>笔</p><p><a href='#'>"+
+            "33"+
+            "条评价</a></p></div></li>"+"</ul><div class='listSummary'><div class='s1'><p>预估费用：<span class='redWord'>￥</span><span class='priceSum'>"+
+            "290"+
+            "</span></p></div><div class='s2'><div class='confirmBtn'>下单</div><div class='collect'><div id='collected'><div class='collectIcon'><img src='../static/image/iconfont-"+
+            "shoucang-wancheng"+
+            ".png'></div><span>"+
+            "已收藏"+
+            "</span></div></div></div></div>"+
+            "<div class='hotroute'><img src='../static/image/searchRoute/hotroute.png'></div>";
+        }
+    });
+})(jquery);

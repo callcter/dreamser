@@ -388,6 +388,19 @@ select {
   background: #26b4d3;
   color: #fff;
 }
+.banner .videoBoxBack {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.3;
+}
+.banner .videoBoxBack .videoBox {
+  width: 800px;
+  height: 600px;
+}
 .servicePic {
   width: 1200px;
   height: auto;

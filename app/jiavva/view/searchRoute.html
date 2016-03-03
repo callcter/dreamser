@@ -71,9 +71,10 @@
                     </div>
                 </div>
                 <ul id="selectList" class="selectList">
-                    <li>送装</li>
-                    <li>物流</li>
-                    <li>配送</li>
+                    <li>异地配送</li>
+                    <li>异地送装</li>
+                    <li>同城配送</li>
+                    <li>同城送装</li>
                     <li>安装</li>
                     <li>维修</li>
                 </ul>
@@ -81,18 +82,42 @@
             <div class="route">
                 <span>&nbsp;&nbsp;&nbsp;始发地</span>
                 <div class="startP" id="startPlaceBox">
-                    <input type="text" id="startPlace" placeholder="请输入始发地点">
+                    <span id="departure">请输入始发地点</span>
                     <div class="pIcon">
                         <img src="../static/image/iconfont-dizhi.png">
                     </div>
                 </div>
                 <span>&nbsp;&nbsp;&nbsp;目的地</span>
-                <div class="startP">
-                    <input type="text" id="endPlace" placeholder="请输入目的地点">
+                <div class="startP" id="endPlaceBox">
+                    <span id="destination">请输入目的地点</span>
                     <div class="pIcon">
                         <img src="../static/image/iconfont-dizhi.png">
                     </div>
                 </div>
+<!--
+                <div class="selectBox" id="selectBox1">
+                    <p class="selectTip">请选择始发地</p>
+                    <ul class="selectTab" id="selectTab1">
+                        <li>省</li>
+                        <li>市</li>
+                        <li>县区</li>
+                    </ul>
+                    <ul class="selectList" id="selectList10"></ul>
+                    <ul class="selectList" id="selectList11"></ul>
+                    <ul class="selectList" id="selectList12"></ul>
+                </div>
+                <div class="selectBox" id="selectBox2">
+                    <p class="selectTip">请选择目的地</p>
+                    <ul class="selectTab" id="selectTab2">
+                        <li>省</li>
+                        <li>市</li>
+                        <li>县区</li>
+                    </ul>
+                    <ul class="selectList" id="selectList20"></ul>
+                    <ul class="selectList" id="selectList21"></ul>
+                    <ul class="selectList" id="selectList22"></ul>
+                </div>
+-->
             </div>
             <div class="searchBtn">搜索</div>
         </div>
@@ -163,247 +188,8 @@
                 <span class="num">10</span> 条线路方案
             </div>
         </div>
+<!--        动态生成路线查询结果列表-->
         <ul id="content">
-            <li>
-                <ul class="listDetail">
-                    <li>
-                        <div class="d1">
-                            <p>一智通家具</p>
-                            <ul class="icon">
-                                <li><img src="../static/image/iconfont-xingji.png"></li>
-                                <li><img src="../static/image/iconfont-xingji.png"></li>
-                                <li><img src="../static/image/iconfont-xingji.png"></li>
-                                <li><img src="../static/image/iconfont-xingji.png"></li>
-                                <li><img src="../static/image/iconfont-iconxingjikongxin.png"></li>
-                            </ul>
-                        </div>
-                        <div class="d2">
-                            <p class="route">
-                                从：佛山市-顺德区（<a href="#">查看网点</a>）
-                            </p>
-                            <p class="route">
-                                从：长沙市-岳麓区（<a href="#">查看网点</a>）
-                            </p>
-                            <p class="icons">
-                                <span>
-                                    <img src="../static/image/baoxian.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/tiqu.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/songzhuang.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/ruanti.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/dingzhi.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/banshi.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/shimu.png">
-                                </span>
-                            </p>
-                            <p class="type orange">送装一体</p>
-                        </div>
-                        <div class="d3">
-                            <p class="time">物流：1-3天</p>
-                            <p class="time">安装：1-2天</p>
-                            <p class="type orange">零担，普通汽运</p>
-                        </div>
-                        <div class="d4">
-                            <p>轻泡：￥100/立方米</p>
-                            <p>重泡：￥120/立方米</p>
-                            <p>配送：￥90/立方米</p>
-                            <p>安装：￥30/组</p>
-                            <p>保底：￥60/票</p>
-                        </div>
-                        <div class="d5">
-                            <div class="buIcon">
-                                <img src="../static/image/searchRoute/butie.png">
-                            </div>
-                            <span>20%</span>
-                        </div>
-                        <div class="d6">
-                            <p>已成交<span class="redWord">150</span>笔</p>
-                            <p><a href="#">33条评价</a></p>
-                        </div>
-                    </li>
-                </ul>
-                <div class="listSummary">
-                    <div class="s1">
-                        <p>
-                            预估费用：<span class="redWord">￥</span><span class="priceSum">290</span>
-                        </p>
-                    </div>
-                    <div class="s2">
-                        <div class="confirmBtn">下单</div>
-                        <div class="collect">
-                            <div id="collected">
-                                <div class="collectIcon">
-                                    <img src="../static/image/iconfont-shoucang-wancheng.png">
-                                </div>
-                                <span>已收藏</span>
-                            </div>
-                            <div id="nocollect"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hotroute">
-                    <img src="../static/image/searchRoute/hotroute.png">
-                </div>
-            </li>
-            <li>
-                <ul class="listDetail">
-                    <li>
-                        <div class="d1">
-                            <p class="name">一智通家具</p>
-                            <ul class="icon">
-                                <li><img src="../static/image/iconfont-xingji.png"></li>
-                                <li><img src="../static/image/iconfont-xingji.png"></li>
-                                <li><img src="../static/image/iconfont-xingji.png"></li>
-                                <li><img src="../static/image/iconfont-xingji.png"></li>
-                                <li><img src="../static/image/iconfont-iconxingjikongxin.png"></li>
-                            </ul>
-                        </div>
-                        <div class="d2">
-                            <p class="route">
-                                从：佛山市-顺德区（<a href="#">查看网点</a>）
-                            </p>
-                            <p class="route">
-                                从：长沙市-岳麓区（<a href="#">查看网点</a>）
-                            </p>
-                            <p class="icons">
-                                <span>
-                                    <img src="../static/image/baoxian.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/tiqu.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/songzhuang.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/ruanti.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/dingzhi.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/banshi.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/shimu.png">
-                                </span>
-                            </p>
-                            <p class="type orange">送装一体</p>
-                        </div>
-                        <div class="d3">
-                            <p class="time">物流：1-3天</p>
-                            <p class="type orange">零担，普通汽运</p>
-
-                        </div>
-                        <div class="d4">
-                            <p>轻泡：￥100/立方米</p>
-                            <p>重泡：￥120/立方米</p>
-                        </div>
-                        <div class="d5">
-                            <div class="buIcon">
-                                <img src="../static/image/searchRoute/butie.png">
-                            </div>
-                            <span>20%</span>
-                        </div>
-                        <div class="d6">
-                            <p>已成交<span class="redWord">150</span>笔</p>
-                            <p><a href="#">33条评价</a></p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="d1">
-                            <p class="name">一智通家具</p>
-                            <ul class="icon">
-                                <li><img src="../static/image/iconfont-xingji.png"></li>
-                                <li><img src="../static/image/iconfont-xingji.png"></li>
-                                <li><img src="../static/image/iconfont-xingji.png"></li>
-                                <li><img src="../static/image/iconfont-xingji.png"></li>
-                                <li><img src="../static/image/iconfont-iconxingjikongxin.png"></li>
-                            </ul>
-                        </div>
-                        <div class="d2">
-                            <p class="route">
-                                从：佛山市-顺德区（<a href="#">查看网点</a>）
-                            </p>
-                            <p class="route">
-                                从：长沙市-岳麓区（<a href="#">查看网点</a>）
-                            </p>
-                            <p class="icons">
-                                <span>
-                                    <img src="../static/image/baoxian.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/tiqu.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/songzhuang.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/ruanti.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/dingzhi.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/banshi.png">
-                                </span>
-                                <span>
-                                    <img src="../static/image/shimu.png">
-                                </span>
-                            </p>
-                            <p class="type orange">送装一体</p>
-                        </div>
-                        <div class="d3">
-                            <p class="time">安装：1-2天</p>
-                            <p class="type orange">零担，普通汽运</p>
-                        </div>
-                        <div class="d4">
-                            <p>配送：￥90/立方米</p>
-                            <p>安装：￥30/组</p>
-                            <p>保底：￥60/票</p>
-                        </div>
-                        <div class="d5">
-                            <div class="buIcon">
-                                <img src="../static/image/searchRoute/butie.png">
-                            </div>
-                            <span>20%</span>
-                        </div>
-                        <div class="d6">
-                            <p>已成交<span class="redWord">150</span>笔</p>
-                            <p><a href="#">33条评价</a></p>
-                        </div>
-                    </li>
-                </ul>
-                <div class="listSummary">
-                    <div class="s1">
-                        预估费用：<span class="redWord">￥</span><span class="priceSum">290</span>
-                    </div>
-                    <div class="s2">
-                        <div class="confirmBtn">下单</div>
-                        <div class="collect">
-                            <div id="collected">
-                                <div class="collectIcon">
-                                    <img src="../static/image/iconfont-shoucang.png">
-                                </div>
-                                <span>未收藏</span>
-                            </div>
-                            <div id="nocollect"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </li>
         </ul>
         <div class="priceDetailBox" id="priceDetailBox">
             <div class="jiao">
@@ -442,7 +228,9 @@
         <div class="copyright">&copy; 2015-2016 www.jiavva.com 版权所有 浙ICP备15014455号-1</div>
     </div>
 </body>
+<script src="../static/script/jquery.js"></script>
 <script src="../static/script/common.js"></script>
+<script src="../static/script/address.js"></script>
 <script src="../static/script/goodType.js"></script>
 <script src="../static/script/searchRoute.js"></script>
 

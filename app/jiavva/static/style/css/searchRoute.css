@@ -204,7 +204,7 @@ select {
   background: #26B4D3;
   border: 1px solid #0896B5;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 14px;
   line-height: 30px;
   vertical-align: middle;
 }
@@ -223,7 +223,7 @@ select {
   position: relative;
 }
 .search .condition .serviceType .selectBox {
-  width: 60px;
+  width: 90px;
   height: 30px;
   padding-left: 5px;
   padding-right: 5px;
@@ -233,7 +233,7 @@ select {
   background: #fff;
   margin-bottom: -10px;
   margin-left: 2px;
-  font-size: 0.7rem;
+  font-size: 14px;
   color: #999;
   cursor: pointer;
   position: relative;
@@ -254,7 +254,7 @@ select {
   z-index: 10;
   display: none;
   height: auto;
-  width: 70px;
+  width: 100px;
   right: 0;
   background: #fff;
 }
@@ -270,6 +270,7 @@ select {
   color: #fff;
 }
 .search .condition .route .startP {
+  width: 300px;
   height: 24px;
   display: inline-block;
   *display: inline;
@@ -289,16 +290,77 @@ select {
   zoom: 1;
   margin-bottom: -4px;
 }
-.search .condition .route input {
-  height: 20px;
-  width: 200px;
-  padding: 0;
-  outline: none;
-  border: none;
-  color: #999;
-}
 .search .condition .route .disabled {
   background: #EBEBE4;
+}
+.search .condition .route .selectBox {
+  width: 310px;
+  height: auto;
+  font-size: 12px;
+  line-height: 25px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  background: #fff;
+  position: absolute;
+  top: 32px;
+  left: 87px;
+  display: none;
+  z-index: 10;
+}
+.search .condition .route .selectBox .selectTip {
+  height: 25px;
+  width: auto;
+  padding-left: 5px;
+}
+.search .condition .route .selectBox .selectTab {
+  width: auto;
+  height: 25px;
+  border-bottom: 1px solid #ddd;
+  padding-left: 10px;
+}
+.search .condition .route .selectBox .selectTab li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  list-style: none;
+  height: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.search .condition .route .selectBox .selectTab li.active {
+  border-bottom: 1px solid #26b4d3;
+  color: #26b4d3;
+}
+.search .condition .route .selectBox .selectList {
+  position: relative;
+  margin-top: 2px;
+  margin-left: 10px;
+  width: 290px;
+  height: auto;
+  background: #fff;
+  display: none;
+}
+.search .condition .route .selectBox .selectList li {
+  list-style: none;
+  height: 20px;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: auto;
+  white-space: nowrap;
+  padding: 0 10px;
+  line-height: 20px;
+  vertical-align: middle;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.search .condition .route .selectBox .selectList li.activeT {
+  background: #26b4d3;
+  color: #fff;
 }
 .search .condition .searchBtn {
   width: 80px;
@@ -531,7 +593,7 @@ select {
   position: relative;
   width: 100%;
   height: auto;
-  background-color: #F2F9FD;
+  background-color: #fff;
   border-bottom: 2px solid #258FAA;
 }
 .list li .listDetail {
@@ -710,6 +772,9 @@ select {
   left: 0;
   width: 75px;
   height: 25px;
+}
+.list li:hover {
+  background-color: #F2F9FD;
 }
 .list .priceDetailBox {
   width: 120px;

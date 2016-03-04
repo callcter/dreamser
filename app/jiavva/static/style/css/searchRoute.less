@@ -35,7 +35,7 @@
                 margin-bottom: -10px;
                 margin-left: 2px;
                 .fontSize(0.7);
-                color: #999;
+                color: #666;
                 cursor: pointer;
                 position: relative;
                 .xlIcon{
@@ -70,21 +70,27 @@
             }
         }
         .route{
+            position: relative;
             .startP{
                 width: 300px;
                 height: 24px;
                 .displayIB;
                 background: #fff;
+                color: #666;
                 padding-right: 5px;
                 padding-left: 5px;
                 padding-bottom: 5px;
                 margin-left: 3px;
+                position: relative;
                 .pIcon{
                     width: 14px;
                     height: 18px;
                     line-height: 18px;
                     .displayIB;
                     margin-bottom: -4px;
+                    right: 5px;
+                    margin-top: 5px;
+                    position: absolute;
                 }
             }
             .disabled{
@@ -99,6 +105,7 @@
                 border: 1px solid #ddd;
                 background: #fff;
                 position: absolute;
+                color: #999;
                 top: 32px;
                 left: 87px;
                 display: none;
@@ -113,6 +120,7 @@
                     height: 25px;
                     border-bottom: 1px solid #ddd;
                     padding-left: 10px;
+                    
                     li{
                         .displayIB;
                         list-style: none;
@@ -132,6 +140,7 @@
                     width: 290px;
                     height: auto;
                     background: #fff;
+                    color: #999;
                     display: none;
                     li{
                         list-style: none;
@@ -183,7 +192,7 @@
             .displayIB;
             position: relative;
             .goodBox{
-                width: 230px;
+                width: 250px;
                 .displayIB;
                 border: 1px solid #ddd;
                 padding-left: 5px;
@@ -196,29 +205,31 @@
                     .displayIB;
                 }
             }
-            .goods{
-                width: 240px;
-                height: 200px;
+            .selectBox{
+                width: 260px;
+                height: auto;
                 .fontSize(0.6);
                 line-height: 25px;
                 vertical-align: middle;
                 border: 1px solid #ddd;
                 background: #fff;
                 position: absolute;
+                color: #999;
                 top: 32px;
                 left: 87px;
                 display: none;
                 z-index: 10;
-                .tip{
+                .selectTip{
                     height: 25px;
                     width: auto;
                     padding-left: 5px;
                 }
-                .tab{
+                .selectTab{
                     width: auto;
                     height: 25px;
                     border-bottom: 1px solid #ddd;
                     padding-left: 10px;
+                    
                     li{
                         .displayIB;
                         list-style: none;
@@ -226,18 +237,19 @@
                         padding-left: 5px;
                         padding-right: 5px;
                     }
-                    li.activeTab{
+                    li.active{
                         border-bottom: 1px solid #26b4d3;
                         color: #26b4d3;
                     }
                 }
-                .firstList,.secondList,.thirdList{
-                    position: absolute;
-                    top: 52px;
-                    left: 10px;
-                    width: 220px;
+                .selectList{
+                    position: relative;
+                    margin-top: 2px;
+                    margin-left: 10px;
+                    width: 240px;
                     height: auto;
                     background: #fff;
+                    color: #999;
                     display: none;
                     li{
                         list-style: none;

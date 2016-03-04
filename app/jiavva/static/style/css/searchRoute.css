@@ -234,7 +234,7 @@ select {
   margin-bottom: -10px;
   margin-left: 2px;
   font-size: 14px;
-  color: #999;
+  color: #666;
   cursor: pointer;
   position: relative;
 }
@@ -269,6 +269,9 @@ select {
   background: #26b4d3;
   color: #fff;
 }
+.search .condition .route {
+  position: relative;
+}
 .search .condition .route .startP {
   width: 300px;
   height: 24px;
@@ -276,10 +279,12 @@ select {
   *display: inline;
   zoom: 1;
   background: #fff;
+  color: #666;
   padding-right: 5px;
   padding-left: 5px;
   padding-bottom: 5px;
   margin-left: 3px;
+  position: relative;
 }
 .search .condition .route .startP .pIcon {
   width: 14px;
@@ -289,6 +294,9 @@ select {
   *display: inline;
   zoom: 1;
   margin-bottom: -4px;
+  right: 5px;
+  margin-top: 5px;
+  position: absolute;
 }
 .search .condition .route .disabled {
   background: #EBEBE4;
@@ -302,6 +310,7 @@ select {
   border: 1px solid #ddd;
   background: #fff;
   position: absolute;
+  color: #999;
   top: 32px;
   left: 87px;
   display: none;
@@ -338,6 +347,7 @@ select {
   width: 290px;
   height: auto;
   background: #fff;
+  color: #999;
   display: none;
 }
 .search .condition .route .selectBox .selectList li {
@@ -400,7 +410,7 @@ select {
   position: relative;
 }
 .search .options .type .goodBox {
-  width: 230px;
+  width: 250px;
   display: inline-block;
   *display: inline;
   zoom: 1;
@@ -417,32 +427,33 @@ select {
   *display: inline;
   zoom: 1;
 }
-.search .options .type .goods {
-  width: 240px;
-  height: 200px;
+.search .options .type .selectBox {
+  width: 260px;
+  height: auto;
   font-size: 12px;
   line-height: 25px;
   vertical-align: middle;
   border: 1px solid #ddd;
   background: #fff;
   position: absolute;
+  color: #999;
   top: 32px;
   left: 87px;
   display: none;
   z-index: 10;
 }
-.search .options .type .goods .tip {
+.search .options .type .selectBox .selectTip {
   height: 25px;
   width: auto;
   padding-left: 5px;
 }
-.search .options .type .goods .tab {
+.search .options .type .selectBox .selectTab {
   width: auto;
   height: 25px;
   border-bottom: 1px solid #ddd;
   padding-left: 10px;
 }
-.search .options .type .goods .tab li {
+.search .options .type .selectBox .selectTab li {
   display: inline-block;
   *display: inline;
   zoom: 1;
@@ -451,24 +462,21 @@ select {
   padding-left: 5px;
   padding-right: 5px;
 }
-.search .options .type .goods .tab li.activeTab {
+.search .options .type .selectBox .selectTab li.active {
   border-bottom: 1px solid #26b4d3;
   color: #26b4d3;
 }
-.search .options .type .goods .firstList,
-.search .options .type .goods .secondList,
-.search .options .type .goods .thirdList {
-  position: absolute;
-  top: 52px;
-  left: 10px;
-  width: 220px;
+.search .options .type .selectBox .selectList {
+  position: relative;
+  margin-top: 2px;
+  margin-left: 10px;
+  width: 240px;
   height: auto;
   background: #fff;
+  color: #999;
   display: none;
 }
-.search .options .type .goods .firstList li,
-.search .options .type .goods .secondList li,
-.search .options .type .goods .thirdList li {
+.search .options .type .selectBox .selectList li {
   list-style: none;
   height: 20px;
   display: inline-block;
@@ -486,9 +494,7 @@ select {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-.search .options .type .goods .firstList li.activeT,
-.search .options .type .goods .secondList li.activeT,
-.search .options .type .goods .thirdList li.activeT {
+.search .options .type .selectBox .selectList li.activeT {
   background: #26b4d3;
   color: #fff;
 }

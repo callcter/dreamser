@@ -65,18 +65,15 @@
             <div class="serviceType">
                 <span>服务类型</span>
                 <div class="selectBox" id="serviceType">
-                    <span id="selected">送装</span>
+                    <span id="selected">物流+安装</span>
                     <div class="xlIcon">
                         <img src="../static/image/searchRoute/iconfont-xiala.png">
                     </div>
                 </div>
                 <ul id="selectList" class="selectList">
-                    <li>异地配送</li>
-                    <li>异地送装</li>
-                    <li>同城配送</li>
-                    <li>同城送装</li>
+                    <li>物流</li>
                     <li>安装</li>
-                    <li>维修</li>
+                    <li>物流+安装</li>
                 </ul>
             </div>
             <div class="route">
@@ -117,12 +114,12 @@
                     <ul class="selectList" id="selectList22"></ul>
                 </div>
             </div>
-            <div class="searchBtn">搜索</div>
+            <div class="searchBtn" id="searchBtn">搜索</div>
         </div>
         <div class="options">
             <fieldset class="checkBoxs" id="checkbox1">
                 <span class="c-title">产品类型&nbsp;&nbsp;&nbsp;</span>
-                <span id="nolimit1">&nbsp;不限&nbsp;</span>
+                <span id="nolimit1" class="nolimit">&nbsp;不限&nbsp;</span>
                 <input id="checkbox11" type="checkbox" name="rt">
                 <label for="checkbox11" class="checkLabel">软体&nbsp;</label>
                 <input id="checkbox12" type="checkbox" name="bs">
@@ -134,7 +131,7 @@
             </fieldset>
             <fieldset class="checkBoxs" id="checkbox2">
                 <span class="c-title">服务要求&nbsp;&nbsp;&nbsp;</span>
-                <span id="nolimit2">&nbsp;不限&nbsp;</span>
+                <span id="nolimit2" class="nolimit">&nbsp;不限&nbsp;</span>
                 <input id="checkbox21" type="checkbox" name="smth">
                 <label for="checkbox21" class="checkLabel">上门提货&nbsp;</label>
                 <input id="checkbox22" type="checkbox" name="shsm">
@@ -165,9 +162,9 @@
                 </div>
             </div>
             <div class="inputBoxs">
-                <input class="input" id="ge" placeholder="1" type="text">&nbsp;个&nbsp;&nbsp;&nbsp;&nbsp;
-                <input class="input" id="gj" placeholder="150" type="text">&nbsp;公斤&nbsp;&nbsp;&nbsp;&nbsp;
-                <input class="input" id="lfm" placeholder="1" type="text">&nbsp;立方米&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="input" id="num" value="1" type="text">&nbsp;个&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="input" id="weight" value="150" type="text">&nbsp;公斤&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="input" id="volume" value="1" type="text">&nbsp;立方米&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
         </div>
     </div>

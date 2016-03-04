@@ -737,7 +737,7 @@ select {
   width: 70px;
   left: 170px;
   position: absolute;
-  top: -15px;
+  top: 0;
 }
 .list li .listSummary .s2 .confirmBtn {
   width: 70px;

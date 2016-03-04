@@ -4,11 +4,12 @@ window.onload = function () {
     checkBox();
     //    priceList();
     selectList();
-    departureSelectList();
+    departureSelect();
     destinationSelect();
     goodTypeSelect();
     rankList();
     routeCreate();
+    search();
 }
 
 //服务类型选择下拉列表样式自定义
@@ -34,10 +35,8 @@ var selectList = function () {
             selected.innerHTML = this.innerHTML;
             if (this.innerHTML == "安装") {
                 document.getElementById("startPlaceBox").className = "startP disabled";
-                document.getElementById("startPlace").setAttribute("disabled", "disabled");
             } else {
                 document.getElementById("startPlaceBox").className = "startP";
-                document.getElementById("startPlace").removeAttribute("disabled");
             }
         });
         addEvent(lis[i], "mouseover", function () {
@@ -48,7 +47,7 @@ var selectList = function () {
         });
     }
 }
-var departureSelectList = function () {
+var departureSelect = function () {
     var box = document.getElementById("departure");
     var selectBox = document.getElementById("selectBox1");
     var selectTabs = document.getElementById("selectTab1").getElementsByTagName("li");
@@ -59,6 +58,7 @@ var departureSelectList = function () {
     var note = "";
     var options = address;
     var selected = box;
+    data.departure = new Object();
     addEvent(boxS, "click", function () {
         note = "";
         selectBox.style.top = this.offsetHeight + this.offsetTop + "px";
@@ -81,6 +81,7 @@ var departureSelectList = function () {
         selectList0.appendChild(fLi);
         addEvent(fLi, "click", function () {
             note += this.innerHTML;
+            data.departure.provinceCode = options[liNum(this)].value;
             selected.innerHTML = note;
             //清空二级商品列表
             removeAllChild(selectList1);
@@ -92,15 +93,18 @@ var departureSelectList = function () {
                 selectList1.appendChild(sLi);
                 addEvent(sLi, "click", function () {
                     note += "-" + this.innerHTML;
+                    data.departure.cityCode = firstListArray[liNum(this)].value;
                     selected.innerHTML = note;
                     //清空三级商品列表
                     removeAllChild(selectList2);
+                    var secondListArray = firstListArray[liNum(this)].children;
                     for (var k = 0; k < firstListArray[liNum(this)].children.length; k++) {
                         var tLi = document.createElement("li");
                         tLi.innerHTML = firstListArray[liNum(this)].children[k].text;
                         selectList2.appendChild(tLi);
                         addEvent(tLi, "click", function () {
                             note += "-" + this.innerHTML;
+                            data.departure.districtCode = secondListArray[liNum(this)].value;
                             selected.innerHTML = note;
                             selectList2.style.display = "none";
                             selectBox.style.display = "none";
@@ -148,6 +152,7 @@ var destinationSelect = function () {
     var note = "";
     var options = address;
     var selected = box;
+    data.destination = new Object();
     addEvent(boxS, "click", function () {
         note = "";
         selectBox.style.top = this.offsetHeight + this.offsetTop + "px";
@@ -170,6 +175,7 @@ var destinationSelect = function () {
         selectList0.appendChild(fLi);
         addEvent(fLi, "click", function () {
             note += this.innerHTML;
+            data.destination.provinceCode = options[liNum(this)].value;
             selected.innerHTML = note;
             //清空二级商品列表
             removeAllChild(selectList1);
@@ -181,6 +187,7 @@ var destinationSelect = function () {
                 selectList1.appendChild(sLi);
                 addEvent(sLi, "click", function () {
                     note += "-" + this.innerHTML;
+                    data.destination.cityCode = firstListArray[liNum(this)].value;
                     selected.innerHTML = note;
                     //清空三级商品列表
                     removeAllChild(selectList2);
@@ -188,8 +195,10 @@ var destinationSelect = function () {
                         var tLi = document.createElement("li");
                         tLi.innerHTML = firstListArray[liNum(this)].children[k].text;
                         selectList2.appendChild(tLi);
+                        var secondListArray = firstListArray[liNum(this)].children;
                         addEvent(tLi, "click", function () {
                             note += "-" + this.innerHTML;
+                            data.destination.districtCode = secondListArray[liNum(this)].value;
                             selected.innerHTML = note;
                             selectList2.style.display = "none";
                             selectBox.style.display = "none";
@@ -227,94 +236,97 @@ var destinationSelect = function () {
     }
 }
 var goodTypeSelect = function () {
-        var box = document.getElementById("goodSelected");
-        var selectBox = document.getElementById("selectBox3");
-        var selectTabs = document.getElementById("selectTab3").getElementsByTagName("li");
-        var selectList0 = document.getElementById("selectList30");
-        var selectList1 = document.getElementById("selectList31");
-        var selectList2 = document.getElementById("selectList32");
-        var boxS = document.getElementById("goodsList");
-        var note = "";
-        var options = goodType[0].children;
-        var selected = box;
-        addEvent(boxS, "click", function () {
-            note = "";
-            selectBox.style.top = this.offsetHeight + this.offsetTop + "px";
-            selectBox.style.left = this.offsetLeft + "px";
-            if (selectBox.style.display == "block") {
-                selectBox.style.display = "none";
-                selectList0.style.display = "none";
-                selectList1.style.display = "none";
-                selectList2.style.display = "none";
-            } else {
-                selectBox.style.display = "block";
-                selectList0.style.display = "block";
-            }
-            selectTabs[2].className = "";
-            selectTabs[0].className = "active";
-        });
-        for (var i = 0; i < options.length; i++) {
-            var fLi = document.createElement("li");
-            fLi.innerHTML = options[i].text;
-            selectList0.appendChild(fLi);
-            addEvent(fLi, "click", function () {
-                note += this.innerHTML;
-                selected.innerHTML = note;
-                //清空二级商品列表
-                removeAllChild(selectList1);
-                //作为三级商品列表向上访问时二级列表的缓存
-                var firstListArray = options[liNum(this)].children;
-                for (var j = 0; j < options[liNum(this)].children.length; j++) {
-                    var sLi = document.createElement("li");
-                    sLi.innerHTML = options[liNum(this)].children[j].text;
-                    selectList1.appendChild(sLi);
-                    addEvent(sLi, "click", function () {
-                        note += "-" + this.innerHTML;
-                        selected.innerHTML = note;
-                        //清空三级商品列表
-                        removeAllChild(selectList2);
-                        for (var k = 0; k < firstListArray[liNum(this)].children.length; k++) {
-                            var tLi = document.createElement("li");
-                            tLi.innerHTML = firstListArray[liNum(this)].children[k].text;
-                            selectList2.appendChild(tLi);
-                            addEvent(tLi, "click", function () {
-                                note += "-" + this.innerHTML;
-                                selected.innerHTML = note;
-                                selectList2.style.display = "none";
-                                selectBox.style.display = "none";
-                            });
-                            addEvent(tLi, "mouseover", function () {
-                                this.className = "activeT";
-                            });
-                            addEvent(tLi, "mouseout", function () {
-                                this.className = "";
-                            });
-                        }
-                        selectList1.style.display = "none";
-                        selectList2.style.display = "block";
-                        selectTabs[1].className = "";
-                        selectTabs[2].className = "active";
-                    });
-                    addEvent(sLi, "mouseover", function () {
-                        this.className = "activeT";
-                    });
-                    addEvent(sLi, "mouseout", function () {
-                        this.className = "";
-                    });
-                }
-                selectList0.style.display = "none";
-                selectList1.style.display = "block";
-                selectTabs[0].className = "";
-                selectTabs[1].className = "active";
-            });
-            addEvent(fLi, "mouseover", function () {
-                this.className = "activeT";
-            });
-            addEvent(fLi, "mouseout", function () {
-                this.className = "";
-            });
+    var box = document.getElementById("goodSelected");
+    var selectBox = document.getElementById("selectBox3");
+    var selectTabs = document.getElementById("selectTab3").getElementsByTagName("li");
+    var selectList0 = document.getElementById("selectList30");
+    var selectList1 = document.getElementById("selectList31");
+    var selectList2 = document.getElementById("selectList32");
+    var boxS = document.getElementById("goodsList");
+    var note = "";
+    var options = goodType[0].children;
+    var selected = box;
+    data.valuation = new Object();
+    addEvent(boxS, "click", function () {
+        note = "";
+        selectBox.style.top = this.offsetHeight + this.offsetTop + "px";
+        selectBox.style.left = this.offsetLeft + "px";
+        if (selectBox.style.display == "block") {
+            selectBox.style.display = "none";
+            selectList0.style.display = "none";
+            selectList1.style.display = "none";
+            selectList2.style.display = "none";
+        } else {
+            selectBox.style.display = "block";
+            selectList0.style.display = "block";
         }
+        selectTabs[2].className = "";
+        selectTabs[0].className = "active";
+    });
+    for (var i = 0; i < options.length; i++) {
+        var fLi = document.createElement("li");
+        fLi.innerHTML = options[i].text;
+        selectList0.appendChild(fLi);
+        addEvent(fLi, "click", function () {
+            note += this.innerHTML;
+            selected.innerHTML = note;
+            //清空二级商品列表
+            removeAllChild(selectList1);
+            //作为三级商品列表向上访问时二级列表的缓存
+            var firstListArray = options[liNum(this)].children;
+            for (var j = 0; j < options[liNum(this)].children.length; j++) {
+                var sLi = document.createElement("li");
+                sLi.innerHTML = options[liNum(this)].children[j].text;
+                selectList1.appendChild(sLi);
+                addEvent(sLi, "click", function () {
+                    note += "-" + this.innerHTML;
+                    selected.innerHTML = note;
+                    //清空三级商品列表
+                    removeAllChild(selectList2);
+                    var secondListArray = firstListArray[liNum(this)].children;
+                    for (var k = 0; k < firstListArray[liNum(this)].children.length; k++) {
+                        var tLi = document.createElement("li");
+                        tLi.innerHTML = firstListArray[liNum(this)].children[k].text;
+                        selectList2.appendChild(tLi);
+                        addEvent(tLi, "click", function () {
+                            note += "-" + this.innerHTML;
+                            data.valuation.productCategory = parseInt(secondListArray[liNum(this)].value);
+                            selected.innerHTML = note;
+                            selectList2.style.display = "none";
+                            selectBox.style.display = "none";
+                        });
+                        addEvent(tLi, "mouseover", function () {
+                            this.className = "activeT";
+                        });
+                        addEvent(tLi, "mouseout", function () {
+                            this.className = "";
+                        });
+                    }
+                    selectList1.style.display = "none";
+                    selectList2.style.display = "block";
+                    selectTabs[1].className = "";
+                    selectTabs[2].className = "active";
+                });
+                addEvent(sLi, "mouseover", function () {
+                    this.className = "activeT";
+                });
+                addEvent(sLi, "mouseout", function () {
+                    this.className = "";
+                });
+            }
+            selectList0.style.display = "none";
+            selectList1.style.display = "block";
+            selectTabs[0].className = "";
+            selectTabs[1].className = "active";
+        });
+        addEvent(fLi, "mouseover", function () {
+            this.className = "activeT";
+        });
+        addEvent(fLi, "mouseout", function () {
+            this.className = "";
+        });
     }
+}
 //复选框勾选样式定义
 var checkBox = function () {
     var field1 = document.getElementById("checkbox1");
@@ -344,8 +356,10 @@ var checkBox = function () {
         addEvent(labels1[i], "click", function () {
             if (this.className == "checkLabel") {
                 this.className = "checkLabel checked";
+//                inputs1[this.index].checked = true;
             } else {
                 this.className = "checkLabel";
+//                inputs1[this.index].checked = false;
             }
             nolimit1.className = "";
         });
@@ -355,8 +369,10 @@ var checkBox = function () {
         addEvent(labels2[i], "click", function () {
             if (this.className == "checkLabel") {
                 this.className = "checkLabel checked";
+//                inputs2[this.index].checked = true;
             } else {
                 this.className = "checkLabel";
+//                inputs2[this.index].checked = false;
             }
             nolimit2.className = "";
         });
@@ -382,9 +398,11 @@ var routeCreate = function () {
         "iconxingjikongxin" +
         ".png'></li></ul></div><div class='d2'><p class='route'>从：" +
         "佛山市-顺德区" +
-        "（<a href='#'>查看网点</a>）</p><p class='route'>从：" +
+        //"（<a href='#'>查看网点</a>）"+
+        "</p><p class='route'>从：" +
         "长沙市-岳麓区" +
-        "（<a href='#'>查看网点</a>）</p><p class='icons'>" +
+        //"（<a href='#'>查看网点</a>）"+
+        "</p><p class='icons'>" +
         "<span><img src='../static/image/baoxian.png'></span>" +
         "<span><img src='../static/image/tiqu.png'></span>" +
         "<span><img src='../static/image/songzhuang.png'>" +
@@ -410,7 +428,7 @@ var routeCreate = function () {
         "30" +
         " /组</p><p>保底：￥" +
         "60" +
-        " /票</p></div><div class='d5'><div class='buIcon'><img src='../static/image/searchRoute/butie.png'></div><span>" +
+        " /票</p></div><div class='d5'><div class='buIcon'><img src='../static/image/searchRoute/butie.png'></div><span> " +
         "20%" +
         "</span></div><div class='d6'><p>已成交<span class='redWord'>" +
         "150" +
@@ -418,11 +436,13 @@ var routeCreate = function () {
         "33" +
         "条评价</a></p></div></li>" + "</ul><div class='listSummary'><div class='s1'><p>预估费用：<span class='redWord'>￥</span><span class='priceSum'>" +
         "290" +
-        "</span></p></div><div class='s2'><div class='confirmBtn'>下单</div><div class='collect'><div id='collected'><div class='collectIcon'><img src='../static/image/iconfont-" +
-        "shoucang-wancheng" +
-        ".png'></div><span>" +
-        " 已收藏" +
-        "</span></div></div></div></div>" +
+        "</span></p></div><div class='s2'><div class='confirmBtn'>下单</div>"+
+        //"<div class='collect'><div id='collected'><div class='collectIcon'><img src='../static/image/iconfont-" +
+        //"shoucang-wancheng" +
+        //".png'></div><span>" +
+        //" 已收藏" +
+        //"</span></div></div>"+
+        "</div></div>" +
         "<div class='hotroute'><img src='../static/image/searchRoute/hotroute.png'></div></li>";
     }
     content.innerHTML = list;
@@ -461,26 +481,45 @@ var rankList = function () {
 //依赖jQuery
 var searchRoute = function(){
     switch($("#selected").text()){
-        case "异地配送":
-            data.serviceType = "t";
-            break;
-        case "异地送装":
-            data.serviceType = "t";
-            break;
-        case "同城配送":
-            data.serviceType = "t";
-            break;
-        case "同城送装":
-            data.serviceType = "t";
+        case "物流":
+            data.serviceType = "logistics";
             break;
         case "安装":
-            data.serviceType = "t";
+            data.serviceType = "install";
             break;
-        case "维修":
-            data.serviceType = "t";
+        case "物流+安装":
+            data.serviceType = "logisticsInstall";
             break;
     }
-    
+    //收集产品类型和服务类型checkbox
+    data.productType = new Array();
+    data.services = new Array();
+    for(var i=0;i<4;i++){
+        if(document.getElementById("checkbox1"+(i+1)).checked){
+            data.productType.push(i+1);
+        }
+        if(document.getElementById("checkbox2"+(i+1)).checked){
+            data.services.push(i+1);
+        }
+    }
+    if(data.productType.length == 0){
+        data.productType = [1,2,3,4];
+    }
+    if(data.services.length == 0){
+        data.services = [1,2,3,4];
+    }
+    data.valuation.num = $("#num").val();
+    data.valuation.weight = $("#weight").val();
+    data.valuation.volume = $("#volume").val();
+    data.sort = "time";
+    console.log(data);
+}
+
+var search = function(){
+    var searchBtn = document.getElementById("searchBtn");
+    addEvent(searchBtn,"click",function(){
+        searchRoute();
+    });
 }
     //后天链接，动态生成路线列表
     //(function($){

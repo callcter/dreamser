@@ -2,13 +2,11 @@
 var data = new Object();
 window.onload = function () {
     checkBox();
-    //    priceList();
     selectList();
     departureSelect();
     destinationSelect();
     goodTypeSelect();
     rankList();
-    routeCreate();
     search();
 }
 
@@ -70,9 +68,7 @@ var departureSelect = function () {
         popularList.appendChild(pLi);
         addEvent(pLi,"click",function(){
             box.innerHTML = this.innerHTML;
-            data.departure.provinceCode = popularAddr[liNum(this)].v1;
-            data.departure.cityCode = popularAddr[liNum(this)].v2;
-            data.departure.districtCode = popularAddr[liNum(this)].v3;
+            data.departure.cityCode = popularAddr[liNum(this)].value;
             selectBox.style.display = "none";
             popularList.style.display = "none";
         });
@@ -321,83 +317,8 @@ var checkBox = function () {
         });
     }
 }
-//循环生成路线
-var routeCreate = function (resObj) {
-    var content = document.getElementById("content");
-    var list = "";
-    var listSub = "";
-    for(var i=0;i<resObj.length;i++){
-        for(var j=0;j<resObj[i]. solutions.length;j++){
-            listSub += "<li><div class='d1'><p>" +
-            resObj[i].solutions[j].serviceProvider +
-            "</p><ul class='icon'><li><img src='../static/image/iconfont-" +
-            "xingji" +
-            ".png'></li><li><img src='../static/image/iconfont-" +
-            "xingji" +
-            ".png'></li><li><img src='../static/image/iconfont-" +
-            "xingji" +
-            ".png'></li><li><img src='../static/image/iconfont-" +
-            "xingji" +
-            ".png'></li><li><img src='../static/image/iconfont-" +
-            "xingji" +
-            ".png'></li></ul></div><div class='d2'><p class='route'>从：" +
-            resObj[i].solutions[j].departure +
-            //"（<a href='#'>查看网点</a>）"+
-            "</p><p class='route'>从：" +
-            resObj[i].solutions[j].destination +
-            //"（<a href='#'>查看网点</a>）"+
-            "</p><p class='icons'>" +
-            "<span><img src='../static/image/baoxian.png'></span>" +
-            "<span><img src='../static/image/tiqu.png'></span>" +
-            "<span><img src='../static/image/songzhuang.png'>" +
-            "</span><span><img src='../static/image/ruanti.png'></span>" +
-            "<span><img src='../static/image/dingzhi.png'></span>" +
-            "<span><img src='../static/image/banshi.png'></span>" +
-            "<span><img src='../static/image/shimu.png'></span>" +
-            "</p><p class='type orange'>" +
-            "送装一体" +
-            "</p></div><div class='d3'><p class='time'>物流：" +
-            "1-3天" +
-            "</p><p class='time'>安装：" +
-            "1-2天" +
-            "</p><p class='type orange'>" +
-            "零担，普通汽运" +
-            "</p></div><div class='d4'><p>轻货：￥" +
-            "100" +
-            " /立方米</p><p>重货：￥" +
-            "120" +
-            " /立方米</p><p>配送：￥" +
-            "90" +
-            " /立方米</p><p>安装：￥" +
-            "30" +
-            " /组</p><p>保底：￥" +
-            "60" +
-            " /票</p></div><div class='d5'><div class='buIcon'><img src='../static/image/searchRoute/butie.png'></div><span> " +
-            "20%" +
-            "</span></div><div class='d6'><p>已成交<span class='redWord'>" +
-            "150" +
-            "</span>笔</p><p><a href='#'>" +
-            "33" +
-            "条评价</a></p></div></li>"
-        }
-        list += "<li><ul class='listDetail'>" +
-        
-         +
-        "</ul><div class='listSummary'><div class='s1'><p>预估费用：<span class='redWord'>￥</span><span class='priceSum'>" +
-        "290" +
-        "</span></p></div><div class='s2'><div class='confirmBtn'>下单</div>"+
-        //"<div class='collect'><div id='collected'><div class='collectIcon'><img src='../static/image/iconfont-" +
-        //"shoucang-wancheng" +
-        //".png'></div><span>" +
-        //" 已收藏" +
-        //"</span></div></div>"+
-        "</div></div>" +
-        "<div class='hotroute'><img src='../static/image/searchRoute/hotroute.png'></div></li>";
-    }
-    content.innerHTML = list;
-}
 //评估费用详细弹出框
-var priceList = function () {
+var priceList = function (obj) {
     var tanchu = document.getElementById("priceDetailBox");
     var top = 0;
     var priceSums = getElementsByClassName(document.body, 'priceSum');
@@ -405,6 +326,11 @@ var priceList = function () {
         addEvent(priceSums[i], "mouseover", function (event) {
             top = this.offsetParent.offsetParent.offsetParent.offsetTop + this.offsetParent.offsetParent.offsetParent.offsetHeight / 2 + this.offsetParent.offsetHeight / 2 - 5;
             tanchu.style.top = top + "px";
+            
+            document.getElementById("transportationPrice").innerHTML = obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].transportationPrice;
+            document.getElementById("distributionPrice").innerHTML = obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].distributionPrice;
+            document.getElementById("installationPrice").innerHTML = obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].installationPrice;
+            
             tanchu.style.display = "block";
         });
     }
@@ -424,8 +350,60 @@ var rankList = function () {
                 lis[j].className = "";
             }
             this.className = "active";
+            
+            switch(this.innerHTML){
+                case "价格":
+                    data.sort = "priceByVolume";
+                    break;
+                case "时效":
+                    data.sort = "time";
+                    break;
+                case "成交量":
+                    data.sort = "orderCount";
+                    break;
+            }
+            //然后再次请求
+            
         });
     }
+}
+//搜索
+var search = function(){
+    var searchBtn = document.getElementById("searchBtn");
+    addEvent(searchBtn,"click",function(){
+        //验证，始发地、目的地必填
+        if($("#departure").text()=="请选择始发地点"){
+            alert("请选择始发地点");
+            return;
+        }
+        if($("#destination").text()=="请选择目的地点"){
+            alert("请选择目的地点");
+            return;
+        }
+        if($("#departure").text()=="同城"){
+            data.departure = data.destination;
+        }
+        //验证，家居品类必填
+        if($("#goodSelected").text()=="请选择家具类别"){
+            alert("请选择家具类别");
+            return;
+        }
+        console.log(searchRoute());
+        routeCreate(test);
+        priceList(test);
+        var url = "";
+        var dataJson = JSON.stringify(searchRoute());
+//        $.ajax({
+//            url: url,
+//            data: dataJson,
+//            dataType: "json",
+//            type: "POST",
+//            success: function(result){
+//                var obj = eval("("+result+")");
+//                routeCreate(obj);
+//            }
+//        });
+    });
 }
 //依赖jQuery
 var searchRoute = function(){
@@ -443,16 +421,18 @@ var searchRoute = function(){
     //收集产品类型和服务类型checkbox
     data.productType = new Array();
     data.services = new Array();
-    for(var i=0;i<4;i++){
+    for(var i=0;i<3;i++){
         if(document.getElementById("checkbox1"+(i+1)).checked){
             data.productType.push(i+1);
         }
+    }
+    for(var i=0;i<4;i++){
         if(document.getElementById("checkbox2"+(i+1)).checked){
             data.services.push(i+1);
         }
     }
     if(data.productType.length == 0){
-        data.productType = [1,2,3,4];
+        data.productType = [1,2,3];
     }
     if(data.services.length == 0){
         data.services = [1,2,3,4];
@@ -460,85 +440,114 @@ var searchRoute = function(){
     data.valuation.num = $("#num").val();
     data.valuation.weight = $("#weight").val();
     data.valuation.volume = $("#volume").val();
-    data.sort = "time";
-    console.log(data);
+    data.sort = "priceByVolume";
+    return data;
 }
-
-var search = function(){
-    var searchBtn = document.getElementById("searchBtn");
-    addEvent(searchBtn,"click",function(){
-        searchRoute();
-    });
+//循环生成路线
+var routeCreate = function (resObj) {
+    var content = document.getElementById("content");
+    var list = "";
+    var listSub = "";
+    var stars = new Array();
+    var serviceType = "";
+    for(var i=0;i<resObj.length;i++){
+        listSub = "";
+        for(var j=0;j<resObj[i]. solutions.length;j++){
+            
+            //星级评定
+            for(var k=0;k<5;k++){
+                if(k<resObj[i].solutions[j].serviceProviderRating){
+                    stars[k] = "yes";
+                }else{
+                    stars[k] = "no";
+                }
+            }
+            
+            //提供服务类型
+            var serv = resObj[i].solutions[j].services.split(",");
+            serviceType = "";
+            for(var l=0;l<serv.length;l++){
+                switch(serv[l]){
+                    case "保险":
+                        serviceType += "<span><img src='../static/image/baoxian.png'></span>";
+                        break;
+                    case "上门提货":
+                        serviceType += "<span><img src='../static/image/tiqu.png'></span>";
+                        break;
+                    case "送货上门":
+                        serviceType += "<span><img src='../static/image/songzhuang.png'></span>";
+                        break;
+                    case "送货上楼":
+                        serviceType += "<span><img src='../static/image/songzhuang.png'></span>";
+                        break;
+                    case "软体":
+                        serviceType += "<span><img src='../static/image/ruanti.png'></span>";
+                        break;
+                    case "定制":
+                        serviceType += "<span><img src='../static/image/dingzhi.png'></span>";
+                        break;
+                    case "板式":
+                        serviceType += "<span><img src='../static/image/banshi.png'></span>";
+                        break;
+                }
+            }
+            
+            listSub += "<li><div class='d1'><p>" +
+            resObj[i].solutions[j].serviceProvider +
+            "</p><ul class='icon'><li><img src='../static/image/star-" +
+            stars[0] +
+            ".png'></li><li><img src='../static/image/star-" +
+            stars[1] +
+            ".png'></li><li><img src='../static/image/star-" +
+            stars[2] +
+            ".png'></li><li><img src='../static/image/star-" +
+            stars[3] +
+            ".png'></li><li><img src='../static/image/star-" +
+            stars[4] +
+            ".png'></li></ul></div><div class='d2'><p class='route'>从：" +
+            resObj[i].solutions[j].departure +
+            //"（<a href='#'>查看网点</a>）"+
+            "</p><p class='route'>从：" +
+            resObj[i].solutions[j].destination +
+            //"（<a href='#'>查看网点</a>）"+
+            "</p><p class='icons'>" +
+            serviceType +"</p>"+
+            //"<p class='type orange'>送装一体</p>"+
+            "</div><div class='d3'>"+
+            "<p class='time'>"+resObj[i].solutions[j].timeLimitType+"："+resObj[i].solutions[j].timeLimit+"</p>"+
+            "<p class='type orange'>" +
+            resObj[i].solutions[j].transportWay +
+            "</p></div><div class='d4'><p>轻货：￥" +
+            resObj[i].solutions[j].priceByVolume +
+            " /立方米</p><p>重货：￥" +
+            resObj[i].solutions[j].priceByWeight +
+            " /立方米</p><p>配送：￥" +
+            resObj[i].solutions[j].distributionPrice +
+            " /立方米</p><p>安装：￥" +
+            resObj[i].solutions[j].installationPrice +
+            " /组</p><p>保底：￥" +
+            resObj[i].solutions[j].limitPrice +
+            " /票</p></div><div class='d5'><div class='buIcon'><img src='../static/image/searchRoute/butie.png'></div><span> " +
+            (1-resObj[i].solutions[j].discount)*100+"%" +
+            "</span></div><div class='d6'><p>已成交<span class='redWord'>" +
+            resObj[i].solutions[j].orderNum +
+            "</span>笔</p>"+
+            //"<p><a href='#'>33条评价</a></p>"+
+            "</div></li>"
+        }
+        list += "<li><ul class='listDetail'>" + listSub +
+        "</ul><div class='listSummary'><div class='s1'><p>预估费用：<span class='redWord'>￥</span><span class='priceSum'>" +
+        resObj[i].totalPrice +
+        "</span></p></div><div class='s2'><div class='confirmBtn'>下单</div>"+
+        //"<div class='collect'><div id='collected'><div class='collectIcon'><img src='../static/image/iconfont-" +
+        //"shoucang-wancheng" +
+        //".png'></div><span>" +
+        //" 已收藏" +
+        //"</span></div></div>"+
+        "</div></div>" +
+        //"<div class='hotroute'><img src='../static/image/searchRoute/hotroute.png'></div>"+
+        "</li>";
+    }
+    content.innerHTML = list;
+    document.getElementById("routeCount").innerHTML = resObj.length;
 }
-    //后天链接，动态生成路线列表
-    //(function($){
-    //    var url = "";
-    //    var dataJson = JSON.stringify(data);
-    //    $.ajax({
-    //        url: url,
-    //        data: json,
-    //        dataType: "json",
-    //        type: "POST",
-    //        success: function(result){
-    //            var obj = eval("("+result+")");
-    //            
-    //            "<ul class='listDetail'>"+
-    //            "<li><div class='d1'><p>"+
-    //            "一智通家具"+
-    //            "</p><ul class='icon'><li><img src='../static/image/iconfont-"+
-    //            "xingji"+
-    //            ".png'></li><li><img src='../static/image/iconfont-"+
-    //            "xingji"+
-    //            ".png'></li><li><img src='../static/image/iconfont-"+
-    //            "xingji"+
-    //            ".png'></li><li><img src='../static/image/iconfont-"+
-    //            "xingji"+
-    //            ".png'></li><li><img src='../static/image/iconfont-"+
-    //            "iconxingjikongxin"+
-    //            ".png'></li></ul></div><div class='d2'><p class='route'>从："+
-    //            "佛山市-顺德区"+
-    //            "（<a href='#'>查看网点</a>）</p><p class='route'>从："+
-    //            "长沙市-岳麓区"+
-    //            "（<a href='#'>查看网点</a>）</p><p class='icons'>"+
-    //            "<span><img src='../static/image/baoxian.png'></span>"+
-    //            "<span><img src='../static/image/tiqu.png'></span>"+
-    //            "<span><img src='../static/image/songzhuang.png'>"+
-    //            "</span><span><img src='../static/image/ruanti.png'></span>"+
-    //            "<span><img src='../static/image/dingzhi.png'></span>"+
-    //            "<span><img src='../static/image/banshi.png'></span>"+
-    //            "<span><img src='../static/image/shimu.png'></span>"+
-    //            "</p><p class='type orange'>"+
-    //            "送装一体"+
-    //            "</p></div><div class='d3'><p class='time'>物流："+
-    //            "1-3天"+
-    //            "</p><p class='time'>安装："+
-    //            "1-2天"+
-    //            "</p><p class='type orange'>"+
-    //            "零担，普通汽运"+
-    //            "</p></div><div class='d4'><p>轻货：￥"+
-    //            "100"+
-    //            " /立方米</p><p>重货：￥"+
-    //            "120"+
-    //            " /立方米</p><p>配送：￥"+
-    //            "90"+
-    //            " /立方米</p><p>安装：￥"+
-    //            "30"+
-    //            " /组</p><p>保底：￥"+
-    //            "60"+
-    //            " /票</p></div><div class='d5'><div class='buIcon'><img src='../static/image/searchRoute/butie.png'></div><span>"+
-    //            "20%"+
-    //            "</span></div><div class='d6'><p>已成交<span class='redWord'>"+
-    //            "150"+
-    //            "</span>笔</p><p><a href='#'>"+
-    //            "33"+
-    //            "条评价</a></p></div></li>"+"</ul><div class='listSummary'><div class='s1'><p>预估费用：<span class='redWord'>￥</span><span class='priceSum'>"+
-    //            "290"+
-    //            "</span></p></div><div class='s2'><div class='confirmBtn'>下单</div><div class='collect'><div id='collected'><div class='collectIcon'><img src='../static/image/iconfont-"+
-    //            "shoucang-wancheng"+
-    //            ".png'></div><span>"+
-    //            "已收藏"+
-    //            "</span></div></div></div></div>"+
-    //            "<div class='hotroute'><img src='../static/image/searchRoute/hotroute.png'></div>";
-    //        }
-    //    });
-    //})(jquery);

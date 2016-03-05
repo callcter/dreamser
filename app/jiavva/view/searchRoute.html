@@ -79,29 +79,24 @@
             <div class="route">
                 <span>&nbsp;&nbsp;&nbsp;始发地</span>
                 <div class="startP" id="startPlaceBox">
-                    <span id="departure">请输入始发地点</span>
+                    <span id="departure">请选择始发地点</span>
                     <div class="pIcon">
                         <img src="../static/image/iconfont-dizhi.png">
                     </div>
                 </div>
                 <span>&nbsp;&nbsp;&nbsp;目的地</span>
                 <div class="startP" id="endPlaceBox">
-                    <span id="destination">请输入目的地点</span>
+                    <span id="destination">请选择目的地点</span>
                     <div class="pIcon">
                         <img src="../static/image/iconfont-dizhi.png">
                     </div>
                 </div>
                 <div class="selectBox" id="selectBox1">
-                    <p class="selectTip">请选择始发地</p>
-<!--
-                    <ul class="selectTab" id="selectTab1">
-                        <li>常用</li>
-                    </ul>
--->
+                    <p class="selectTip">请选择始发地点</p>
                     <ul class="selectList" id="popularList"></ul>
                 </div>
                 <div class="selectBox" id="selectBox2">
-                    <p class="selectTip">请选择目的地</p>
+                    <p class="selectTip">请选择目的地点</p>
                     <ul class="selectTab" id="selectTab2">
                         <li>省</li>
                         <li>市</li>
@@ -124,8 +119,10 @@
                 <label for="checkbox12" class="checkLabel">版式&nbsp;</label>
                 <input id="checkbox13" type="checkbox" name="sm">
                 <label for="checkbox13" class="checkLabel">实木&nbsp;</label>
+<!--
                 <input id="checkbox14" type="checkbox" name="dz">
                 <label for="checkbox14" class="checkLabel">定制&nbsp;</label>
+-->
             </fieldset>
             <fieldset class="checkBoxs" id="checkbox2">
                 <span class="c-title">服务要求&nbsp;&nbsp;&nbsp;</span>
@@ -174,29 +171,29 @@
                 <li>价格</li>
                 <li>时效</li>
                 <li>成交量</li>
-                <li>总费用</li>
+<!--                <li>总费用</li>-->
             </ul>
             <div class="result">
                 共筛选出
-                <span class="num">10</span> 条线路方案
+                <span class="num" id="routeCount">--</span> 条线路方案
             </div>
         </div>
 <!--        动态生成路线查询结果列表-->
-        <ul id="content">
-        </ul>
+        <ul id="content"></ul>
         <div class="priceDetailBox" id="priceDetailBox">
             <div class="jiao">
                 <img src="../static/image/searchRoute/tanchujiao.png">
             </div>
             <ul class="detailList">
-                <li>运输费：￥70</li>
-                <li>配送费：￥100</li>
-                <li>安装费：￥70</li>
+                <li>运输费：￥<span id="transportationPrice">70</span></li>
+                <li>配送费：￥<span id="distributionPrice">100</span></li>
+                <li>安装费：￥<span id="installationPrice">70</span></li>
                 <li>保价费：￥--</li>
                 <li>增值费：￥--</li>
             </ul>
         </div>
     </div>
+<!--
     <div class="page" id="page">
         <div class="nextpage" id="nextpage">下一页</div>
         <ul id="pages" class="pages">
@@ -207,6 +204,7 @@
         <div class="prepage" id="prepage">上一页</div>
         <div class="clear"></div>
     </div>
+-->
     <div class="footer">
         <ul class="anchor">
             <li><a href="#">关于我们</a></li>

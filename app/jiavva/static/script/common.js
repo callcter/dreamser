@@ -1,11 +1,11 @@
 //返回li的序号
 function liNum(li){
-    var lis = li.offsetParent.getElementsByTagName("li");
-    for(var i=0;i<lis.length;i++){
-        if(lis[i]==li){
-            return i;
-        }
+    var flag = 0;
+    while(li.previousSibling){
+        flag ++;
+        li = li.previousSibling;
     }
+    return flag;
 }
 //删除所有子元素
 function removeAllChild(ul)

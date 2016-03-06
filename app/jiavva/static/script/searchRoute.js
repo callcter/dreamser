@@ -8,6 +8,7 @@ window.onload = function () {
     goodTypeSelect();
     rankList();
     search();
+    
 }
 
 //服务类型选择下拉列表样式自定义

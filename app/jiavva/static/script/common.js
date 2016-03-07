@@ -34,4 +34,19 @@ function addEvent(obj,event,fn){
         obj.addEventListener(event,fn,false);
     }
 }
-//轮播框，需依赖jquery animate模块
+//URL处理，返回name、value的url对象
+function urlString(){
+    var str = location.href;
+    var num = str.indexOf("?");
+    str = str.substring(num+1);
+    var arrTmp = str.split("&");
+    var urls = new Array(arrTmp.length);
+    for(var i=0;i<arrTmp.length;i++){
+        var url = new Object();
+        var nameValue = arrTmp[i].split("=");
+        url.name = nameValue[0];
+        url.value = nameValue[1];
+        urls[i] = url;
+    }
+    return urls;
+}

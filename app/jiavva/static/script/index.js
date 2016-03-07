@@ -6,6 +6,7 @@ window.onload = function(){
     selectList3();
     selectList4();
     carousel();
+    search();
 }
 var dataFromIndex = new Object();
 
@@ -14,6 +15,9 @@ var search = function(){
     var box0 = document.getElementById("searchTab0");
     var box1 = document.getElementById("searchTab1");
     var box2 = document.getElementById("searchTab2");
+    box0.style.display = "block";
+    box1.style.display = "none";
+    box2.style.display = "none";
     addEvent(btn,"click",function(){
         if(box0.style.display=="block"&&box1.style.display=="none"&&box2.style.display=="none"){
             //验证，始发地、目的地必填

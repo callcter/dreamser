@@ -3,12 +3,38 @@ var data = new Object();
 window.onload = function () {
     checkBox();
     selectList();
-    departureSelect();
-    destinationSelect();
-    goodTypeSelect();
+    departureSelect();//始发地
+    destinationSelect();//目的地
+    goodTypeSelect();//家居品类
     rankList();
     search();
-    
+    locatinUrl();
+}
+
+var locatinUrl = function(){
+    var urlParam = urlString();
+    //如果是始发地，请求物流
+    if(urlParam[0].name == "departure"){
+        searchRoute();
+        data.serviceType = "logistics";
+        if(urlParam[0].value == ""){
+            //同城
+            data.departure = data.destination;
+        }
+        routeCreate(test);
+        priceList(test);
+        document.getElementById("selected").innerHTML = "物流";
+    }
+    //如果是产品分类，请求安装
+    else if(urlParam[0].name == "productCategory"){
+        searchRoute();
+        data.serviceType = "install";
+        routeCreate(test);
+        priceList(test);
+        document.getElementById("selected").innerHTML = "安装";
+    }
+    //不是始发地，也不是产品分类，也就是参数为空，直接访问本页，不作任何处理
+//    console.log(urlParam);
 }
 
 //服务类型选择下拉列表样式自定义
@@ -392,18 +418,18 @@ var search = function(){
         console.log(searchRoute());
         routeCreate(test);
         priceList(test);
-        var url = "";
+        var url = "192.168.191.3:8080/jeesite/lineCompare";
         var dataJson = JSON.stringify(searchRoute());
-//        $.ajax({
-//            url: url,
-//            data: dataJson,
-//            dataType: "json",
-//            type: "POST",
-//            success: function(result){
-//                var obj = eval("("+result+")");
-//                routeCreate(obj);
-//            }
-//        });
+        $.ajax({
+            url: url,
+            data: dataJson,
+            dataType: "json",
+            type: "POST",
+            success: function(result){
+                var obj = eval("("+result+")");
+                routeCreate(obj);
+            }
+        });
     });
 }
 //依赖jQuery

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>干线云图</title>
+    <link rel="stylesheet" href="../static/style/css/cloudMap.css">
+</head>
+
+<body onload="dataForm()">
+
+<div class="header">
+    <ul class="links">
+        <li><a href="routeMap.html">干线云图</a></li>
+        <li><a href="serviceMap.html">送装云图</a></li>
+        <li><a href="orderMap.html">订单分布</a></li>
+        <li class="active" id="dataFormTab">数据报表</li>
+        <li><a href="../index.html">回到首页</a></li>
+    </ul>
+</div>
+<div class="wrapper">
+    <div class="map" id="map1"></div>
+    <div class="map" id="map2"></div>
+    <div class="map" id="map3"></div>
+</div>
+
+</body>
+   
+   <script src="../static/script/echarts-all.js"></script>
+   <script src="../static/script/cloudMap.js"></script>
+    
+</html>

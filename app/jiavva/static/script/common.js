@@ -50,3 +50,12 @@ function urlString(){
     }
     return urls;
 }
+//获取屏幕宽高
+function getScreen(){
+    var winWidth = window.innerWidth;
+    var winHeight = window.innerHeight;
+    return {
+        width: winWidth,
+        heihgt: winHeight
+    };
+}

@@ -1,4 +1,3 @@
-//首页js
 window.onload = function(){
     searchBox();
     departureSelect();
@@ -7,76 +6,97 @@ window.onload = function(){
     selectList4();
     carousel();
     search();
+    document.onclick = function(){
+        document.getElementById("selectBox1").style.display = "none";
+        document.getElementById("selectBox2").style.display = "none";
+        document.getElementById("selectBox3").style.display = "none";
+        document.getElementById("selectBox4").style.display = "none";
+        document.getElementById("popularList").style.display = "none";
+        document.getElementById("selectList20").style.display = "none";
+        document.getElementById("selectList21").style.display = "none";
+        document.getElementById("selectList22").style.display = "none";
+        document.getElementById("selectList30").style.display = "none";
+        document.getElementById("selectList31").style.display = "none";
+        document.getElementById("selectList32").style.display = "none";
+        document.getElementById("selectList40").style.display = "none";
+        document.getElementById("selectList41").style.display = "none";
+        document.getElementById("selectList42").style.display = "none";
+    };
+    document.getElementById("selectBox1").onclick = function(e){
+        stopProgapation(e);
+    }
+    document.getElementById("selectBox2").onclick = function(e){
+        stopProgapation(e);
+    }
+    document.getElementById("selectBox3").onclick = function(e){
+        stopProgapation(e);
+    }
+    document.getElementById("selectBox4").onclick = function(e){
+        stopProgapation(e);
+    }
 }
 var dataFromIndex = new Object();
-
 var search = function(){
-    var btn = document.getElementById("searchBtn");
-    var box0 = document.getElementById("searchTab0");
-    var box1 = document.getElementById("searchTab1");
-    var box2 = document.getElementById("searchTab2");
-    box0.style.display = "block";
-    box1.style.display = "none";
-    box2.style.display = "none";
-    addEvent(btn,"click",function(){
-        if(box0.style.display=="block"&&box1.style.display=="none"&&box2.style.display=="none"){
+    var box0 = $("#searchTab0");
+    var box1 = $("#searchTab1");
+    var box2 = $("#searchTab2");
+    box0.css("display","block");
+    box1.css("display","none");
+    box2.css("display","none");
+    $("#searchBtn").bind("click",function(){
+        if(box0.css("display")=="block"&&box1.css("display")=="none"&&box2.css("display")=="none"){
             //验证，始发地、目的地必填
-            if(document.getElementById("departure").innerHTML=="请选择始发地"){
+            if($("#departure").text()=="请选择始发地"){
                 alert("请选择始发地");
                 return;
             }
-            if(document.getElementById("destination").innerHTML=="请选择目的地"){
+            if($("#destination").text().split("-").length<3){
                 alert("请选择目的地");
                 return;
             }
-            window.location.href = "view/searchRoute.html?departure="+dataFromIndex.departure+"&provinceCode="+dataFromIndex.provinceCode+"&cityCode="+dataFromIndex.cityCode+"&districtCode="+dataFromIndex.districtCode;
-        }else if(box0.style.display=="none"&&box1.style.display=="block"&&box2.style.display=="none"){
-            if(document.getElementById("goodType").innerHTML=="请选择家具分类"){
+            window.location.href = "view/searchRoute.html?departure="+dataFromIndex.departure+"&provinceCode="+dataFromIndex.provinceCode+"&cityCode="+dataFromIndex.cityCode+"&districtCode="+dataFromIndex.districtCode+"&departureName="+document.getElementById("departure").innerHTML+"&destinationName="+document.getElementById("destination").innerHTML;
+        }else if(box0.css("display")=="none"&&box1.css("display")=="block"&&box2.css("display")=="none"){
+            if($("#goodType").text().split("-").length<3){
                 alert("请选择始发地");
                 return;
             }
-            if(document.getElementById("goodInstall").innerHTML=="请选择安装地点"){
+            if($("#goodInstall").text().split("-").length<3){
                 alert("请选择安装地点");
                 return;
             }
-            window.location.href = "view/searchRoute.html?productCategory="+dataFromIndex.productCategory+"&provinceCode="+dataFromIndex.provinceCode+"&cityCode="+dataFromIndex.cityCode+"&districtCode="+dataFromIndex.districtCode;;
-        }else if(box0.style.display=="none"&&box1.style.display=="none"&&box2.style.display=="block"){
-            window.location.href = "view/searchRoute.html?";
+            window.location.href = "view/searchRoute.html?productCategory="+dataFromIndex.productCategory+"&provinceCode="+dataFromIndex.provinceCode+"&cityCode="+dataFromIndex.cityCode+"&districtCode="+dataFromIndex.districtCode+"&goodTypeName="+document.getElementById("goodType").innerHTML+"&destinationName="+document.getElementById("goodInstall").innerHTML;
+        }else if(box0.css("display")=="none"&&box1.css("display")=="none"&&box2.css("display")=="block"){
+//            window.location.href = "view/searchRoute.html?";
+            return;
         }
     });
 }
-
-//首页查询框
 var searchBox = function(){
-    var tabs = document.getElementById("searchTab").getElementsByTagName("li");
-    var active = document.getElementById("tabActive");
-    var box0 = document.getElementById("searchTab0");
-    var box1 = document.getElementById("searchTab1");
-    var box2 = document.getElementById("searchTab2");
-    for(var i=0;i<tabs.length;i++){
-        tabs[i].index = i;
-        addEvent(tabs[i],"click",function(){
-            for(var j=0;j<tabs.length;j++){
-                tabs[j].className = "";
+    var box0 = $("#searchTab0");
+    var box1 = $("#searchTab1");
+    var box2 = $("#searchTab2");
+    for(var i=0;i<3;i++){
+        $("ul#searchTab li:eq("+i+")").bind("click",{index:i},function(event){
+            for(var j=0;j<3;j++){
+                $("ul#searchTab li:eq("+j+")").removeClass("active");
             }
-            this.className = "active";
-            active.style.left = 30+this.index*100+"px";
-            
-            switch(this.index){
+            $(this).addClass("active");
+            $("#tabActive").css("left",30+event.data.index*100+"px");
+            switch(event.data.index){
                 case 0:
-                    box0.style.display = "block";
-                    box1.style.display = "none";
-                    box2.style.display = "none";
+                    box0.css("display","block");
+                    box1.css("display","none");
+                    box2.css("display","none");
                     break;
                 case 1:
-                    box0.style.display = "none";
-                    box1.style.display = "block";
-                    box2.style.display = "none";
+                    box0.css("display","none");
+                    box1.css("display","block");
+                    box2.css("display","none");
                     break;
                 case 2:
-                    box0.style.display = "none";
-                    box1.style.display = "none";
-                    box2.style.display = "block";
+                    box0.css("display","none");
+                    box1.css("display","none");
+                    box2.css("display","block");
                     break;
                 default:
                     break;
@@ -89,9 +109,14 @@ var departureSelect = function () {
     var selectBox = document.getElementById("selectBox1");
     var popularList = document.getElementById("popularList");
     var boxS = document.getElementById("startPlaceBox");
-    addEvent(boxS, "click", function () {
+    addEvent(boxS, "click", function (e) {
+        stopProgapation(e);
+        document.getElementById("selectList20").style.display = "none";
+        document.getElementById("selectList21").style.display = "none";
+        document.getElementById("selectList22").style.display = "none";
+        document.getElementById("selectBox2").style.display = "none";
         selectBox.style.top = this.offsetHeight + this.offsetTop + "px";
-        selectBox.style.left = this.offsetLeft + "px";
+        selectBox.style.left = (this.offsetLeft-1) + "px";
         if (selectBox.style.display == "block") {
             selectBox.style.display = "none";
             popularList.style.display = "none";
@@ -103,7 +128,6 @@ var departureSelect = function () {
     for(var l=0;l<popularAddr.length;l++){
         var pLi = document.createElement("li");
         pLi.innerHTML = popularAddr[l].text;
-        popularList.appendChild(pLi);
         addEvent(pLi,"click",function(){
             box.innerHTML = this.innerHTML;
             dataFromIndex.departure = popularAddr[liNum(this)].value;
@@ -111,11 +135,15 @@ var departureSelect = function () {
             popularList.style.display = "none";
         });
         addEvent(pLi,"mouseover",function(){
-            this.className = "activeT";
+            $(this).addClass("activeT");
         });
         addEvent(pLi, "mouseout", function () {
-            this.className = "";
+            $(this).removeClass("activeT");
         });
+        if(l==popularAddr.length-1){
+            pLi.className = "tc";
+        }
+        popularList.appendChild(pLi);
     }
 }
 var selectList2 = function(){
@@ -129,10 +157,13 @@ var selectList2 = function(){
     var note = "";
     var options = address;
     var selected = box;
-    addEvent(boxS,"click",function(){
+    addEvent(boxS,"click",function(e){
+        document.getElementById("selectBox1").style.display = "none";
+        document.getElementById("popularList").style.display = "none";
+        stopProgapation(e);
         note = "";
         selectBox.style.top = this.offsetHeight+this.offsetTop+"px";
-        selectBox.style.left = this.offsetLeft+"px";
+        selectBox.style.left = (this.offsetLeft-1)+"px";
         if(selectBox.style.display == "block"){
             selectBox.style.display = "none";
             selectList0.style.display = "none";
@@ -143,6 +174,7 @@ var selectList2 = function(){
             selectList0.style.display = "block";
         }
         selectTabs[2].className = "";
+        selectTabs[1].className = "";
         selectTabs[0].className = "active";
     });
     for(var i=0;i<options.length;i++){
@@ -222,7 +254,12 @@ var selectList3 = function(){
     var note = "";
     var options = goodType[0].children;
     var selected = box;
-    addEvent(boxS,"click",function(){
+    addEvent(boxS,"click",function(e){
+        stopProgapation(e);
+        document.getElementById("selectBox4").style.display = "none";
+        document.getElementById("selectList40").style.display = "none";
+        document.getElementById("selectList41").style.display = "none";
+        document.getElementById("selectList42").style.display = "none";
         note = "";
         selectBox.style.top = this.offsetHeight+this.offsetTop+"px";
         selectBox.style.left = this.offsetLeft+"px";
@@ -236,6 +273,7 @@ var selectList3 = function(){
             selectList0.style.display = "block";
         }
         selectTabs[2].className = "";
+        selectTabs[1].className = "";
         selectTabs[0].className = "active";
     });
     for(var i=0;i<options.length;i++){
@@ -313,7 +351,12 @@ var selectList4 = function(){
     var note = "";
     var options = address;
     var selected = box;
-    addEvent(boxS,"click",function(){
+    addEvent(boxS,"click",function(e){
+        stopProgapation(e);
+        document.getElementById("selectBox3").style.display = "none";
+        document.getElementById("selectList30").style.display = "none";
+        document.getElementById("selectList31").style.display = "none";
+        document.getElementById("selectList32").style.display = "none";
         note = "";
         selectBox.style.top = this.offsetHeight+this.offsetTop+"px";
         selectBox.style.left = this.offsetLeft+"px";
@@ -327,6 +370,7 @@ var selectList4 = function(){
             selectList0.style.display = "block";
         }
         selectTabs[2].className = "";
+        selectTabs[1].className = "";
         selectTabs[0].className = "active";
     });
     for(var i=0;i<options.length;i++){

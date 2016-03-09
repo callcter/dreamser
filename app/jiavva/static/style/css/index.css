@@ -291,8 +291,9 @@ select {
 .banner .bannerBox .searchBox .searchInput .searchSelect .input {
   width: 280px;
   border: none;
-  height: 24px;
   outline: none;
+  font-size: 16px;
+  color: #666;
 }
 .banner .bannerBox .searchBox .searchInput .searchSelect .searchIcon {
   position: absolute;
@@ -384,6 +385,9 @@ select {
   -o-border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+}
+.banner .bannerBox .selectBox .selectList li.tc {
+  color: #FFA939;
 }
 .banner .bannerBox .selectBox .selectList li.activeT {
   background: #26b4d3;

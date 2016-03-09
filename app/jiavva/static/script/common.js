@@ -24,14 +24,28 @@ function getElementsByClassName(node, classname) {
         if (re.test(els[i].className)) a.push(els[i]);
     return a;
 }
-//事件绑定，兼容所有
+//添加事件绑定，兼容所有
 function addEvent(obj,event,fn){
     if(obj.attachEvent){
         obj.attachEvent("on"+event,function(){
             fn.call(obj);
         });
-    }else{
+    }else if(obj.addEventListener){
         obj.addEventListener(event,fn,false);
+    }else{
+        obj["on"+event] = fn;
+    }
+}
+//移除事件监听
+function removeEvent(obj,event,fn){
+    if(obj.removeEventListener){
+        obj.removeEventListener(event,fn,false);
+    }else if(obj.detachEvent){
+        obj.detachEvent("on"+event,function(){
+            fn.call(obj);
+        });
+    }else{
+        obj["on"+event] = null;
     }
 }
 //URL处理，返回name、value的url对象
@@ -58,4 +72,16 @@ function getScreen(){
         width: winWidth,
         heihgt: winHeight
     };
+}
+
+function stopProgapation(e){
+    if(e.stopPropagation){
+        e.stopPropagation();
+    }else{
+        e.cancelBubble = true;
+    }
+}
+
+function numFormat(num){
+    return Math.round(num*100)/100;
 }

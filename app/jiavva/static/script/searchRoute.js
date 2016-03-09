@@ -9,29 +9,87 @@ window.onload = function () {
     rankList();
     search();
     locatinUrl();
+    
+    document.onclick = function(){
+        document.getElementById("selectBox1").style.display = "none";
+        document.getElementById("selectBox2").style.display = "none";
+        document.getElementById("selectBox3").style.display = "none";
+        document.getElementById("popularList").style.display = "none";
+        document.getElementById("selectList20").style.display = "none";
+        document.getElementById("selectList21").style.display = "none";
+        document.getElementById("selectList22").style.display = "none";
+        document.getElementById("selectList30").style.display = "none";
+        document.getElementById("selectList31").style.display = "none";
+        document.getElementById("selectList32").style.display = "none";
+    };
+    document.getElementById("selectBox1").onclick = function(e){
+        stopProgapation(e);
+    }
+    document.getElementById("selectBox2").onclick = function(e){
+        stopProgapation(e);
+    }
+    document.getElementById("selectBox3").onclick = function(e){
+        stopProgapation(e);
+    }
+    
 }
 
 var locatinUrl = function(){
     var urlParam = urlString();
+    var boxS = document.getElementById("startPlaceBox");
     //如果是始发地，请求物流
     if(urlParam[0].name == "departure"){
         searchRoute();
         data.serviceType = "logistics";
+        document.getElementById("departure").innerHTML = decodeURI(urlParam[4].value);
+        document.getElementById("destination").innerHTML = decodeURI(urlParam[5].value);
         if(urlParam[0].value == ""){
             //同城
             data.departure = data.destination;
         }
-        routeCreate(test);
-        priceList(test);
+        var url = "/lineCompare";
+        var dataJson = JSON.stringify(data);
+        $.ajax({
+            url: url,
+            data: dataJson,
+            dataType: "json",
+            type: "POST",
+            success: function(result){
+                if(result.length==0){
+                    document.getElementById("content").innerHTML = "根据您所输入的条件没有查找到线路，请重新搜索";
+                }else{
+                    routeCreate(result);
+                    priceList(result);
+                }
+            }
+        });
         document.getElementById("selected").innerHTML = "物流";
     }
     //如果是产品分类，请求安装
     else if(urlParam[0].name == "productCategory"){
         searchRoute();
         data.serviceType = "install";
-        routeCreate(test);
-        priceList(test);
+        document.getElementById("goodSelected").innerHTML = decodeURI(urlParam[4].value);
+        document.getElementById("destination").innerHTML = decodeURI(urlParam[5].value);
+        var url = "/lineCompare";
+        var dataJson = JSON.stringify(data);
+        $.ajax({
+            url: url,
+            data: dataJson,
+            dataType: "json",
+            type: "POST",
+            success: function(result){
+                if(result.length==0){
+                    document.getElementById("content").innerHTML = "根据您所输入的条件没有查找到线路，请重新搜索";
+                }else{
+                    routeCreate(result);
+                    priceList(result);
+                }
+            }
+        });
         document.getElementById("selected").innerHTML = "安装";
+        document.getElementById("startPlaceBox").className = "startP disabled";
+        removeEvent(boxS, "click", departureSelectFn);
     }
     //不是始发地，也不是产品分类，也就是参数为空，直接访问本页，不作任何处理
 //    console.log(urlParam);
@@ -43,6 +101,7 @@ var selectList = function () {
     var selectList = document.getElementById("selectList");
     var lis = selectList.getElementsByTagName("li");
     var selected = document.getElementById("selected");
+    var boxS = document.getElementById("startPlaceBox");
     addEvent(serviceType, "mouseover", function () {
         selectList.style.display = "block";
     });
@@ -60,8 +119,10 @@ var selectList = function () {
             selected.innerHTML = this.innerHTML;
             if (this.innerHTML == "安装") {
                 document.getElementById("startPlaceBox").className = "startP disabled";
+                removeEvent(boxS, "click", departureSelectFn);
             } else {
                 document.getElementById("startPlaceBox").className = "startP";
+                addEvent(boxS, "click", departureSelectFn);
             }
         });
         addEvent(lis[i], "mouseover", function () {
@@ -72,27 +133,39 @@ var selectList = function () {
         });
     }
 }
+var departureSelectFn = function (e){
+    stopProgapation(e);
+    document.getElementById("selectBox2").style.display = "none";
+    document.getElementById("selectBox3").style.display = "none";
+    document.getElementById("selectList20").style.display = "none";
+    document.getElementById("selectList21").style.display = "none";
+    document.getElementById("selectList22").style.display = "none";
+    document.getElementById("selectList30").style.display = "none";
+    document.getElementById("selectList31").style.display = "none";
+    document.getElementById("selectList32").style.display = "none";
+    var selectBox = document.getElementById("selectBox1");
+    var popularList = document.getElementById("popularList");
+    selectBox.style.top = this.offsetHeight + this.offsetTop + "px";
+    selectBox.style.left = this.offsetLeft + "px";
+    if (selectBox.style.display == "block") {
+        selectBox.style.display = "none";
+        popularList.style.display = "none";
+    } else {
+        selectBox.style.display = "block";
+        popularList.style.display = "block";
+    }
+}
 var departureSelect = function () {
     var box = document.getElementById("departure");
     var selectBox = document.getElementById("selectBox1");
     var popularList = document.getElementById("popularList");
     var boxS = document.getElementById("startPlaceBox");
     data.departure = new Object();
-    addEvent(boxS, "click", function () {
-        selectBox.style.top = this.offsetHeight + this.offsetTop + "px";
-        selectBox.style.left = this.offsetLeft + "px";
-        if (selectBox.style.display == "block") {
-            selectBox.style.display = "none";
-            popularList.style.display = "none";
-        } else {
-            selectBox.style.display = "block";
-            popularList.style.display = "block";
-        }
-    });
+    addEvent(boxS, "click", departureSelectFn);
     for(var l=0;l<popularAddr.length;l++){
         var pLi = document.createElement("li");
         pLi.innerHTML = popularAddr[l].text;
-        popularList.appendChild(pLi);
+        
         addEvent(pLi,"click",function(){
             box.innerHTML = this.innerHTML;
             data.departure.cityCode = popularAddr[liNum(this)].value;
@@ -105,6 +178,10 @@ var departureSelect = function () {
         addEvent(pLi, "mouseout", function () {
             this.className = "";
         });
+        if(l==popularAddr.length-1){
+            pLi.className = "tc";
+        }
+        popularList.appendChild(pLi);
     }
 }
 var destinationSelect = function () {
@@ -119,7 +196,14 @@ var destinationSelect = function () {
     var options = address;
     var selected = box;
     data.destination = new Object();
-    addEvent(boxS, "click", function () {
+    addEvent(boxS, "click", function (e) {
+        stopProgapation(e);
+        document.getElementById("selectBox1").style.display = "none";
+        document.getElementById("selectBox3").style.display = "none";
+        document.getElementById("popularList").style.display = "none";
+        document.getElementById("selectList30").style.display = "none";
+        document.getElementById("selectList31").style.display = "none";
+        document.getElementById("selectList32").style.display = "none";
         note = "";
         selectBox.style.top = this.offsetHeight + this.offsetTop + "px";
         selectBox.style.left = this.offsetLeft + "px";
@@ -133,6 +217,7 @@ var destinationSelect = function () {
             selectList0.style.display = "block";
         }
         selectTabs[2].className = "";
+        selectTabs[1].className = "";
         selectTabs[0].className = "active";
     });
     for (var i = 0; i < options.length; i++) {
@@ -213,7 +298,14 @@ var goodTypeSelect = function () {
     var options = goodType[0].children;
     var selected = box;
     data.valuation = new Object();
-    addEvent(boxS, "click", function () {
+    addEvent(boxS, "click", function (e) {
+        stopProgapation(e);
+        document.getElementById("selectBox1").style.display = "none";
+        document.getElementById("selectBox2").style.display = "none";
+        document.getElementById("popularList").style.display = "none";
+        document.getElementById("selectList20").style.display = "none";
+        document.getElementById("selectList21").style.display = "none";
+        document.getElementById("selectList22").style.display = "none";
         note = "";
         selectBox.style.top = this.offsetHeight + this.offsetTop + "px";
         selectBox.style.left = this.offsetLeft + "px";
@@ -354,9 +446,9 @@ var priceList = function (obj) {
             top = this.offsetParent.offsetParent.offsetParent.offsetTop + this.offsetParent.offsetParent.offsetParent.offsetHeight / 2 + this.offsetParent.offsetHeight / 2 - 5;
             tanchu.style.top = top + "px";
             
-            document.getElementById("transportationPrice").innerHTML = obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].transportationPrice;
-            document.getElementById("distributionPrice").innerHTML = obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].distributionPrice;
-            document.getElementById("installationPrice").innerHTML = obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].installationPrice;
+            document.getElementById("transportationPrice").innerHTML = resDeal(obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].transportationPrice);
+            document.getElementById("distributionPrice").innerHTML = resDeal(obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].distributionPrice);
+            document.getElementById("installationPrice").innerHTML = resDeal(obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].installationPrice);
             
             tanchu.style.display = "block";
         });
@@ -390,7 +482,22 @@ var rankList = function () {
                     break;
             }
             //然后再次请求
-            
+            var url = "/lineCompare";
+            var dataJson = JSON.stringify(data);
+            $.ajax({
+                url: url,
+                data: dataJson,
+                dataType: "json",
+                type: "POST",
+                success: function(result){
+                    if(result.length==0){
+                        document.getElementById("content").innerHTML = "根据您所输入的条件没有查找到线路，请重新搜索";
+                    }else{
+                        routeCreate(result);
+                        priceList(result);
+                    }
+                }
+            });
         });
     }
 }
@@ -399,9 +506,11 @@ var search = function(){
     var searchBtn = document.getElementById("searchBtn");
     addEvent(searchBtn,"click",function(){
         //验证，始发地、目的地必填
-        if($("#departure").text()=="请选择始发地点"){
-            alert("请选择始发地点");
-            return;
+        if($("#selected").text()!="安装"){
+            if($("#departure").text()=="请选择始发地点"){
+                alert("请选择始发地点");
+                return;
+            }
         }
         if($("#destination").text()=="请选择目的地点"){
             alert("请选择目的地点");
@@ -410,15 +519,17 @@ var search = function(){
         if($("#departure").text()=="同城"){
             data.departure = data.destination;
         }
-        //验证，家居品类必填
-        if($("#goodSelected").text()=="请选择家具类别"){
-            alert("请选择家具类别");
-            return;
+        if($("#selected").text()!="物流"){
+            //验证，家居品类必填
+            if($("#goodSelected").text()=="请选择家具类别"){
+                alert("请选择家具类别");
+                return;
+            }
         }
         console.log(searchRoute());
-        routeCreate(test);
-        priceList(test);
-        var url = "192.168.191.3:8080/jeesite/lineCompare";
+//        routeCreate(test);
+//        priceList(test);
+        var url = "/lineCompare";
         var dataJson = JSON.stringify(searchRoute());
         $.ajax({
             url: url,
@@ -426,8 +537,12 @@ var search = function(){
             dataType: "json",
             type: "POST",
             success: function(result){
-                var obj = eval("("+result+")");
-                routeCreate(obj);
+                if(result.length==0){
+                    document.getElementById("content").innerHTML = "根据您所输入的条件没有查找到线路，请重新搜索";
+                }else{
+                    routeCreate(result);
+                    priceList(result);
+                }
             }
         });
     });
@@ -446,8 +561,8 @@ var searchRoute = function(){
             break;
     }
     //收集产品类型和服务类型checkbox
-    data.productType = new Array();
-    data.services = new Array();
+    data.productType = [];
+    data.services = [];
     for(var i=0;i<3;i++){
         if(document.getElementById("checkbox1"+(i+1)).checked){
             data.productType.push(i+1);
@@ -458,12 +573,12 @@ var searchRoute = function(){
             data.services.push(i+1);
         }
     }
-    if(data.productType.length == 0){
-        data.productType = [1,2,3];
-    }
-    if(data.services.length == 0){
-        data.services = [1,2,3,4];
-    }
+//    if(data.productType.length == 0){
+//        data.productType = [1,2,3];
+//    }
+//    if(data.services.length == 0){
+//        data.services = [1,2,3,4];
+//    }
     data.valuation.num = $("#num").val();
     data.valuation.weight = $("#weight").val();
     data.valuation.volume = $("#volume").val();
@@ -534,30 +649,30 @@ var routeCreate = function (resObj) {
             ".png'></li></ul></div><div class='d2'><p class='route'>从：" +
             resObj[i].solutions[j].departure +
             //"（<a href='#'>查看网点</a>）"+
-            "</p><p class='route'>从：" +
+            "</p><p class='route'>到：" +
             resObj[i].solutions[j].destination +
             //"（<a href='#'>查看网点</a>）"+
             "</p><p class='icons'>" +
             serviceType +"</p>"+
             //"<p class='type orange'>送装一体</p>"+
             "</div><div class='d3'>"+
-            "<p class='time'>"+resObj[i].solutions[j].timeLimitType+"："+resObj[i].solutions[j].timeLimit+"</p>"+
+            "<p class='time'>"+resObj[i].solutions[j].timeLimitType+"："+resDeal(resObj[i].solutions[j].timeLimit)+"</p>"+
             "<p class='type orange'>" +
-            resObj[i].solutions[j].transportWay +
+            resDeal(resObj[i].solutions[j].transportWay) +
             "</p></div><div class='d4'><p>轻货：￥" +
-            resObj[i].solutions[j].priceByVolume +
+            resDeal(resObj[i].solutions[j].priceByVolume) +
             " /立方米</p><p>重货：￥" +
-            resObj[i].solutions[j].priceByWeight +
+            resDeal(resObj[i].solutions[j].priceByWeight) +
             " /立方米</p><p>配送：￥" +
-            resObj[i].solutions[j].distributionPrice +
+            resDeal(resObj[i].solutions[j].distributionPrice) +
             " /立方米</p><p>安装：￥" +
-            resObj[i].solutions[j].installationPrice +
+            resDeal(resObj[i].solutions[j].installationPrice) +
             " /组</p><p>保底：￥" +
-            resObj[i].solutions[j].limitPrice +
+            resDeal(resObj[i].solutions[j].limitPrice) +
             " /票</p></div><div class='d5'><div class='buIcon'><img src='../static/image/searchRoute/butie.png'></div><span> " +
-            (1-resObj[i].solutions[j].discount)*100+"%" +
+            numFormat((1-resObj[i].solutions[j].discount)*100)+"%" +
             "</span></div><div class='d6'><p>已成交<span class='redWord'>" +
-            resObj[i].solutions[j].orderNum +
+            resDeal(resObj[i].solutions[j].orderNum) +
             "</span>笔</p>"+
             //"<p><a href='#'>33条评价</a></p>"+
             "</div></li>"
@@ -577,4 +692,12 @@ var routeCreate = function (resObj) {
     }
     content.innerHTML = list;
     document.getElementById("routeCount").innerHTML = resObj.length;
+}
+
+function resDeal(val){
+    if(val||val===undefined){
+        return "--";
+    }else{
+        return val;
+    }
 }

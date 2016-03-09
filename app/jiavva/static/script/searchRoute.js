@@ -37,9 +37,15 @@ window.onload = function () {
 var locatinUrl = function(){
     var urlParam = urlString();
     var boxS = document.getElementById("startPlaceBox");
+    data.departure = new Object();
+    data.destination = new Object();
     //如果是始发地，请求物流
     if(urlParam[0].name == "departure"){
         searchRoute();
+        data.departure.cityCode = urlParam[0].value;
+        data.destination.provinceCode = urlParam[1].value;
+        data.destination.cityCode = urlParam[2].value;
+        data.destination.districtCode = urlParam[3].value;
         data.serviceType = "logistics";
         document.getElementById("departure").innerHTML = decodeURI(urlParam[4].value);
         document.getElementById("destination").innerHTML = decodeURI(urlParam[5].value);
@@ -68,6 +74,10 @@ var locatinUrl = function(){
     //如果是产品分类，请求安装
     else if(urlParam[0].name == "productCategory"){
         searchRoute();
+        data.valuation.productCategory = urlParam[0].value;
+        data.destination.provinceCode = urlParam[1].value;
+        data.destination.cityCode = urlParam[2].value;
+        data.destination.districtCode = urlParam[3].value;
         data.serviceType = "install";
         document.getElementById("goodSelected").innerHTML = decodeURI(urlParam[4].value);
         document.getElementById("destination").innerHTML = decodeURI(urlParam[5].value);

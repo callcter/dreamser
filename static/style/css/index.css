@@ -1,1 +1,385 @@
-body{min-width:1200px}.wrapper{width:1200px;background:#fff;margin:0 auto}.wrapper .banner{width:100%;height:auto;background:#f0f0f0}.wrapper .banner .carousel{display:block;position:relative;float:left;width:900px;height:400px}.wrapper .banner .carousel .index{display:block;position:absolute;top:350px;left:435px}.wrapper .banner .carousel .index li{list-style:none;display:inline-block;width:10px;height:10px;border-radius:50%;-o-border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;background-color:#f0f0f0;cursor:pointer}.wrapper .banner .carousel .index li.active{background-color:#e2ff00}.wrapper .banner .thumbnail{display:block;position:relative;float:left;width:240px;height:320px;margin-left:30px;margin-top:40px}.wrapper .banner .thumbnail .avator{margin:0 auto 30px;width:80px;height:80px;border-radius:50%;-o-border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;overflow:hidden}.wrapper .banner .thumbnail .nickname{width:100%;height:40px;font-size:.9rem;color:#333;line-height:40px;vertical-align:middle;text-align:center;margin-bottom:10px}.wrapper .banner .thumbnail .motto{width:100%;height:auto;font-size:.8rem;line-height:25px}.wrapper .list{width:100%;height:auto}.wrapper .list li{list-style:none;width:100%;height:auto;background:#f0f0f0;margin-top:10px}.wrapper .list li .title-1{font-size:.9rem;line-height:25px;vertical-align:middle;text-align:left;color:#333;width:100%;height:25px;padding:5px 20px}.wrapper .list li .workList{width:100%;height:auto;padding-top:10px;padding-bottom:10px}.wrapper .list li .workList li{list-style:none;height:auto;width:90%;margin:5px auto}.wrapper .list li .workList li .title-2{font-size:.8rem;color:#666;height:20px;line-height:20px;vertical-align:middle}.wrapper .list li .workList li .detail{width:100%;height:auto}.wrapper .list li .workList li .detail .text{line-height:20px;font-size:.7rem}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+  margin: 0;
+  padding: 0;
+}
+header,
+footer,
+section,
+article,
+aside,
+nav,
+hgroup,
+address,
+figure,
+figcaption,
+menu,
+details {
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th {
+  text-align: left;
+  font-weight: normal;
+}
+html,
+body,
+fieldset,
+img,
+iframe,
+abbr {
+  border: 0;
+}
+i,
+cite,
+em,
+var,
+address,
+dfn {
+  font-style: normal;
+}
+[hidefocus],
+summary {
+  outline: 0;
+}
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small {
+  font-size: 100%;
+}
+sup,
+sub {
+  font-size: 83%;
+}
+pre,
+code,
+kbd,
+samp {
+  font-family: inherit;
+}
+q:before,
+q:after {
+  content: none;
+}
+textarea {
+  overflow: auto;
+  resize: none;
+}
+label,
+summary {
+  cursor: default;
+}
+a,
+button {
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+strong,
+b {
+  font-weight: bold;
+}
+del,
+ins,
+u,
+s,
+a,
+a:hover {
+  text-decoration: none;
+}
+a,
+a:hover {
+  color: #333;
+}
+html {
+  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', arial, sans-serif;
+  font-size: 20px;
+}
+body {
+  background: #fff;
+}
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+select {
+  font-size: .7rem;
+  line-height: 25px;
+  display: inline-block;
+  height: 25px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  outline: none;
+  background: #fff;
+}
+header {
+  width: 100%;
+  height: 50px;
+  background: #333;
+  font-size: 0.8rem;
+  vertical-align: middle;
+  line-height: 50px;
+}
+header .h-wrapper {
+  width: 1200px;
+  height: 50px;
+  margin: 0 auto;
+}
+header .h-wrapper .title {
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+  font-size: 1rem;
+  color: #aaa;
+}
+header .h-wrapper .title:hover {
+  color: #fff;
+}
+header .h-wrapper .list {
+  display: inline-block;
+  width: auto;
+  height: 40px;
+}
+header .h-wrapper .list li {
+  display: inline-block;
+  width: 90px;
+  height: 40px;
+  font-size: 0.8rem;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: font-size 1s, color 1s, background 1s;
+  -o-transition: font-size 1s, color 1s, background 1s;
+  -moz-transition: font-size 1s, color 1s, background 1s;
+  -webkit-transition: font-size 1s, color 1s, background 1s;
+}
+header .h-wrapper .list li:hover {
+  font-size: 0.9rem;
+  color: #000;
+  background: #fff;
+}
+header .h-left {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 15px;
+  top: 5px;
+  line-height: 30px;
+  vertical-align: middle;
+  text-align: left;
+  color: #999;
+}
+header .h-middle {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  left: 50%;
+  margin-left: -100px;
+  text-align: center;
+  color: #f0f0f0;
+}
+header .h-right {
+  position: absolute;
+  text-align: right;
+  width: 30px;
+  height: 30px;
+  right: 15px;
+  top: 5px;
+  line-height: 30px;
+  vertical-align: middle;
+  color: #999;
+}
+nav {
+  height: 30px;
+  background: #f0f0f0;
+  width: 100%;
+  min-width: 1200px;
+  margin-bottom: 10px;
+}
+nav .navigator {
+  width: 1180px;
+  height: 30px;
+  margin: 0 auto;
+  line-height: 30px;
+  color: #999;
+  vertical-align: middle;
+  font-size: 0.7rem;
+}
+footer {
+  width: 1200px;
+  height: auto;
+  background: #333;
+  margin: 10px auto 0;
+  text-align: center;
+}
+body {
+  min-width: 1200px;
+}
+main {
+  width: 1200px;
+  background: #fff;
+  margin: 0 auto;
+}
+main .banner {
+  width: 100%;
+  height: auto;
+  background: #f0f0f0;
+}
+main .banner .carousel {
+  display: block;
+  position: relative;
+  float: left;
+  width: 900px;
+  height: 400px;
+}
+main .banner .carousel .index {
+  display: block;
+  position: absolute;
+  top: 350px;
+  left: 435px;
+}
+main .banner .carousel .index li {
+  list-style: none;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+main .banner .carousel .index li.active {
+  background-color: #e2ff00;
+}
+main .banner .thumbnail {
+  display: block;
+  position: relative;
+  float: left;
+  width: 240px;
+  height: 320px;
+  margin-left: 30px;
+  margin-top: 40px;
+}
+main .banner .thumbnail .avator {
+  margin: 0 auto 30px;
+  width: 80px;
+  height: 80px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+}
+main .banner .thumbnail .nickname {
+  width: 100%;
+  height: 40px;
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  margin-bottom: 10px;
+}
+main .banner .thumbnail .motto {
+  width: 100%;
+  height: auto;
+  font-size: 0.8rem;
+  line-height: 25px;
+}
+main .list {
+  width: 100%;
+  height: auto;
+}
+main .list li {
+  list-style: none;
+  width: 100%;
+  height: auto;
+  background: #f0f0f0;
+  margin-top: 10px;
+}
+main .list li .title-1 {
+  font-size: 0.9rem;
+  line-height: 25px;
+  vertical-align: middle;
+  text-align: left;
+  color: #333;
+  width: 100%;
+  height: 25px;
+  padding: 5px 20px;
+}
+main .list li .workList {
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+main .list li .workList li {
+  list-style: none;
+  height: auto;
+  width: 90%;
+  margin: 5px auto;
+}
+main .list li .workList li .title-2 {
+  font-size: 0.8rem;
+  color: #666;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+main .list li .workList li .detail {
+  width: 100%;
+  height: auto;
+}
+main .list li .workList li .detail .text {
+  line-height: 20px;
+  font-size: 0.7rem;
+}

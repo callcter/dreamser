@@ -1,0 +1,102 @@
+@import "common.less";
+
+header{
+    width: 100%;
+    height: 50px;
+    background: #333;
+    font-size: 0.8rem;
+    vertical-align: middle;
+    line-height: 50px;
+    .h-wrapper{
+        width: 1200px;
+        height: 50px;
+        margin: 0 auto;
+        .title{
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+            font-size: 1rem;
+            color: #aaa;
+        }
+        .title:hover{
+            color: #fff;
+        }
+        .list{
+            display: inline-block;
+            width: auto;
+            height: 40px;
+            li{
+                display: inline-block;
+                width: 90px;
+                height: 40px;
+                font-size: 0.8rem;
+                color: #fff;
+                text-align: center;
+                cursor: pointer;
+                transition: font-size 1s,color 1s,background 1s;
+                -o-transition: font-size 1s,color 1s,background 1s;
+                -moz-transition: font-size 1s,color 1s,background 1s;
+                -webkit-transition: font-size 1s,color 1s,background 1s;
+            }
+            li:hover{
+                font-size: 0.9rem;
+                color: #000;
+                background: #fff;
+            }
+        }
+    }
+    .h-left{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 15px;
+        top: 5px;
+        line-height: 30px;
+        vertical-align: middle;
+        text-align: left;
+        color: #999;
+    }
+    .h-middle{
+        position: absolute;
+        width: 200px;
+        height: 40px;
+        left: 50%;
+        margin-left: -100px;
+        text-align: center;
+        color: #f0f0f0;
+    }
+    .h-right{
+        position: absolute;
+        text-align: right;
+        width: 30px;
+        height: 30px;
+        right: 15px;
+        top: 5px;
+        line-height: 30px;
+        vertical-align: middle;
+        color: #999;
+    }
+}
+nav{
+    height: 30px;
+    background: #f0f0f0;
+    width: 100%;
+    min-width: 1200px;
+    margin-bottom: 10px;
+    .navigator{
+        width: 1180px;
+        height: 30px;
+        margin: 0 auto;
+        line-height: 30px;
+        color: #999;
+        vertical-align: middle;
+        font-size: 0.7rem;
+    }
+}
+footer{
+    width: 1200px;
+    height: auto;
+    background: #333;
+    margin: 10px auto 0;
+    text-align: center;
+}

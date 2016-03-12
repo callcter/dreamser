@@ -1,42 +1,49 @@
 //通用变量、函数定义
 //border-radius定义
-.rounded-corners(@radius:5px){
-    border-radius: @radius;
-    -o-border-radius: @radius;
-    -moz-border-radius: @radius;
+.rounded-corners(@radius:5px)
+{
     -webkit-border-radius: @radius;
+       -moz-border-radius: @radius;
+            border-radius: @radius;
+
+         -o-border-radius: @radius;
 }
 
-.text-shadow(@x:0,@y:0,@blur:1px,@color:#000){
-    text-shadow: @arguments;
-    -o-text-shadow: @arguments;
-    -moz-text-shadow: @arguments;
+.text-shadow(@x:0,@y:0,@blur:1px,@color:#000)
+{
+            text-shadow: @arguments;
+
+         -o-text-shadow: @arguments;
+       -moz-text-shadow: @arguments;
     -webkit-text-shadow: @arguments;
 }
 
-.box-shadow(@x:0,@y:0,@blur:1px,@color:#000){
-    box-shadow: @arguments;
-    -o-box-shadow: @arguments;
-    -moz-box-shadow: @arguments;
+.box-shadow(@x:0,@y:0,@blur:1px,@color:#000)
+{
     -webkit-box-shadow: @arguments;
+       -moz-box-shadow: @arguments;
+            box-shadow: @arguments;
+
+         -o-box-shadow: @arguments;
 }
 
 //颜色变量定义
-@black: #000;
+@black1: #000;//纯黑色，一般不使用
+@black2: #333;//作为背景色、字体颜色使用
+@black3: #999;//作为类placeholder使用
+@black4: #ddd;//作为边框使用
 @tan: #d2b48c;
 @gray: #808080;
 @sliver: #c0c0c0;
 @white: #fff;
 @ghostwhite: #f8f8ff;
 @pink: #ffc0cb;
-@red: #ff0000;
-@green: #00ff00;
-@blue: #0000ff;
+@red: #f00;
+@green: #0f0;
+@blue: #00f;
 @indigo: #4b0082;
 @purple: #800080;
 @violet: #ee82ee;
 @glod: #ffd700;
 @cornislk: #fff8dc;
 @orange: #ffa500;
-
-//

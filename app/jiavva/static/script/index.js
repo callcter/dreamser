@@ -5,7 +5,16 @@ window.onload = function(){
     selectList3();
     selectList4();
     carousel();
+    carousel1();
     search();
+    play();
+    stop();
+    addEvent(document.getElementById("ddd"),"mouseover",function(){
+        document.getElementById("erweima").style.display = "block";
+    });
+    addEvent(document.getElementById("ddd"),"mouseout",function(){
+        document.getElementById("erweima").style.display = "none";
+    });
     document.onclick = function(){
         document.getElementById("selectBox1").style.display = "none";
         document.getElementById("selectBox2").style.display = "none";
@@ -162,8 +171,6 @@ var selectList2 = function(){
         document.getElementById("popularList").style.display = "none";
         stopProgapation(e);
         note = "";
-        selectBox.style.top = this.offsetHeight+this.offsetTop+"px";
-        selectBox.style.left = (this.offsetLeft-1)+"px";
         if(selectBox.style.display == "block"){
             selectBox.style.display = "none";
             selectList0.style.display = "none";
@@ -358,8 +365,6 @@ var selectList4 = function(){
         document.getElementById("selectList31").style.display = "none";
         document.getElementById("selectList32").style.display = "none";
         note = "";
-        selectBox.style.top = this.offsetHeight+this.offsetTop+"px";
-        selectBox.style.left = this.offsetLeft+"px";
         if(selectBox.style.display == "block"){
             selectBox.style.display = "none";
             selectList0.style.display = "none";
@@ -445,12 +450,52 @@ var carousel = function(){
     var pics = container.getElementsByTagName("li");
     var index = 0;
     var autoPlay = setInterval(function(){
-        if(index==pics.length-5){
+        if(index==pics.length){
             index = 0;
         }
         $("#carousel").animate({
-            left: -pics[index].offsetLeft+"px"
-        },"slow");
+            left: (-index*1100)+"px"
+        },"fast");
         index++;
     },2000);
+}
+var carousel1 = function(){
+    var clientW = window.innerWidth;
+    var container = document.getElementById("carousel1");
+    var pics = container.getElementsByTagName("li");
+    container.style.width = (clientW*4+50)+"px";
+    for(var i=0;i<pics.length;i++){
+        pics[i].style.width = clientW+"px";
+    }
+    var index = 0;
+    var autoPlay = setInterval(function(){
+        if(index==pics.length){
+            index = 0;
+        }
+        $("#carousel1").animate({
+            left: (-index*clientW)+"px"
+        },"fast");
+        index++;
+    },3000);
+}
+var play = function(){
+    var box = document.getElementById("videoBoxBack");
+    var btn = document.getElementById("play");
+    var video = document.getElementById("video");
+    addEvent(btn,"click",function(){
+        box.style.display = "block";
+        video.currentTime = 0;
+        video.play();
+        document.documentElement.style.overflow='hidden';
+    });
+}
+var stop = function(){
+    var box = document.getElementById("videoBoxBack");
+    var btn = document.getElementById("close");
+    var video = document.getElementById("video");
+    addEvent(btn,"click",function(){
+        box.style.display = "none";
+        video.pause();
+        document.documentElement.style.overflow='auto';
+    });
 }

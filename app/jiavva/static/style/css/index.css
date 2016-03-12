@@ -53,93 +53,81 @@ select {
   height: auto;
   margin: 0;
 }
+.header a {
+  color: #000;
+}
 .header .top {
-  width: 100%;
-  height: 30px;
-  border-bottom: 1px solid #ddd;
-}
-.header .top .top-l,
-.header .top .top-r {
-  width: auto;
-  height: 30px;
-  line-height: 30px;
-  font-size: 12px;
-  color: #333;
-  vertical-align: middle;
-}
-.header .top .top-l a,
-.header .top .top-r a {
-  text-decoration: none;
-  color: #333;
-}
-.header .top .top-l a.blue,
-.header .top .top-r a.blue {
-  color: #0d6eb7;
-}
-.header .top .top-l {
-  float: left;
-  margin-left: 30px;
-}
-.header .top .top-r {
-  float: right;
-  margin-right: 30px;
-}
-.header .logo {
   width: 1200px;
-  height: 90px;
+  height: 100px;
   margin: 0 auto;
 }
-.header .logo .logo-l {
-  width: 415px;
-  height: 90px;
+.header .top .logo {
   float: left;
-  margin-left: 0;
+  width: 425px;
+  height: 100px;
 }
-.header .logo .logo-r {
-  margin-top: 35px;
-  height: 20px;
+.header .top .links {
+  width: 700px;
+  height: 100px;
   float: right;
-  margin-right: 50px;
-  vertical-align: middle;
 }
-.header .logo .logo-r li {
+.header .top .links .links-t {
+  text-align: right;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: text-bottom;
+  font-size: 14px;
+}
+.header .top .links .links-m {
+  width: 100%;
+  height: 20px;
+  text-align: right;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.header .top .links .links-m li {
   display: inline-block;
   *display: inline;
   zoom: 1;
-  list-style: none;
-  height: 20px;
-  line-height: 20px;
-  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
 }
-.header .logo .logo-r li span {
+.header .top .links .links-m li span {
   display: inline-block;
   *display: inline;
   zoom: 1;
+  height: 20px;
+  width: auto;
 }
-.header .logo .logo-r li span.icon {
-  width: 18px;
-  height: 18px;
-  margin-bottom: -3px;
-  margin-left: 2px;
+.header .top .links .links-m li span.icon {
+  width: 20px;
+  height: 20px;
+  margin-bottom: -5px;
 }
-.header .logo .logo-code {
-  float: right;
-  width: 64px;
-  height: 81px;
-  margin-top: 5px;
-  margin-right: 0;
+.header .top .links .links-b {
+  text-align: right;
+  height: 25px;
+  line-height: 25px;
+  font-size: 14px;
+  vertical-align: baseline;
+}
+.header .top .links .links-b .pNum {
+  color: #0D6FB8;
+  font-size: 20px;
 }
 .header .nav {
   width: 100%;
   height: 40px;
-  background: #5aa7e1;
+  background: #404144;
+}
+.header .nav a {
+  color: #fff;
 }
 .header .nav .navi {
   width: 1200px;
   margin: 0 auto;
 }
 .header .nav .navi li {
-  list-style: none;
   display: inline-block;
   *display: inline;
   zoom: 1;
@@ -153,20 +141,64 @@ select {
   cursor: pointer;
   margin-left: -3px;
 }
-.header .nav .navi li.index {
-  background: #FFA939;
+.header .nav .navi li.first {
+  background: #166BAB;
   margin-left: 0;
 }
 .header .nav .navi li:hover {
-  background: #5196ca;
+  background: #2B2C30;
+}
+.header .nav1 {
+  width: 100%;
+  height: 40px;
+  background: #5AA7E1;
+}
+.header .nav1 a {
+  color: #fff;
+}
+.header .nav1 .navi {
+  width: 1200px;
+  margin: 0 auto;
+}
+.header .nav1 .navi li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: -3px;
+}
+.header .nav1 .navi li.first {
+  background: #FFA939;
+  margin-left: 0;
+}
+.header .nav1 .navi li:hover {
+  background: #5096CA;
+}
+.header .erweima {
+  position: fixed;
+  width: 90px;
+  height: 90px;
+  top: 5px;
+  left: 50%;
+  margin-left: 90px;
+  display: none;
 }
 .footer {
-  width: 700px;
-  margin: 10px auto 20px;
+  width: 855px;
+  margin: 0 auto 20px;
   font-size: 14px;
 }
 .footer .anchor {
-  width: 100%;
+  width: 340px;
+  float: left;
+  height: 80px;
   margin-bottom: 10px;
 }
 .footer .anchor li {
@@ -175,8 +207,8 @@ select {
   zoom: 1;
   list-style: none;
   width: 80px;
-  height: 30px;
-  line-height: 30px;
+  height: 40px;
+  line-height: 40px;
   vertical-align: middle;
   margin-left: -3px;
   text-align: center;
@@ -188,28 +220,85 @@ select {
 .footer .anchor li.index {
   margin-left: 0;
 }
+.footer .ewcode {
+  float: left;
+  width: 70px;
+  height: 70px;
+  padding: 5px 50px;
+  border-left: 2px solid #ddd;
+  border-right: 2px solid #ddd;
+}
+.footer .phones {
+  float: left;
+  width: 240px;
+  height: 80px;
+  margin-left: 20px;
+}
+.footer .phones p {
+  line-height: 25px;
+}
+.footer .phones p.p-num {
+  color: #FF5000;
+  font-size: 20px;
+}
+.footer .buttons {
+  float: left;
+  width: 80px;
+  height: 80px;
+}
+.footer .buttons .btn {
+  width: 80px;
+  height: 25px;
+  line-height: 25px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 3px;
+  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: none;
+  margin-top: 10px;
+  color: #fff;
+}
+.footer .buttons .color1 {
+  background: #E7A800;
+}
+.footer .buttons .color2 {
+  background: #FF5000;
+}
 .footer .copyright {
   width: 100%;
+  margin-top: 10px;
   text-align: center;
 }
 .banner {
   width: 100%;
-  height: 370px;
+  height: 420px;
+  overflow: hidden;
   position: relative;
-  background-image: url(../../image/index/banner.png);
-  background-position: center 0;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  margin-bottom: 20px;
+}
+.banner .carou {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  position: absolute;
+}
+.banner .carou li {
+  width: 100%;
+  height: 420px;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+.banner .carou li.left {
+  margin-left: -4px;
 }
 .banner .bannerBox {
-  position: relative;
-  top: 50px;
+  position: absolute;
+  left: 50%;
+  margin-left: -600px;
+  top: 80px;
   width: 1200px;
-  margin: 0 auto;
 }
 .banner .bannerBox .searchBox {
   width: 500px;
@@ -220,7 +309,7 @@ select {
   -o-border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  background: #fff;
+  background-image: url(../../image/index/tab_bg.png);
 }
 .banner .bannerBox .searchBox .searchTab {
   position: relative;
@@ -232,6 +321,7 @@ select {
   list-style: none;
   width: 100px;
   height: 40px;
+  color: #fff;
   text-align: center;
   line-height: 40px;
   vertical-align: middle;
@@ -246,7 +336,7 @@ select {
   margin-left: 30px;
 }
 .banner .bannerBox .searchBox .searchTab li.active {
-  color: #FFA939;
+  color: #166BAB;
 }
 .banner .bannerBox .searchBox .searchTab .tabActive {
   position: absolute;
@@ -267,7 +357,7 @@ select {
   height: 50px;
   margin: 20px auto;
   font-size: 18px;
-  color: #333;
+  color: #fff;
 }
 .banner .bannerBox .searchBox .searchInput .searchSelect {
   display: inline-block;
@@ -281,7 +371,7 @@ select {
   border: 1px solid #ddd;
   cursor: pointer;
   font-size: 16px;
-  color: #999;
+  color: #ddd;
   border-radius: 5px;
   -o-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -312,7 +402,7 @@ select {
   -o-border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  background: #FFA939;
+  background: #166BAB;
   color: #fff;
   text-align: center;
   line-height: 35px;
@@ -321,7 +411,28 @@ select {
   font-size: 16px;
   cursor: pointer;
 }
-.banner .bannerBox .selectBox {
+.banner .playBtn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: 80px;
+  margin-left: 380px;
+  cursor: pointer;
+  z-index: 10;
+}
+.sb2 {
+  margin-top: -146px;
+  left: 50%;
+  margin-left: -481px;
+}
+.sb4 {
+  margin-top: -146px;
+  left: 50%;
+  margin-left: -473px;
+}
+.selectBox {
   width: 310px;
   height: auto;
   font-size: 12px;
@@ -330,23 +441,21 @@ select {
   border: 1px solid #ddd;
   background: #fff;
   position: absolute;
-  top: 32px;
-  left: 87px;
   display: none;
-  z-index: 10;
+  z-index: 100;
 }
-.banner .bannerBox .selectBox .selectTip {
+.selectBox .selectTip {
   height: 25px;
   width: auto;
   padding-left: 5px;
 }
-.banner .bannerBox .selectBox .selectTab {
+.selectBox .selectTab {
   width: auto;
   height: 25px;
   border-bottom: 1px solid #ddd;
   padding-left: 10px;
 }
-.banner .bannerBox .selectBox .selectTab li {
+.selectBox .selectTab li {
   display: inline-block;
   *display: inline;
   zoom: 1;
@@ -355,11 +464,11 @@ select {
   padding-left: 5px;
   padding-right: 5px;
 }
-.banner .bannerBox .selectBox .selectTab li.active {
+.selectBox .selectTab li.active {
   border-bottom: 1px solid #26b4d3;
   color: #26b4d3;
 }
-.banner .bannerBox .selectBox .selectList {
+.selectBox .selectList {
   position: relative;
   margin-top: 2px;
   margin-left: 10px;
@@ -368,7 +477,7 @@ select {
   background: #fff;
   display: none;
 }
-.banner .bannerBox .selectBox .selectList li {
+.selectBox .selectList li {
   list-style: none;
   height: 20px;
   display: inline-block;
@@ -386,222 +495,103 @@ select {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-.banner .bannerBox .selectBox .selectList li.tc {
+.selectBox .selectList li.tc {
   color: #FFA939;
 }
-.banner .bannerBox .selectBox .selectList li.activeT {
+.selectBox .selectList li.activeT {
   background: #26b4d3;
   color: #fff;
 }
-.banner .videoBoxBack {
+.videoBoxBack {
   width: 100%;
   height: 100%;
   position: fixed;
+  display: none;
   top: 0;
   left: 0;
-  background: #000;
-  opacity: 0.3;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
 }
-.banner .videoBoxBack .videoBox {
+.videoBoxBack .videoBox {
+  position: absolute;
+  top: 50%;
+  margin-top: -225px;
+  left: 50%;
+  margin-left: -400px;
   width: 800px;
-  height: 600px;
+  height: 450px;
+}
+.videoBoxBack .close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -245px;
+  margin-left: 400px;
+  cursor: pointer;
 }
 .servicePic {
-  width: 1200px;
-  height: auto;
-  margin: 0 auto 20px;
-}
-.recommendBox {
-  width: 1200px;
-  margin: 20px auto;
-}
-.recommendBox .title {
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  vertical-align: middle;
-  font-size: 22px;
-  color: #666;
-  border-bottom: 1px solid #f00;
-}
-.recommendBox .brands {
   width: 100%;
   height: auto;
-  margin-top: 20px;
+  background: #F7F7F7;
+  position: relative;
+  z-index: -1;
 }
-.recommendBox .brands li {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  width: 280px;
-  height: 90px;
-  border: 1px solid #ddd;
-  margin-left: 17px;
-}
-.recommendBox .brands li .brandLogo {
-  float: left;
-  width: 80px;
-  height: 80px;
-  margin: 5px;
-}
-.recommendBox .brands li .brandDetail {
-  float: left;
-  width: 160px;
-  height: 75px;
-  margin-top: 8px;
-  margin-left: 10px;
-}
-.recommendBox .brands li .brandDetail p {
-  height: 25px;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 25px;
-  vertical-align: middle;
-  width: 100%;
-}
-.recommendBox .brands li .brandDetail p .num {
-  color: #fa3b5b;
-}
-.recommendBox .brands li.index {
-  margin-left: 2px;
-}
-.recommendRoute {
+.servicePic .con1 {
   width: 1200px;
-  margin: 20px auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
-.recommendRoute .title,
-.recommendRoute .tab {
+.servicePic2 {
   width: 100%;
-  line-height: 35px;
-  vertical-align: middle;
-  color: #666;
-}
-.recommendRoute .title {
-  height: 35px;
-  font-size: 22px;
-}
-.recommendRoute .tab {
-  height: 36px;
-  border-bottom: 1px solid #ddd;
-  font-size: 16px;
-}
-.recommendRoute .tab li {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  border: 1px solid #ddd;
-  width: 150px;
-  text-align: center;
-  margin-left: -1px;
-  cursor: pointer;
+  height: auto;
   background: #fff;
-}
-.recommendRoute .tab li.active {
-  border-top: 1px solid #f00;
-  margin-bottom: 2px solid #fff;
-}
-.recommendRoute .routeList {
-  margin-top: 20px;
-  width: 100%;
-  height: auto;
-}
-.recommendRoute .routeList li {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  margin-top: 5px;
-  width: 33%;
-  height: 25px;
-  line-height: 25px;
-  text-align: center;
-  vertical-align: middle;
-}
-.recommendRoute .routeList li .num {
-  color: #ECAF72;
-  font-style: italic;
-}
-.brandWall {
-  width: 1200px;
-  margin: 0 auto;
-}
-.brandWall .title {
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  vertical-align: middle;
-  font-size: 22px;
-  color: #666;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #f00;
-}
-.brandWall .brands {
-  width: 100%;
-  height: auto;
-}
-.brandWall .brands li {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  width: 218px;
-  height: 98px;
-  border: 1px solid #ddd;
-  margin-left: 20px;
-  margin-bottom: 10px;
-}
-.brandWall .brands li.first {
-  margin-left: 0;
-}
-.logisticWall {
-  width: 1200px;
-  overflow: hidden;
-  height: auto;
-  margin: 0 auto;
   position: relative;
+  z-index: -1;
+  border-bottom: 1px solid #ddd;
 }
-.logisticWall .title {
-  width: 100%;
-  height: 35px;
-  line-height: 35px;
-  vertical-align: middle;
-  font-size: 22px;
-  color: #666;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #f00;
+.servicePic2 .con1 {
+  width: 1200px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
-.logisticWall .carouselContainer {
-  width: 1120px;
-  height: 100px;
-  margin: 0 auto;
-  overflow: hidden;
+.serRecommend {
+  background: #F1F1F1;
+  border-bottom: 1px solid #ddd;
+}
+.serRecommend .serTitle {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.serRecommend .serCarousel {
   position: relative;
+  width: 1100px;
+  height: 345px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding-bottom: 50px;
 }
-.logisticWall .carouselContainer .carousel {
-  width: 2230px;
-  height: 100px;
+.serRecommend .serCarousel .carousel {
   position: absolute;
-  left: 0;
-  top: 0;
+  width: 2220px;
 }
-.logisticWall .carouselContainer .carousel li {
+.serRecommend .serCarousel .carousel li {
   display: inline-block;
   *display: inline;
   zoom: 1;
-  width: 218px;
-  height: 98px;
-  margin-left: 3px;
+  width: 1093px;
+  height: 344px;
+  margin-left: 4px;
 }
-.logisticWall .prevBtn,
-.logisticWall .nextBtn {
-  position: absolute;
-  width: 35px;
-  height: 100px;
-  top: 56px;
-  opacity: 1;
-  z-index: 10;
-}
-.logisticWall .prevBtn {
-  left: 0;
-}
-.logisticWall .nextBtn {
-  right: 0;
+.serPic {
+  width: 1200px;
+  height: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 2px solid #ddd;
 }

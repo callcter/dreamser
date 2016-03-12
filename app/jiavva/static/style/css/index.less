@@ -4,28 +4,36 @@
 
 .banner{
     width: 100%;
-    height: 370px;
+    height: 420px;
+    overflow: hidden;
     position: relative;
-    background-image: url(../../image/index/banner.png);
-    background-position: center 0;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    margin-bottom: 20px;
+    .carou{
+        width: 100%;
+        height: 420px;
+        overflow: hidden;
+        position: absolute;
+        li{
+            width: 100%;
+            height: 420px;
+            .displayIB;
+        }
+        li.left{
+            margin-left: -4px;
+        }
+    }
     .bannerBox{
-        position: relative;
-        top: 50px;
+        position: absolute;
+        left: 50%;
+        margin-left: -600px;
+        top: 80px;
         width: 1200px;
-        margin: 0 auto;
         .searchBox{
             width: 500px;
             height: 250px;
             padding-top: 10px;
             padding-bottom: 10px;
             .rounded-corners(3px);
-            background: #fff;
+            background-image: url(../../image/index/tab_bg.png);
             .searchTab{
                 position: relative;
                 width: 100%;
@@ -35,6 +43,7 @@
                     list-style: none;
                     width: 100px;
                     height: 40px;
+                    color: #fff;
                     text-align: center;
                     line-height: 40px;
                     vertical-align: middle;
@@ -47,7 +56,7 @@
                     margin-left: 30px;
                 }
                 li.active{
-                    color: #FFA939;
+                    color: #166BAB;
                 }
                 .tabActive{
                     position: absolute;
@@ -68,7 +77,7 @@
                 height: 50px;
                 margin: 20px auto;
                 .fontSize(0.9);
-                color: #333;
+                color: #fff;
                 .searchSelect{
                     .displayIB;
                     position: relative;
@@ -79,7 +88,7 @@
                     border: 1px solid #ddd;
                     cursor: pointer;
                     .fontSize(0.8);
-                    color: #999;
+                    color: #ddd;
                     .rounded-corners;
                     white-space: nowrap;
                     .input{
@@ -103,7 +112,7 @@
                 width: 120px;
                 height: 35px;
                 .rounded-corners(3px);
-                background: #FFA939;
+                background: #166BAB;
                 color: #fff;
                 text-align: center;
                 line-height: 35px;
@@ -113,287 +122,180 @@
                 cursor: pointer;
             }
         }
-        .selectBox{
-            width: 310px;
-            height: auto;
-            .fontSize(0.6);
-            line-height: 25px;
-            vertical-align: middle;
-            border: 1px solid #ddd;
-            background: #fff;
-            position: absolute;
-            top: 32px;
-            left: 87px;
-            display: none;
-            z-index: 10;
-            .selectTip{
-                height: 25px;
-                width: auto;
-                padding-left: 5px;
-            }
-            .selectTab{
-                width: auto;
-                height: 25px;
-                border-bottom: 1px solid #ddd;
-                padding-left: 10px;
-                li{
-                    .displayIB;
-                    list-style: none;
-                    height: 25px;
-                    padding-left: 5px;
-                    padding-right: 5px;
-                }
-                li.active{
-                    border-bottom: 1px solid #26b4d3;
-                    color: #26b4d3;
-                }
-            }
-            .selectList{
-                position: relative;
-                margin-top: 2px;
-                margin-left: 10px;
-                width: 290px;
-                height: auto;
-                background: #fff;
-                display: none;
-                li{
-                    list-style: none;
-                    height: 20px;
-                    .displayIB;
-                    width: auto;
-                    white-space: nowrap;
-                    padding: 0 10px;
-                    line-height: 20px;
-                    vertical-align: middle;
-                    border: none;
-                    cursor: pointer;
-                    .rounded-corners(3px);
-                }
-                li.tc{
-                    color: #FFA939;
-                }
-                li.activeT{
-                    background: #26b4d3;
-                    color: #fff;
-                }
-            }
+    }
+    .playBtn{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100px;
+        height: 100px;
+        margin-top: 80px;
+        margin-left: 380px;
+        cursor: pointer;
+        z-index: 10;
+    }
+}
+.sb2{
+    margin-top: -146px;
+    left: 50%;
+    margin-left: -481px;
+}
+.sb4{
+    margin-top: -146px;
+    left: 50%;
+    margin-left: -473px;
+}
+.selectBox{
+    width: 310px;
+    height: auto;
+    .fontSize(0.6);
+    line-height: 25px;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    background: #fff;
+    position: absolute;
+    display: none;
+    z-index: 100;
+    .selectTip{
+        height: 25px;
+        width: auto;
+        padding-left: 5px;
+    }
+    .selectTab{
+        width: auto;
+        height: 25px;
+        border-bottom: 1px solid #ddd;
+        padding-left: 10px;
+        li{
+            .displayIB;
+            list-style: none;
+            height: 25px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        li.active{
+            border-bottom: 1px solid #26b4d3;
+            color: #26b4d3;
         }
     }
-    .videoBoxBack{
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: #000;
-        opacity: 0.3;
-        .videoBox{
-            width: 800px;
-            height: 600px;
+    .selectList{
+        position: relative;
+        margin-top: 2px;
+        margin-left: 10px;
+        width: 290px;
+        height: auto;
+        background: #fff;
+        display: none;
+        li{
+            list-style: none;
+            height: 20px;
+            .displayIB;
+            width: auto;
+            white-space: nowrap;
+            padding: 0 10px;
+            line-height: 20px;
+            vertical-align: middle;
+            border: none;
+            cursor: pointer;
+            .rounded-corners(3px);
         }
+        li.tc{
+            color: #FFA939;
+        }
+        li.activeT{
+            background: #26b4d3;
+            color: #fff;
+        }
+    }
+}
+.videoBoxBack{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 100;
+    .videoBox{
+        position: absolute;
+        top: 50%;
+        margin-top: -225px;
+        left: 50%;
+        margin-left: -400px;
+        width: 800px;
+        height: 450px;
+    }
+    .close{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -245px;
+        margin-left: 400px;
+        cursor: pointer;
     }
 }
 .servicePic{
-    width: 1200px;
+    width: 100%;
     height: auto;
-    margin: 0 auto 20px;
-}
-.recommendBox{
-    width: 1200px;
-    margin: 20px auto;
-    .title{
-        width: 100%;
-        height: 35px;
-        line-height: 35px;
-        vertical-align: middle;
-        .fontSize(1.1);
-        color: #666;
-        border-bottom: 1px solid #f00;
-    }
-    .brands{
-        width: 100%;
-        height: auto;
-        margin-top: 20px;
-        li{
-            .displayIB;
-            width: 280px;
-            height: 90px;
-            border: 1px solid #ddd;
-            margin-left: 17px;
-            .brandLogo{
-                float: left;
-                width: 80px;
-                height: 80px;
-                margin: 5px;
-            }
-            .brandDetail{
-                float: left;
-                width: 160px;
-                height: 75px;
-                margin-top: 8px;
-                margin-left: 10px;
-                p{
-                    height: 25px;
-                    .fontSize(0.8);
-                    font-weight: bold;
-                    line-height: 25px;
-                    vertical-align: middle;
-                    width: 100%;
-                    .num{
-                        color: #fa3b5b;
-                    }
-                }
-            }
-        }
-        li.index{
-            margin-left: 2px;
-        }
-    }
-}
-.recommendRoute{
-    width: 1200px;
-    margin: 20px auto;
-    .title,.tab{
-        width: 100%;
-        line-height: 35px;
-        vertical-align: middle;
-        color: #666;
-    }
-    .title{
-        height: 35px;
-        .fontSize(1.1);
-    }
-    .tab{
-        height: 36px;
-        border-bottom: 1px solid #ddd;
-        .fontSize(0.8);
-        li{
-            .displayIB;
-            border: 1px solid #ddd;
-            width: 150px;
-            text-align: center;
-            margin-left: -1px;
-            cursor: pointer;
-            background: #fff;
-        }
-        li.active{
-            border-top: 1px solid #f00;
-            margin-bottom: 2px solid #fff;
-        }
-    }
-    .routeList{
-        margin-top: 20px;
-        width: 100%;
-        height: auto;
-        li{
-            .displayIB;
-            margin-top: 5px;
-            width: 33%;
-            height: 25px;
-            line-height: 25px;
-            text-align: center;
-            vertical-align: middle;
-            .num{
-                color: #ECAF72;
-                font-style: italic;
-            }
-        }
-    }
-}
-.brandWall{
-    width: 1200px;
-    margin: 0 auto;
-    .title{
-        width: 100%;
-        height: 35px;
-        line-height: 35px;
-        vertical-align: middle;
-        .fontSize(1.1);
-        color: #666;
-        margin-bottom: 20px;
-        border-bottom: 1px solid #f00;
-    }
-    .brands{
-        width: 100%;
-        height: auto;
-        li{
-            .displayIB;
-            width: 218px;
-            height: 98px;
-            border: 1px solid #ddd;
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
-        li.first{
-            margin-left: 0;
-        }
-    }
-}
-.logisticWall{
-    width: 1200px;
-    overflow: hidden;
-    height: auto;
-    margin: 0 auto;
+    background: #F7F7F7;
     position: relative;
-    .title{
-        width: 100%;
-        height: 35px;
-        line-height: 35px;
-        vertical-align: middle;
-        .fontSize(1.1);
-        color: #666;
-        margin-bottom: 20px;
-        border-bottom: 1px solid #f00;
+    z-index: -1;
+    .con1{
+        width: 1200px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
-    .carouselContainer{
-        width: 1120px;
-        height: 100px;
-        margin: 0 auto;
-        overflow: hidden;
+}
+.servicePic2{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    position: relative;
+    z-index: -1;
+    border-bottom: 1px solid #ddd;
+    .con1{
+        width: 1200px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.serRecommend{
+    background: #F1F1F1;
+    border-bottom: 1px solid #ddd;
+    .serTitle{
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .serCarousel{
         position: relative;
+        width: 1100px;
+        height: 345px;
+        overflow: hidden;
+        margin: 0 auto;
+        padding-bottom: 50px;
         .carousel{
-            width: 2230px;
-            height: 100px;
             position: absolute;
-            left: 0;
-            top: 0;
+            width: 2220px;
             li{
                 .displayIB;
-                width: 218px;
-                height: 98px;
-                margin-left: 3px;
-//                border: 1px solid #ddd;
+                width: 1093px;
+                height: 344px;
+                margin-left: 4px;
             }
         }
     }
-    .prevBtn,.nextBtn{
-        position: absolute;
-        width: 35px;
-        height: 100px;
-        top: 56px;
-        opacity: 1;
-        z-index: 10;
-    }
-    .prevBtn{
-        left: 0;
-    }
-    .nextBtn{
-        right: 0;
-    }
-//    .indexs{
-//        width: 50px;
-//        height: auto;
-//        margin: 5px auto;
-//        li{
-//            .displayIB;
-//            width: 10px;
-//            height: 10px;
-//            background: #ddd;
-//            .rounded-corners(50%);
-//            cursor: pointer;
-//        }
-//        li.active{
-//            background: #f00;
-//        }
-//    }
+}
+.serPic{
+    width: 1200px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 2px solid #ddd;
 }

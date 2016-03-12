@@ -8,85 +8,75 @@
     width: 100%;
     height: auto;
     margin: 0;
-    .top{
-        width: 100%;
-        height: 30px;
-        border-bottom: 1px solid #ddd;
-        .top-l,.top-r{
-            width: auto;
-            height: 30px;
-            line-height: 30px;
-            .fontSize(0.6);
-            color: #333;
-            vertical-align: middle;
-            a{
-                text-decoration: none;
-                color: #333;
-            }
-            a.blue{
-                color: #0d6eb7;
-            }
-        }
-        .top-l{
-            float: left;
-            margin-left: 30px;
-        }
-        .top-r{
-            float: right;
-            margin-right: 30px;
-        }
-        
+    a{
+        color: #000;
     }
-    .logo{
+    .top{
         width: 1200px;
-        height: 90px;
+        height: 100px;
         margin: 0 auto;
-        .logo-l{
-            width: 415px;
-            height: 90px;
+        .logo{
             float: left;
-            margin-left: 0;
+            width: 425px;
+            height: 100px;
         }
-        .logo-r{
-            margin-top: 35px;
-            height: 20px;
+        .links{
+            width: 700px;
+            height: 100px;
             float: right;
-            margin-right: 50px;
-            vertical-align: middle;
-            li{
-                .displayIB;
-                list-style: none;
+            .links-t{
+                text-align: right;
+                height: 40px;
+                line-height: 40px;
+                vertical-align: text-bottom;
+                .fontSize(0.7);
+            }
+            .links-m{
+                width: 100%;
                 height: 20px;
-                line-height: 20px;
-                margin-left: 10px;
-                span{
+                text-align: right;
+                margin-bottom: 10px;
+                .fontSize(0.7);
+                li{
                     .displayIB;
-                }
-                span.icon{
-                    width: 18px;
-                    height: 18px;
-                    margin-bottom: -3px;
-                    margin-left: 2px;
+                    margin-right: 10px;
+                    cursor: pointer;
+                    span{
+                        .displayIB;
+                        height: 20px;
+                        width: auto;
+                    }
+                    span.icon{
+                        width: 20px;
+                        height: 20px;
+                        margin-bottom: -5px;
+                    }
                 }
             }
-        }
-        .logo-code{
-            float: right;
-            width: 64px;
-            height: 81px;
-            margin-top: 5px;
-            margin-right: 0;
+            .links-b{
+                text-align: right;
+                height: 25px;
+                line-height: 25px;
+                .fontSize(0.7);
+                vertical-align: baseline;
+                .pNum{
+                    color: #0D6FB8;
+                    .fontSize(1);
+                }
+            }
         }
     }
     .nav{
         width: 100%;
         height: 40px;
-        background: #5aa7e1;
+        background: #404144;
+        a{
+            color: #fff;
+        }
         .navi{
             width: 1200px;
             margin: 0 auto;
             li{
-                list-style: none;
                 .displayIB;
                 height: 40px;
                 line-height: 40px;
@@ -98,30 +88,72 @@
                 cursor: pointer;
                 margin-left: -3px;
             }
-            li.index{
+            li.first{
+                background: #166BAB;
+                margin-left: 0;
+            }
+            li:hover{
+                background: #2B2C30;
+            }
+        }
+    }
+    .nav1{
+        width: 100%;
+        height: 40px;
+        background: #5AA7E1;
+        a{
+            color: #fff;
+        }
+        .navi{
+            width: 1200px;
+            margin: 0 auto;
+            li{
+                .displayIB;
+                height: 40px;
+                line-height: 40px;
+                vertical-align: middle;
+                width: 100px;
+                text-align: center;
+                .fontSize(0.8);
+                color: #fff;
+                cursor: pointer;
+                margin-left: -3px;
+            }
+            li.first{
                 background: #FFA939;
                 margin-left: 0;
             }
             li:hover{
-                background: #5196ca;
+                background: #5096CA;
             }
         }
+    }
+    .erweima{
+        position: fixed;
+        width: 90px;
+        height: 90px;
+        top: 5px;
+        left: 50%;
+        margin-left: 90px;
+        display: none;
     }
 }
 
 .footer{
-    width: 700px;
-    margin: 10px auto 20px;
+    width: 855px;
+    margin: 0 auto 20px;
     .fontSize(0.7);
     .anchor{
-        width: 100%;
+        width: 340px;
+        float: left;
+        height: 80px;
         margin-bottom: 10px;
         li{
             .displayIB;
             list-style: none;
             width: 80px;
-            height: 30px;
-            line-height: 30px;
+            height: 40px;
+            line-height: 40px;
             vertical-align: middle;
             margin-left: -3px;
             text-align: center;
@@ -134,8 +166,52 @@
             margin-left: 0;
         }
     }
+    .ewcode{
+        float: left;
+        width: 70px;
+        height: 70px;
+        padding: 5px 50px;
+        border-left: 2px solid #ddd;
+        border-right: 2px solid #ddd;
+    }
+    .phones{
+        float: left;
+        width: 240px;
+        height: 80px;
+        margin-left: 20px;
+        p{
+            line-height: 25px;
+        }
+        p.p-num{
+            color: #FF5000;
+            .fontSize(1);
+        }
+    }
+    .buttons{
+        float: left;
+        width: 80px;
+        height: 80px;
+        .btn{
+            width: 80px;
+            height: 25px;
+            line-height: 25px;
+            vertical-align: middle;
+            text-align: center;
+            .rounded-corners(3px);
+            border: none;
+            margin-top: 10px;
+            color: #fff;
+        }
+        .color1{
+            background: #E7A800;
+        }
+        .color2{
+            background: #FF5000;
+        }
+    }
     .copyright{
         width: 100%;
+        margin-top: 10px;
         text-align: center;
     }
 }

@@ -59,6 +59,7 @@ var locatinUrl = function(){
             url: url,
             data: dataJson,
             dataType: "json",
+            contentType:"application/json",
             type: "POST",
             success: function(result){
                 if(result.length==0){
@@ -87,6 +88,7 @@ var locatinUrl = function(){
             url: url,
             data: dataJson,
             dataType: "json",
+            contentType:"application/json",
             type: "POST",
             success: function(result){
                 if(result.length==0){
@@ -498,6 +500,7 @@ var rankList = function () {
                 url: url,
                 data: dataJson,
                 dataType: "json",
+                contentType:"application/json",
                 type: "POST",
                 success: function(result){
                     if(result.length==0){
@@ -537,14 +540,15 @@ var search = function(){
             }
         }
         console.log(searchRoute());
-//        routeCreate(test);
-//        priceList(test);
+        routeCreate(test);
+        priceList(test);
         var url = "/lineCompare";
         var dataJson = JSON.stringify(searchRoute());
         $.ajax({
             url: url,
             data: dataJson,
             dataType: "json",
+            contentType:"application/json",
             type: "POST",
             success: function(result){
                 if(result.length==0){
@@ -583,12 +587,6 @@ var searchRoute = function(){
             data.services.push(i+1);
         }
     }
-//    if(data.productType.length == 0){
-//        data.productType = [1,2,3];
-//    }
-//    if(data.services.length == 0){
-//        data.services = [1,2,3,4];
-//    }
     data.valuation.num = $("#num").val();
     data.valuation.weight = $("#weight").val();
     data.valuation.volume = $("#volume").val();
@@ -656,30 +654,26 @@ var routeCreate = function (resObj) {
             stars[3] +
             ".png'></li><li><img src='../static/image/star-" +
             stars[4] +
-            ".png'></li></ul></div><div class='d2'><p class='route'>从：" +
-            resObj[i].solutions[j].departure +
+            ".png'></li></ul></div><div class='d2'>"+
+            valD1(resObj[i].solutions[j].departure)+
             //"（<a href='#'>查看网点</a>）"+
-            "</p><p class='route'>到：" +
+            "<p class='route'>到：" +
             resObj[i].solutions[j].destination +
             //"（<a href='#'>查看网点</a>）"+
             "</p><p class='icons'>" +
             serviceType +"</p>"+
             //"<p class='type orange'>送装一体</p>"+
             "</div><div class='d3'>"+
-            "<p class='time'>"+resObj[i].solutions[j].timeLimitType+"："+resDeal(resObj[i].solutions[j].timeLimit)+"</p>"+
+            "<p class='time'>"+resObj[i].solutions[j].timeLimitType+"："+resObj[i].solutions[j].timeLimit+"</p>"+
             "<p class='type orange'>" +
             resDeal(resObj[i].solutions[j].transportWay) +
-            "</p></div><div class='d4'><p>轻货：￥" +
-            resDeal(resObj[i].solutions[j].priceByVolume) +
-            " /立方米</p><p>重货：￥" +
-            resDeal(resObj[i].solutions[j].priceByWeight) +
-            " /立方米</p><p>配送：￥" +
-            resDeal(resObj[i].solutions[j].distributionPrice) +
-            " /立方米</p><p>安装：￥" +
-            resDeal(resObj[i].solutions[j].installationPrice) +
-            " /组</p><p>保底：￥" +
-            resDeal(resObj[i].solutions[j].limitPrice) +
-            " /票</p></div><div class='d5'><div class='buIcon'><img src='../static/image/searchRoute/butie.png'></div><span> " +
+            "</p></div><div class='d4'>"+
+            valD2(resObj[i].solutions[j].priceByVolume)+
+            valD3(resObj[i].solutions[j].priceByWeight)+
+            valD4(resObj[i].solutions[j].distributionPrice)+
+            valD5(resObj[i].solutions[j].installationPrice)+
+            valD6(resObj[i].solutions[j].limitPrice)+
+            "</div><div class='d5'><div class='buIcon'><img src='../static/image/searchRoute/butie.png'></div><span> " +
             numFormat((1-resObj[i].solutions[j].discount)*100)+"%" +
             "</span></div><div class='d6'><p>已成交<span class='redWord'>" +
             resDeal(resObj[i].solutions[j].orderNum) +
@@ -690,7 +684,7 @@ var routeCreate = function (resObj) {
         list += "<li><ul class='listDetail'>" + listSub +
         "</ul><div class='listSummary'><div class='s1'><p>预估费用：<span class='redWord'>￥</span><span class='priceSum'>" +
         resObj[i].totalPrice +
-        "</span></p></div><div class='s2'><div class='confirmBtn'>下单</div>"+
+        "</span></p></div><div class='s2'><div class='confirmBtn'><a href='http://www.jiavva.com'>下单</a></div>"+
         //"<div class='collect'><div id='collected'><div class='collectIcon'><img src='../static/image/iconfont-" +
         //"shoucang-wancheng" +
         //".png'></div><span>" +
@@ -705,9 +699,52 @@ var routeCreate = function (resObj) {
 }
 
 function resDeal(val){
-    if(val||val===undefined){
+    if(!val){
         return "--";
     }else{
         return val;
+    }
+}
+
+function valD1(a){
+    if(a){
+        return "<p class='route'>从："+a+"</p>";
+    }else{
+        return "";
+    }
+}
+function valD2(a){
+    if(a){
+        return "<p>轻货：￥"+a+" /方</p>";
+    }else{
+        return "";
+    }
+}
+function valD3(a){
+    if(a){
+        return "<p>重货：￥"+a+" /方</p>";
+    }else{
+        return "";
+    }
+}
+function valD4(a){
+    if(a){
+        return "<p>配送：￥"+a+" /方</p>";
+    }else{
+        return "";
+    }
+}
+function valD5(a){
+    if(a){
+        return "<p>安装：￥"+a+" /组</p>";
+    }else{
+        return "";
+    }
+}
+function valD6(a){
+    if(a){
+        return "<p>保底：￥"+a+" /票</p>";
+    }else{
+        return "";
     }
 }

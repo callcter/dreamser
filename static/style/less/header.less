@@ -11,37 +11,39 @@ header{
         width: 1200px;
         height: 50px;
         margin: 0 auto;
-        .title{
-            display: inline-block;
+        .displayIBCon;
+        .h-domain{
+            .displayIBSub;
             width: 200px;
-            height: 40px;
+            height: 50px;
             font-size: 1rem;
-            color: #aaa;
-        }
-        .title:hover{
-            color: #fff;
-        }
-        .list{
-            display: inline-block;
-            width: auto;
-            height: 40px;
-            li{
-                display: inline-block;
-                width: 90px;
-                height: 40px;
-                font-size: 0.8rem;
-                color: #fff;
-                text-align: center;
-                cursor: pointer;
-                transition: font-size 1s,color 1s,background 1s;
-                -o-transition: font-size 1s,color 1s,background 1s;
-                -moz-transition: font-size 1s,color 1s,background 1s;
-                -webkit-transition: font-size 1s,color 1s,background 1s;
+            a{
+                color: #aaa;
             }
-            li:hover{
-                font-size: 0.9rem;
+            a:hover{
+                color: @white;
+            }
+        }
+        .h-link{
+            .displayIBSub;
+            width: 100px;
+            height: 50px;
+            font-size: 0.8rem;
+            text-align: center;
+            cursor: pointer;
+            transition: font-size 1s,color 1s,background 1s;
+            -o-transition: font-size 1s,color 1s,background 1s;
+            -moz-transition: font-size 1s,color 1s,background 1s;
+            -webkit-transition: font-size 1s,color 1s,background 1s;
+            a{
+                color: #fff;
+            }
+        }
+        .h-link:hover{
+            font-size: 1rem;
+            background: #fff;
+            a{
                 color: #000;
-                background: #fff;
             }
         }
     }
@@ -99,4 +101,15 @@ footer{
     background: #333;
     margin: 10px auto 0;
     text-align: center;
+    .f-copy{
+        color: #FFF;
+        line-height: 40px;
+    }
+    .f-record{
+        font-size: 0.8rem;
+        line-height: 30px;
+        a{
+            color: @black4;
+        }
+    }
 }

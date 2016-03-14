@@ -1,3 +1,297 @@
+.displayIBCon {
+  *word-spacing: -1px;
+  font-size: 0;
+}
+.displayIBSub {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+  margin: 0;
+  padding: 0;
+}
+header,
+footer,
+section,
+article,
+aside,
+nav,
+hgroup,
+address,
+figure,
+figcaption,
+menu,
+details {
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th {
+  text-align: left;
+  font-weight: normal;
+}
+html,
+body,
+fieldset,
+img,
+iframe,
+abbr {
+  border: 0;
+}
+i,
+cite,
+em,
+var,
+address,
+dfn {
+  font-style: normal;
+}
+[hidefocus],
+summary {
+  outline: 0;
+}
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small {
+  font-size: 100%;
+}
+sup,
+sub {
+  font-size: 83%;
+}
+pre,
+code,
+kbd,
+samp {
+  font-family: inherit;
+}
+q:before,
+q:after {
+  content: none;
+}
+textarea {
+  overflow: auto;
+  resize: none;
+}
+label,
+summary {
+  cursor: default;
+}
+a,
+button {
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+strong,
+b {
+  font-weight: bold;
+}
+del,
+ins,
+u,
+s,
+a,
+a:hover {
+  text-decoration: none;
+}
+a,
+a:hover {
+  color: #333;
+}
+html {
+  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', arial, sans-serif;
+  font-size: 20px;
+}
+body {
+  background: #fff;
+}
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+select {
+  font-size: .7rem;
+  line-height: 25px;
+  display: inline-block;
+  height: 25px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  outline: none;
+  background: #fff;
+}
+.clear {
+  clear: both;
+}
+header {
+  width: 100%;
+  height: 50px;
+  background: #333;
+  font-size: 0.8rem;
+  vertical-align: middle;
+  line-height: 50px;
+}
+header .h-wrapper {
+  width: 1200px;
+  height: 50px;
+  margin: 0 auto;
+  *word-spacing: -1px;
+  font-size: 0;
+}
+header .h-wrapper .h-domain {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+  width: 200px;
+  height: 50px;
+  font-size: 1rem;
+}
+header .h-wrapper .h-domain a {
+  color: #aaa;
+}
+header .h-wrapper .h-domain a:hover {
+  color: #ffffff;
+}
+header .h-wrapper .h-link {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+  width: 100px;
+  height: 50px;
+  font-size: 0.8rem;
+  text-align: center;
+  cursor: pointer;
+  transition: font-size 1s, color 1s, background 1s;
+  -o-transition: font-size 1s, color 1s, background 1s;
+  -moz-transition: font-size 1s, color 1s, background 1s;
+  -webkit-transition: font-size 1s, color 1s, background 1s;
+}
+header .h-wrapper .h-link a {
+  color: #fff;
+}
+header .h-wrapper .h-link:hover {
+  font-size: 1rem;
+  background: #fff;
+}
+header .h-wrapper .h-link:hover a {
+  color: #000;
+}
+header .h-left {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 15px;
+  top: 5px;
+  line-height: 30px;
+  vertical-align: middle;
+  text-align: left;
+  color: #999;
+}
+header .h-middle {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  left: 50%;
+  margin-left: -100px;
+  text-align: center;
+  color: #f0f0f0;
+}
+header .h-right {
+  position: absolute;
+  text-align: right;
+  width: 30px;
+  height: 30px;
+  right: 15px;
+  top: 5px;
+  line-height: 30px;
+  vertical-align: middle;
+  color: #999;
+}
+nav {
+  height: 30px;
+  background: #f0f0f0;
+  width: 100%;
+  min-width: 1200px;
+  margin-bottom: 10px;
+}
+nav .navigator {
+  width: 1180px;
+  height: 30px;
+  margin: 0 auto;
+  line-height: 30px;
+  color: #999;
+  vertical-align: middle;
+  font-size: 0.7rem;
+}
+footer {
+  width: 1200px;
+  height: auto;
+  background: #333;
+  margin: 10px auto 0;
+  text-align: center;
+}
+footer .f-copy {
+  color: #FFF;
+  line-height: 40px;
+}
+footer .f-record {
+  font-size: 0.8rem;
+  line-height: 30px;
+}
+footer .f-record a {
+  color: #dddddd;
+}
 .scrollBox {
   width: 100%;
   height: 100%;

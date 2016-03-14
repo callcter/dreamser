@@ -6,25 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>dreamser开发者聚集地</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="static/style/css/quote.css"> -->
+    <link rel="stylesheet" href="static/framework/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/style/css/index.css">
 </head>
 
 <body>
     <header>
         <div class="h-wrapper">
-            <div class="title">
+            <span class="h-domain">
                 <a href="http://dreamser.com">
                     Dreamser
                 </a>
-            </div>
-            <ul class="list">
-                <a href="#workShow"><li>作品展示</li></a>
-                <a href="#mobileApp"><li>移动应用</li></a>
-                <a href="#customService"><li>定制服务</li></a>
-                <a href="view/contactManager.html"><li>联系作者</li></a>
-                <a href="view/supportManager.html"><li>支持作者</li></a>
-            </ul>
+            </span>
+            <span class="h-link"><a href="#workShow">作品展示</a></span>
+            <span class="h-link"><a href="#mobileApp">移动应用</a></span>
+            <span class="h-link"><a href="view/customService.html">定制服务</a></span>
+            <span class="h-link"><a href="view/contactManager.html">联系作者</a></span>
+            <span class="h-link"><a href="view/supportManager.html">支持作者</a></span>
         </div>
     </header>
     <nav>
@@ -32,7 +30,7 @@
             首页
         </div>
     </nav>
-    <main>
+    <div class="main">
         <div class="banner">
             <div class="carousel">
                 <img id="carousel" src="static/image/carousel1.jpg">
@@ -50,7 +48,7 @@
                     Callcter
                 </div>
                 <div class="motto">
-                    <a href="app/">临时作品链接</a>
+                    <img src="static/image/dreamser.jpg" alt="dreamser微信公众号">
                 </div>
             </div>
             <div class="clear"></div>
@@ -58,52 +56,132 @@
         <ul class="list">
             <li id="workShow">
                 <p class="title-1">作品展示</p>
-                <ul class="workList">
+                <ul class="sub-list">
                     <li>
-                        <p class="title-2">DOTA英雄展示</p>
+                        <p class="title-2">
+                            DOTA英雄展示
+                            <span class="fa fa-angle-double-down fa-lg"></span>
+                        </p>
                         <div class="detail">
-                            <div class="text">
-                                
-                            </div>
-                            <a href="apps/dota/"><div class="skip"></div></a>
+                            DOTA2英雄头像展示，主要使用CSS3变换
+                            <a href="app/dota/index.html"><span class="fa fa-link fa-lg"></span></a>
                         </div>
                     </li>
                     <li>
-                        <p class="title-2"><a href="apps/requireJS/">RequireJS</a>
+                        <p class="title-2">
+                            尾灯动画制作工具
+                            <span class="fa fa-angle-double-down fa-lg"></span>
+                        </p>
+                        <div class="detail">
+                            按帧制作尾灯动画，可以播放、存储，可用canvas生成预览图
+                            <a href="app/taillight/index.html"><span class="fa fa-link fa-lg"></span></a>
+                        </div>
                     </li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                        <p class="title-2">
+                            Google Map
+                            <span class="fa fa-angle-double-down fa-lg"></span>
+                        </p>
+                        <div class="detail">
+                            使用Google地图和HighCharts做的海拔小Demo
+                            <a href="app/googlemap/index.html"><span class="fa fa-link fa-lg"></span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="title-2">
+                            Angularjs Demos
+                            <span class="fa fa-angle-double-down fa-lg"></span>
+                        </p>
+                        <div class="detail">
+                            Angularjs Demos，还在学习中
+                            <a href="app/dota/index.html"><span class="fa fa-link fa-lg"></span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="title-2">
+                            React Demos
+                            <span class="fa fa-angle-double-down fa-lg"></span>
+                        </p>
+                        <div class="detail">
+                            React Demos，还在学习中
+                            <a href="app/dota/index.html"><span class="fa fa-link fa-lg"></span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="title-2">
+                            RequireJS Demos
+                            <span class="fa fa-angle-double-down fa-lg"></span>
+                        </p>
+                        <div class="detail">
+                            RequireJS Demos，采用新的架构，还在学习中
+                            <a href="app/dota/index.html"><span class="fa fa-link fa-lg"></span></a>
+                        </div>
+                    </li>
                 </ul>
             </li>
             <li id="mobileApp">
                 <p class="title-1">移动应用</p>
-                <ul class="workList">
-                    <li><a href="apps/dota/">DOTA英雄展示</a></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-            <li id="customService">
-                <p class="title-1">定制服务</p>
-                <ul class="workList">
-                    <li><a href="apps/dota/">DOTA英雄展示</a></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                <ul class="sub-list">
+                    <li>
+                        <p class="title-2">
+                            恋爱笔记
+                            <span class="fa fa-angle-double-down fa-lg"></span>
+                        </p>
+                        <div class="detail">
+                            自用的恋爱小工具，包括时间线、纪念日、生理期等小功能
+                            <a href="app/lovenote/index.html"><span class="fa fa-link fa-lg"></span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="title-2">
+                            圣诞节活动微信Webapp
+                            <span class="fa fa-angle-double-down fa-lg"></span>
+                        </p>
+                        <div class="detail">
+                            包括圣诞树点灯小游戏、许愿、祝愿排行榜等
+                            <a href="app/christmas/game.html"><span class="fa fa-link fa-lg"></span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="title-2">
+                            Data list by date
+                            <span class="fa fa-angle-double-down fa-lg"></span>
+                        </p>
+                        <div class="detail">
+                            自己写的一个日历小插件，按日期查看数据，HighChart生成报表
+                            <a href="app/datalistbydate/index.html"><span class="fa fa-link fa-lg"></span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="title-2">
+                            Jquery-mobile Demos
+                            <span class="fa fa-angle-double-down fa-lg"></span>
+                        </p>
+                        <div class="detail">
+                            Jquery-mobile Demos，还在学习中
+                            <a href="app/jquery-mobile/index.html"><span class="fa fa-link fa-lg"></span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="title-2">
+                            Touch Demos
+                            <span class="fa fa-angle-double-down fa-lg"></span>
+                        </p>
+                        <div class="detail">
+                            为Webapp准备的一些功能插件
+                            <a href="app/touch/index.html"><span class="fa fa-link fa-lg"></span></a>
+                        </div>
+                    </li>
                 </ul>
             </li>
         </ul>
-    </main>
+    </div>
     <footer>
-        <p>&copy;Dreamser.com by Callcter</p>
-        <p><a href="//www.miitbeian.gov.cn/">鲁ICP备 16006293</a></p>
+        <p class="f-copy">&copy;Dreamser.com by Callcter</p>
+        <p class="f-record"><a href="//www.miitbeian.gov.cn/">鲁ICP备 16006293</a></p>
     </footer>
 </body>
-    <script data-main="static/script/main" src="static/framework/require.js"></script>
-    <script src="statics/scripts/index.js"></script>
+    <script src="static/framework/jquery-2.1.4/jquery.min.js"></script>
+    <script src="static/script/index.js"></script>
 
 </html>

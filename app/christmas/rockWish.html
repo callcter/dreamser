@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>摇一摇许愿</title>
+    <title>许愿</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -12,20 +12,48 @@
     <script src="jquery-2.1.4.min.js"></script>
     <script src="style.js"></script>
 </head>
-<body onload="rockWishWrapper()">
-    <div class="rockWish_wrapper">
+<body onload="wish()">
+    <div class="menu">
+        <div class="arrow-up"></div>
+        <ul class="menu-list">
+            <a href="christmas.html">
+            <li>
+                <div class="i1">
+                    <img src="img/heart_3.png">
+                </div>
+                <div class="text">我要许愿</div>
+                <div class="clear"></div>
+            </li>
+            </a>
+            <a href="wishes.html">
+            <li>
+                <div class="i2">
+                    <img src="img/cup_icon_2.png">
+                </div>
+                <div class="text">愿望广场</div>
+                <div class="clear"></div>
+            </li>
+            </a>
+            <a href="mine.html">
+            <li>
+                <div class="i3">
+                    <img src="img/man_icon.png">
+                </div>
+                <div class="text">我的</div>
+                <div class="clear"></div>
+            </li>
+            </a>
+        </ul>
+    </div>
+    <div class="wish_wrapper">
         <header>
             <div class="left">
-                <div class="pic">
-                    <img src="img/back.png">
+                <div class="menu-icon">
+                    <img src="img/menu_icon.png">
                 </div>
-                <div class="tip">
-                    <span>返回</span>
-                </div>
-                <div class="clear"></div>
             </div>
             <div class="middle">
-                <span>圣诞节许愿</span>
+                <span id="nav_title">圣诞愿</span>
             </div>
             <div class="right">
                 <div class="num">
@@ -41,66 +69,33 @@
             <div class="clear"></div>
         </header>
         <div class="carousel" id="carousel">
-            <div id="c1">
-                <img src="img/center1.jpg">
+            <div class="c" id="c1">
+                <img src="img/shengdan.jpg">
             </div>
-            <div id="c2">
-                <img src="img/center.jpg">
-                <div class="bot">
-                    <span>
-                        <img src="img/wish_mac.png">
-                    </span>
-                    <span>
-                        <img src="img/avator.jpg">
-                    </span>
-                    <span>
-                        <img src="img/avator.jpg">
-                    </span>
-                </div>
+            <div class="c" id="c2">
+                <img src="img/aiqing.jpg">
             </div>
-            <div id="c3">
-                <img src="img/center3.jpg">
+            <div class="c" id="c3">
+                <img src="img/shiye.jpg">
+            </div>
+            <div class="c" id="c4">
+                <img src="img/pingan.jpg">
+            </div>
+            <div class="c" id="c5">
+                <img src="img/jiankang.jpg">
+            </div>
+            <div class="c" id="c6">
+                <img src="img/xueye.jpg">
+            </div>
+            <div class="c" id="c7">
+                <img src="img/facai.jpg">
             </div>
         </div>
-        <div class="luckyNum">
-            恭喜你获得<span id="luckyNum">247</span>个幸运指数，快快说出你的愿望吧！
+        <div class="change2">
+            <div class="hide_div" id="wish_content"></div>
+            <img src="img/rockWish.png">
         </div>
-        <ul class="icons">
-            <li>
-                <div class="icon">
-                    <div class="i1">
-                        <img src="img/mac_icon_2.png">
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="icon">
-                    <div class="i2">
-                        <img src="img/pic_icon.png">
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="icon">
-                    <div class="i3">
-                        <img src="img/round_icon.png">
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <ul class="write">
-            <li class="left">
-                <div class="lock">
-                    <img src="img/lock_open_2.png">
-                </div>
-            </li>
-            <li class="middle">
-                <input type="text" name="wish" placeholder="在这里输入您的愿望">
-            </li>
-            <li class="right">
-                完成
-            </li>
-        </ul>
     </div>
 </body>
+
 </html>

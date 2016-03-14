@@ -1,30 +1,37 @@
 //通用变量、函数定义
 //border-radius定义
-.rounded-corners(@radius:5px)
-{
+.rounded-corners(@radius:5px){
     -webkit-border-radius: @radius;
        -moz-border-radius: @radius;
             border-radius: @radius;
-
          -o-border-radius: @radius;
 }
 
-.text-shadow(@x:0,@y:0,@blur:1px,@color:#000)
-{
+.text-shadow(@x:0,@y:0,@blur:1px,@color:#000){
             text-shadow: @arguments;
-
          -o-text-shadow: @arguments;
        -moz-text-shadow: @arguments;
     -webkit-text-shadow: @arguments;
 }
 
-.box-shadow(@x:0,@y:0,@blur:1px,@color:#000)
-{
+.box-shadow(@x:0,@y:0,@blur:1px,@color:#000){
     -webkit-box-shadow: @arguments;
        -moz-box-shadow: @arguments;
             box-shadow: @arguments;
-
          -o-box-shadow: @arguments;
+}
+//IE, Firefox, Opera, Safari6, Chrome18
+//为inline-block元素的容器添加
+.displayIBCon{
+    *word-spacing: -1px;
+    font-size: 0;
+}
+//inline-block的元素
+.displayIBSub{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    word-spacing: normal;
 }
 
 //颜色变量定义

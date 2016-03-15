@@ -172,7 +172,6 @@ var selectList2 = function(){
         selectBox.style.top = getAbsoluteTop("destination")+43+"px";
         selectBox.style.left = getAbsoluteLeft("destination")+"px";
         stopProgapation(e);
-        note = "";
         if(selectBox.style.display == "block"){
             selectBox.style.display = "none";
             selectList0.style.display = "none";
@@ -187,13 +186,41 @@ var selectList2 = function(){
         selectTabs[0].className = "active";
     });
     addEvent(selectTabs[0],"click",function(){
-        
+        selectList0.style.display = "block";
+        selectList1.style.display = "none";
+        selectList2.style.display = "none";
+        selectTabs[0].className = "active";
+        selectTabs[1].className = "";
+        selectTabs[2].className = "";
+    });
+    addEvent(selectTabs[1],"click",function(){
+        if(note==""){
+            return;
+        }
+        selectList0.style.display = "none";
+        selectList1.style.display = "block";
+        selectList2.style.display = "none";
+        selectTabs[0].className = "";
+        selectTabs[1].className = "active";
+        selectTabs[2].className = "";
+    });
+    addEvent(selectTabs[2],"click",function(){
+        if(note.split("-").length<2){
+            return;
+        }
+        selectList0.style.display = "none";
+        selectList1.style.display = "none";
+        selectList2.style.display = "block";
+        selectTabs[0].className = "";
+        selectTabs[1].className = "";
+        selectTabs[2].className = "active";
     });
     for(var i=0;i<options.length;i++){
         var fLi = document.createElement("li");
         fLi.innerHTML = options[i].text;
         selectList0.appendChild(fLi);
         addEvent(fLi,"click",function(){
+            note = "";
             note += this.innerHTML;
             dataFromIndex.provinceCode = options[liNum(this)].value;
             selected.innerHTML = note;
@@ -206,6 +233,7 @@ var selectList2 = function(){
                 sLi.innerHTML = options[liNum(this)].children[j].text;
                 selectList1.appendChild(sLi);
                 addEvent(sLi,"click",function(){
+                     note = note.split("-")[0];
                      note += "-"+this.innerHTML;
                      dataFromIndex.cityCode = firstListArray[liNum(this)].value;
                      selected.innerHTML = note;
@@ -217,6 +245,7 @@ var selectList2 = function(){
                          selectList2.appendChild(tLi);
                          var secondListArray = firstListArray[liNum(this)].children;
                          addEvent(tLi,"click",function(){
+                             note = note.split("-")[0]+"-"+note.split("-")[1];
                              note += "-"+this.innerHTML;
                              dataFromIndex.districtCode = secondListArray[liNum(this)].value;
                              selected.innerHTML = note;
@@ -229,7 +258,7 @@ var selectList2 = function(){
                          addEvent(tLi,"mouseout",function(){
                              this.className = "";
                          });
-                     }
+                    }
                     selectList1.style.display = "none";
                     selectList2.style.display = "block";
                     selectTabs[1].className = "";
@@ -272,7 +301,6 @@ var selectList3 = function(){
         document.getElementById("selectList40").style.display = "none";
         document.getElementById("selectList41").style.display = "none";
         document.getElementById("selectList42").style.display = "none";
-        note = "";
         selectBox.style.top = getAbsoluteTop("goodType")+43+"px";
         selectBox.style.left = getAbsoluteLeft("goodType")+"px";
         if(selectBox.style.display == "block"){
@@ -288,11 +316,42 @@ var selectList3 = function(){
         selectTabs[1].className = "";
         selectTabs[0].className = "active";
     });
+    addEvent(selectTabs[0],"click",function(){
+        selectList0.style.display = "block";
+        selectList1.style.display = "none";
+        selectList2.style.display = "none";
+        selectTabs[0].className = "active";
+        selectTabs[1].className = "";
+        selectTabs[2].className = "";
+    });
+    addEvent(selectTabs[1],"click",function(){
+        if(note==""){
+            return;
+        }
+        selectList0.style.display = "none";
+        selectList1.style.display = "block";
+        selectList2.style.display = "none";
+        selectTabs[0].className = "";
+        selectTabs[1].className = "active";
+        selectTabs[2].className = "";
+    });
+    addEvent(selectTabs[2],"click",function(){
+        if(note.split("-").length<2){
+            return;
+        }
+        selectList0.style.display = "none";
+        selectList1.style.display = "none";
+        selectList2.style.display = "block";
+        selectTabs[0].className = "";
+        selectTabs[1].className = "";
+        selectTabs[2].className = "active";
+    });
     for(var i=0;i<options.length;i++){
         var fLi = document.createElement("li");
         fLi.innerHTML = options[i].text;
         selectList0.appendChild(fLi);
         addEvent(fLi,"click",function(){
+            note = "";
             note += this.innerHTML;
             selected.innerHTML = note;
             //清空二级商品列表
@@ -304,6 +363,7 @@ var selectList3 = function(){
                 sLi.innerHTML = options[liNum(this)].children[j].text;
                 selectList1.appendChild(sLi);
                 addEvent(sLi,"click",function(){
+                    note = note.split("-")[0];
                     note += "-"+this.innerHTML;
                      selected.innerHTML = note;
                      //清空三级商品列表
@@ -314,6 +374,7 @@ var selectList3 = function(){
                          tLi.innerHTML = firstListArray[liNum(this)].children[k].text;
                          selectList2.appendChild(tLi);
                          addEvent(tLi,"click",function(){
+                             note = note.split("-")[0]+"-"+note.split("-")[1];
                              note += "-"+this.innerHTML;
                              dataFromIndex.productCategory = parseInt(secondListArray[liNum(this)].value);
                              selected.innerHTML = note;
@@ -385,11 +446,42 @@ var selectList4 = function(){
         selectTabs[1].className = "";
         selectTabs[0].className = "active";
     });
+    addEvent(selectTabs[0],"click",function(){
+        selectList0.style.display = "block";
+        selectList1.style.display = "none";
+        selectList2.style.display = "none";
+        selectTabs[0].className = "active";
+        selectTabs[1].className = "";
+        selectTabs[2].className = "";
+    });
+    addEvent(selectTabs[1],"click",function(){
+        if(note==""){
+            return;
+        }
+        selectList0.style.display = "none";
+        selectList1.style.display = "block";
+        selectList2.style.display = "none";
+        selectTabs[0].className = "";
+        selectTabs[1].className = "active";
+        selectTabs[2].className = "";
+    });
+    addEvent(selectTabs[2],"click",function(){
+        if(note.split("-").length<2){
+            return;
+        }
+        selectList0.style.display = "none";
+        selectList1.style.display = "none";
+        selectList2.style.display = "block";
+        selectTabs[0].className = "";
+        selectTabs[1].className = "";
+        selectTabs[2].className = "active";
+    });
     for(var i=0;i<options.length;i++){
         var fLi = document.createElement("li");
         fLi.innerHTML = options[i].text;
         selectList0.appendChild(fLi);
         addEvent(fLi,"click",function(){
+            note = "";
             note += this.innerHTML;
             dataFromIndex.provinceCode = options[liNum(this)].value;
             selected.innerHTML = note;
@@ -402,7 +494,8 @@ var selectList4 = function(){
                 sLi.innerHTML = options[liNum(this)].children[j].text;
                 selectList1.appendChild(sLi);
                 addEvent(sLi,"click",function(){
-                     note += "-"+this.innerHTML;
+                    note = note.split("-")[0];
+                    note += "-"+this.innerHTML;
                     dataFromIndex.cityCode = firstListArray[liNum(this)].value;
                      selected.innerHTML = note;
                      //清空三级商品列表
@@ -413,6 +506,7 @@ var selectList4 = function(){
                          selectList2.appendChild(tLi);
                          var secondListArray = firstListArray[liNum(this)].children;
                          addEvent(tLi,"click",function(){
+                             note = note.split("-")[0]+"-"+note.split("-")[1];
                              note += "-"+this.innerHTML;
                              dataFromIndex.districtCode = secondListArray[liNum(this)].value;
                              selected.innerHTML = note;

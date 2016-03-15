@@ -12,7 +12,7 @@ $(function(){
     saveFrame();
     saveFrame();
     page(0);
-    getAction();
+//    getAction();//暂时不连接数据库
     $(".speed-slider").jRange({
         from: 1,
         to: 8,
@@ -3334,7 +3334,8 @@ function saveAction(){
     actionJson.thumbnail = nowCover;
     actionJson.data = actFormat(action);//动画点阵内容，base64编码后的结果
     var actJson = JSON.stringify(actionJson);
-    saveActionJson(actJson);  
+    
+    saveActionJson(actJson);//暂时不连接数据库
 }
 function getAction(){
     var direct = document.getElementById("directoryBox");

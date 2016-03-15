@@ -1,8 +1,4 @@
 @import "common.less";
-@import "global.less";
-.clear{
-    clear: both;
-}
 
 .header{
     width: 100%;
@@ -14,7 +10,7 @@
     .top{
         width: 1200px;
         height: 100px;
-        margin: 0 auto;
+        margin: 5px auto;
         .logo{
             float: left;
             width: 425px;
@@ -47,10 +43,13 @@
                         width: auto;
                     }
                     span.icon{
-                        width: 20px;
-                        height: 20px;
-                        margin-bottom: -5px;
+                        width: 18px;
+                        height: 18px;
+                        margin-bottom: -4px;
                     }
+                }
+                li.last{
+                    margin-right: 0;
                 }
             }
             .links-b{
@@ -136,82 +135,5 @@
         left: 50%;
         margin-left: 90px;
         display: none;
-    }
-}
-
-.footer{
-    width: 855px;
-    margin: 0 auto 20px;
-    .fontSize(0.7);
-    .anchor{
-        width: 340px;
-        float: left;
-        height: 80px;
-        margin-bottom: 10px;
-        li{
-            .displayIB;
-            list-style: none;
-            width: 80px;
-            height: 40px;
-            line-height: 40px;
-            vertical-align: middle;
-            margin-left: -3px;
-            text-align: center;
-            a{
-                color: #333;
-                text-decoration: none;
-            }
-        }
-        li.index{
-            margin-left: 0;
-        }
-    }
-    .ewcode{
-        float: left;
-        width: 70px;
-        height: 70px;
-        padding: 5px 50px;
-        border-left: 2px solid #ddd;
-        border-right: 2px solid #ddd;
-    }
-    .phones{
-        float: left;
-        width: 240px;
-        height: 80px;
-        margin-left: 20px;
-        p{
-            line-height: 25px;
-        }
-        p.p-num{
-            color: #FF5000;
-            .fontSize(1);
-        }
-    }
-    .buttons{
-        float: left;
-        width: 80px;
-        height: 80px;
-        .btn{
-            width: 80px;
-            height: 25px;
-            line-height: 25px;
-            vertical-align: middle;
-            text-align: center;
-            .rounded-corners(3px);
-            border: none;
-            margin-top: 10px;
-            color: #fff;
-        }
-        .color1{
-            background: #E7A800;
-        }
-        .color2{
-            background: #FF5000;
-        }
-    }
-    .copyright{
-        width: 100%;
-        margin-top: 10px;
-        text-align: center;
     }
 }

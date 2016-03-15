@@ -85,3 +85,23 @@ function stopProgapation(e){
 function numFormat(num){
     return Math.round(num*100)/100;
 }
+function getAbsoluteLeft(objectId){
+    o = document.getElementById(objectId);
+    oLeft = o.offsetLeft;
+    while(o.offsetParent!=null) {
+        oParent = o.offsetParent;
+        oLeft += oParent.offsetLeft;
+        o = oParent;
+    }
+    return oLeft-10;
+}
+function getAbsoluteTop(objectId){
+    o = document.getElementById(objectId);
+    oTop = o.offsetTop;
+    while(o.offsetParent!=null){
+    oParent = o.offsetParent;
+    oTop += oParent.offsetTop;
+    o = oParent;
+    }
+    return oTop-10;
+}

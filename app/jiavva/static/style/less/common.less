@@ -6,19 +6,30 @@
     -moz-border-radius: @radius;
     -webkit-border-radius: @radius;
 }
-
 .text-shadow(@x:0,@y:0,@blur:1px,@color:#000){
     text-shadow: @arguments;
     -o-text-shadow: @arguments;
     -moz-text-shadow: @arguments;
     -webkit-text-shadow: @arguments;
 }
-
 .box-shadow(@x:0,@y:0,@blur:1px,@color:#000){
     box-shadow: @arguments;
     -o-box-shadow: @arguments;
     -moz-box-shadow: @arguments;
     -webkit-box-shadow: @arguments;
+}
+//IE, Firefox, Opera, Safari6, Chrome18
+//为inline-block元素的容器添加
+.displayIBCon{
+    *word-spacing: -1px;
+    font-size: 0;
+}
+//inline-block的元素
+.displayIBSub{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    word-spacing: normal;
 }
 
 .displayIB{
@@ -30,21 +41,3 @@
 .fontSize(@multy:1){
     font-size: @multy * 20px;
 }
-
-//颜色变量定义
-@black: #000;
-@tan: #d2b48c;
-@gray: #808080;
-@sliver: #c0c0c0;
-@white: #fff;
-@ghostwhite: #f8f8ff;
-@pink: #ffc0cb;
-@red: #ff0000;
-@green: #00ff00;
-@blue: #0000ff;
-@indigo: #4b0082;
-@purple: #800080;
-@violet: #ee82ee;
-@glod: #ffd700;
-@cornislk: #fff8dc;
-@orange: #ffa500;

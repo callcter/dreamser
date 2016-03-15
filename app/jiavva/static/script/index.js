@@ -124,8 +124,8 @@ var departureSelect = function () {
         document.getElementById("selectList21").style.display = "none";
         document.getElementById("selectList22").style.display = "none";
         document.getElementById("selectBox2").style.display = "none";
-        selectBox.style.top = this.offsetHeight + this.offsetTop + "px";
-        selectBox.style.left = (this.offsetLeft-1) + "px";
+        selectBox.style.top = getAbsoluteTop("departure")+43+"px";
+        selectBox.style.left = getAbsoluteLeft("departure")+"px";
         if (selectBox.style.display == "block") {
             selectBox.style.display = "none";
             popularList.style.display = "none";
@@ -169,6 +169,8 @@ var selectList2 = function(){
     addEvent(boxS,"click",function(e){
         document.getElementById("selectBox1").style.display = "none";
         document.getElementById("popularList").style.display = "none";
+        selectBox.style.top = getAbsoluteTop("destination")+43+"px";
+        selectBox.style.left = getAbsoluteLeft("destination")+"px";
         stopProgapation(e);
         note = "";
         if(selectBox.style.display == "block"){
@@ -183,6 +185,9 @@ var selectList2 = function(){
         selectTabs[2].className = "";
         selectTabs[1].className = "";
         selectTabs[0].className = "active";
+    });
+    addEvent(selectTabs[0],"click",function(){
+        
     });
     for(var i=0;i<options.length;i++){
         var fLi = document.createElement("li");
@@ -268,8 +273,8 @@ var selectList3 = function(){
         document.getElementById("selectList41").style.display = "none";
         document.getElementById("selectList42").style.display = "none";
         note = "";
-        selectBox.style.top = this.offsetHeight+this.offsetTop+"px";
-        selectBox.style.left = this.offsetLeft+"px";
+        selectBox.style.top = getAbsoluteTop("goodType")+43+"px";
+        selectBox.style.left = getAbsoluteLeft("goodType")+"px";
         if(selectBox.style.display == "block"){
             selectBox.style.display = "none";
             selectList0.style.display = "none";
@@ -364,6 +369,8 @@ var selectList4 = function(){
         document.getElementById("selectList30").style.display = "none";
         document.getElementById("selectList31").style.display = "none";
         document.getElementById("selectList32").style.display = "none";
+        selectBox.style.top = getAbsoluteTop("goodInstall")+43+"px";
+        selectBox.style.left = getAbsoluteLeft("goodInstall")+"px";
         note = "";
         if(selectBox.style.display == "block"){
             selectBox.style.display = "none";
@@ -455,15 +462,15 @@ var carousel = function(){
         }
         $("#carousel").animate({
             left: (-index*1100)+"px"
-        },"fast");
+        },"slow");
         index++;
-    },2000);
+    },3000);
 }
 var carousel1 = function(){
     var clientW = window.innerWidth;
     var container = document.getElementById("carousel1");
     var pics = container.getElementsByTagName("li");
-    container.style.width = (clientW*4+50)+"px";
+    container.style.width = (clientW*4+10)+"px";
     for(var i=0;i<pics.length;i++){
         pics[i].style.width = clientW+"px";
     }

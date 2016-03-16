@@ -9,7 +9,12 @@ window.onload = function () {
     rankList();
     search();
     locatinUrl();
-    
+    addEvent(document.getElementById("ddd"),"mouseover",function(){
+        document.getElementById("erweima").style.display = "block";
+    });
+    addEvent(document.getElementById("ddd"),"mouseout",function(){
+        document.getElementById("erweima").style.display = "none";
+    });
     document.onclick = function(){
         document.getElementById("selectBox1").style.display = "none";
         document.getElementById("selectBox2").style.display = "none";
@@ -49,12 +54,13 @@ var locatinUrl = function(){
         data.serviceType = "logistics";
         document.getElementById("departure").innerHTML = decodeURI(urlParam[4].value);
         document.getElementById("destination").innerHTML = decodeURI(urlParam[5].value);
-        if(urlParam[0].value == ""){
-            //同城
-            data.departure = data.destination;
-        }
+//        if(urlParam[0].value == ""){
+//            //同城
+//            data.departure = data.destination;
+//        }
         var url = "/lineCompare";
         var dataJson = JSON.stringify(data);
+        document.getElementById("content").innerHTML ="<div class='loading'><span><img src='../static/image/loading.gif'></span></div>";
         $.ajax({
             url: url,
             data: dataJson,
@@ -63,7 +69,7 @@ var locatinUrl = function(){
             type: "POST",
             success: function(result){
                 if(result.length==0){
-                    document.getElementById("content").innerHTML = "根据您所输入的条件没有查找到线路，请重新搜索";
+                    document.getElementById("content").innerHTML = "<div class='noResult'><span><img src='../static/image/noResult.png'></span></div>";
                 }else{
                     routeCreate(result);
                     priceList(result);
@@ -84,6 +90,7 @@ var locatinUrl = function(){
         document.getElementById("destination").innerHTML = decodeURI(urlParam[5].value);
         var url = "/lineCompare";
         var dataJson = JSON.stringify(data);
+        document.getElementById("content").innerHTML ="<div class='loading'><span><img src='../static/line/static/image/loading.gif'></span></div>";
         $.ajax({
             url: url,
             data: dataJson,
@@ -92,7 +99,7 @@ var locatinUrl = function(){
             type: "POST",
             success: function(result){
                 if(result.length==0){
-                    document.getElementById("content").innerHTML = "根据您所输入的条件没有查找到线路，请重新搜索";
+                    document.getElementById("content").innerHTML = "<div class='noResult'><span><img src='../static/line/static/image/noResult.png'></span></div>";
                 }else{
                     routeCreate(result);
                     priceList(result);
@@ -216,7 +223,7 @@ var destinationSelect = function () {
         document.getElementById("selectList30").style.display = "none";
         document.getElementById("selectList31").style.display = "none";
         document.getElementById("selectList32").style.display = "none";
-        note = "";
+//        note = "";
         selectBox.style.top = this.offsetHeight + this.offsetTop + "px";
         selectBox.style.left = this.offsetLeft + "px";
         if (selectBox.style.display == "block") {
@@ -232,11 +239,42 @@ var destinationSelect = function () {
         selectTabs[1].className = "";
         selectTabs[0].className = "active";
     });
+    addEvent(selectTabs[0],"click",function(){
+        selectList0.style.display = "block";
+        selectList1.style.display = "none";
+        selectList2.style.display = "none";
+        selectTabs[0].className = "active";
+        selectTabs[1].className = "";
+        selectTabs[2].className = "";
+    });
+    addEvent(selectTabs[1],"click",function(){
+        if(note==""){
+            return;
+        }
+        selectList0.style.display = "none";
+        selectList1.style.display = "block";
+        selectList2.style.display = "none";
+        selectTabs[0].className = "";
+        selectTabs[1].className = "active";
+        selectTabs[2].className = "";
+    });
+    addEvent(selectTabs[2],"click",function(){
+        if(note.split("-").length<2){
+            return;
+        }
+        selectList0.style.display = "none";
+        selectList1.style.display = "none";
+        selectList2.style.display = "block";
+        selectTabs[0].className = "";
+        selectTabs[1].className = "";
+        selectTabs[2].className = "active";
+    });
     for (var i = 0; i < options.length; i++) {
         var fLi = document.createElement("li");
         fLi.innerHTML = options[i].text;
         selectList0.appendChild(fLi);
         addEvent(fLi, "click", function () {
+            note = "";
             note += this.innerHTML;
             data.destination.provinceCode = options[liNum(this)].value;
             selected.innerHTML = note;
@@ -249,6 +287,7 @@ var destinationSelect = function () {
                 sLi.innerHTML = options[liNum(this)].children[j].text;
                 selectList1.appendChild(sLi);
                 addEvent(sLi, "click", function () {
+                    note = note.split("-")[0];
                     note += "-" + this.innerHTML;
                     data.destination.cityCode = firstListArray[liNum(this)].value;
                     selected.innerHTML = note;
@@ -260,6 +299,7 @@ var destinationSelect = function () {
                         selectList2.appendChild(tLi);
                         var secondListArray = firstListArray[liNum(this)].children;
                         addEvent(tLi, "click", function () {
+                            note = note.split("-")[0]+"-"+note.split("-")[1];
                             note += "-" + this.innerHTML;
                             data.destination.districtCode = secondListArray[liNum(this)].value;
                             selected.innerHTML = note;
@@ -318,7 +358,7 @@ var goodTypeSelect = function () {
         document.getElementById("selectList20").style.display = "none";
         document.getElementById("selectList21").style.display = "none";
         document.getElementById("selectList22").style.display = "none";
-        note = "";
+//        note = "";
         selectBox.style.top = this.offsetHeight + this.offsetTop + "px";
         selectBox.style.left = this.offsetLeft + "px";
         if (selectBox.style.display == "block") {
@@ -333,11 +373,42 @@ var goodTypeSelect = function () {
         selectTabs[2].className = "";
         selectTabs[0].className = "active";
     });
+    addEvent(selectTabs[0],"click",function(){
+        selectList0.style.display = "block";
+        selectList1.style.display = "none";
+        selectList2.style.display = "none";
+        selectTabs[0].className = "active";
+        selectTabs[1].className = "";
+        selectTabs[2].className = "";
+    });
+    addEvent(selectTabs[1],"click",function(){
+        if(note==""){
+            return;
+        }
+        selectList0.style.display = "none";
+        selectList1.style.display = "block";
+        selectList2.style.display = "none";
+        selectTabs[0].className = "";
+        selectTabs[1].className = "active";
+        selectTabs[2].className = "";
+    });
+    addEvent(selectTabs[2],"click",function(){
+        if(note.split("-").length<2){
+            return;
+        }
+        selectList0.style.display = "none";
+        selectList1.style.display = "none";
+        selectList2.style.display = "block";
+        selectTabs[0].className = "";
+        selectTabs[1].className = "";
+        selectTabs[2].className = "active";
+    });
     for (var i = 0; i < options.length; i++) {
         var fLi = document.createElement("li");
         fLi.innerHTML = options[i].text;
         selectList0.appendChild(fLi);
         addEvent(fLi, "click", function () {
+            note = "";
             note += this.innerHTML;
             selected.innerHTML = note;
             //清空二级商品列表
@@ -349,6 +420,7 @@ var goodTypeSelect = function () {
                 sLi.innerHTML = options[liNum(this)].children[j].text;
                 selectList1.appendChild(sLi);
                 addEvent(sLi, "click", function () {
+                    note = note.split("-")[0];
                     note += "-" + this.innerHTML;
                     selected.innerHTML = note;
                     //清空三级商品列表
@@ -359,6 +431,7 @@ var goodTypeSelect = function () {
                         tLi.innerHTML = firstListArray[liNum(this)].children[k].text;
                         selectList2.appendChild(tLi);
                         addEvent(tLi, "click", function () {
+                            note = note.split("-")[0]+"-"+note.split("-")[1];
                             note += "-" + this.innerHTML;
                             data.valuation.productCategory = parseInt(secondListArray[liNum(this)].value);
                             selected.innerHTML = note;
@@ -455,13 +528,24 @@ var priceList = function (obj) {
     var priceSums = getElementsByClassName(document.body, 'priceSum');
     for (var i = 0; i < priceSums.length; i++) {
         addEvent(priceSums[i], "mouseover", function (event) {
+            $("#totalPriceList").empty();
             top = this.offsetParent.offsetParent.offsetParent.offsetTop + this.offsetParent.offsetParent.offsetParent.offsetHeight / 2 + this.offsetParent.offsetHeight / 2 - 5;
             tanchu.style.top = top + "px";
-            
-            document.getElementById("transportationPrice").innerHTML = resDeal(obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].transportationPrice);
-            document.getElementById("distributionPrice").innerHTML = resDeal(obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].distributionPrice);
-            document.getElementById("installationPrice").innerHTML = resDeal(obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].installationPrice);
-            
+            var transportationPrice = obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].transportationPrice;
+            var distributionPrice = obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].distributionPrice;
+            var installationPrice = obj[liNum(this.parentNode.parentNode.parentNode.parentNode)].installationPrice;
+            if (transportationPrice) {
+                $("<li>运输费：￥<span id='transportationPrice'>" + resDeal(transportationPrice) + "</span></li>").appendTo("#totalPriceList");
+                //document.getElementById("transportationPrice").innerHTML = resDeal(transportationPrice);
+            }
+            if (distributionPrice) {
+                $("<li>配送费：￥<span id='distributionPrice'>" + resDeal(distributionPrice) + "</span></li>").appendTo("#totalPriceList");
+                //document.getElementById("distributionPrice").innerHTML = resDeal(distributionPrice);
+            }
+            if (installationPrice) {
+                $("<li>安装费：￥<span id='installationPrice'>" + resDeal(installationPrice) + "</span></li>").appendTo("#totalPriceList");
+                //document.getElementById("installationPrice").innerHTML = resDeal(installationPrice);
+            }
             tanchu.style.display = "block";
         });
     }
@@ -481,7 +565,7 @@ var rankList = function () {
                 lis[j].className = "";
             }
             this.className = "active";
-            
+            document.getElementById("content").innerHTML ="<div class='loading'><span><img src='../static/image/loading.gif'></span></div>";
             switch(this.innerHTML){
                 case "价格":
                     data.sort = "priceByVolume";
@@ -504,7 +588,7 @@ var rankList = function () {
                 type: "POST",
                 success: function(result){
                     if(result.length==0){
-                        document.getElementById("content").innerHTML = "根据您所输入的条件没有查找到线路，请重新搜索";
+                        document.getElementById("content").innerHTML = "<div class='noResult'><span><img src='../static/image/noResult.png'></span></div>";
                     }else{
                         routeCreate(result);
                         priceList(result);
@@ -539,9 +623,11 @@ var search = function(){
                 return;
             }
         }
-        console.log(searchRoute());
-        routeCreate(test);
-        priceList(test);
+//        console.log(searchRoute());
+//        routeCreate(test);
+//        priceList(test);
+        document.getElementById("routeCount").innerHTML = "0";
+        document.getElementById("content").innerHTML ="<div class='loading'><span><img src='../static/image/loading.gif'></span></div>";
         var url = "/lineCompare";
         var dataJson = JSON.stringify(searchRoute());
         $.ajax({
@@ -552,7 +638,7 @@ var search = function(){
             type: "POST",
             success: function(result){
                 if(result.length==0){
-                    document.getElementById("content").innerHTML = "根据您所输入的条件没有查找到线路，请重新搜索";
+                    document.getElementById("content").innerHTML = "<div class='noResult'><span><img src='../static/image/noResult.png'></span></div>";
                 }else{
                     routeCreate(result);
                     priceList(result);

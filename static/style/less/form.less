@@ -1,0 +1,89 @@
+@import "common.less";
+
+.input-group{
+    margin-bottom: 10px;
+    .displayIBCon;
+    width: auto;
+    height: auto;
+    .input-label{
+        .displayIBSub;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        text-align: right;
+        font-size: 0.8rem;
+        .input-require{
+            color: #f00;
+        }
+    }
+    input{
+        width: 270px;
+        height: 20px;
+        margin-left: 10px;
+        line-height: 20px;
+        font-size: 16px;
+        .rounded-corners(3px);
+        padding: 5px 30px 5px 10px;
+        outline-color: #099;
+        border: 1px solid #ddd;
+    }
+    .input-icon{
+        .displayIBSub;
+        margin-left: -30px;
+        width: 30px;
+        height: 27px;
+        line-height: 15px;
+        font-size: 22px;
+        text-align: center;
+        vertical-align: bottom;
+    }
+    .input-tip{
+        .displayIBSub;
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        color: #000;
+        font-size: 0.8rem;
+        color: #f00;
+        margin-left: 20px;
+    }
+}
+
+.select-group{
+    margin-bottom: 10px;
+    .displayIBCon;
+    width: auto;
+    height: auto;
+    .input-label{
+        .displayIBSub;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        text-align: right;
+        font-size: 0.8rem;
+        .input-require{
+            color: #f00;
+        }
+    }
+    select{
+        width: 200px;
+        height: 30px;
+        margin-left: 10px;
+        font-size: 16px;
+//        padding: 5px 30px 5px 10px;
+        border: 1px solid #ddd;
+        outline-color: #099;
+        .rounded-corners(3px);
+    }
+}
+button{
+    width: 100px;
+    height: 40px;
+    .rounded-corners;
+    border: none;
+    background: #099;
+    line-height: 40px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #fff;
+}

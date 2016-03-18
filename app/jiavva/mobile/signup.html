@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<hmtl>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scaleable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <title>商家注册&物流入驻</title>
+    <link rel="stylesheet" href="mui.picker.css">
+    <link rel="stylesheet" href="mui.poppicker.css">
+    <link rel="stylesheet" href="../../../static/framework/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="signup.css">
+    <script src="../static/script/jquery.js"></script>
+    <script>
+        $(function(){
+            $("#tab1").bind("click",function(){
+                if($(this).hasClass("active")){
+
+                }else{
+                    $(this).addClass("active");
+                    $("#tab2").removeClass("active");
+                    $("#form1").show();
+                    $("#form2").hide();
+                }
+            });
+            $("#tab2").bind("click",function(){
+                if($(this).hasClass("active")){
+
+                }else{
+                    $(this).addClass("active");
+                    $("#tab1").removeClass("active");
+                    $("#form2").show();
+                    $("#form1").hide();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="tab">
+        <span id="tab1" class="active">商家注册</span>
+        <span id="tab2">物流入驻</span>
+    </div>
+    <div class="form" id="form1">
+        <form action="" method="post">
+            <label class="label" for="username"><span class="require">*</span> 用户名：</label><br>
+            <input class="input width1" name="username" type="text"><br>
+            <label class="label" for="password"><span class="require">*</span> 密码：</label><br>
+            <input class="input width1" name="password" type="password"><br>
+            <label class="label" for="confirm_pwd"><span class="require">*</span> 确认密码：</label><br>
+            <input class="input width1" name="confirm_pwd" type="password"><br>
+            <label class="label" for="phone"><span class="require">*</span> 验证手机：</label><br>
+            <input class="input width1" name="phone" type="text"><br>
+            <label class="label" for="captcha"><span class="require">*</span> 短信验证码：</label><br>
+            <input class="input width2" name="captcha" type="text"><span class="captcha">获取验证码</span><br>
+            <button class="btn">提交审核</button>
+            <p class="tip"></p>
+        </form>
+    </div>
+    <div class="form" id="form2">
+        <form action="" method="post">
+            <label class="label" for="linkman"><span class="require">*</span> 联系人：</label><br>
+            <input class="input width1" name="linkman" type="text"><br>
+            <label class="label" for="phonenum"><span class="require">*</span> 联系电话：</label><br>
+            <input class="input width1" name="phonenum" type="text"><br>
+            <label class="label" for="company"><span class="require">*</span> 公司名称：</label><br>
+            <input class="input width1" name="company" type="password"><br>
+            <button class="btn">提交审核</button>
+            <p class="tip"></p>
+        </form>
+    </div>
+
+</body>
+</hmtl>

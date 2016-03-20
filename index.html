@@ -8,12 +8,16 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="static/framework/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/style/css/index.css">
+    <!--[if lt IE 9]
+        <script src="static/framework/html5shiv.min.js"></script>
+    ![endif]-->
+    
 </head>
 
 <body>
     <header>
         <div class="h-wrapper">
-            <span class="h-domain">
+            <span class="h-domain" id="domain">
                 <a href="http://dreamser.com">
                     Dreamser
                 </a>
@@ -181,7 +185,10 @@
         <p class="f-record"><a href="//www.miitbeian.gov.cn/">鲁ICP备 16006293</a></p>
     </footer>
 </body>
+    <script src="scripts/require.js" data-main="scripts/main"></script>
+<!--
     <script src="static/framework/jquery-2.1.4/jquery.min.js"></script>
     <script src="static/script/index.js"></script>
+-->
 
 </html>

@@ -8,35 +8,11 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="email=no">
     <title>商家注册&物流入驻</title>
-    <link rel="stylesheet" href="mui.picker.css">
-    <link rel="stylesheet" href="mui.poppicker.css">
     <link rel="stylesheet" href="../../../static/framework/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="signup.css">
     <script src="../static/script/jquery.js"></script>
-    <script>
-        $(function(){
-            $("#tab1").bind("click",function(){
-                if($(this).hasClass("active")){
-
-                }else{
-                    $(this).addClass("active");
-                    $("#tab2").removeClass("active");
-                    $("#form1").show();
-                    $("#form2").hide();
-                }
-            });
-            $("#tab2").bind("click",function(){
-                if($(this).hasClass("active")){
-
-                }else{
-                    $(this).addClass("active");
-                    $("#tab1").removeClass("active");
-                    $("#form2").show();
-                    $("#form1").hide();
-                }
-            });
-        });
-    </script>
+    <script src="jquery.validate.min.js"></script>
+    <script src="signup.js"></script>
 </head>
 <body>
 
@@ -45,30 +21,30 @@
         <span id="tab2">物流入驻</span>
     </div>
     <div class="form" id="form1">
-        <form action="" method="post">
-            <label class="label" for="username"><span class="require">*</span> 用户名：</label><br>
-            <input class="input width1" name="username" type="text"><br>
+        <form id="signForm1" action="/f/sysuser/saveUser" method="post">
+            <label class="label" for="loginName"><span class="require">*</span> 用户名：</label><br>
+            <input id="loginName" class="input width1" name="loginName" type="text" placeholder="用户名为6-20个字符（英文字母、数字）"><br>
             <label class="label" for="password"><span class="require">*</span> 密码：</label><br>
-            <input class="input width1" name="password" type="password"><br>
-            <label class="label" for="confirm_pwd"><span class="require">*</span> 确认密码：</label><br>
-            <input class="input width1" name="confirm_pwd" type="password"><br>
-            <label class="label" for="phone"><span class="require">*</span> 验证手机：</label><br>
-            <input class="input width1" name="phone" type="text"><br>
-            <label class="label" for="captcha"><span class="require">*</span> 短信验证码：</label><br>
-            <input class="input width2" name="captcha" type="text"><span class="captcha">获取验证码</span><br>
-            <button class="btn">提交审核</button>
+            <input id="password" class="input width1" name="password" type="password" placeholder="密码为6-20个字符（英文字母、数字）组成"><br>
+            <label class="label" for="confirm_password"><span class="require">*</span> 确认密码：</label><br>
+            <input id="confirm_password" class="input width1" name="confirm_password" type="password" placeholder="请再次输入密码"><br>
+            <label class="label" for="mobile"><span class="require">*</span> 验证手机：</label><br>
+            <input id="mobile" class="input  width1" name="mobile" type="text" placeholder="请输入手机号"><br>
+            <label class="label" for="smsCode"><span class="require">*</span> 短信验证码：</label><br>
+            <input id="smsCode" class="input width2" name="smsCode" type="text" placeholder="请输入验证码"><span id="getSmsCode" class="captcha">获取验证码</span><br>
+            <button id="smBtn1" class="btn">提交审核</button>
             <p class="tip"></p>
         </form>
     </div>
     <div class="form" id="form2">
-        <form action="" method="post">
+        <form id="signForm2" action="" method="post">
             <label class="label" for="linkman"><span class="require">*</span> 联系人：</label><br>
-            <input class="input width1" name="linkman" type="text"><br>
+            <input class="input width1" name="linkman" type="text" placeholder="请输入联系人姓名"><br>
             <label class="label" for="phonenum"><span class="require">*</span> 联系电话：</label><br>
-            <input class="input width1" name="phonenum" type="text"><br>
+            <input class="input width1" name="phonenum" type="text" placeholder="请输入联系电话"><br>
             <label class="label" for="company"><span class="require">*</span> 公司名称：</label><br>
-            <input class="input width1" name="company" type="password"><br>
-            <button class="btn">提交审核</button>
+            <input class="input width1" name="company" type="text" placeholder="请输入公司名称"><br>
+            <button id="smBtn2" class="btn">提交审核</button>
             <p class="tip"></p>
         </form>
     </div>

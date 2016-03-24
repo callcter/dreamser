@@ -1,0 +1,445 @@
+.displayIBCon {
+  *word-spacing: -1px;
+  font-size: 0;
+}
+.displayIBSub {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+}
+.displayIB {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+  margin: 0;
+  padding: 0;
+}
+header,
+footer,
+section,
+article,
+aside,
+nav,
+hgroup,
+address,
+figure,
+figcaption,
+menu,
+details {
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th {
+  text-align: left;
+  font-weight: normal;
+}
+html,
+body,
+fieldset,
+img,
+iframe,
+abbr {
+  border: 0;
+}
+i,
+cite,
+em,
+var,
+address,
+dfn {
+  font-style: normal;
+}
+[hidefocus],
+summary {
+  outline: 0;
+}
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small {
+  font-size: 100%;
+}
+sup,
+sub {
+  font-size: 83%;
+}
+pre,
+code,
+kbd,
+samp {
+  font-family: inherit;
+}
+q:before,
+q:after {
+  content: none;
+}
+textarea {
+  overflow: auto;
+  resize: none;
+}
+label,
+summary {
+  cursor: default;
+}
+a,
+button {
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+strong,
+b {
+  font-weight: bold;
+}
+del,
+ins,
+u,
+s,
+a,
+a:hover {
+  text-decoration: none;
+}
+a,
+a:hover {
+  color: #333;
+}
+html {
+  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', arial, sans-serif;
+  font-size: 20px;
+}
+body {
+  background: #fff;
+}
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+select {
+  font-size: .7rem;
+  line-height: 25px;
+  display: inline-block;
+  height: 25px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  outline: none;
+  background: #fff;
+}
+.clear {
+  clear: both;
+}
+header {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+header a {
+  color: #000;
+}
+header .msg {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+header .msg .msg-con {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: right;
+  height: 30px;
+  line-height: 30px;
+  vertical-align: text-bottom;
+  font-size: 14px;
+}
+header .top {
+  width: 1200px;
+  height: 80px;
+  margin: 10px auto;
+}
+header .top .logo {
+  float: left;
+  width: 355px;
+  height: 80px;
+}
+header .top .links {
+  width: 700px;
+  height: 80px;
+  float: right;
+}
+header .top .links .links-m {
+  width: 100%;
+  margin-top: 10px;
+  height: 20px;
+  text-align: right;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+header .top .links .links-m li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin-right: 10px;
+  cursor: pointer;
+}
+header .top .links .links-m li span {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  height: 20px;
+  width: auto;
+}
+header .top .links .links-m li span.icon {
+  width: 18px;
+  height: 18px;
+  margin-bottom: -4px;
+}
+header .top .links .links-m li.last {
+  margin-right: 0;
+}
+header .top .links .links-b {
+  text-align: right;
+  height: 25px;
+  line-height: 25px;
+  font-size: 14px;
+  vertical-align: baseline;
+}
+header .top .links .links-b .pNum {
+  color: #0D6FB8;
+  font-size: 20px;
+}
+header nav {
+  width: 100%;
+  height: 40px;
+  background: #404144;
+}
+header nav a {
+  color: #fff;
+}
+header nav .navi {
+  width: 1200px;
+  margin: 0 auto;
+}
+header nav .navi li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: -3px;
+}
+header nav .navi li.first {
+  background: #166BAB;
+  margin-left: 0;
+}
+header nav .navi li:hover {
+  background: #2B2C30;
+}
+header .nav1 {
+  width: 100%;
+  height: 40px;
+  background: #5AA7E1;
+}
+header .nav1 a {
+  color: #fff;
+}
+header .nav1 .navi {
+  width: 1200px;
+  margin: 0 auto;
+}
+header .nav1 .navi li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: -3px;
+}
+header .nav1 .navi li.first {
+  background: #FFA939;
+  margin-left: 0;
+}
+header .nav1 .navi li:hover {
+  background: #5096CA;
+}
+header .erweima {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 35px;
+  left: 50%;
+  margin-left: 90px;
+  display: none;
+}
+footer {
+  width: 855px;
+  margin: 0 auto 20px;
+  font-size: 14px;
+}
+footer .anchor {
+  width: 340px;
+  float: left;
+  height: 80px;
+  margin-bottom: 10px;
+}
+footer .anchor li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  list-style: none;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  margin-left: -3px;
+  text-align: center;
+}
+footer .anchor li a {
+  color: #333;
+  text-decoration: none;
+}
+footer .anchor li.index {
+  margin-left: 0;
+}
+footer .ewcode {
+  float: left;
+  width: 70px;
+  height: 70px;
+  padding: 5px 50px;
+  border-left: 2px solid #ddd;
+  border-right: 2px solid #ddd;
+}
+footer .phones {
+  float: left;
+  width: 240px;
+  height: 80px;
+  margin-left: 20px;
+}
+footer .phones p {
+  line-height: 25px;
+}
+footer .phones p.p-num {
+  color: #FF5000;
+  font-size: 20px;
+}
+footer .buttons {
+  float: left;
+  width: 80px;
+  height: 80px;
+}
+footer .buttons .btn {
+  width: 80px;
+  height: 25px;
+  line-height: 25px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 3px;
+  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: none;
+  margin-top: 10px;
+  color: #fff;
+}
+footer .buttons .color1 {
+  background: #E7A800;
+}
+footer .buttons .color2 {
+  background: #FF5000;
+}
+footer .copyright {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+.confirm-box {
+  display: none;
+  position: absolute;
+  top: 50%;
+  margin-top: -100px;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+  height: 200px;
+  border-radius: 3px;
+  -o-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  overflow: hidden;
+  background: #fff;
+  z-index: 1000;
+}
+.confirm-box .confirm-con {
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+}
+.confirm-box .confirm-btn {
+  width: 100%;
+  height: 49px;
+  border-top: 1px solid #ddd;
+  line-height: 49px;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+}

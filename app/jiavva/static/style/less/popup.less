@@ -1,0 +1,31 @@
+@import "common.less";
+
+.confirm-box{
+	display: none;
+	position: absolute;
+	top: 50%;
+	margin-top: -100px;
+	left: 50%;
+	margin-left: -200px;
+	width: 400px;
+	height: 200px;
+	.rounded-corners(3px);
+	overflow: hidden;
+	background: #fff;
+	z-index: 1000;
+	.confirm-con{
+		width: 100%;
+		height: 150px;
+		text-align: center;
+		line-height: 150px;
+	}
+	.confirm-btn{
+		width: 100%;
+		height: 49px;
+		border-top: 1px solid #ddd;
+		line-height: 49px;
+		text-align: center;
+		font-size: 1rem;
+		cursor: pointer;
+	}
+}

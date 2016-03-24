@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>需求单管理</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../static/style/css/public.css">
+    <link rel="stylesheet" href="../static/style/css/demandFormManage.css">
+    <!--[if lt IE 9]>
+        <script src="../static/scripts/lib/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<h1>商家中心—需求单管理</h1>
+	<input type="text" placeholder="请输入单号、收件人、商品、手机号等">
+	<button>立即搜索</button>
+	<input type="checkbox">待办
+	<select name="serviceType" id="">
+		<option value="">服务类型</option>
+		<option value="">物流运输</option>
+		<option value="">配送安装</option>
+		<option value="">送装一体</option>
+	</select>
+	<select name="status" id="">
+		<option value="">全部状态</option>
+		<option value="">取消</option>
+		<option value="">已完成</option>
+		<option value="">已出账</option>
+		<option value="">待下单</option>
+		<option value="">配送中</option>
+		<option value="">安装中</option>
+		<option value="">异常处理中</option>
+	</select>
+	<table>
+		<tr>
+			<th></th>
+			<th>单号</th>
+			<th>用户名</th>
+			<th>
+				<select name="dateType" id="">
+					<option value="">订单下单日期</option>
+					<option value="">订单揽收日期</option>
+					<option value="">最新状态日期</option>
+				</select>
+			</th>
+			<th>全额</th>
+			<th>产品名称*件数</th>
+			<th>发货地</th>
+			<th>收货地</th>
+			<th>收件人</th>
+			<th>服务商</th>
+			<th>状态</th>
+			<th>类型</th>
+			<th>操作</th>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox">
+			</td>
+			<td>P1929222922318</td>
+			<td>123</td>
+			<td>
+				<p>2016-02-04</p>
+				<p>11:11:11</p>
+			</td>
+			<td>2222.22</td>
+			<td>小书桌EW01*2</td>
+			<td>山东省-青岛市-即墨市</td>
+			<td>山东省-青岛市-即墨市</td>
+			<td>成吉思汗</td>
+			<td>德邦</td>
+			<td>未下单</td>
+			<td>送装一体</td>
+			<td>
+				<span>查看</span>
+				<span>取消</span>
+				<span>更新</span>
+				<span>标注</span>
+			</td>
+			<td></td>
+		</tr>
+	</table>
+</body>
+	<script src="../static/scripts/require.js" data-main="../static/scripts/demandFormManage"></script>
+
+</html>

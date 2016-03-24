@@ -1,0 +1,27 @@
+.displayIBCon {
+  *word-spacing: -1px;
+  font-size: 0;
+}
+.displayIBSub {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+}
+.displayIB {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+table {
+  border: 1px solid #ddd;
+  font-size: 0.8rem;
+  width: auto;
+}
+table tr th {
+  border: 1px solid #ddd;
+}
+table tr td {
+  border: 1px solid #ddd;
+  padding: 5px;
+}

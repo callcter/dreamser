@@ -112,3 +112,9 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
 ERR: 无法加载模块:Announce
 
+[ 2016-03-27T23:07:14+08:00 ] 127.0.0.1 /announce.php?info_hash=3%25%90%2B%C3%82V7%20%5C%12%EF%B3%9D%88%87%0F%DFp%E4&peer_id=%2DSD0100%2D%FA%96%2F%84%BC%81k%5C%C7%B8q%5F&ip=123.168.64.192&port=16002&uploaded=253759580&downloaded=253759580&left=1388314624&numwant=200&key=8543&compact=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+ERR: 无法加载模块:Announce
+

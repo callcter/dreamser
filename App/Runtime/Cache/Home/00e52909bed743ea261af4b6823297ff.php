@@ -11,7 +11,7 @@
 
 <!-- 	<?php if(is_array($person)): foreach($person as $key=>$data): echo ($data['name']); ?>---------------<?php echo ($data['age']); ?><br><?php endforeach; endif; ?> -->
 
-<!-- 	<?php $__FOR_START_17999__=1;$__FOR_END_17999__=10;for($k=$__FOR_START_17999__;$k <= $__FOR_END_17999__;$k+=1){ echo ($k); ?><br><?php } ?> -->
+<!-- 	<?php $__FOR_START_12037__=1;$__FOR_END_12037__=10;for($k=$__FOR_START_12037__;$k <= $__FOR_END_12037__;$k+=1){ echo ($k); ?><br><?php } ?> -->
 
 <!-- 	<?php if($num > 10): ?>num大于10
 	<?php elseif($num < 10): ?>

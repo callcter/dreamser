@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scaleable=0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
@@ -33,7 +33,7 @@
     </div>
     <div class="wrapper">
         <div class="loveDays">
-            <span id="loveDays"></span>
+            我们已经相爱 <span class="important-word" id="loveDays"></span> 天
         </div>
         <div class="memorialDay" id="mD">
             今天是 <span id="memorialDay"></span> 的日子

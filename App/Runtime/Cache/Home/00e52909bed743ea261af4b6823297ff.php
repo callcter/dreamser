@@ -69,7 +69,7 @@
                         </p>
                         <div class="detail">
                             DOTA2英雄头像展示，主要使用CSS3变换
-                            <a href="app/dota/index.html"><span class="fa fa-link fa-lg"></span></a>
+                            <a href="Dota/index"><span class="fa fa-link fa-lg"></span></a>
                         </div>
                     </li>
                     <li>
@@ -79,7 +79,7 @@
                         </p>
                         <div class="detail">
                             按帧制作尾灯动画，可以播放、存储，可用canvas生成预览图
-                            <a href="app/taillight/index.html"><span class="fa fa-link fa-lg"></span></a>
+                            <a href="Taillight/index"><span class="fa fa-link fa-lg"></span></a>
                         </div>
                     </li>
                     <li>
@@ -89,7 +89,7 @@
                         </p>
                         <div class="detail">
                             使用Google地图和HighCharts做的海拔小Demo
-                            <a href="app/googlemap/index.html"><span class="fa fa-link fa-lg"></span></a>
+                            <a href="Googlemap/index"><span class="fa fa-link fa-lg"></span></a>
                         </div>
                     </li>
                     <li>
@@ -99,7 +99,7 @@
                         </p>
                         <div class="detail">
                             Angularjs Demos，还在学习中
-                            <a href="app/dota/index.html"><span class="fa fa-link fa-lg"></span></a>
+                            <a href="Angular/index"><span class="fa fa-link fa-lg"></span></a>
                         </div>
                     </li>
                     <li>
@@ -109,17 +109,7 @@
                         </p>
                         <div class="detail">
                             React Demos，还在学习中
-                            <a href="app/dota/index.html"><span class="fa fa-link fa-lg"></span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <p class="title-2">
-                            RequireJS Demos
-                            <span class="fa fa-angle-double-down fa-lg"></span>
-                        </p>
-                        <div class="detail">
-                            RequireJS Demos，采用新的架构，还在学习中
-                            <a href="app/dota/index.html"><span class="fa fa-link fa-lg"></span></a>
+                            <a href="React/index"><span class="fa fa-link fa-lg"></span></a>
                         </div>
                     </li>
                 </ul>
@@ -134,7 +124,7 @@
                         </p>
                         <div class="detail">
                             自用的恋爱小工具，包括时间线、纪念日、生理期等小功能
-                            <a href="app/lovenote/index.html"><span class="fa fa-link fa-lg"></span></a>
+                            <a href="Lovenote/index"><span class="fa fa-link fa-lg"></span></a>
                         </div>
                     </li>
                     <li>
@@ -144,7 +134,7 @@
                         </p>
                         <div class="detail">
                             包括圣诞树点灯小游戏、许愿、祝愿排行榜等
-                            <a href="app/christmas/game.html"><span class="fa fa-link fa-lg"></span></a>
+                            <a href="Christmasol/index"><span class="fa fa-link fa-lg"></span></a>
                         </div>
                     </li>
                     <li>
@@ -154,7 +144,7 @@
                         </p>
                         <div class="detail">
                             自己写的一个日历小插件，按日期查看数据，HighChart生成报表
-                            <a href="app/datalistbydate/index.html"><span class="fa fa-link fa-lg"></span></a>
+                            <a href="Datalistbydate/index"><span class="fa fa-link fa-lg"></span></a>
                         </div>
                     </li>
                     <li>
@@ -164,7 +154,7 @@
                         </p>
                         <div class="detail">
                             Jquery-mobile Demos，还在学习中
-                            <a href="app/jquery-mobile/index.html"><span class="fa fa-link fa-lg"></span></a>
+                            <a href="Jquerymobile/index"><span class="fa fa-link fa-lg"></span></a>
                         </div>
                     </li>
                     <li>
@@ -174,7 +164,7 @@
                         </p>
                         <div class="detail">
                             为Webapp准备的一些功能插件
-                            <a href="app/touch/index.html"><span class="fa fa-link fa-lg"></span></a>
+                            <a href="Touch/index"><span class="fa fa-link fa-lg"></span></a>
                         </div>
                     </li>
                 </ul>

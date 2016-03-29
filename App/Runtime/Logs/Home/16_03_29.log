@@ -1,3 +1,87 @@
 [ 2016-03-29T11:05:43+08:00 ] ::1 /Index/Public/js/helper/index.js
 ERR: 非法操作:Public
 
+[ 2016-03-29T13:53:46+08:00 ] ::1 /app/lovenote/index.html
+ERR: 无法加载控制器:App
+
+[ 2016-03-29T13:53:59+08:00 ] ::1 /app/lovenote/index.html
+ERR: 无法加载控制器:App
+
+[ 2016-03-29T13:54:47+08:00 ] ::1 /models/MemorialEventQuery.php?uid=5201314&offset=0&limit=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000722s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001397s ]
+ERR: 无法加载控制器:Models
+
+[ 2016-03-29T13:54:47+08:00 ] ::1 /models/MemorialDayQuery.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002585s ]
+ERR: 无法加载控制器:Models
+
+[ 2016-03-29T13:54:49+08:00 ] ::1 /models/MemorialDayQuery.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001272s ]
+ERR: 无法加载控制器:Models
+
+[ 2016-03-29T13:54:49+08:00 ] ::1 /models/MemorialEventQuery.php?uid=5201314&offset=0&limit=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001797s ]
+ERR: 无法加载控制器:Models
+
+[ 2016-03-29T13:55:22+08:00 ] ::1 /models/MemorialDayQuery.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001594s ]
+ERR: 无法加载控制器:Models
+
+[ 2016-03-29T13:55:22+08:00 ] ::1 /models/MemorialEventQuery.php?uid=5201314&offset=0&limit=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001530s ]
+ERR: 无法加载控制器:Models
+
+[ 2016-03-29T13:58:05+08:00 ] ::1 /models/MemorialDayQuery.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001616s ]
+ERR: 无法加载控制器:Models
+
+[ 2016-03-29T13:58:05+08:00 ] ::1 /models/MemorialEventQuery.php?uid=5201314&offset=0&limit=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001143s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004363s ]
+ERR: 无法加载控制器:Models
+
+[ 2016-03-29T14:01:52+08:00 ] ::1 /Public/style/css/public-mobile.css
+ERR: 无法加载控制器:Public
+
+[ 2016-03-29T14:01:52+08:00 ] ::1 /models/MemorialDayQuery.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001307s ]
+ERR: 无法加载控制器:Models
+
+[ 2016-03-29T14:01:52+08:00 ] ::1 /models/MemorialEventQuery.php?uid=5201314&offset=0&limit=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001790s ]
+ERR: 无法加载控制器:Models
+
+[ 2016-03-29T14:01:53+08:00 ] ::1 /Public/style/css/public-mobile.css
+ERR: 无法加载控制器:Public
+
+[ 2016-03-29T14:01:54+08:00 ] ::1 /models/MemorialDayQuery.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000870s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001452s ]
+ERR: 无法加载控制器:Models
+
+[ 2016-03-29T14:01:54+08:00 ] ::1 /models/MemorialEventQuery.php?uid=5201314&offset=0&limit=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001385s ]
+ERR: 无法加载控制器:Models
+

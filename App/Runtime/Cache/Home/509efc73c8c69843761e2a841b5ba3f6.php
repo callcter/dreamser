@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -9,9 +9,9 @@
     <meta name="format-detection" content="email=no">
     <title>爱的纪念册</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="__PUBLIC__/lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/style/css/public-mobile.css">
-    <link rel="stylesheet" href="__PUBLIC__/style/css/lovenote.css">
+    <link rel="stylesheet" href="/Public/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Public/style/css/public-mobile.css">
+    <link rel="stylesheet" href="/Public/style/css/lovenote.css">
 
 </head>
 
@@ -43,9 +43,9 @@
     <footer></footer>
 </body>
 
-    <script src="__PUBLIC__/js/lib/jquery-2.1.4/jquery.min.js"></script>
-    <script src="__PUBLIC__/js/global.js"></script>
-    <script src="__PUBLIC__/js/common.js"></script>
-    <script src="__PUBLIC__/js/lovenote.js"></script>
+    <script src="/Public/js/lib/jquery-2.1.4/jquery.min.js"></script>
+    <script src="/Public/js/global.js"></script>
+    <script src="/Public/js/common.js"></script>
+    <script src="/Public/js/lovenote.js"></script>
 
 </html>

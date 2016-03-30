@@ -1,0 +1,268 @@
+.displayIBCon {
+  *word-spacing: -1px;
+  font-size: 0;
+}
+.displayIBSub {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+}
+.back1 {
+  background: #f9f9f9 !important;
+}
+.back2 {
+  background: #f3f3f3 !important;
+}
+.margin-top60 {
+  margin-top: 60px;
+}
+.border-left0 {
+  border-left: none !important;
+}
+.margin-left100 {
+  margin-left: 100px !important;
+}
+a,
+a:hover {
+  color: #fff;
+}
+.menu-box {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 20;
+}
+.menu-box .menu-con {
+  *word-spacing: -1px;
+  font-size: 0;
+  width: 1200px;
+  height: 60px;
+  margin: 0 auto;
+}
+.menu-box .menu-con .logo {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+  width: 185px;
+  height: 60px;
+}
+.menu-box .menu-con .menu {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+  position: relative;
+  top: -25px;
+  width: 90px;
+  height: 20px;
+  font-size: 0.8rem;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  border-left: 1px solid #fff;
+}
+.title {
+  position: relative;
+  *word-spacing: -1px;
+  font-size: 0;
+  width: 1200px;
+  height: 50px;
+  margin: 10px auto;
+}
+.title .border1 {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+  width: 10%;
+  height: 3px;
+  background: #006ab5;
+  margin-bottom: -1px;
+}
+.title .border2 {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+  width: 40%;
+  height: 1px;
+  margin-top: 26px;
+  background: #ddd;
+}
+.title .title-con {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  left: 50%;
+  margin-left: -100px;
+  line-height: 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  background: #fff;
+  z-index: 10;
+}
+.title .title-con .text1 {
+  color: #006ab5;
+}
+.title-sub {
+  width: 1200px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 1.2rem;
+  color: #999;
+  margin: 0 auto 10px;
+  text-align: center;
+}
+.pic-box {
+  width: 100%;
+  height: auto;
+}
+.pic-box .pic-con {
+  width: 1200px;
+  height: auto;
+  margin: 0 auto;
+}
+.recruitment-box {
+  *word-spacing: -1px;
+  font-size: 0;
+  width: 1200px;
+  height: 400px;
+  margin: 20px auto 0;
+}
+.recruitment-box .tab {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+  width: 239px;
+  height: 80px;
+  background: #f0f0f0;
+  font-size: 1rem;
+  color: #666;
+  line-height: 80px;
+  border-left: 1px solid #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+.recruitment-box .tab .icon {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+  width: 30px;
+  height: 30px;
+  margin-bottom: -8px;
+}
+.recruitment-box .border-left0 {
+  border-left: 0;
+}
+.recruitment-box .active {
+  background: #006ab5;
+  color: #fff;
+}
+.recruitment-box .recruitment-con {
+  width: 1197px;
+  height: auto;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-top: none;
+}
+.recruitment-box .recruitment-con .con-con {
+  overflow-x: hidden;
+  float: left;
+  width: 44%;
+  padding: 20px 2% 20px 4%;
+}
+.recruitment-box .recruitment-con .con-con .title {
+  line-height: 30px;
+  font-size: 1.2rem;
+}
+.recruitment-box .recruitment-con .con-con .text {
+  line-height: 30px;
+  font-size: 0.9rem;
+}
+.recruitment-box .recruitment-con .con-con .text li {
+  list-style: circle;
+}
+#recruitment2,
+#recruitment3,
+#recruitment4,
+#recruitment5 {
+  display: none;
+}
+.joinus-btn {
+  width: 160px;
+  height: 40px;
+  margin: 10px auto;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  background: #006ab5;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+@media screen and (min-width: 1200px) {
+  .menu-box {
+    width: 1200px;
+  }
+  .recruitment-box {
+    width: 1200px;
+  }
+  .recruitment-box .tab {
+    width: 239px;
+  }
+  .recruitment-box .recruitment-con {
+    width: 1197px;
+  }
+  .pic-box .pic-con {
+    width: 1200px;
+  }
+  .title {
+    width: 1200px;
+  }
+  .title-sub {
+    width: 1200px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .menu-box {
+    width: 100%;
+  }
+  .menu-box .menu-con .menu {
+    display: none;
+  }
+  .menu-box .menu-con .menu-list {
+    display: block;
+  }
+  .recruitment-box {
+    width: 100%;
+  }
+  .recruitment-box .tab {
+    width: 20%;
+    border: none;
+  }
+  .recruitment-box .recruitment-con {
+    width: 98%;
+  }
+  .pic-box .pic-con {
+    width: 100%;
+  }
+  .title {
+    width: 100%;
+  }
+  .title-sub {
+    width: 100%;
+  }
+}

@@ -18,7 +18,22 @@ window.onload = function(){
 	$('.menu a').on('click',function(){
 		var posi = $('#'+$(this).attr('class')).offset().top;
 		$('body').animate({
-			scrollTop: posi-60
+			scrollTop: posi-80
 		},1000);
+	});
+	$('.menu-list li').on('click',function(){
+		var posi = $('#'+$(this).attr('class')).offset().top;
+		$('body').animate({
+			scrollTop: posi-40
+		},1000);
+	});
+	$('.joinus-btn').on('click',function(){
+		$('.resume-box').show();
+	});
+	$('.resume-box .close').on('click',function(){
+		$('.resume-box').hide();
+	});
+	$('.menu-btn').on('click',function(){
+		$('.menu-list').toggle('fast');
 	});
 }

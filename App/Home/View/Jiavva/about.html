@@ -2,7 +2,13 @@
 <html>
 <head>
 	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
 	<title>关于我们</title>
+	<link rel="stylesheet" href="__PUBLIC__/lib/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="__PUBLIC__/style/css/public-pc.css">
 	<link rel="stylesheet" href="__PUBLIC__/style/jiavva/about.css">
 </head>
@@ -20,14 +26,17 @@
 			<span class="menu"><a class="jwry">家哇荣誉</a></span>
 			<span class="menu"><a class="hzhb">合作伙伴</a></span>
 			<span class="menu"><a class="jrwm">加入我们</a></span>
+			<div class="menu-btn">
+				<i class="fa fa-navicon"></i>
+			</div>
 			<ul class="menu-list">
-				<li>平台定位</li>
-				<li>业务前景</li>
-				<li>家哇背景</li>
-				<li>创客团队</li>
-				<li>家哇荣誉</li>
-				<li>合作伙伴</li>
-				<li>加入我们</li>
+				<li class="ptdw">平台定位</li>
+				<li class="ywqj">业务前景</li>
+				<li class="jwbj">家哇背景</li>
+				<li class="cktd">创客团队</li>
+				<li class="jwry">家哇荣誉</li>
+				<li class="hzhb">合作伙伴</li>
+				<li class="jrwm">加入我们</li>
 			</ul>
 		</div>
 	</div>
@@ -124,7 +133,12 @@
 			<img src="__PUBLIC__/image/jiavva/about6.jpg">
 		</div>
 	</div>
-	<!-- <div class="title-sub">合作服务商</div> -->
+	<div class="title-sub">合作服务商</div>
+	<div class="pic-box">
+		<div class="pic-con">
+			<img src="__PUBLIC__/image/jiavva/about6.jpg">
+		</div>
+	</div>
 	<div class="title" id="jrwm">
 		<div class="title-con">
 			<span class="text1">加入</span>我们
@@ -138,25 +152,26 @@
 	<div class="recruitment-box">
 		<div class="tab active border-left0">
 			<span class="icon"><img src="__PUBLIC__/image/jiavva/icon_shichang1.png"></span>
-			市场调研员
+			<span class="text">市场调研员</span>
 		</div>
 		<div class="tab">
 			<span class="icon"><img src="__PUBLIC__/image/jiavva/icon_yunying.png"></span>
-			用户运营
+			<span class="text">用户运营</span>
 		</div>
 		<div class="tab">
 			<span class="icon"><img src="__PUBLIC__/image/jiavva/icon_pingtaiyunying.png"></span>
-			平台运营
+			<span class="text">平台运营</span>
 		</div>
 		<div class="tab">
 			<span class="icon"><img src="__PUBLIC__/image/jiavva/icon_kefuzhuguan.png"></span>
-			客服主管
+			<span class="text">客服主管</span>
 		</div>
 		<div class="tab">
 			<span class="icon"><img src="__PUBLIC__/image/jiavva/icon_shujufenxi.png"></span>
-			数据分析
+			<span class="text">数据分析</span>
 		</div>
 		<div class="recruitment-con" id="recruitment1">
+			<p class="con-title">市场调研员</p>
 			<div class="con-con">
 				<p class="title">岗位职责</p>
 				<ul class="text">
@@ -178,6 +193,7 @@
 			<div class="clear"></div>
 		</div>
 		<div class="recruitment-con" id="recruitment2">
+			<p class="con-title">用户运营</p>
 			<div class="con-con">
 				<p class="title">岗位职责</p>
 				<ul class="text">
@@ -200,6 +216,7 @@
 			<div class="clear"></div>
 		</div>
 		<div class="recruitment-con" id="recruitment3">
+			<p class="con-title">平台运营</p>
 			<div class="con-con">
 				<p class="title">岗位职责</p>
 				<ul class="text">
@@ -222,6 +239,7 @@
 			<div class="clear"></div>
 		</div>
 		<div class="recruitment-con" id="recruitment4">
+			<p class="con-title">客服主管</p>
 			<div class="con-con">
 				<p class="title">岗位职责</p>
 				<ul class="text">
@@ -244,6 +262,7 @@
 			<div class="clear"></div>
 		</div>
 		<div class="recruitment-con" id="recruitment5">
+			<p class="con-title">数据分析</p>
 			<div class="con-con">
 				<p class="title">岗位职责</p>
 				<ul class="text">
@@ -266,6 +285,53 @@
 		</div>
 		<div class="joinus-btn">加入我们</div>
 	</div>
+	<div class="resume-box">
+		<div class="close">
+			<img src="__PUBLIC__/image/jiavva/close.png">
+		</div>
+		<div class="pic1">
+			<img src="__PUBLIC__/image/jiavva/top_txt.png">
+		</div>
+		<div class="input1">
+			姓名：<input type="text">
+		</div>
+		<div class="input2">
+			邮箱：<input type="text">
+		</div>
+		<div class="input3">
+			应聘职位：<input type="text">
+		</div>
+		<div class="file">
+			<input type="file">
+		</div>
+		<div class="sub-btn">
+			提交
+		</div>
+	</div>
+	<footer>
+		<div class="ft-con">
+			<div class="list1">
+				<p class="title">联系我们</p>
+				<p class="text">电话：0532-55775722</p>
+				<p class="text">E-mail：contact@jiavva.com</p>
+				<p class="text">地址：山东省青岛市海尔路1号海尔工业园中心大楼703室</p>
+				<p class="title">友情链接</p>
+				<p class="text">快递查询</p>
+			</div>
+			<div class="list2">
+				<p class="title">版权声明</p>
+				<p class="text">青岛家哇云网络科技有限公司</p>
+				<p class="text">&copy;2013-2016 Jiavva.com All Rights Reserved</p>
+				<p class="text">浙ICP备15014455号-1</p>
+			</div>
+			<div class="list3">
+				<div><img src="__PUBLIC__/image/jiavva/code.png"></div>
+				<p class="text text-center">微信扫一扫</p>
+				<p class="text text-center">掌握第一手服务资讯</p>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</footer>
 
 	<script src="__PUBLIC__/js/lib/jquery-1.12.0/jquery.min.js"></script>
 	<script src="__PUBLIC__/js/jiavva/about.js"></script>

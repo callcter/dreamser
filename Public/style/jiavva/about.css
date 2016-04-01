@@ -14,8 +14,8 @@
 .back2 {
   background: #f3f3f3 !important;
 }
-.margin-top60 {
-  margin-top: 60px;
+.margin-top80 {
+  margin-top: 80px;
 }
 .border-left0 {
   border-left: none !important;
@@ -27,11 +27,14 @@ a,
 a:hover {
   color: #fff;
 }
+.text-center {
+  text-align: center;
+}
 .menu-box {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 60px;
+  height: 80px;
   background: rgba(0, 0, 0, 0.7);
   z-index: 20;
 }
@@ -39,7 +42,7 @@ a:hover {
   *word-spacing: -1px;
   font-size: 0;
   width: 1200px;
-  height: 60px;
+  height: 80px;
   margin: 0 auto;
 }
 .menu-box .menu-con .logo {
@@ -49,6 +52,43 @@ a:hover {
   word-spacing: normal;
   width: 185px;
   height: 60px;
+  margin-top: 10px;
+}
+.menu-box .menu-con .menu-btn {
+  position: absolute;
+  top: 5px;
+  display: none;
+  width: 30px;
+  height: 30px;
+  right: 20px;
+  line-height: 30px;
+  text-align: center;
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  background: #006ab5;
+  cursor: pointer;
+}
+.menu-box .menu-con .menu-list {
+  position: fixed;
+  display: none;
+  top: 40px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  width: 120px;
+  height: auto;
+}
+.menu-box .menu-con .menu-list li {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #fff;
 }
 .menu-box .menu-con .menu {
   display: inline-block;
@@ -58,12 +98,15 @@ a:hover {
   position: relative;
   top: -25px;
   width: 90px;
-  height: 20px;
+  height: 30px;
   font-size: 0.8rem;
   color: #fff;
   text-align: center;
-  line-height: 20px;
+  line-height: 30px;
   border-left: 1px solid #fff;
+}
+.menu-box .menu-con a:hover {
+  color: #006ab5 !important;
 }
 .title {
   position: relative;
@@ -131,7 +174,7 @@ a:hover {
   *word-spacing: -1px;
   font-size: 0;
   width: 1200px;
-  height: 400px;
+  height: auto;
   margin: 20px auto 0;
 }
 .recruitment-box .tab {
@@ -142,7 +185,6 @@ a:hover {
   width: 239px;
   height: 80px;
   background: #f0f0f0;
-  font-size: 1rem;
   color: #666;
   line-height: 80px;
   border-left: 1px solid #ddd;
@@ -157,6 +199,10 @@ a:hover {
   width: 30px;
   height: 30px;
   margin-bottom: -8px;
+  margin-right: 5px;
+}
+.recruitment-box .tab .text {
+  font-size: 1rem;
 }
 .recruitment-box .border-left0 {
   border-left: 0;
@@ -172,6 +218,15 @@ a:hover {
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   border-top: none;
+}
+.recruitment-box .recruitment-con .con-title {
+  display: none;
+  color: #006ab5;
+  line-height: 30px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
 }
 .recruitment-box .recruitment-con .con-con {
   overflow-x: hidden;
@@ -196,10 +251,94 @@ a:hover {
 #recruitment5 {
   display: none;
 }
-.joinus-btn {
-  width: 160px;
+.resume-box {
+  display: none;
+  position: fixed;
+  top: 50%;
+  margin-top: -200px;
+  left: 50%;
+  margin-left: -300px;
+  width: 600px;
+  height: 400px;
+  background-image: url(../../image/jiavva/about_bg2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 100;
+}
+.resume-box .pic1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 410px;
+  height: 22px;
+}
+.resume-box .input1,
+.resume-box .input2,
+.resume-box .input3 {
+  position: absolute;
+  left: 20px;
+  width: 340px;
   height: 40px;
-  margin: 10px auto;
+  line-height: 40px;
+  font-size: 0.9rem;
+  text-align: right;
+}
+.resume-box .input1 input,
+.resume-box .input2 input,
+.resume-box .input3 input {
+  width: 220px;
+  height: 25px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+}
+.resume-box .input1 {
+  top: 60px;
+}
+.resume-box .input2 {
+  top: 110px;
+}
+.resume-box .input3 {
+  top: 160px;
+}
+.resume-box .close {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.resume-box .file {
+  position: absolute;
+  top: 210px;
+  left: 20px;
+  width: 340px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.resume-box .sub-btn {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  top: 260px;
+  left: 80px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  background: #006ab5;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+.joinus-btn {
+  width: 200px;
+  height: 50px;
+  margin: 30px auto;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -209,41 +348,69 @@ a:hover {
   outline: none;
   color: #fff;
   font-size: 1rem;
-  line-height: 40px;
+  line-height: 50px;
   text-align: center;
   cursor: pointer;
 }
-@media screen and (min-width: 1200px) {
-  .menu-box {
-    width: 1200px;
-  }
-  .recruitment-box {
-    width: 1200px;
-  }
-  .recruitment-box .tab {
-    width: 239px;
-  }
-  .recruitment-box .recruitment-con {
-    width: 1197px;
-  }
-  .pic-box .pic-con {
-    width: 1200px;
-  }
-  .title {
-    width: 1200px;
-  }
-  .title-sub {
-    width: 1200px;
-  }
+footer {
+  width: 100%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.7);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+footer .ft-con {
+  width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+footer .ft-con .list1,
+footer .ft-con .list2,
+footer .ft-con .list3 {
+  float: left;
+}
+footer .ft-con .list1 .title,
+footer .ft-con .list2 .title,
+footer .ft-con .list3 .title {
+  width: 100%;
+  line-height: 30px;
+  border-bottom: 1px solid #fff;
+  font-size: 1.2rem;
+  color: #fff;
+}
+footer .ft-con .list1 .text,
+footer .ft-con .list2 .text,
+footer .ft-con .list3 .text {
+  line-height: 30px;
+  font-size: 0.8rem;
+  color: #ddd;
+}
+footer .ft-con .list1 {
+  width: 500px;
+}
+footer .ft-con .list2 {
+  width: 400px;
+  margin-left: 50px;
+}
+footer .ft-con .list3 {
+  width: 150px;
+  margin-left: 50px;
 }
 @media screen and (max-width: 1199px) {
   .menu-box {
     width: 100%;
+    height: 40px;
   }
   .menu-box .menu-con .menu {
     display: none;
   }
-  .menu-box .menu-con .menu-list {
+  .menu-box .menu-con .logo {
+    height: 30px;
+    width: 90px;
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+  .menu-box .menu-con .menu-btn {
     display: block;
   }
   .recruitment-box {
@@ -252,9 +419,53 @@ a:hover {
   .recruitment-box .tab {
     width: 20%;
     border: none;
+    height: 60px;
+  }
+  .recruitment-box .tab .text {
+    display: none;
   }
   .recruitment-box .recruitment-con {
+    border: none;
     width: 98%;
+  }
+  .recruitment-box .recruitment-con .con-title {
+    display: block;
+  }
+  .recruitment-box .recruitment-con .con-con {
+    float: none;
+    width: 92%;
+    margin-left: 0 auto;
+    padding: 10px 2% 10px 6%;
+  }
+  .resume-box {
+    width: 300px;
+    height: 340px;
+    margin-left: -150px;
+    margin-top: -170px;
+    background-image: none;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .resume-box .pic1 {
+    display: none;
+  }
+  .resume-box .input1,
+  .resume-box .input2,
+  .resume-box .input3 {
+    width: 95%;
+    left: 0;
+    color: #fff;
+  }
+  .resume-box .input1 input,
+  .resume-box .input2 input,
+  .resume-box .input3 input {
+    width: 150px;
+  }
+  .resume-box .file {
+    color: #fff;
+    left: 0;
+  }
+  .resume-box .sub-btn {
+    left: 50px;
   }
   .pic-box .pic-con {
     width: 100%;
@@ -262,7 +473,24 @@ a:hover {
   .title {
     width: 100%;
   }
+  .title .title-con {
+    font-size: 1.4rem;
+  }
   .title-sub {
     width: 100%;
+  }
+  footer .ft-con {
+    width: 100%;
+  }
+  footer .ft-con .list1,
+  footer .ft-con .list2 {
+    float: none;
+    width: 90%;
+    margin: 0 auto;
+  }
+  footer .ft-con .list3 {
+    width: 200px;
+    float: none;
+    margin: 10px auto;
   }
 }

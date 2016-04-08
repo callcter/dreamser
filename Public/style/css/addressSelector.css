@@ -1,0 +1,85 @@
+.displayIBCon {
+  *word-spacing: -1px;
+  font-size: 0;
+}
+.displayIBSub {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+}
+.address-box {
+  position: absolute;
+  width: 310px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  z-index: 100;
+}
+.address-box .address-tip {
+  height: 25px;
+  width: auto;
+  padding-left: 5px;
+}
+.address-box .address-tab {
+  *word-spacing: -1px;
+  font-size: 0;
+  width: auto;
+  height: 25px;
+  border-bottom: 1px solid #ddd;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.address-box .address-tab li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+  list-style: none;
+  height: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.address-box .address-tab li.active {
+  border-bottom: 1px solid #26b4d3;
+  color: #26b4d3;
+}
+.address-box .address-list {
+  position: relative;
+  *word-spacing: -1px;
+  font-size: 0;
+  margin-top: 2px;
+  margin-left: 10px;
+  padding: 0;
+  width: 290px;
+  height: auto;
+  background: #fff;
+  display: none;
+}
+.address-box .address-list li {
+  list-style: none;
+  height: 20px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+  width: auto;
+  white-space: nowrap;
+  padding: 0 10px;
+  line-height: 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -o-border-radius: 3px;
+}
+.address-box .address-list li.active {
+  background: #26b4d3;
+  color: #fff;
+}

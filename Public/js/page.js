@@ -1,14 +1,15 @@
 var Page = function(config){
     this.elem = config.elem;
-    this.pageSize = config.pageSize;
+    this.pageSize = 20;
     this.total = 0;
     this.pageNum = 0;
-    // this.showNum = config.showNum;
+    this.showNum = config.showNum;
     this.lang = config.lang;
     this.pageNow = 1;
     this.rFn = config.remote;
 }
 Page.prototype = {
+    constructor: Page,
     setTotal: function(num){
         this.total = num;
         this.pageNum = Math.ceil(this.total/this.pageSize);
@@ -17,14 +18,20 @@ Page.prototype = {
         this.pageNow = now;
     },
     //初始化
-    init: function(){
-        this.clearHTML();
-        if(this.total==0){
+    init: function(obj){
+        obj.clearHTML();
+        if(obj.total==0){
             return false;
         }else{
             var preLi = document.createElement('li');
             var nextLi = document.createElement('li');
-            switch(this.lang){
+            var pageDir = document.createElement('span');
+            pageDir.innerHTML = obj.pageNow+'/'+obj.pageNum;
+            var pageInput = document.createElement('input');
+            pageInput.setAttribute('type','text');
+            var pageBtn = document.createElement('button');
+            pageBtn.innerHTML = '跳转';
+            switch(obj.lang){
                 case 'cn':
                     preLi.innerHTML = '上一页';
                     nextLi.innerHTML = '下一页';
@@ -34,61 +41,131 @@ Page.prototype = {
                     nextLi.innerHTML = 'next';
                     break;
             }
-            this.elem.appendChild(preLi);
-            this.elem.appendChild(nextLi);
-            for(var i=1;i<=this.pageNum;i++){
-                var pageLi = document.createElement('li');
-                pageLi.innerHTML = i;
-                this.elem.insertBefore(pageLi,nextLi);
+            obj.elem.appendChild(preLi);
+            obj.elem.appendChild(nextLi);
+            obj.elem.appendChild(pageDir);
+            obj.elem.appendChild(pageInput);
+            obj.elem.appendChild(pageBtn);
+            if(obj.pageNum<=obj.showNum){
+                for(var i=1;i<=obj.pageNum;i++){
+                    var pageLi = document.createElement('li');
+                    pageLi.innerHTML = i;
+                    obj.elem.insertBefore(pageLi,nextLi);
+                }
+            }else{
+                if(obj.pageNow-Math.floor(obj.showNum/2)<=0){
+                    for(var i=1;i<=obj.showNum;i++){
+                        var pageLi = document.createElement('li');
+                        pageLi.innerHTML = i;
+                        obj.elem.insertBefore(pageLi,nextLi);
+                    }
+                }else if(obj.pageNow+Math.floor(obj.showNum/2)>obj.pageNum){
+                    for(var i=obj.showNum;i>0;i--){
+                        var pageLi = document.createElement('li');
+                        pageLi.innerHTML = i;
+                        obj.insertAfter(pageLi,preLi);
+                    }
+                }else{
+                    for(var i=0;i<obj.showNum;i++){
+                        var pageLi = document.createElement('li');
+                        pageLi.innerHTML = obj.pageNow-Math.floor(obj.showNum/2)+i;
+                        obj.elem.insertBefore(pageLi,nextLi);
+                    }
+                }
             }
-            var pageLis = this.elem.getElementsByTagName('li');
-            pageLis[this.pageNow].className = 'active';
-            this.addEvent(preLi,'click',function(event){
+            var pageLis = obj.elem.getElementsByTagName('li');
+            for(var i=0;i<obj.showNum;i++){
+                if(parseInt(pageLis[i].innerHTML)==obj.pageNow){
+                    pageLis[i].className = 'active';
+                    break;
+                }
+            }
+            obj.addEvent(preLi,'click',function(event){
                 if(pageLis.length<3||event.pageNow<2){
                     return false;
                 }else{
                     event.pageNow--;
-                    for(var j=0;j<pageLis.length;j++){
-                        pageLis[j].className = '';
-                    }
-                    pageLis[event.pageNow].className = 'active';
-                    event.remote();
+                    event.remote(function(){
+                        obj.reset(obj);
+                    });
                 }
-            },this);
-            this.addEvent(nextLi,'click',function(event){
+            },obj);
+            obj.addEvent(nextLi,'click',function(event){
                 if(pageLis.length<3||event.pageNow==(pageLis.length-1)){
                     return false;
                 }else{
                     event.pageNow++;
-                    for(var j=0;j<pageLis.length;j++){
-                        pageLis[j].className = '';
-                    }
-                    pageLis[event.pageNow].className = 'active';
-                    event.remote();
+                    event.remote(function(){
+                        obj.reset(obj);
+                    });
                 }
-            },this);
+            },obj);
             for(var i=1;i<(pageLis.length-1);i++){
-                this.addEvent(pageLis[i],'click',function(event){
+                obj.addEvent(pageLis[i],'click',function(event){
                     event.pageNow = this.innerHTML;
-                    for(var j=0;j<pageLis.length;j++){
-                        pageLis[j].className = '';
-                    }
-                    pageLis[event.pageNow].className = 'active';
-                    event.remote();
-                },this);
+                    event.remote(function(){
+                        obj.reset(obj);
+                    });
+                },obj);
             }
+            obj.addEvent(pageBtn,'click',function(event){
+                if(pageInput.value){
+                    var inputNum = pageInput.value;
+                    var totalNum = parseInt(pageDir.innerHTML.split('/')[1]);
+                    if(inputNum<1||inputNum>totalNum){
+                        alert('请输入正确的页码');
+                    }else{
+                        event.pageNow = inputNum;
+                        event.remote(function(){
+                            obj.reset(obj);
+                        });
+                    }
+                }else{
+                    return false;
+                }
+            },obj);
         }
     },
+    reset: function(obj){
+        var pageLis = obj.elem.getElementsByTagName('li');
+        for(var i=0;i<pageLis.length;i++){
+            pageLis[i].className = '';
+        }
+        if(obj.pageNum<=obj.showNum){
+            for(var i=1;i<=obj.pageNum;i++){
+                pageLis[i].innerHTML = i;
+            }
+        }else{
+            if(obj.pageNow-Math.floor(obj.showNum/2)<=0){
+                for(var i=1;i<=obj.showNum;i++){
+                    pageLis[i].innerHTML = i;
+                }
+            }else if(parseInt(obj.pageNow)+Math.floor(obj.showNum/2)>obj.pageNum){
+                for(var i=1;i<=obj.showNum;i--){
+                    pageLis[i].innerHTML = obj.pageNum-obj.showNum+i;
+                }
+            }else{
+                for(var i=1;i<=obj.showNum;i++){
+                    pageLis[i].innerHTML = obj.pageNow-Math.floor(obj.showNum/2)+i;
+                }
+            }
+        }
+        for(var i=0;i<obj.showNum;i++){
+            if(parseInt(pageLis[i].innerHTML)==obj.pageNow){
+                pageLis[i].className = 'active';
+                break;
+            }
+        }
+        var pageDir = obj.elem.getElementsByTagName('span')[0];
+        pageDir.innerHTML = obj.pageNow+'/'+pageDir.innerHTML.split('/')[1];
+    },
     //远程连接
-    remote: function(){
-        this.rFn(this.pageNow,this.pageSize);
+    remote: function(callback){
+        this.rFn(this.pageNow,this.pageSize,callback);
     },
     clearHTML: function(){
         this.elem.innerHTML = '';
     },
-    // setEventParam: function(pp){
-    //     thisP = pp;
-    // },
     addEvent: function(obj,event,fun,pp){
         var fn = fun;
         fn = function(e){
@@ -100,6 +177,14 @@ Page.prototype = {
             obj.addEventListener(event,fn,false);
         }else{
             obj["on"+event] = fn;
+        }
+    },
+    insertAfter: function(newEl, targetEl){
+        var parentEl = targetEl.parentNode;
+        if(parentEl.lastChild == targetEl){
+            parentEl.appendChild(newEl);
+        }else{
+            parentEl.insertBefore(newEl,targetEl.nextSibling);
         }
     }
 }

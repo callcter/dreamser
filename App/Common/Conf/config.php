@@ -8,6 +8,16 @@ return array(
     	'Conf',
     	'Runtime'
     ),
+    'DB_CONFIG'=>array(
+        'db_type'=>'mysql',
+        'db_user'=>'root',
+        'db_pwd'=>'%CmX0#cCdHSmR8Qs',
+        'db_host'=>'localhost',
+        'db_port'=>'3306',
+        'db_name'=>'dreamser',
+        'db_charset'=>'utf8',
+        'db_prefix'=>'ds_'
+    ),
     'TEMP_PARSE_STRING'=>array(
         '__PUBLIC__'=>__ROOT__.'/Public'
     ),

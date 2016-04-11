@@ -21,4 +21,10 @@ class LovenoteController extends Controller {
     public function MEDetail(){
     	$this->display();
     }
+    //查询纪念日
+    public function MDQuery(){
+        $item = $_POST['date'];
+        echo $item;
+        $this->ajaxReturn($item,'见到了',1);
+    }
 }

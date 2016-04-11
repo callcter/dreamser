@@ -8,171 +8,6 @@
   *zoom: 1;
   word-spacing: normal;
 }
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-p,
-blockquote,
-pre,
-hr,
-figure,
-table,
-caption,
-th,
-td,
-form,
-fieldset,
-legend,
-input,
-button,
-textarea,
-menu {
-  margin: 0;
-  padding: 0;
-}
-header,
-footer,
-section,
-article,
-aside,
-nav,
-hgroup,
-address,
-figure,
-figcaption,
-menu,
-details {
-  display: block;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-caption,
-th {
-  text-align: left;
-  font-weight: normal;
-}
-html,
-body,
-fieldset,
-img,
-iframe,
-abbr {
-  border: 0;
-}
-i,
-cite,
-em,
-var,
-address,
-dfn {
-  font-style: normal;
-}
-[hidefocus],
-summary {
-  outline: 0;
-}
-li {
-  list-style: none;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-small {
-  font-size: 100%;
-}
-sup,
-sub {
-  font-size: 83%;
-}
-pre,
-code,
-kbd,
-samp {
-  font-family: inherit;
-}
-q:before,
-q:after {
-  content: none;
-}
-textarea {
-  overflow: auto;
-  resize: none;
-}
-label,
-summary {
-  cursor: default;
-}
-a,
-button {
-  cursor: pointer;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-em,
-strong,
-b {
-  font-weight: bold;
-}
-del,
-ins,
-u,
-s,
-a,
-a:hover {
-  text-decoration: none;
-}
-a,
-a:hover {
-  color: #333;
-}
-body,
-button,
-input,
-select,
-textarea,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Microsoft YaHei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', arial, sans-serif !important;
-}
-html {
-  font-size: 20px;
-}
-body {
-  background: #fff;
-}
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.clear {
-  clear: both;
-}
 header {
   width: 100%;
   height: 50px;
@@ -293,4 +128,40 @@ footer .f-record {
 }
 footer .f-record a {
   color: #dddddd;
+}
+.container {
+  width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  background: #f0f0f0;
+}
+.container .md-title,
+.container .md-demo,
+.container .md-code {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.container .md-title .mdt-title,
+.container .md-demo .mdt-title,
+.container .md-code .mdt-title {
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.container .md-title .mdt-info,
+.container .md-demo .mdt-info,
+.container .md-code .mdt-info {
+  font-size: 0.8rem;
+}
+.container .md-title .mdd-title,
+.container .md-demo .mdd-title,
+.container .md-code .mdd-title,
+.container .md-title .mdc-title,
+.container .md-demo .mdc-title,
+.container .md-code .mdc-title {
+  font-size: 0.9rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }

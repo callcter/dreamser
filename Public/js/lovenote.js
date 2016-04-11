@@ -1,7 +1,7 @@
 function index(){
     howManyDays();
     MDQuery();
-    MEQuery();
+    // MEQuery();
     menu();
 }
 
@@ -30,16 +30,24 @@ function MDQuery(){
     var month = now.getMonth()+1;
     var year = now.getFullYear();
     var date = year+"-"+month+"-"+day;
-    $.post("../../models/MemorialDayQuery.php",{
-        date: date
-    },function(result){
-        if(result=="[]"){
-            var mD = document.getElementById("mD");
-            mD.innerHTML = "今天会是美好的一天";
-        }else{
-            var obj = eval("("+result+")");
-            var memorialDayDiv = document.getElementById("memorialDay");
-            memorialDayDiv.innerHTML = obj[0].event;
+    $.ajax({
+        url: "/Lovenote/MDQuery",
+        data: JSON.stringify({date:date}),
+        dataType: 'json',
+        type: 'POST',
+        contentType: 'application/json',
+        success: function(res){
+            if(result=="[]"){
+                var mD = document.getElementById("mD");
+                mD.innerHTML = "今天会是美好的一天";
+            }else{
+                var obj = eval("("+result+")");
+                var memorialDayDiv = document.getElementById("memorialDay");
+                memorialDayDiv.innerHTML = obj[0].event;
+            }
+        },
+        error: function(err){
+            console.log(err);
         }
     });
     return date;
@@ -140,7 +148,6 @@ function MECreate(){
 var imageUrls = "";
 
 function previewImage(file){
-    
     //图片预览
     var upload = document.getElementById("upload");
     var image = new Image();
@@ -160,19 +167,19 @@ function previewImage(file){
     var reader = new FileReader();
     reader.onload = function(e){
         image.src = e.target.result;
-        
+
         //图片AJAX上传,并记录到图片序列中
         var imageObj = new Object();
         var picture = e.target.result;
         var strArray = picture.split(",");
-        
+
         var h1Arr = strArray[0].split("/");
         var h2Arr = h1Arr[1].split(";");
-        
+
         imageObj.header = h2Arr[0];
         imageObj.pic = strArray[1];
         var imgJson = JSON.stringify(imageObj);
-        
+
         $.ajax({
             url: "../models/imageAdd.php",
             method: "POST",

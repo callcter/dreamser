@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
-	<title>分页插件——Readme</title>
+	<title>分页组件—Readme</title>
+	<link rel="stylesheet" href="__PUBLIC__/style/css/public-pc.css">
+	<link rel="stylesheet" href="__PUBLIC__/style/css/module-develop.css">
+	<link rel="stylesheet" href="__PUBLIC__/lib/syntaxhighlighter/styles/shCoreFadeToGrey.css">
+	<link rel="stylesheet" href="__PUBLIC__/style/css/page.css">
+	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shCore.js"></script>
+	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shBrushXml.js"></script>
+	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+	<script src="__PUBLIC__/js/page.js"></script>
+	<script>SyntaxHighlighter.all();</script>
 </head>
+
 <body>
-	
+
+	<header>
+        <div class="h-wrapper">
+            <span class="h-domain" id="domain">
+                <a href="http://dreamser.com">
+                    Dreamser
+                </a>
+            </span>
+            <span class="h-link"><a href="#workShow">作品展示</a></span>
+            <span class="h-link"><a href="#mobileApp">移动应用</a></span>
+            <span class="h-link"><a href="#moduleDevelop">组件开发</a></span>
+            <span class="h-link"><a href="view/customService.html">定制服务</a></span>
+            <span class="h-link"><a href="view/contactManager.html">联系作者</a></span>
+            <span class="h-link"><a href="view/supportManager.html">支持作者</a></span>
+        </div>
+    </header>
+    <nav>
+        <div class="navigator">
+            组件开发->分页组件
+        </div>
+    </nav>
+
+	<div class="container">
+		<div class="md-title">
+			<p class="mdt-title">分页组件</p>
+			<p class="mdt-info">可以选择国内的省、市、区三级，返回地区名称（在input框中直接显示，js通过读取value获得），返回地区码（定义在data-code自定义属性中，js读取属性获得）</p>
+		</div>
+		<div class="md-demo">
+			<p class="mdd-title">Demo</p>
+			<div class="mdd-demo">
+				<input type="text" onfocus="addressSelector(event)" placeholder="选择地址" redonly='readonly'>
+			</div>
+		</div>
+		<div class="md-code">
+			<p class="mdc-title">Code-html</p>
+			<div class="mdc-code">
+				<pre class="brush:html">
+					<input type="text" id="address" onfocus="addressSelector(event)" placeholder="地址选择"></pre>
+			</div>
+			<p class="mdc-title">Code-js</p>
+			<div class="mdc-code">
+				<pre class="brush:js">
+					var address = document.getElementById('address');
+					//获取地址名称
+					var addr-name = address.value;
+					//获取地址编码
+					var addr-code = address.getAttribute('data-code'); </pre>
+			</div>
+		</div>
+	</div>
+
 </body>
+
 </html>

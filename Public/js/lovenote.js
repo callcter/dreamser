@@ -40,12 +40,12 @@ function MDQuery(){
         contentType: 'application/json',
         success: function(result){
             console.log(result);
-            if(result=="[]"){
+            if(result==""){
                 var mD = document.getElementById("mD");
                 mD.innerHTML = "今天会是美好的一天";
             }else{
                 var memorialDayDiv = document.getElementById("memorialDay");
-                memorialDayDiv.innerHTML = result.date;
+                memorialDayDiv.innerHTML = result[0].memory;
             }
         },
         error: function(err){

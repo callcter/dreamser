@@ -29,21 +29,23 @@ function MDQuery(){
     var day = now.getDate();
     var month = now.getMonth()+1;
     var year = now.getFullYear();
-    var date = year+"-"+month+"-"+day;
+    var data = new Object();
+    data.date = year+"-"+month+"-"+day;
+    data.uid = 5201314;
     $.ajax({
         url: "/Lovenote/MDQuery",
-        data: JSON.stringify({date:date}),
+        data: JSON.stringify(data),
         dataType: 'json',
         type: 'POST',
         contentType: 'application/json',
-        success: function(res){
+        success: function(result){
+            console.log(result);
             if(result=="[]"){
                 var mD = document.getElementById("mD");
                 mD.innerHTML = "今天会是美好的一天";
             }else{
-                var obj = eval("("+result+")");
                 var memorialDayDiv = document.getElementById("memorialDay");
-                memorialDayDiv.innerHTML = obj[0].event;
+                memorialDayDiv.innerHTML = result.date;
             }
         },
         error: function(err){

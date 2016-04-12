@@ -4,7 +4,10 @@ use Think\Controller;
 
 class LovenoteController extends Controller {
     public function index(){
-        $this->display();
+        // $this->display();
+        $Memory = M('memory');
+        $data=$Memory->select();
+        dump($data);
     }
     public function calendar(){
     	$this->display();
@@ -23,8 +26,10 @@ class LovenoteController extends Controller {
     }
     //查询纪念日
     public function MDQuery(){
-        $item = $_POST['date'];
-        echo $item;
-        $this->ajaxReturn($item,'见到了',1);
+        $item = json_decode(file_get_contents("php://input"));
+        // $memory = new Model('memory');
+        // $data=$memory->select();
+        $res = json_encode($item);
+        echo $res;
     }
 }

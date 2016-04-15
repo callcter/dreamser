@@ -24,6 +24,7 @@ Page.prototype = {
             return false;
         }else{
             var preLi = document.createElement('li');
+            preLi.style.display='none';
             var nextLi = document.createElement('li');
             var pageDir = document.createElement('span');
             pageDir.innerHTML = obj.pageNow+'/'+obj.pageNum;
@@ -53,24 +54,10 @@ Page.prototype = {
                     obj.elem.insertBefore(pageLi,nextLi);
                 }
             }else{
-                if(obj.pageNow-Math.floor(obj.showNum/2)<=0){
-                    for(var i=1;i<=obj.showNum;i++){
-                        var pageLi = document.createElement('li');
-                        pageLi.innerHTML = i;
-                        obj.elem.insertBefore(pageLi,nextLi);
-                    }
-                }else if(obj.pageNow+Math.floor(obj.showNum/2)>obj.pageNum){
-                    for(var i=obj.showNum;i>0;i--){
-                        var pageLi = document.createElement('li');
-                        pageLi.innerHTML = i;
-                        obj.insertAfter(pageLi,preLi);
-                    }
-                }else{
-                    for(var i=0;i<obj.showNum;i++){
-                        var pageLi = document.createElement('li');
-                        pageLi.innerHTML = obj.pageNow-Math.floor(obj.showNum/2)+i;
-                        obj.elem.insertBefore(pageLi,nextLi);
-                    }
+                for(var i=1;i<=obj.showNum;i++){
+                    var pageLi = document.createElement('li');
+                    pageLi.innerHTML = i;
+                    obj.elem.insertBefore(pageLi,nextLi);
                 }
             }
             var pageLis = obj.elem.getElementsByTagName('li');
@@ -128,6 +115,16 @@ Page.prototype = {
     },
     reset: function(obj){
         var pageLis = obj.elem.getElementsByTagName('li');
+        if(obj.pageNow==1){
+            pageLis[0].style.display="none";
+        }else{
+            pageLis[0].style.display="inline-block";
+        }
+        if(obj.pageNow==obj.pageNum){
+            pageLis[obj.showNum+1].style.display="none";
+        }else{
+            pageLis[obj.showNum+1].style.display="inline-block";
+        }
         for(var i=0;i<pageLis.length;i++){
             pageLis[i].className = '';
         }
@@ -141,7 +138,7 @@ Page.prototype = {
                     pageLis[i].innerHTML = i;
                 }
             }else if(parseInt(obj.pageNow)+Math.floor(obj.showNum/2)>obj.pageNum){
-                for(var i=1;i<=obj.showNum;i--){
+                for(var i=1;i<=obj.showNum;i++){
                     pageLis[i].innerHTML = obj.pageNum-obj.showNum+i;
                 }
             }else{
@@ -150,7 +147,7 @@ Page.prototype = {
                 }
             }
         }
-        for(var i=0;i<obj.showNum;i++){
+        for(var i=1;i<=obj.showNum;i++){
             if(parseInt(pageLis[i].innerHTML)==obj.pageNow){
                 pageLis[i].className = 'active';
                 break;

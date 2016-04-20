@@ -1,6 +1,6 @@
 var Page = function(config){
     this.elem = config.elem;
-    this.pageSize = 20;
+    this.pageSize = config.pageSize;
     this.total = 0;
     this.pageNum = 0;
     this.showNum = config.showNum;
@@ -121,9 +121,9 @@ Page.prototype = {
             pageLis[0].style.display="inline-block";
         }
         if(obj.pageNow==obj.pageNum){
-            pageLis[obj.showNum+1].style.display="none";
+            pageLis[obj.min(obj.showNum,obj.pageNum)+1].style.display="none";
         }else{
-            pageLis[obj.showNum+1].style.display="inline-block";
+            pageLis[obj.min(obj.showNum,obj.pageNum)+1].style.display="inline-block";
         }
         for(var i=0;i<pageLis.length;i++){
             pageLis[i].className = '';
@@ -182,6 +182,13 @@ Page.prototype = {
             parentEl.appendChild(newEl);
         }else{
             parentEl.insertBefore(newEl,targetEl.nextSibling);
+        }
+    },
+    min: function(a,b){
+        if(a<b){
+            return a;
+        }else{
+            return b;
         }
     }
 }

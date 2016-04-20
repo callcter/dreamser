@@ -11,4 +11,20 @@ class IndexController extends Controller {
         echo C('name');
         $this->display();
     }
+
+    public function contactManager(){
+    	$this->display();
+    }
+
+    public function customService(){
+    	$this->display();
+    }
+
+    public function supportManager(){
+    	$this->display();
+    }
+
+    public function specifications(){
+    	$this->display();
+    }
 }

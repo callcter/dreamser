@@ -1,3 +1,12 @@
+/**
+* addressSelector by callcter
+* dreamser.com
+* update @ 2016/4/20
+**/
+
+var SelectList = function(event,arr){
+	
+}
 function getFocus(event){
 	var src = event.target || window.event.srcElement;
 	if(src.nodeName=='I'){

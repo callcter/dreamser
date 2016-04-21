@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>地址选择组件—Readme</title>
+	<link rel="stylesheet" href="__PUBLIC__/style/css/public-pc.css">
+	<link rel="stylesheet" href="__PUBLIC__/style/css/module-develop.css">
+	<link rel="stylesheet" href="__PUBLIC__/lib/syntaxhighlighter/styles/shCoreFadeToGrey.css">
+	<link rel="stylesheet" href="__PUBLIC__/style/css/carousel.css">
+	<style>
+
+	</style>
+	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shCore.js"></script>
+	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shBrushXml.js"></script>
+	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script src="__PUBLIC__/js/carousel.js"></script>
+</head>
+
+<body>
+
+	<!-- <header>
+        <div class="h-wrapper">
+            <span class="h-domain" id="domain">
+                <a href="http://dreamser.com">
+                    Dreamser
+                </a>
+            </span>
+            <span class="h-link"><a href="#workShow">作品展示</a></span>
+            <span class="h-link"><a href="#mobileApp">移动应用</a></span>
+            <span class="h-link"><a href="#moduleDevelop">组件开发</a></span>
+            <span class="h-link"><a href="Index/customService">定制服务</a></span>
+            <span class="h-link"><a href="Index/contactManager">联系作者</a></span>
+            <span class="h-link"><a href="Index/supportManager">支持作者</a></span>
+            <span class="h-link"><a href="Index/specifications">支持作者</a></span>
+        </div>
+    </header>
+    <nav>
+        <div class="navigator">
+            组件开发->图片轮播组件
+        </div>
+    </nav> -->
+
+	<div class="container">
+		<div class="md-title">
+			<p class="mdt-title">轮播组件</p>
+			<p class="mdt-info">完全原生js完成的图片轮播组件，支持前后翻页、索引翻页，使用方法如Code</p>
+		</div>
+		<div class="md-demo">
+			<p class="mdd-title">Demo</p>
+			<div class="mdd-demo">
+				<div id="carousel"></div>
+			</div>
+		</div>
+		<div class="md-code">
+			<p class="mdc-title">Code-html</p>
+			<div class="mdc-code">
+				<pre class="brush:html">
+					<div id="carousel"></div></pre>
+			</div>
+			<p class="mdc-title">Code-js</p>
+			<div class="mdc-code">
+				<pre class="brush:js">
+					var div = document.getElementById('carousel');
+					var images = [{
+						src: '__PUBLIC__/image/carousel1.jpg',
+						alt: '第一张'
+					},
+					{
+						src: '__PUBLIC__/image/carousel2.jpg',
+						alt: '第二张'
+					},
+					{
+						src: '__PUBLIC__/image/carousel3.jpg',
+						alt: '第三张'
+					}];
+					var config = {
+						speed: 3000,
+						btn: true,
+						dir: true
+					};
+					var carousel = new Carousel(div,images,config);
+					carousel.init(); </pre>
+			</div>
+		</div>
+	</div>
+	<script>
+		SyntaxHighlighter.all();
+		var div = document.getElementById('carousel');
+		var images = [{
+			src: '__PUBLIC__/image/carousel1.jpg',
+			alt: '第一张'
+		},
+		{
+			src: '__PUBLIC__/image/carousel2.jpg',
+			alt: '第二张'
+		},
+		{
+			src: '__PUBLIC__/image/carousel3.jpg',
+			alt: '第三张'
+		}];
+		var config = {
+			speed: 3000,
+			btn: true,
+			dir: true
+		};
+		var carousel = new Carousel(div,images,config);
+		carousel.init();
+	</script>
+
+</body>
+
+</html>

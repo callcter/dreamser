@@ -1,0 +1,45 @@
+@import '../less/common.less';
+@import '../less/global.less';
+
+.carousel{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	.prev,.next{
+		position: absolute;
+		display: none;
+		width: 40px;
+		height: 100px;
+		top: 50%;
+		margin-top: -50px;
+		background: rgba(0,0,0,0.7);
+		z-index: 10;
+		cursor: pointer;
+	}
+	.prev{
+		left: 0;
+	}
+	.next{
+		right: 0;
+	}
+	.index{
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		.displayIBCon;
+		li{
+			.displayIBSub;
+			width: 10px;
+			height: 10px;
+			margin-left: 5px;
+			background: #fff;
+			.rounded-corners(50%);
+			overflow: hidden;
+			z-index: 10;
+			cursor: pointer;
+		}
+		li.active{
+			background: #333;
+		}
+	}
+}

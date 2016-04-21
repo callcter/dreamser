@@ -3,9 +3,7 @@ function Canvas2D(canvas){
     var width = canvas.width;
     var height = canvas.height;
     var pageOffset = {left:canvas.offsetLeft,top:canvas.offsetTop};
-    
     context.font = "20px Arial";
-    
     this.drawRect = function(start,end,isFill){
         var w = end.x-start.x;
         var h = end.y-start.y;
@@ -20,25 +18,20 @@ function Canvas2D(canvas){
         var metrics = context.measureText(text);
         var textWidth = metrics.width;
         var textHeight = parseInt(context.font);
-        
         return {
             x: width/2 - textWidth/2,
             y: height/2 - textHeight/2
         };
     }
-    
     this.width = function(){
         return width;
     }
-    
     this.height = function(){
         return height;
     }
-    
     this.pageOffset = function(){
         return pageOffset;
     }
-    
     window.onresize = function(){
         pageOffset = {left:canvas.offsetLeft,top:canvas.offsetTop};
     }
@@ -88,7 +81,6 @@ function Canvas2D(canvas){
         }
         return context.strokeStyle;
     }
-    
     this.fontSize = function(fontSize){
         if(arguments.length){
             context.font = fontSize + "px Arial";
@@ -96,5 +88,4 @@ function Canvas2D(canvas){
         }
         return context.fontSize;
     }
-    
 }

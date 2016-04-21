@@ -3,7 +3,6 @@ function GuaGuaLe(idFront,idBack){
     this.eleBack = document.getElementById(idBack);
     this.frontCanvas = new Canvas2D(this.eleFront);
     this.backCanvas = new Canvas2D(this.eleBack);
-    
     this.isStart = false;
 }
 
@@ -24,18 +23,14 @@ GuaGuaLe.prototype = {
     },
     init: function(desAttr){
         var attr = this.mergeAttr(desAttr);
-        
         this.backCanvas.penColor(attr.backFillColor);
         this.backCanvas.fontSize(attr.backFontSize);
         this.backCanvas.drawRect({x:0,y:0},{x:this.backCanvas.width(),y:this.backCanvas.height()},true);
         this.backCanvas.penColor(attr.backFontColor);
         this.backCanvas.drawTextInCenter(attr.msg,true);
-        
         this.frontCanvas.penColor(attr.frontFillColor);
         this.frontCanvas.drawRect({x:0,y:0},{x:this.frontCanvas.width(),y:this.frontCanvas.height()},true);
-        
         var _this = this;
-        
         this.eleFront.onmousedown = function(event){
             _this.mouseDown(event);
         }
@@ -58,5 +53,4 @@ GuaGuaLe.prototype = {
     mouseUp: function(event){
         this.isStart = false;
     }
-    
 };

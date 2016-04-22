@@ -56,3 +56,9 @@ function removeEvent(obj,event,fn){
         obj["on"+event] = null;
     }
 }
+function getStyle(obj,attr){
+    return obj.currentStyle?obj.currentStyle[attr] : getComputedStyle( obj )[attr];
+}
+// function setStyle(obj,attr){
+//     obj.style[attr]
+// }

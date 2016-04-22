@@ -8,9 +8,6 @@
 	<link rel="stylesheet" href="__PUBLIC__/style/css/module-develop.css">
 	<link rel="stylesheet" href="__PUBLIC__/lib/syntaxhighlighter/styles/shCoreFadeToGrey.css">
 	<link rel="stylesheet" href="__PUBLIC__/style/css/carousel.css">
-	<style>
-
-	</style>
 	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shCore.js"></script>
 	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shBrushXml.js"></script>
 	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
@@ -20,7 +17,7 @@
 
 <body>
 
-	<!-- <header>
+	<header>
         <div class="h-wrapper">
             <span class="h-domain" id="domain">
                 <a href="http://dreamser.com">
@@ -33,14 +30,14 @@
             <span class="h-link"><a href="Index/customService">定制服务</a></span>
             <span class="h-link"><a href="Index/contactManager">联系作者</a></span>
             <span class="h-link"><a href="Index/supportManager">支持作者</a></span>
-            <span class="h-link"><a href="Index/specifications">支持作者</a></span>
+            <span class="h-link"><a href="Index/specifications">开发规范</a></span>
         </div>
     </header>
     <nav>
         <div class="navigator">
             组件开发->图片轮播组件
         </div>
-    </nav> -->
+    </nav>
 
 	<div class="container">
 		<div class="md-title">
@@ -78,13 +75,19 @@
 					var config = {
 						speed: 3000,
 						btn: true,
-						dir: true
+						dir: true,
+						frameSpeed: 1000,
+						pattern: 3   //0:直接切换;1:左右切换;2:上下切换;3:渐隐渐显
 					};
 					var carousel = new Carousel(div,images,config);
 					carousel.init(); </pre>
 			</div>
 		</div>
 	</div>
+	<footer>
+        <p class="f-copy">&copy;Dreamser.com by Callcter</p>
+        <p class="f-record"><a href="//www.miitbeian.gov.cn/">鲁ICP备 16006293-1</a></p>
+    </footer>
 	<script>
 		SyntaxHighlighter.all();
 		var div = document.getElementById('carousel');
@@ -103,7 +106,9 @@
 		var config = {
 			speed: 3000,
 			btn: true,
-			dir: true
+			dir: true,
+			frameSpeed: 1000,
+			pattern: 3
 		};
 		var carousel = new Carousel(div,images,config);
 		carousel.init();

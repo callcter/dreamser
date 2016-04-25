@@ -143,7 +143,7 @@ a:hover {
   left: 50%;
   margin-left: -100px;
   line-height: 50px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   background: #fff;
@@ -156,7 +156,7 @@ a:hover {
   width: 1200px;
   height: 30px;
   line-height: 30px;
-  font-size: 1.2rem;
+  font-size: 0.87rem;
   color: #999;
   margin: 0 auto 10px;
   text-align: center;
@@ -202,7 +202,7 @@ a:hover {
   margin-right: 5px;
 }
 .recruitment-box .tab .text {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .recruitment-box .border-left0 {
   border-left: 0;
@@ -225,7 +225,7 @@ a:hover {
   line-height: 30px;
   vertical-align: middle;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-top: 10px;
 }
 .recruitment-box .recruitment-con .con-con {
@@ -240,7 +240,7 @@ a:hover {
 }
 .recruitment-box .recruitment-con .con-con .text {
   line-height: 30px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .recruitment-box .recruitment-con .con-con .text li {
   list-style: circle;
@@ -250,90 +250,6 @@ a:hover {
 #recruitment4,
 #recruitment5 {
   display: none;
-}
-.resume-box {
-  display: none;
-  position: fixed;
-  top: 50%;
-  margin-top: -200px;
-  left: 50%;
-  margin-left: -300px;
-  width: 600px;
-  height: 400px;
-  background-image: url(../../image/jiavva/about_bg2.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  z-index: 100;
-}
-.resume-box .pic1 {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 410px;
-  height: 22px;
-}
-.resume-box .input1,
-.resume-box .input2,
-.resume-box .input3 {
-  position: absolute;
-  left: 20px;
-  width: 340px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 0.9rem;
-  text-align: right;
-}
-.resume-box .input1 input,
-.resume-box .input2 input,
-.resume-box .input3 input {
-  width: 220px;
-  height: 25px;
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-}
-.resume-box .input1 {
-  top: 60px;
-}
-.resume-box .input2 {
-  top: 110px;
-}
-.resume-box .input3 {
-  top: 160px;
-}
-.resume-box .close {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  right: 10px;
-  top: 10px;
-  cursor: pointer;
-}
-.resume-box .file {
-  position: absolute;
-  top: 210px;
-  left: 20px;
-  width: 340px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-}
-.resume-box .sub-btn {
-  position: absolute;
-  width: 200px;
-  height: 40px;
-  top: 260px;
-  left: 80px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  -o-border-radius: 5px;
-  background: #006ab5;
-  font-size: 1rem;
-  color: #fff;
-  line-height: 40px;
-  text-align: center;
-  cursor: pointer;
 }
 .joinus-btn {
   width: 200px;
@@ -358,6 +274,7 @@ footer {
   background: rgba(0, 0, 0, 0.7);
   padding-top: 30px;
   padding-bottom: 30px;
+  margin: 20px 0 0;
 }
 footer .ft-con {
   width: 1200px;
@@ -436,36 +353,6 @@ footer .ft-con .list3 {
     width: 92%;
     margin-left: 0 auto;
     padding: 10px 2% 10px 6%;
-  }
-  .resume-box {
-    width: 300px;
-    height: 340px;
-    margin-left: -150px;
-    margin-top: -170px;
-    background-image: none;
-    background: rgba(0, 0, 0, 0.7);
-  }
-  .resume-box .pic1 {
-    display: none;
-  }
-  .resume-box .input1,
-  .resume-box .input2,
-  .resume-box .input3 {
-    width: 95%;
-    left: 0;
-    color: #fff;
-  }
-  .resume-box .input1 input,
-  .resume-box .input2 input,
-  .resume-box .input3 input {
-    width: 150px;
-  }
-  .resume-box .file {
-    color: #fff;
-    left: 0;
-  }
-  .resume-box .sub-btn {
-    left: 50px;
   }
   .pic-box .pic-con {
     width: 100%;

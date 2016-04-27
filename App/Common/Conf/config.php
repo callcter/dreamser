@@ -12,7 +12,7 @@ return array(
     'DB_USER'=>'root',
     'DB_PWD'=>'%CmX0#cCdHSmR8Qs',
     'DB_HOST'=>'localhost',
-    'DB_PORT'=>'3306',
+    'DB_PORT'=>'3124',
     'DB_NAME'=>'dreamser',
     'DB_CHARSET'=>'utf8',
     'DB_PREFIX'=>'ds_',

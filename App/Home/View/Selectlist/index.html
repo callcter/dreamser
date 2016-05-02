@@ -3,15 +3,16 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>分页组件—Readme</title>
+	<title>下拉列表—Readme</title>
+	<link rel="stylesheet" href="__PUBLIC__/lib/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="__PUBLIC__/style/css/public-pc.css">
 	<link rel="stylesheet" href="__PUBLIC__/style/css/module-develop.css">
 	<link rel="stylesheet" href="__PUBLIC__/lib/syntaxhighlighter/styles/shCoreFadeToGrey.css">
-	<link rel="stylesheet" href="__PUBLIC__/style/css/page.css">
+	<link rel="stylesheet" href="__PUBLIC__/style/css/selectList.css">
 	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shCore.js"></script>
 	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shBrushXml.js"></script>
 	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
-	<script src="__PUBLIC__/js/page.js"></script>
+	<script src="__PUBLIC__/js/selectList.js"></script>
 	<script>SyntaxHighlighter.all();</script>
 </head>
 
@@ -47,23 +48,20 @@
 		<div class="md-demo">
 			<p class="mdd-title">Demo</p>
 			<div class="mdd-demo">
-				<input type="text" onfocus="addressSelector(event)" placeholder="选择地址" redonly='readonly'>
+				<input class="selectList-input" placeholder="请选择" onfocus="selectList(event,['选项一','选项二','选项三'])"><span class="selectList-btn" onclick='getFocus(event)'><i class="fa fa-angle-down"></i></span>
 			</div>
 		</div>
 		<div class="md-code">
 			<p class="mdc-title">Code-html</p>
 			<div class="mdc-code">
 				<pre class="brush:html">
-					<input type="text" id="address" onfocus="addressSelector(event)" placeholder="地址选择"></pre>
+					<input class="selectList-input" placeholder="请选择" onfocus="selectList(event,['选项一','选项二','选项三'])">
+					<span class="selectList-btn" onclick='getFocus(event)'><i class="fa fa-angle-down"></i></span></pre>
 			</div>
 			<p class="mdc-title">Code-js</p>
 			<div class="mdc-code">
 				<pre class="brush:js">
-					var address = document.getElementById('address');
-					//获取地址名称
-					var addr-name = address.value;
-					//获取地址编码
-					var addr-code = address.getAttribute('data-code'); </pre>
+				    //可以直接在html中绑定事件，也可以在js中绑定 </pre>
 			</div>
 		</div>
 	</div>

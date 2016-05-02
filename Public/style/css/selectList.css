@@ -1,0 +1,50 @@
+.displayIBCon {
+  *word-spacing: -1px;
+  font-size: 0;
+}
+.displayIBSub {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  word-spacing: normal;
+}
+.selectList-input {
+  width: 200px;
+  height: 24px;
+  line-height: 24px;
+  padding: 3px 30px 3px 5px;
+  font-size: 0.7rem;
+  color: #666;
+  border: 1px solid #ddd;
+  outline-color: #5aaa76;
+}
+.selectList-btn {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 2px;
+  margin-left: -30px;
+  background: #5aaa76;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.selectList {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  z-index: 10000;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+.selectList li {
+  width: auto;
+  height: auto;
+  padding-left: 10px;
+  font-size: 0.7rem;
+  line-height: 25px;
+}
+.selectList li.active {
+  background: #5aaa76;
+}

@@ -23,13 +23,13 @@ function selectList(event,arr){
 	}
 	stopProgapation(event);
 	var src = event.target || window.event.srcElement;
-	var left = getAbsoluteLeft(src);
+	var left = getAbsoluteLeft(src)-1;
 	var top = getAbsoluteTop(src)+src.offsetHeight;
 	var ul = document.createElement('ul');
 	ul.style.width = src.offsetWidth+'px';
 	ul.style.left = left+'px';
 	ul.style.top = top+'px';
-	ul.className = 'select-list';
+	ul.className = 'selectList';
 	ul.setAttribute('id','selectlist');
 	for(var i=0;i<arr.length;i++){
 		var li = document.createElement('li');
@@ -54,9 +54,6 @@ function selectList(event,arr){
 		if(document.getElementById('selectlist')!=undefined){
 			document.body.removeChild(document.getElementById('selectlist'));
 		}
-		// removeEvent(document,'click',function(){
-		// 	document.body.removeChild(document.getElementById('selectlist'));
-		// });
 	});
 	ul.onclick = function(e){
 		stopProgapation(e);
@@ -64,9 +61,6 @@ function selectList(event,arr){
 	src.onclick = function(e){
 		stopProgapation(e);
 	}
-	// src.nextSibling.onclick = function(e){
-	// 	stopProgapation(e);
-	// }
 }
 function stopProgapation(e){
     if(e.stopPropagation){

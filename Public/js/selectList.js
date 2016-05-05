@@ -18,17 +18,22 @@ function getFocus(event){
 	stopProgapation(event);
 }
 function selectList(event,arr){
+	var src = event.target || window.event.srcElement;
 	if(document.getElementById('selectlist')){
-		document.body.removeChild(document.getElementById('selectlist'));
+		var listParent = document.getElementById('selectlist').parentNode;
+		listParent.removeChild(document.getElementById('selectlist'));
 	}
 	stopProgapation(event);
-	var src = event.target || window.event.srcElement;
-	var left = getAbsoluteLeft(src)-1;
-	var top = getAbsoluteTop(src)+src.offsetHeight;
+	// var left = getAbsoluteLeft(src)-1;
+	var left = src.offsetLeft-1;
+	// var top = getAbsoluteTop(src)+src.offsetHeight;
+	var top = src.offsetTop+src.offsetHeight;
 	var ul = document.createElement('ul');
 	ul.style.width = src.offsetWidth+'px';
-	ul.style.left = left+'px';
-	ul.style.top = top+'px';
+	// ul.style.left = left+'px';
+	// ul.style.marginLeft = left+'px';
+	// ul.style.top = top+'px';
+	// ul.style.marginTop = top+'px';
 	ul.className = 'selectList';
 	ul.setAttribute('id','selectlist');
 	for(var i=0;i<arr.length;i++){
@@ -36,9 +41,9 @@ function selectList(event,arr){
 		li.innerHTML = arr[i];
 		addEvent(li,'click',function(){
 			src.value = this.innerHTML;
-			document.body.removeChild(document.getElementById('selectlist'));
+			src.parentNode.removeChild(document.getElementById('selectlist'));
 			removeEvent(document,'click',function(){
-				document.body.removeChild(document.getElementById('selectlist'));
+				src.parentNode.removeChild(document.getElementById('selectlist'));
 			});
 		});
 		addEvent(li,'mouseover',function(){
@@ -49,10 +54,11 @@ function selectList(event,arr){
 		});
 		ul.appendChild(li);
 	}
-	document.body.appendChild(ul);
+	src.parentNode.appendChild(ul);
 	addEvent(document,'click',function(){
 		if(document.getElementById('selectlist')!=undefined){
-			document.body.removeChild(document.getElementById('selectlist'));
+			var listParent = document.getElementById('selectlist').parentNode;
+			listParent.removeChild(document.getElementById('selectlist'));
 		}
 	});
 	ul.onclick = function(e){

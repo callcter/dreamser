@@ -32,6 +32,7 @@
 }
 .selectList {
   position: absolute;
+  float: left;
   width: 150px;
   height: auto;
   z-index: 10000;

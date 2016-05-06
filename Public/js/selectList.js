@@ -1,7 +1,7 @@
 /**
 * addressSelector by callcter
 * dreamser.com
-* update @ 2016/4/20
+* update @ 2016/5/6
 **/
 
 var SelectList = function(event,arr){
@@ -21,6 +21,7 @@ function selectList(event,arr){
 	var src = event.target || window.event.srcElement;
 	if(document.getElementById('selectlist')){
 		var listParent = document.getElementById('selectlist').parentNode;
+		clearZIndex(document.getElementById('selectlist'));
 		listParent.removeChild(document.getElementById('selectlist'));
 	}
 	stopProgapation(event);
@@ -28,12 +29,12 @@ function selectList(event,arr){
 	var left = src.offsetLeft-1;
 	// var top = getAbsoluteTop(src)+src.offsetHeight;
 	var top = src.offsetTop+src.offsetHeight;
+	// var ifa = document.createElement('iframe');
+	// ifa.style.display = 'none';
 	var ul = document.createElement('ul');
 	ul.style.width = src.offsetWidth+'px';
-	// ul.style.left = left+'px';
-	// ul.style.marginLeft = left+'px';
-	// ul.style.top = top+'px';
-	// ul.style.marginTop = top+'px';
+	ul.style.left = left+'px';
+	ul.style.top = top+'px';
 	ul.className = 'selectList';
 	ul.setAttribute('id','selectlist');
 	for(var i=0;i<arr.length;i++){
@@ -43,6 +44,7 @@ function selectList(event,arr){
 			src.value = this.innerHTML;
 			src.parentNode.removeChild(document.getElementById('selectlist'));
 			removeEvent(document,'click',function(){
+				clearZIndex(document.getElementById('selectlist'));
 				src.parentNode.removeChild(document.getElementById('selectlist'));
 			});
 		});
@@ -54,10 +56,14 @@ function selectList(event,arr){
 		});
 		ul.appendChild(li);
 	}
+	// ifa.appendChild(ul);
+	// src.parentNode.appendChild(ifa);
 	src.parentNode.appendChild(ul);
+	setZIndex(ul);
 	addEvent(document,'click',function(){
 		if(document.getElementById('selectlist')!=undefined){
 			var listParent = document.getElementById('selectlist').parentNode;
+			clearZIndex(document.getElementById('selectlist'));
 			listParent.removeChild(document.getElementById('selectlist'));
 		}
 	});
@@ -114,4 +120,16 @@ function removeEvent(obj,event,fn){
     }else{
         obj["on"+event] = null;
     }
+}
+function setZIndex(o){
+	while(o.offsetParent!=null){
+		o.style.zIndex = 10;
+		o = o.offsetParent;
+	}
+}
+function clearZIndex(o){
+	while(o.offsetParent!=null){
+		o.style.zIndex = 0;
+		o = o.offsetParent;
+	}
 }

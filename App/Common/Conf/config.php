@@ -3,11 +3,6 @@ return array(
     'name'=>'Callcter',
     'URL_MODEL'=>2,
     'URL_HTML_SUFFIX'=>'html|dhtml',
-    'MODULE_DENY_LIST'=>array(
-    	'Common',
-    	'Conf',
-    	'Runtime'
-    ),
     'DB_TYPE'=>'mysql',
     'DB_USER'=>'root',
     'DB_PWD'=>'%CmX0#cCdHSmR8Qs',
@@ -16,8 +11,11 @@ return array(
     'DB_NAME'=>'dreamser',
     'DB_CHARSET'=>'utf8',
     'DB_PREFIX'=>'ds_',
-    'TEMP_PARSE_STRING'=>array(
-        '__PUBLIC__'=>__ROOT__.'/Public'
-    ),
-    'TEMP_ENGINE_TYPE'=>'PHP'
+    'TEMP_ENGINE_TYPE'=>'PHP',
+    'TMPL_PARSE_STRING' => array(
+        '__JS__'        =>  '/Public/js',
+        '__STYLE__'     =>  __ROOT__.'/Public/style',
+        '__DATA__'      =>  __ROOT__.'/Public/data',
+        '__IMAGE__'     =>  __ROOT__.'/Public/image',
+    )
 );

@@ -418,3 +418,44 @@ body {
   font-size: 0.7rem;
   color: #999;
 }
+.main .team-logo {
+  width: 600px;
+  height: 360px;
+  float: left;
+}
+.main .team-info {
+  width: 500px;
+  height: 320px;
+  padding: 20px 50px;
+  float: left;
+  text-align: center;
+}
+.main .team-name {
+  width: 820px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main .team-member {
+  width: 1160px;
+  height: auto;
+  margin-top: 50px;
+  padding: 0 20px;
+}
+.main .team-member li {
+  width: 100%;
+  height: auto;
+}
+.main .team-member li .team-avator {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  float: left;
+}
+.main .team-member li .team-member-info {
+  width: 980px;
+  height: auto;
+  min-height: 80px;
+  padding: 10px 20px;
+  float: left;
+}

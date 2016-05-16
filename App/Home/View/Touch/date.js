@@ -49,9 +49,6 @@ function dataList(){
             loadChart(result[0].distance.segs);
         }
     });
-    
-    
-    
 }
 //前后翻页
 function next(now){
@@ -59,7 +56,7 @@ function next(now){
     var month = document.getElementById("month");
     var left = document.getElementById("left");
     var right = document.getElementById("right");
-    
+
     left.addEventListener("click",function(){
         var nYear = now.getFullYear();
         var nMonth = now.getMonth();
@@ -73,7 +70,7 @@ function next(now){
         $("#day_list").css("margin-top",$("#horizontal").css("height"));
         //查询某月的数据待完善--------------------------------------------------------------------
     });
-    
+
     right.addEventListener("click",function(){
         var nYear = now.getFullYear();
         var nMonth = now.getMonth()+2;

@@ -4,6 +4,11 @@
 *功能三：天可添加标记
 *功能四：以月为单位前后翻页
 ***/
+
+function Date(event){
+  
+}
+
 //年下拉列表
 function yearList(style){
     var now = new Date();

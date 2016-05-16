@@ -7,11 +7,11 @@
 	<link rel="stylesheet" href="__PUBLIC__/style/css/public-pc.css">
 	<link rel="stylesheet" href="__PUBLIC__/style/css/module-develop.css">
 	<link rel="stylesheet" href="__PUBLIC__/lib/syntaxhighlighter/styles/shCoreFadeToGrey.css">
-	<link rel="stylesheet" href="__PUBLIC__/style/css/page.css">
+	<link rel="stylesheet" href="__PUBLIC__/style/css/date.css">
 	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shCore.js"></script>
 	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shBrushXml.js"></script>
 	<script src="__PUBLIC__/lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
-	<script src="__PUBLIC__/js/page.js"></script>
+	<script src="__PUBLIC__/js/date.js"></script>
 	<script>SyntaxHighlighter.all();</script>
 </head>
 
@@ -40,32 +40,63 @@
     </nav>
 
 	<div class="container">
-		<div class="md-title">
-			<p class="mdt-title">日历组件</p>
-			<p class="mdt-info">可以选择是否扩展阴历（额外阴历数据）</p>
-		</div>
-		<div class="md-demo">
-			<p class="mdd-title">Demo</p>
-			<div class="mdd-demo">
-				<input type="text" onfocus="addressSelector(event)" placeholder="选择地址" redonly='readonly'>
-			</div>
-		</div>
-		<div class="md-code">
-			<p class="mdc-title">Code-html</p>
-			<div class="mdc-code">
-				<pre class="brush:html">
-					<input type="text" id="address" onfocus="addressSelector(event)" placeholder="地址选择"></pre>
-			</div>
-			<p class="mdc-title">Code-js</p>
-			<div class="mdc-code">
-				<pre class="brush:js">
-					var address = document.getElementById('address');
-					//获取地址名称
-					var addr-name = address.value;
-					//获取地址编码
-					var addr-code = address.getAttribute('data-code'); </pre>
-			</div>
-		</div>
+		<div class="date" id="date">
+      <div class="year-month">
+        < <input type="text" value="2016">年 >
+        < <input type="text" value="5">月 >
+      </div>
+      <ul class="weekbox">
+        <li>一</li>
+        <li>二</li>
+        <li>三</li>
+        <li>四</li>
+        <li>五</li>
+        <li>六</li>
+        <li>日</li>
+      </ul>
+      <ul class="day">
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+      </ul>
+      <ul class="time">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+      </ul>
+      <p>
+        <button>关闭</button>
+        <button>今天</button>
+        <button>确定</button>
+      </p>
+    </div>
 	</div>
 
 </body>

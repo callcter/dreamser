@@ -1,20 +1,69 @@
-.date{
-  width: 300px;
+@color: #ffcc33;
+.dsdate{
+  width: 235px;
+  margin-left: 20px;
   height: auto;
+  padding: 10px;
   background: #fff;
   font-size: 0.7rem;
-  .weekbox,.day{
+  .week,.day{
     li{
       display: inline-block;
       width: 30px;
       height: 30px;
+      margin-left: 3px;
+      line-height: 30px;
+      text-align: center;
     }
   }
-  .year-month,.time{
+  .day{
+    li{
+      cursor: pointer;
+    }
+    li:hover{
+      background: #ffcc33;
+      color: #fff;
+    }
+  }
+  .year{
+    margin-bottom: 10px;
+    span{
+      display: inline-block;
+      width: 20px;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      cursor: pointer;
+    }
     input{
-      width: 30px;
+      width: 35px;
       height: 16px;
       padding: 2px 5px;
+    }
+  }
+  .time{
+    margin-top: 10px;
+    text-align: center;
+    input{
+      width: 55px;
+      height: 16px;
+      padding: 3px 5px;
+    }
+  }
+  .btns{
+    margin-top: 10px;
+    text-align: center;
+    button{
+      width: 70px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      background: @color;
+      color: #fff;
+      border: none;
     }
   }
 }

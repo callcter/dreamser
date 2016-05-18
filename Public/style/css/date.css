@@ -1,18 +1,65 @@
-.date {
-  width: 300px;
+.dsdate {
+  width: 235px;
+  margin-left: 20px;
   height: auto;
+  padding: 10px;
   background: #fff;
   font-size: 0.7rem;
 }
-.date .weekbox li,
-.date .day li {
+.dsdate .week li,
+.dsdate .day li {
   display: inline-block;
   width: 30px;
   height: 30px;
+  margin-left: 3px;
+  line-height: 30px;
+  text-align: center;
 }
-.date .year-month input,
-.date .time input {
-  width: 30px;
+.dsdate .day li {
+  cursor: pointer;
+}
+.dsdate .day li:hover {
+  background: #ffcc33;
+  color: #fff;
+}
+.dsdate .year {
+  margin-bottom: 10px;
+}
+.dsdate .year span {
+  display: inline-block;
+  width: 20px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  cursor: pointer;
+}
+.dsdate .year input {
+  width: 35px;
   height: 16px;
   padding: 2px 5px;
+}
+.dsdate .time {
+  margin-top: 10px;
+  text-align: center;
+}
+.dsdate .time input {
+  width: 55px;
+  height: 16px;
+  padding: 3px 5px;
+}
+.dsdate .btns {
+  margin-top: 10px;
+  text-align: center;
+}
+.dsdate .btns button {
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background: #ffcc33;
+  color: #fff;
+  border: none;
 }

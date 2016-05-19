@@ -24,6 +24,10 @@
       background: #ffcc33;
       color: #fff;
     }
+    li.today{
+      background: #33ffcc;
+      color: #fff;
+    }
   }
   .year{
     margin-bottom: 10px;
@@ -31,6 +35,7 @@
       display: inline-block;
       width: 20px;
       height: 25px;
+      margin-left: 2px;
       line-height: 25px;
       text-align: center;
       cursor: pointer;
@@ -38,7 +43,9 @@
     input{
       width: 35px;
       height: 16px;
+      margin-left: 2px;
       padding: 2px 5px;
+      text-align: center;
     }
   }
   .time{
@@ -47,7 +54,12 @@
     input{
       width: 55px;
       height: 16px;
+      margin-left: 5px;
       padding: 3px 5px;
+      text-align: center;
+    }
+    input:first-child{
+      margin-left: 0;
     }
   }
   .btns{
@@ -56,6 +68,7 @@
     button{
       width: 70px;
       height: 30px;
+      margin-left: 5px;
       text-align: center;
       line-height: 30px;
       border-radius: 3px;
@@ -64,6 +77,9 @@
       background: @color;
       color: #fff;
       border: none;
+    }
+    button:first-child{
+      margin-left: 0;
     }
   }
 }

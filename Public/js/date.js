@@ -41,12 +41,39 @@ Dsdate.prototype = {
     box.appendChild(time);
     box.appendChild(btns);
     parent.appendChild(box);
+    document.getElementById('year').value = this.date.getFullYear();
+    document.getElementById('month').value = this.date.getMonth()+1;
+    var days = document.getElementById('day').getElementsByTagName('li');
+    for(var i=0;i<days.length;i++){
+        if(days[i].innerHTML==this.date.getDate()){
+            days[i].className = 'today';
+            break;
+        }
+    }
+    document.getElementById('hour').value = this.date.getHours();
+    document.getElementById('minute').value = this.date.getMinutes();
+    document.getElementById('second').value = this.date.getSeconds();
+
+    _this = this;
+
+    addEvent(document.getElementById('nextMonth'),'click',function(){
+        _this.nextMonth(document.getElementById('month'),day);
+    });
+    addEvent(document.getElementById('preMonth'),'click',function(){
+        _this.preMonth(document.getElementById('month'),day);
+    });
+    addEvent(document.getElementById('nextYear'),'click',function(){
+        _this.nextYear(document.getElementById('year'),day);
+    });
+    addEvent(document.getElementById('preYear'),'click',function(){
+        _this.preYear(document.getElementById('year'),day);
+    });
   },
   yearInit: function(parent){
-    parent.innerHTML = '<span id="preYear" class="btn"> < </span><input id="year" type="text"> 年<span id="nextYear" class="btn"> > </span><span id="preMonth" class="btn"> < </span><input id="month" type="text"> 月<span id="nextMonth" class="btn"> > </span>';
+    parent.innerHTML = '<span id="preYear" class="btn"> < </span><input id="year" type="text"> 年<span id="nextYear" class="btn"> > </span> <span id="preMonth" class="btn"> < </span><input id="month" type="text"> 月<span id="nextMonth" class="btn"> > </span>';
   },
   weekInit: function(parent){
-    parent.innerHTML = '<li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li><li>日</li>';
+    parent.innerHTML = '<li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li>';
   },
   dayInit: function(parent){
     var today = this.date.getDate();
@@ -104,6 +131,37 @@ Dsdate.prototype = {
   dayWeekNumber: function(year,month){
     var d = new Date(year,month,1);
     return d.getDay();
+  },
+  nextMonth: function(con,day){
+    if(this.date.getMonth()==11){
+        this.date.setMonth(0);
+    }else{
+        this.date.setMonth(this.date.getMonth()+1);
+    }
+    con.value = this.date.getMonth()+1;
+    this.dayInit(day);
+  },
+  preMonth: function(con,day){
+    if(this.date.getMonth()==0){
+        this.date.setMonth(11);
+    }else{
+        this.date.setMonth(this.date.getMonth()-1);
+    }
+    con.value = this.date.getMonth()+1;
+    this.dayInit(day);
+  },
+  nextYear: function(con,day){
+    this.date.setFullYear(this.date.getFullYear()+1);
+    con.value = this.date.getFullYear();
+    this.dayInit(day);
+  },
+  preYear: function(con,day){
+    this.date.setFullYear(this.date.getFullYear()-1);
+    con.value = this.date.getFullYear();
+    this.dayInit(day);
+  },
+  hourInit: function(){
+    
   }
 }
 

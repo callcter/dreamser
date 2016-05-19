@@ -6,6 +6,7 @@
 
 //终止事件冒泡
 function stopProgapation(e){
+    e = e || window.event;
     if(e.stopPropagation){
         e.stopPropagation();
     }else{

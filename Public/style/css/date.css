@@ -22,6 +22,10 @@
   background: #ffcc33;
   color: #fff;
 }
+.dsdate .day li.today {
+  background: #33ffcc;
+  color: #fff;
+}
 .dsdate .year {
   margin-bottom: 10px;
 }
@@ -29,6 +33,7 @@
   display: inline-block;
   width: 20px;
   height: 25px;
+  margin-left: 2px;
   line-height: 25px;
   text-align: center;
   cursor: pointer;
@@ -36,7 +41,9 @@
 .dsdate .year input {
   width: 35px;
   height: 16px;
+  margin-left: 2px;
   padding: 2px 5px;
+  text-align: center;
 }
 .dsdate .time {
   margin-top: 10px;
@@ -45,7 +52,12 @@
 .dsdate .time input {
   width: 55px;
   height: 16px;
+  margin-left: 5px;
   padding: 3px 5px;
+  text-align: center;
+}
+.dsdate .time input:first-child {
+  margin-left: 0;
 }
 .dsdate .btns {
   margin-top: 10px;
@@ -54,6 +66,7 @@
 .dsdate .btns button {
   width: 70px;
   height: 30px;
+  margin-left: 5px;
   text-align: center;
   line-height: 30px;
   border-radius: 3px;
@@ -62,4 +75,7 @@
   background: #ffcc33;
   color: #fff;
   border: none;
+}
+.dsdate .btns button:first-child {
+  margin-left: 0;
 }

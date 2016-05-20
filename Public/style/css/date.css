@@ -1,10 +1,12 @@
 .dsdate {
   width: 235px;
-  margin-left: 20px;
   height: auto;
   padding: 10px;
   background: #fff;
   font-size: 0.7rem;
+  position: absolute;
+  z-index: 10;
+  border: 1px solid #ddd;
 }
 .dsdate .week li,
 .dsdate .day li {
@@ -18,12 +20,12 @@
 .dsdate .day li {
   cursor: pointer;
 }
-.dsdate .day li:hover {
-  background: #ffcc33;
+.dsdate .day li.active {
+  background: #26b4d3;
   color: #fff;
 }
 .dsdate .day li.today {
-  background: #33ffcc;
+  background: #ffcc33;
   color: #fff;
 }
 .dsdate .year {
@@ -72,10 +74,35 @@
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  background: #ffcc33;
+  background: #26b4d3;
   color: #fff;
   border: none;
 }
 .dsdate .btns button:first-child {
   margin-left: 0;
+}
+.dsdate .list-box {
+  position: absolute;
+  display: none;
+  top: 35px;
+  left: 0;
+  width: 94%;
+  padding-left: 5%;
+  padding-top: 2px;
+  background: #fff;
+  z-index: 10;
+}
+.dsdate .list-box li {
+  display: inline-block;
+  min-width: 22px;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 3px;
+  padding-right: 3px;
+  cursor: pointer;
+}
+.dsdate .list-box li:hover {
+  background: #999;
+  color: #fff;
 }

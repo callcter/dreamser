@@ -1,11 +1,13 @@
-@color: #ffcc33;
+@color: #26b4d3;
 .dsdate{
   width: 235px;
-  margin-left: 20px;
   height: auto;
   padding: 10px;
   background: #fff;
   font-size: 0.7rem;
+  position: absolute;
+  z-index: 10;
+  border: 1px solid #ddd;
   .week,.day{
     li{
       display: inline-block;
@@ -20,12 +22,12 @@
     li{
       cursor: pointer;
     }
-    li:hover{
-      background: #ffcc33;
+    li.active{
+      background: @color;
       color: #fff;
     }
     li.today{
-      background: #33ffcc;
+      background: #ffcc33;
       color: #fff;
     }
   }
@@ -80,6 +82,32 @@
     }
     button:first-child{
       margin-left: 0;
+    }
+  }
+  .list-box{
+    position: absolute;
+    display: none;
+    top: 35px;
+    left: 0;
+    width: 94%;
+    padding-left: 5%;
+    padding-top: 2px;
+    // height: auto;
+    background: #fff;
+    z-index: 10;
+    li{
+      display: inline-block;
+      min-width: 22px;
+      text-align: center;
+      height: 25px;
+      line-height: 25px;
+      padding-left: 3px;
+      padding-right: 3px;
+      cursor: pointer;
+    }
+    li:hover{
+      background: #999;
+      color: #fff;
     }
   }
 }

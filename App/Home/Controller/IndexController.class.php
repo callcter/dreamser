@@ -6,13 +6,13 @@ class IndexController extends Controller {
     public function index(){
         $this->display();
     }
-    public function customservice(){
-    	$this->display();
+    public function service(){
+        $this->display();
     }
     public function about(){
         $this->display();
     }
-    public function specifications(){
+    public function document(){
     	$this->display();
     }
 }

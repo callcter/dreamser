@@ -6,11 +6,7 @@ class IndexController extends Controller {
     public function index(){
         $this->display();
     }
-    public function user(){
-        echo C('name');
-        $this->display();
-    }
-    public function customService(){
+    public function customservice(){
     	$this->display();
     }
     public function about(){

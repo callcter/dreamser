@@ -1,19 +1,13 @@
-window.onload = function(){
-  var par = document.getElementById('par');
-  var dsdate = new Dsdate();
-  par.onfocus = function(event){
-    dsdate.init(event);
-  };
-}
-
-function Dsdate(){
+function Dsdate(options){
   this.src = null;
   this.srcPN = null;
   this.date = null;
+  this.showTime = options.showTime;
 }
 
 Dsdate.prototype = {
   init: function(event){
+    this.stopEvent(event);
     this.date = new Date();
     this.src = event.target || window.event.srcElement;
     this.srcPN = this.src.parentNode;
@@ -30,16 +24,20 @@ Dsdate.prototype = {
     day.className = 'day';
     day.setAttribute('id','day');
     this.dayInit(day);
-    var time = document.createElement('p');
-    time.className = 'time';
-    this.timeInit(time);
+    if(this.showTime){
+      var time = document.createElement('p');
+      time.className = 'time';
+      this.timeInit(time);
+    }
     var btns = document.createElement('p');
     btns.className = 'btns';
     this.btnsInit(btns);
     box.appendChild(year);
     box.appendChild(week);
     box.appendChild(day);
-    box.appendChild(time);
+    if(this.showTime){
+      box.appendChild(time);
+    }
     box.appendChild(btns);
 
     //box定位
@@ -57,9 +55,11 @@ Dsdate.prototype = {
         break;
       }
     }
-    document.getElementById('hour').value = this.date.getHours();
-    document.getElementById('minute').value = this.date.getMinutes();
-    document.getElementById('second').value = this.date.getSeconds();
+    if(this.showTime){
+      document.getElementById('hour').value = this.date.getHours();
+      document.getElementById('minute').value = this.date.getMinutes();
+      document.getElementById('second').value = this.date.getSeconds();
+    }
 
     var list_box = document.createElement('ul');
     list_box.className = 'list-box';
@@ -92,14 +92,16 @@ Dsdate.prototype = {
     document.getElementById('preYear').onclick = function(){
       _this.preYear(document.getElementById('year'),day);
     }
-    document.getElementById('hour').onfocus = function(){
-      _this.hourSelect(list_box,document.getElementById('hour'),box);
-    }
-    document.getElementById('minute').onfocus = function(){
-      _this.minuteSelect(list_box,document.getElementById('minute'),box);
-    }
-    document.getElementById('second').onfocus = function(){
-      _this.secondSelect(list_box,document.getElementById('second'),box);
+    if(this.showTime){
+      document.getElementById('hour').onfocus = function(){
+        _this.hourSelect(list_box,document.getElementById('hour'),box);
+      }
+      document.getElementById('minute').onfocus = function(){
+        _this.minuteSelect(list_box,document.getElementById('minute'),box);
+      }
+      document.getElementById('second').onfocus = function(){
+        _this.secondSelect(list_box,document.getElementById('second'),box);
+      }
     }
     document.getElementById('month').onfocus = function(){
       _this.monthSelect(list_box,document.getElementById('month'),box,day);
@@ -114,13 +116,21 @@ Dsdate.prototype = {
     }
     document.getElementById('todayBtn').onclick = function(){
       _this.date = new Date();
-      output = _this.date.getFullYear()+'-'+_this.format(_this.date.getMonth()+1)+'-'+_this.format(_this.date.getDate())+' '+_this.format(_this.date.getHours())+':'+_this.format(_this.date.getMinutes())+':'+_this.format(_this.date.getSeconds());
+      if(_this.showTime){
+        output = _this.date.getFullYear()+'-'+_this.format(_this.date.getMonth()+1)+'-'+_this.format(_this.date.getDate())+' '+_this.format(_this.date.getHours())+':'+_this.format(_this.date.getMinutes())+':'+_this.format(_this.date.getSeconds());
+      }else{
+        output = _this.date.getFullYear()+'-'+_this.format(_this.date.getMonth()+1)+'-'+_this.format(_this.date.getDate());
+      }
       _this.src.value = output;
       _this.clearIndex(_this.srcPN);
       _this.srcPN.removeChild(box);
     }
     document.getElementById('confirmBtn').onclick = function(){
-      output = _this.date.getFullYear()+'-'+_this.format(_this.date.getMonth()+1)+'-'+_this.format(_this.date.getDate())+' '+_this.format(_this.date.getHours())+':'+_this.format(_this.date.getMinutes())+':'+_this.format(_this.date.getSeconds());
+      if(_this.showTime){
+        output = _this.date.getFullYear()+'-'+_this.format(_this.date.getMonth()+1)+'-'+_this.format(_this.date.getDate())+' '+_this.format(_this.date.getHours())+':'+_this.format(_this.date.getMinutes())+':'+_this.format(_this.date.getSeconds());
+      }else{
+        output = _this.date.getFullYear()+'-'+_this.format(_this.date.getMonth()+1)+'-'+_this.format(_this.date.getDate());
+      }
       _this.src.value = output;
       _this.clearIndex(_this.srcPN);
       _this.srcPN.removeChild(box);

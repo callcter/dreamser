@@ -4,7 +4,6 @@ var Page = function(config){
     this.total = 0;
     this.pageNum = 0;
     this.showNum = config.showNum;
-    this.lang = config.lang;
     this.pageNow = 1;
     this.rFn = config.remote;
 }
@@ -18,143 +17,140 @@ Page.prototype = {
         this.pageNow = now;
     },
     //初始化
-    init: function(obj){
-        obj.clearHTML();
-        if(obj.total==0){
+    init: function(){
+      var _this = this;
+        _this.clearHTML();
+        this.pageNow = 1;
+        if(_this.total==0){
             return false;
         }else{
             var preLi = document.createElement('li');
             preLi.style.display='none';
             var nextLi = document.createElement('li');
+            if(_this.pageNum==1){
+                nextLi.style.display = 'none';
+            }
             var pageDir = document.createElement('span');
-            pageDir.innerHTML = obj.pageNow+'/'+obj.pageNum;
+            pageDir.innerHTML = _this.pageNow+'/'+_this.pageNum;
             var pageInput = document.createElement('input');
             pageInput.setAttribute('type','text');
             var pageBtn = document.createElement('button');
             pageBtn.innerHTML = '跳转';
-            switch(obj.lang){
-                case 'cn':
-                    preLi.innerHTML = '上一页';
-                    nextLi.innerHTML = '下一页';
-                    break;
-                case 'en':
-                    preLi.innerHTML = 'prev';
-                    nextLi.innerHTML = 'next';
-                    break;
-            }
-            obj.elem.appendChild(preLi);
-            obj.elem.appendChild(nextLi);
-            obj.elem.appendChild(pageDir);
-            obj.elem.appendChild(pageInput);
-            obj.elem.appendChild(pageBtn);
-            if(obj.pageNum<=obj.showNum){
-                for(var i=1;i<=obj.pageNum;i++){
+            preLi.innerHTML = '上一页';
+            nextLi.innerHTML = '下一页';
+            _this.elem.appendChild(preLi);
+            _this.elem.appendChild(nextLi);
+            _this.elem.appendChild(pageDir);
+            _this.elem.appendChild(pageInput);
+            _this.elem.appendChild(pageBtn);
+            if(_this.pageNum<=_this.showNum){
+                for(var i=1;i<=_this.pageNum;i++){
                     var pageLi = document.createElement('li');
                     pageLi.innerHTML = i;
-                    obj.elem.insertBefore(pageLi,nextLi);
+                    _this.elem.insertBefore(pageLi,nextLi);
                 }
             }else{
-                for(var i=1;i<=obj.showNum;i++){
+                for(var i=1;i<=_this.showNum;i++){
                     var pageLi = document.createElement('li');
                     pageLi.innerHTML = i;
-                    obj.elem.insertBefore(pageLi,nextLi);
+                    _this.elem.insertBefore(pageLi,nextLi);
                 }
             }
-            var pageLis = obj.elem.getElementsByTagName('li');
-            for(var i=0;i<obj.showNum;i++){
-                if(parseInt(pageLis[i].innerHTML)==obj.pageNow){
+            var pageLis = _this.elem.getElementsByTagName('li');
+            for(var i=0;i<_this.showNum;i++){
+                if(parseInt(pageLis[i].innerHTML)==_this.pageNow){
                     pageLis[i].className = 'active';
                     break;
                 }
             }
-            obj.addEvent(preLi,'click',function(event){
-                if(pageLis.length<3||event.pageNow<2){
+            preLi.onclick = function(event){
+                if(pageLis.length<3||_this.pageNow<2){
                     return false;
                 }else{
-                    event.pageNow--;
-                    event.remote(function(){
-                        obj.reset(obj);
+                    _this.pageNow--;
+                    _this.remote(function(){
+                        _this.reset();
                     });
                 }
-            },obj);
-            obj.addEvent(nextLi,'click',function(event){
-                if(pageLis.length<3||event.pageNow==(pageLis.length-1)){
-                    return false;
-                }else{
-                    event.pageNow++;
-                    event.remote(function(){
-                        obj.reset(obj);
-                    });
-                }
-            },obj);
-            for(var i=1;i<(pageLis.length-1);i++){
-                obj.addEvent(pageLis[i],'click',function(event){
-                    event.pageNow = this.innerHTML;
-                    event.remote(function(){
-                        obj.reset(obj);
-                    });
-                },obj);
             }
-            obj.addEvent(pageBtn,'click',function(event){
+            nextLi.onclick = function(event){
+                if(pageLis.length<3||_this.pageNow==_this.pageNum){
+                    return false;
+                }else{
+                    _this.pageNow++;
+                    _this.remote(function(){
+                        _this.reset();
+                    });
+                }
+            }
+            for(var i=1;i<(pageLis.length-1);i++){
+                pageLis[i].onclick = function(event){
+                    _this.pageNow = this.innerHTML;
+                    _this.remote(function(){
+                        _this.reset();
+                    });
+                }
+            }
+            pageBtn.onclick = function(event){
                 if(pageInput.value){
                     var inputNum = pageInput.value;
                     var totalNum = parseInt(pageDir.innerHTML.split('/')[1]);
                     if(inputNum<1||inputNum>totalNum){
                         alert('请输入正确的页码');
                     }else{
-                        event.pageNow = inputNum;
-                        event.remote(function(){
-                            obj.reset(obj);
+                        _this.pageNow = inputNum;
+                        _this.remote(function(){
+                            _this.reset();
                         });
                     }
                 }else{
                     return false;
                 }
-            },obj);
+            }
         }
     },
-    reset: function(obj){
-        var pageLis = obj.elem.getElementsByTagName('li');
-        if(obj.pageNow==1){
+    reset: function(){
+        var pageLis = this.elem.getElementsByTagName('li');
+        if(this.pageNow==1){
             pageLis[0].style.display="none";
         }else{
             pageLis[0].style.display="inline-block";
         }
-        if(obj.pageNow==obj.pageNum){
-            pageLis[obj.min(obj.showNum,obj.pageNum)+1].style.display="none";
+        if(this.pageNow==this.pageNum){
+            pageLis[this.min(this.showNum,this.pageNum)+1].style.display="none";
         }else{
-            pageLis[obj.min(obj.showNum,obj.pageNum)+1].style.display="inline-block";
+            pageLis[this.min(this.showNum,this.pageNum)+1].style.display="inline-block";
         }
         for(var i=0;i<pageLis.length;i++){
             pageLis[i].className = '';
         }
-        if(obj.pageNum<=obj.showNum){
-            for(var i=1;i<=obj.pageNum;i++){
+        if(this.pageNum<=this.showNum){
+            for(var i=1;i<=this.pageNum;i++){
                 pageLis[i].innerHTML = i;
             }
         }else{
-            if(obj.pageNow-Math.floor(obj.showNum/2)<=0){
-                for(var i=1;i<=obj.showNum;i++){
+            if(this.pageNow-Math.floor(this.showNum/2)<=0){
+                for(var i=1;i<=this.showNum;i++){
                     pageLis[i].innerHTML = i;
                 }
-            }else if(parseInt(obj.pageNow)+Math.floor(obj.showNum/2)>obj.pageNum){
-                for(var i=1;i<=obj.showNum;i++){
-                    pageLis[i].innerHTML = obj.pageNum-obj.showNum+i;
+            }else if(parseInt(this.pageNow)+Math.floor(this.showNum/2)>this.pageNum){
+                for(var i=1;i<=this.showNum;i++){
+                    pageLis[i].innerHTML = this.pageNum-this.showNum+i;
                 }
             }else{
-                for(var i=1;i<=obj.showNum;i++){
-                    pageLis[i].innerHTML = obj.pageNow-Math.floor(obj.showNum/2)+i;
+                for(var i=1;i<=this.showNum;i++){
+                    pageLis[i].innerHTML = this.pageNow-Math.floor(this.showNum/2)+i;
                 }
             }
         }
-        for(var i=1;i<=obj.showNum;i++){
-            if(parseInt(pageLis[i].innerHTML)==obj.pageNow){
+        for(var i=1;i<=this.showNum;i++){
+            if(parseInt(pageLis[i].innerHTML)==this.pageNow){
                 pageLis[i].className = 'active';
                 break;
             }
         }
-        var pageDir = obj.elem.getElementsByTagName('span')[0];
-        pageDir.innerHTML = obj.pageNow+'/'+pageDir.innerHTML.split('/')[1];
+        var pageDir = this.elem.getElementsByTagName('span')[0];
+        pageDir.innerHTML = this.pageNow+'/'+pageDir.innerHTML.split('/')[1];
     },
     //远程连接
     remote: function(callback){
@@ -162,19 +158,6 @@ Page.prototype = {
     },
     clearHTML: function(){
         this.elem.innerHTML = '';
-    },
-    addEvent: function(obj,event,fun,pp){
-        var fn = fun;
-        fn = function(e){
-            fun.call(this,pp);
-        }
-        if(obj.attachEvent){
-            obj.attachEvent("on"+event,fn);
-        }else if(obj.addEventListener){
-            obj.addEventListener(event,fn,false);
-        }else{
-            obj["on"+event] = fn;
-        }
     },
     insertAfter: function(newEl, targetEl){
         var parentEl = targetEl.parentNode;

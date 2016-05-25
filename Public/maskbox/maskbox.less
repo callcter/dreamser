@@ -1,0 +1,72 @@
+@color: #26b4d3;
+.mask-back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  color: #333;
+  .mask-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    margin-left: -150px;
+    height: 200px;
+    margin-top: -100px;
+    background: #fff;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    .mask-title{
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+      line-height: 40px;
+      text-align: center;
+      border-bottom: 1px solid @color;
+    }
+    .mask-content{
+      width: 280px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height: 90px;
+      margin-left: 10px;
+      line-height: 30px;
+      font-size: 16px;
+      text-align: center;
+    }
+    .mask-btns{
+      width: 100%;
+      height: 50px;
+      border-top: 1px solid @color;
+      text-align: center;
+      .mask-btn{
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 70px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background: @color;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+      }
+      .mask-btn:first-child{
+        margin-left: 0;
+      }
+      .mask-btn:hover{
+        //
+      }
+    }
+  }
+}

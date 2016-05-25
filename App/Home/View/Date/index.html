@@ -19,20 +19,18 @@
 <body>
 
 	<header>
-        <div class="h-wrapper">
-            <span class="h-domain" id="domain">
-                <a href="http://dreamser.com">
-                    Dreamser
-                </a>
-            </span>
-            <span class="h-link"><a href="Index/index#workShow">作品展示</a></span>
-            <span class="h-link"><a href="Index/index#mobileApp">移动应用</a></span>
-            <span class="h-link"><a href="Index/index#moduleDevelop">组件开发</a></span>
-            <span class="h-link"><a href="Index/customService">定制服务</a></span>
-            <span class="h-link"><a href="Index/specifications">开发规范</a></span>
-            <span class="h-link"><a href="Index/about">关于作者</a></span>
-            <span class="h-link"><a href="http://blog.dreamser.com">博客</a></span>
-        </div>
+      <div class="h-wrapper">
+        <span class="h-domain" id="domain">
+          <a href="http://dreamser.com">Dreamser</a>
+        </span>
+        <span class="h-link"><a href="Index/index#workShow">作品展示</a></span>
+        <span class="h-link"><a href="Index/index#mobileApp">移动应用</a></span>
+        <span class="h-link"><a href="Index/index#moduleDevelop">组件开发</a></span>
+        <span class="h-link"><a href="Index/customService">定制服务</a></span>
+        <span class="h-link"><a href="Index/specifications">开发规范</a></span>
+        <span class="h-link"><a href="Index/about">关于作者</a></span>
+        <span class="h-link"><a href="http://blog.dreamser.com">博客</a></span>
+      </div>
     </header>
     <nav>
         <div class="navigator">
@@ -41,8 +39,41 @@
     </nav>
 
 	<div class="container">
+    <div class="md-title">
+      <p class="mdt-title">日期组件</p>
+      <p class="mdt-info">可以选择年、月、日、时、分、秒，后面版本会加入阴历的支持</p>
+    </div>
+    <div class="md-demo">
+      <p class="mdd-title">Demo</p>
+      <div class="mdd-demo">
         <input type="text" id="par">
+      </div>
+    </div>
+    <div class="md-code">
+      <p class="mdc-title">Code-html</p>
+      <div class="mdc-code">
+        <pre class="brush:html">
+          <input type="text" id="par"></pre>
+      </div>
+      <p class="mdc-title">Code-js</p>
+      <div class="mdc-code">
+        <pre class="brush:js">
+          var dsdate = new Dsdate({showTime:true});
+          document.getElementById('par').onclick = function(event){
+            dsdate.init(event);
+          } </pre>
+      </div>
+    </div>
 	</div>
+
+  <script>
+      window.onload = function(){
+        var dsdate = new Dsdate({showTime:true});
+        document.getElementById('par').onclick = function(event){
+          dsdate.init(event);
+        }
+      }
+  </script>
 
 </body>
 

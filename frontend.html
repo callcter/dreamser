@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>frontend</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Microsoft YaHei,Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#outline-list{
+  position: fixed;
+  left: 50%;
+  margin-left: -650px;
+  top: 50px;
+  width: auto;
+  height: auto;
+  padding: 10px;
+}
+#outline-list li{
+  list-style: none;
+}
+#outline-list li a{
+  text-decoration: none;
+  padding: 2px 5px;
+}
+#outline-list a:hover{
+  background: #4183C4;
+  color: #fff;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 26px;
+  color: #000;
+  text-align: center;
+}
+
+h2 {
+  font-size: 22px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h5 {
+  color: #333;
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 生成目录列表
+        var outline = document.createElement("ul");
+        outline.setAttribute("id", "outline-list");
+        outline.style.cssText = "border: 1px solid #ccc;";
+        document.body.insertBefore(outline, document.body.childNodes[0]);
+        // 获取所有标题
+        var headers = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+        for (var i = 0; i < headers.length; i++) {
+            var header = headers[i];
+            var hash = _hashCode(header.textContent);
+            // MarkdownPad2无法为中文header正确生成id，这里生成一个
+            header.setAttribute("id", header.tagName + hash);
+            // 找出它是H几，为后面前置空格准备
+            var prefix = parseInt(header.tagName.replace('H', ''), 10);
+            outline.appendChild(document.createElement("li"));
+            var a = document.createElement("a");
+            // 为目录项设置链接
+            a.setAttribute("href", "#" + header.tagName + hash)
+            // 目录项文本前面放置对应的空格
+            a.innerHTML = header.textContent;
+            a.style.marginLeft = (prefix-1)*20 + 'px';
+            outline.lastChild.appendChild(a);
+        }
+
+    });
+
+    // 类似Java的hash生成方式，为一段文字生成一段基本不会重复的数字
+    function _hashCode(txt) {
+         var hash = 0;
+         if (txt.length == 0) return hash;
+         for (i = 0; i < txt.length; i++) {
+              char = txt.charCodeAt(i);
+              hash = ((hash<<5)-hash)+char;
+              hash = hash & hash; // Convert to 32bit integer
+         }
+         return hash;
+    }
+</script>
+</head>
+<body>
+<h1>一、基本规范</h1>
+<h2>1.开发方式</h2>
+<ul>
+<li>以<strong>前后端分离</strong>的开发方式为主，jsp 脚本为辅的开发方式</li>
+<li>以 <strong>json</strong> 作为前后端数据交互的数据格式  </li>
+<li>使用 <strong>ajax</strong> 方法作为前后端数据交互的方法</li>
+</ul>
+<h2>2.开发流程</h2>
+<ul>
+<li>产品：分析需求出原型</li>
+<li>UI：根据原型设计，标注元素</li>
+<li>前端：根据设计切出静态页面；对接后台接口</li>
+<li>后台：根据原型设计数据库表，开发后台接口</li>
+</ul>
+<h1>二、文件结构</h1>
+<h2>1. HTML文件</h2>
+<ul>
+<li>使用html5标签规范，通过html5shiv兼容IE9以下浏览器，引用如下</li>
+</ul>
+<pre><code>&lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;/static/scripts/lib/html5shiv.min.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre>
+
+<ul>
+<li>页面模板</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-cmn-Hans&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;link rel=&quot;shortcut icon&quot; href=&quot;/static/favicon.ico&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script src=&quot;&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>2. Javascript文件</h2>
+<ul>
+<li>依赖 jQuery 文件，引用版本为1.x.x，以兼容IE9以下浏览器</li>
+<li>公用方法在 common.js 文件中</li>
+</ul>
+<h2>3. Less文件</h2>
+<h3>文件说明</h3>
+<ul>
+<li>common.less：变量定义</li>
+<li>global.less：样式重置</li>
+<li>header.less：页面头部样式</li>
+<li>footer.less：页面尾部样式</li>
+<li>public.less：公用样式定义</li>
+</ul>
+<h3>开发规范</h3>
+<ul>
+<li>所有页面需引用 public.css 样式文件</li>
+<li>每个页面单独定义 less 文件，需 import common.less文件</li>
+</ul>
+<h1>三、UI文档</h1>
+<h2>1.色彩</h2>
+<ul>
+<li><span style="color:#26b4d3">家哇蓝</span> #26b4d3 家哇的主题色</li>
+<li><span style="color:#333;">黑色</span> #333 第一级字体颜色，禁止使用 #000</li>
+<li><span style="color:#666;">淡黑</span> #666 第二级字体颜色</li>
+<li><span style="color:#999;">灰色</span> #999 第三级字体颜色</li>
+<li><span style="color:#ddd;">边框灰</span> #ddd  边框、input的placeholder</li>
+</ul>
+<h2>2.字体</h2>
+<ul>
+<li>以 微软雅黑 （Microsoft YaHei） 为标准字体</li>
+</ul>
+<h2>3.字号</h2>
+<ul>
+<li>14px：正文、列表</li>
+<li>16px：标题</li>
+</ul>
+<h1>四、组件文档</h1>
+<h2>1. 下拉列表</h2>
+<h3>实例</h3>
+<p><a href="http://test.jiavva.com/views/examples.html">链接</a></p>
+<h3>说明</h3>
+<pre><code>//引用文件
+//样式文件在public.css中，未单独定义
+&lt;script src=&quot;/static/lib/selectList/selectList.js&quot;&gt;&lt;/script&gt;
+//html
+&lt;input class=&quot;selectList-input&quot; placeholder=&quot;请选择&quot; onfocus=&quot;selectList(event,['选项一','选项二','选项三'])&quot;&gt;
+&lt;span class=&quot;selectList-btn&quot; onclick=&quot;getFocus(event)&quot;&gt;&lt;i class=&quot;fa fa-angle-down&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+//js
+//可以直接在html中绑定事件，也可以在js中绑定
+</code></pre>
+
+<h2>2. 地址选择</h2>
+<h3>实例</h3>
+<p><a href="http://test.jiavva.com/views/examples.html">链接</a></p>
+<h3>说明</h3>
+<pre><code>//引用文件
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/static/lib/addressSelector/addressSeclector.css&quot;&gt;
+&lt;script src=&quot;/static/lib/addressSelector/addressSeclector.js&quot;&gt;&lt;/script&gt;
+//html
+&lt;input type=&quot;text&quot; id=&quot;address&quot; onfocus=&quot;addressSelector(event)&quot; placeholder=&quot;地址选择&quot;&gt;
+//js
+var address = document.getElementById('address');
+//获取地址名称
+var addr-name = address.value;
+//获取地址编码
+var addr-code = address.getAttribute('data-code');
+</code></pre>
+
+<h2>3. 商品选择</h2>
+<h3>实例</h3>
+<p><a href="http://test.jiavva.com/views/examples.html">链接</a></p>
+<h3>说明</h3>
+<pre><code>//引用文件
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/static/lib/addressSelector/addressSeclector.css&quot;&gt;
+&lt;script src=&quot;/static/scripts/goodSeclector.js&quot;&gt;&lt;/script&gt;
+//html
+&lt;input type=&quot;text&quot; id=&quot;address&quot; onfocus=&quot;goodSelector(event)&quot; placeholder=&quot;商品选择&quot;&gt;
+//js
+//采用异步的方式，在页面加载时向数据库请求商品品类列表
+var goodLib = new Array();
+window.onload = function () {
+    $.ajax({
+        url: '/productCategory',
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function (goods) {
+            goodLib = goods;
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+    ……
+}
+//使用方法
+var goodSelector = document.getElementById('goodSelector');
+//获取地址名称
+var good-name = goodSelector.value;
+//获取地址编码
+var good-code = goodSelector.getAttribute('data-code');
+//后台CURD仅使用第四个商品编码
+var product-code = good-code.split('-')[3];
+</code></pre>
+
+<h2>4. 分页</h2>
+<h3>实例</h3>
+<p><a href="http://test.jiavva.com/views/examples.html">链接</a></p>
+<h3>说明</h3>
+<pre><code>//引用文件
+//样式文件在public.css中
+&lt;script src=&quot;/static/lib/page/page.js&quot;&gt;&lt;/script&gt;
+//html
+&lt;ul id=&quot;page&quot; class=&quot;page&quot;&gt;&lt;/ul&gt;
+//js
+//初始化分页组件
+page = new Page({
+    elem: document.getElementById('page'),
+    pageSize: 20,
+    showNum: 6,
+    remote: function(pageN,pageS,callback){
+        //分页请求参数
+        condition.page.pageNo = pageN;
+        condition.page.pageSize = pageS;
+        //清空列表
+        $('table tr:gt(0)').remove();
+        //显示过渡动画
+        $('#loading').show();
+        $.ajax({
+            url: '/orders/f/searchResult',
+            data: JSON.stringify(condition),
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function(res){
+                //关闭过渡动画
+                $('#loading').hide();
+                result = res;
+                listTables(res);
+                //重置页码
+                page.setTotal(result.count);
+                callback();
+            },
+            error: function(err){
+                console.log(err);
+            }
+        });
+    }
+});
+//执行分页方法
+page.remote(function(){
+    page.init();
+});
+</code></pre>
+
+<h2>5. 日期选择</h2>
+<h3>实例</h3>
+<p><a href="http://test.jiavva.com/views/examples.html">链接</a> </p>
+<h3>说明</h3>
+<pre><code>//引用文件
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/static/lib/dsdate/date.css&quot;&gt;
+&lt;script src=&quot;/static/lib/dsdate/date.js&quot;&gt;&lt;/script&gt;
+//html
+&lt;input id=&quot;condition_date_start&quot; placeholder=&quot;日期&quot; readonly=&quot;true&quot;&gt;
+//js
+//初始化组件
+dsdate = new Dsdate({
+    showTime: true     //是否显示时间
+});
+$('#condition_date_start').on('click',function(event){
+    dsdate.init(event);
+});
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

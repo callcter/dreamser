@@ -9,6 +9,7 @@ class ReactController extends Controller {
   public function recommend(){
     $Memory = M('memory');
     $data=$Memory->select();
+    header('Content-type:application/json');
     $res = json_encode($data);
     echo $res;
   }

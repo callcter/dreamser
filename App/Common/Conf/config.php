@@ -14,8 +14,8 @@ return array(
     'TEMP_ENGINE_TYPE'=>'PHP',
     'TMPL_PARSE_STRING' => array(
         '__JS__'        =>  '/Public/js',
-        '__STYLE__'     =>  __ROOT__.'/Public/style',
-        '__DATA__'      =>  __ROOT__.'/Public/data',
-        '__IMAGE__'     =>  __ROOT__.'/Public/image',
+        '__STYLE__'     =>  '/Public/style',
+        '__DATA__'      =>  '/Public/data',
+        '__IMAGE__'     =>  '/Public/image',
     )
 );

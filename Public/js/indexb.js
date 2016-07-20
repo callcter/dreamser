@@ -17,7 +17,7 @@ var carousel = function(){
             }
 
             indexs[this.index].className = "active";
-            src = "../Public/image/carousel"+(this.index+1)+".jpg";
+            src = "/Public/image/carousel"+(this.index+1)+".jpg";
             box.setAttribute("src",src);
             flag = this.index+1;
         });
@@ -34,7 +34,7 @@ var carousel = function(){
         }
 
         indexs[flag-1].className = "active";
-        src = "../Public/image/carousel"+flag+".jpg";
+        src = "/Public/image/carousel"+flag+".jpg";
         box.setAttribute("src",src);
 
         flag++;
